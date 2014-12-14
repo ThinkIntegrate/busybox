@@ -1,0 +1,12 @@
+# DO NOT EDIT. This file is generated from Config.src
+#
+# For a description of the syntax of this configuration file,
+# see scripts/kbuild/config-language.txt.
+#
+
+config UDHCPC6
+	bool "udhcp client for DHCPv6 (udhcpc6)"
+	default n  # not yet ready
+	depends on FEATURE_IPV6
+	help
+	  udhcpc6 is a DHCPv6 client

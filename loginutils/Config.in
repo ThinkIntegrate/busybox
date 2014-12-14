@@ -1,0 +1,19 @@
+# DO NOT EDIT. This file is generated from Config.src
+#
+# For a description of the syntax of this configuration file,
+# see scripts/kbuild/config-language.txt.
+#
+
+menu "Login/Password Management Utilities"
+
+config ADD_SHELL
+       bool "add-shell"
+       default y if DESKTOP
+       help
+         Add shells to /etc/shells.
+
+config REMOVE_SHELL
+       bool "remove-shell"
+       default y if DESKTOP
+       help
+         Remove shells from /etc/shells.
