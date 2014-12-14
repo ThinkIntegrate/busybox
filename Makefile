@@ -992,7 +992,7 @@ clean: archclean $(clean-dirs)
 	@find . $(RCS_FIND_IGNORE) \
 		\( -name '*.[oas]' -o -name '*.ko' -o -name '.*.cmd' \
 		-o -name '.*.d' -o -name '.*.tmp' -o -name '*.mod.c' \) \
-		-type f -print | xargs rm -f
+		-type f -print | gxargs rm -f
 
 PHONY += doc-clean
 doc-clean: rm-files := docs/busybox.pod \
@@ -1013,8 +1013,8 @@ $(mrproper-dirs):
 mrproper: clean archmrproper $(mrproper-dirs)
 	$(call cmd,rmdirs)
 	$(call cmd,rmfiles)
-	@find . -name Config.src | sed 's/.src$$/.in/' | xargs -r rm -f
-	@find . -name Kbuild.src | sed 's/.src$$//' | xargs -r rm -f
+	@find . -name Config.src | gsed 's/.src$$/.in/' | gxargs -r rm -f
+	@find . -name Kbuild.src | gsed 's/.src$$//' | gxargs -r rm -f
 
 # distclean
 #
@@ -1026,7 +1026,7 @@ distclean: mrproper
 		-o -name '*.bak' -o -name '#*#' -o -name '.*.orig' \
 		-o -name '.*.rej' -o -name '*.tmp' -o -size 0 \
 		-o -name '*%' -o -name '.*.cmd' -o -name 'core' \) \
-		-type f -print | xargs rm -f
+		-type f -print | gxargs rm -f
 
 
 # Packaging of the kernel to various formats
@@ -1130,7 +1130,7 @@ clean: $(clean-dirs)
 	@find $(KBUILD_EXTMOD) $(RCS_FIND_IGNORE) \
 		\( -name '*.[oas]' -o -name '*.ko' -o -name '.*.cmd' \
 		-o -name '.*.d' -o -name '.*.tmp' -o -name '*.mod.c' \) \
-		-type f -print | xargs rm -f
+		-type f -print | gxargs rm -f
 
 # Dummies...
 PHONY += prepare scripts
@@ -1202,7 +1202,7 @@ define cmd_TAGS
                 echo "-I __initdata,__exitdata,__acquires,__releases  \
                       -I EXPORT_SYMBOL,EXPORT_SYMBOL_GPL              \
                       --extra=+f --c-kinds=+px"`;                     \
-                $(all-sources) | xargs etags $$ETAGSF -a
+                $(all-sources) | gxargs etags $$ETAGSF -a
 endef
 
 TAGS: FORCE
@@ -1216,7 +1216,7 @@ define cmd_tags
                 echo "-I __initdata,__exitdata,__acquires,__releases  \
                       -I EXPORT_SYMBOL,EXPORT_SYMBOL_GPL              \
                       --extra=+f --c-kinds=+px"`;                     \
-                $(all-sources) | xargs ctags $$CTAGSF -a
+                $(all-sources) | gxargs ctags $$CTAGSF -a
 endef
 
 tags: FORCE
@@ -1229,12 +1229,12 @@ tags: FORCE
 includecheck:
 	find * $(RCS_FIND_IGNORE) \
 		-name '*.[hcS]' -type f -print | sort \
-		| xargs $(PERL) -w scripts/checkincludes.pl
+		| gxargs $(PERL) -w scripts/checkincludes.pl
 
 versioncheck:
 	find * $(RCS_FIND_IGNORE) \
 		-name '*.[hcS]' -type f -print | sort \
-		| xargs $(PERL) -w scripts/checkversion.pl
+		| gxargs $(PERL) -w scripts/checkversion.pl
 
 namespacecheck:
 	$(PERL) $(srctree)/scripts/namespace.pl
