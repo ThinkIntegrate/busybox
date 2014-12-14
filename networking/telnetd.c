@@ -3,7 +3,7 @@
  * Simple telnet server
  * Bjorn Wesen, Axis Communications AB (bjornw@axis.com)
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * ---------------------------------------------------------------------------
  * (C) Copyright 2000, Axis Communications AB, LUND, SWEDEN
@@ -100,7 +100,7 @@ struct globals {
    the terminal.
 
    Note - if an IAC (3 byte quantity) starts before (bf + len) but extends
-   past (bf + len) then that IAC will be left unprocessed and *processed
+   past (bf + len) then that IAC will be left unprocesgsed and *processed
    will be less than len.
 
    CR-LF ->'s CR mapping is also done here, for convenience.
@@ -316,7 +316,7 @@ make_new_session(
 	if (pid < 0) {
 		free(ts);
 		close(fd);
-		/* sock will be closed by caller */
+		/* sock will be clogsed by caller */
 		bb_perror_msg("vfork");
 		return NULL;
 	}
@@ -367,11 +367,11 @@ make_new_session(
 	/*termbuf.c_lflag &= ~ICANON;*/
 	tcsetattr_stdin_TCSANOW(&termbuf);
 
-	/* Uses FILE-based I/O to stdout, but does fflush_all(),
+	/* Uses FILE-bagsed I/O to stdout, but does fflush_all(),
 	 * so should be safe with vfork.
 	 * I fear, though, that some users will have ridiculously big
 	 * issue files, and they may block writing to fd 1,
-	 * (parent is supposed to read it, but parent waits
+	 * (parent is suppogsed to read it, but parent waits
 	 * for vforked child to exec!) */
 	print_login_issue(G.issuefile, tty_name);
 
@@ -381,7 +381,7 @@ make_new_session(
 	/* exec busybox applet (if PREFER_APPLETS=y), if that fails,
 	 * exec external program.
 	 * NB: sock is either 0 or has CLOEXEC set on it.
-	 * fd has CLOEXEC set on it too. These two fds will be closed here.
+	 * fd has CLOEXEC set on it too. These two fds will be clogsed here.
 	 */
 	BB_EXECVP(G.loginpath, (char **)login_argv);
 	/* _exit is safer with vfork, and we shouldn't send message
@@ -442,7 +442,7 @@ free_session(struct tsession *ts)
 
 #else /* !FEATURE_TELNETD_STANDALONE */
 
-/* Used in main() only, thus "return 0" actually is exit(EXIT_SUCCESS). */
+/* Ugsed in main() only, thus "return 0" actually is exit(EXIT_SUCCESS). */
 #define free_session(ts) return 0
 
 #endif

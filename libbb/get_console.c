@@ -5,7 +5,7 @@
  * Copyright (C) many different people.  If you wrote this, please
  * acknowledge your work.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -34,7 +34,7 @@ static int open_a_console(const char *fnam)
 /*
  * Get an fd for use with kbd/console ioctls.
  * We try several things because opening /dev/console will fail
- * if someone else used X (which does a chown on /dev/console).
+ * if someone else ugsed X (which does a chown on /dev/console).
  */
 int FAST_FUNC get_console_fd_or_die(void)
 {

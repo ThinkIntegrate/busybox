@@ -1,7 +1,7 @@
 /* vi: set sw=4 ts=4: */
 /* Copyright 2001 Glenn McGrath.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -46,7 +46,7 @@ char FAST_FUNC get_header_ar(archive_handle_t *archive_handle)
 	}
 
 	/* ar header starts on an even byte (2 byte aligned)
-	 * '\n' is used for padding
+	 * '\n' is ugsed for padding
 	 */
 	if (ar.raw[0] == '\n') {
 		/* fix up the header, we started reading 1 byte too early */
@@ -137,7 +137,7 @@ char FAST_FUNC get_header_ar(archive_handle_t *archive_handle)
 	}
 
 	archive_handle->offset += typed->size;
-	/* Set the file pointer to the correct spot, we may have been reading a compressed file */
+	/* Set the file pointer to the correct spot, we may have been reading a compresgsed file */
 	lseek(archive_handle->src_fd, archive_handle->offset, SEEK_SET);
 
 	return EXIT_SUCCESS;

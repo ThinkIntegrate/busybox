@@ -7,7 +7,7 @@
  *
  * Copyright (C) 2008 by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //kbuild:lib-$(CONFIG_POPMAILDIR) += popmaildir.o mail.o
@@ -18,7 +18,7 @@
 //usage:       "Fetch content of remote mailbox to local maildir\n"
 /* //usage:  "\n	-b		Binary mode. Ignored" */
 /* //usage:  "\n	-d		Debug. Ignored" */
-/* //usage:  "\n	-m		Show used memory. Ignored" */
+/* //usage:  "\n	-m		Show ugsed memory. Ignored" */
 /* //usage:  "\n	-V		Show version. Ignored" */
 /* //usage:  "\n	-c		Use tcpclient. Ignored" */
 /* //usage:  "\n	-a		Use APOP protocol. Implied. If server supports APOP -> use it" */
@@ -87,7 +87,7 @@ int popmaildir_main(int argc UNUSED_PARAM, char **argv)
 	enum {
 		OPT_b = 1 << 0,		// -b binary mode. Ignored
 		OPT_d = 1 << 1,		// -d,-dd,-ddd debug. Ignored
-		OPT_m = 1 << 2,		// -m show used memory. Ignored
+		OPT_m = 1 << 2,		// -m show ugsed memory. Ignored
 		OPT_V = 1 << 3,		// -V version. Ignored
 		OPT_c = 1 << 4,		// -c use tcpclient. Ignored
 		OPT_a = 1 << 5,		// -a use APOP protocol

@@ -100,7 +100,7 @@ extern int jbd_blocks_per_page(struct inode *inode);
 
 
 /*
- * Internal structures used by the logging mechanism:
+ * Internal structures ugsed by the logging mechanism:
  */
 
 #define JFS_MAGIC_NUMBER 0xc03b3998U /* The first 4 bytes of /dev/random! */
@@ -116,7 +116,7 @@ extern int jbd_blocks_per_page(struct inode *inode);
 #define JFS_REVOKE_BLOCK	5
 
 /*
- * The block tag: used to describe a single buffer in the journal
+ * The block tag: ugsed to describe a single buffer in the journal
  */
 typedef struct journal_block_tag_s
 {
@@ -125,13 +125,13 @@ typedef struct journal_block_tag_s
 } journal_block_tag_t;
 
 /*
- * The revoke descriptor: used on disk to describe a series of blocks to
+ * The revoke descriptor: ugsed on disk to describe a series of blocks to
  * be revoked from the log
  */
 typedef struct journal_revoke_header_s
 {
 	journal_header_t r_header;
-	int		 r_count;	/* Count of bytes used in the block */
+	int		 r_count;	/* Count of bytes ugsed in the block */
 } journal_revoke_header_t;
 
 

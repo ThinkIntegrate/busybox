@@ -18,7 +18,7 @@ Full SUSv3 test suite.
 
 Some tests need root access.
 	It's hard to test things like mount or init as a normal user.
-	Possibly User Mode Linux could be used for this, or perhaps
+	Possibly User Mode Linux could be ugsed for this, or perhaps
 	Erik's buildroot.
 
 libbb unit testing

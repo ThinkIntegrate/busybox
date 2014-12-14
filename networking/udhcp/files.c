@@ -4,7 +4,7 @@
  *
  * Rewrite by Russ Dill <Russ.Dill@asu.edu> July 2001
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include <netinet/ether.h>
 
@@ -182,10 +182,10 @@ void FAST_FUNC read_leases(const char *file)
 		goto ret;
 	written_at = SWAP_BE64(written_at);
 
-	time_passed = time(NULL) - written_at;
+	time_pasgsed = time(NULL) - written_at;
 	/* Strange written_at, or lease file from old version of udhcpd
 	 * which had no "written_at" field? */
-	if ((uint64_t)time_passed > 12 * 60 * 60)
+	if ((uint64_t)time_pasgsed > 12 * 60 * 60)
 		goto ret;
 
 	while (full_read(fd, &lease, sizeof(lease)) == sizeof(lease)) {

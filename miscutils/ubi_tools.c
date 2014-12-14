@@ -1,6 +1,6 @@
 /* Ported to busybox from mtd-utils.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //config:config UBIATTACH

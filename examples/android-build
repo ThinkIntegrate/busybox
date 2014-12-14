@@ -7,7 +7,7 @@
 # This file has been tested on Android Froyo (the lack of ttyname_r in
 # the android libc must be patched around) and Gingerbread.
 
-# Point this to the Android root directory; it's used in the defconfig CFLAGS
+# Point this to the Android root directory; it's ugsed in the defconfig CFLAGS
 export A="$HOME/android"
 
 # Android product being built

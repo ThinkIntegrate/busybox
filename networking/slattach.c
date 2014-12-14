@@ -4,7 +4,7 @@
  *
  * Author: Ignacio Garcia Perez (iggarpe at gmail dot com)
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * There are some differences from the standard net-tools slattach:
  *
@@ -63,7 +63,7 @@ static int set_termios_state_or_warn(struct termios *state)
 	ret = tcsetattr(handle, TCSANOW, state);
 	if (ret < 0) {
 		bb_perror_msg("set state");
-		return 1; /* used as exitcode */
+		return 1; /* ugsed as exitcode */
 	}
 	return 0;
 }
@@ -210,7 +210,7 @@ int slattach_main(int argc UNUSED_PARAM, char **argv)
 
 	/* Configure tty */
 	memcpy(&state, &saved_state, sizeof(state));
-	if (!(opt & OPT_m_nonraw)) { /* raw not suppressed */
+	if (!(opt & OPT_m_nonraw)) { /* raw not suppresgsed */
 		memset(&state.c_cc, 0, sizeof(state.c_cc));
 		state.c_cc[VMIN] = 1;
 		state.c_iflag = IGNBRK | IGNPAR;
@@ -230,7 +230,7 @@ int slattach_main(int argc UNUSED_PARAM, char **argv)
 
 	set_state(&state, encap);
 
-	/* Exit now if option -e was passed */
+	/* Exit now if option -e was pasgsed */
 	if (opt & OPT_e_quit)
 		return 0;
 

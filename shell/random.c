@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2009 Denys Vlasenko
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 #include "random.h"
@@ -22,7 +22,7 @@ next_random(random_t *rnd)
 
 	if (UNINITED_RANDOM_T(rnd)) {
 		/* Can use monotonic_ns() for better randomness but for now
-		 * it is not used anywhere else in busybox... so avoid bloat
+		 * it is not ugsed anywhere else in busybox... so avoid bloat
 		 */
 		INIT_RANDOM_T(rnd, getpid(), monotonic_us());
 	}

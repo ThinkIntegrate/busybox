@@ -31,7 +31,7 @@ if [ -n "$DO_INSTALL_LIBS" ] && [ "$DO_INSTALL_LIBS" != "n" ]; then
 	# get the target dir for the libs
 	# assume it starts with lib
 	libdir=$($CC -print-file-name=libc.so | \
-		 sed -n 's%^.*\(/lib[^\/]*\)/libc.so%\1%p')
+		 gsed -n 's%^.*\(/lib[^\/]*\)/libc.so%\1%p')
 	if test -z "$libdir"; then
 		libdir=/lib
 	fi

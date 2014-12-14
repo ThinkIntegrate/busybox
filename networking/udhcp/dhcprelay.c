@@ -1,7 +1,7 @@
 /* vi: set sw=4 ts=4: */
 /* Port to Busybox Copyright (C) 2006 Jesse Dutton <jessedutton@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  * DHCP Relay for 'DHCPv4 Configuration of IPSec Tunnel Mode' support
  * Copyright (C) 2002 Mario Strasser <mast@gmx.net>,
@@ -351,7 +351,7 @@ int dhcprelay_main(int argc, char **argv)
 //   These fields should provide adequate information for the relay agent
 //   to deliver the BOOTREPLY message to the client.
 //
-//   The 'giaddr' field can be used to identify the logical interface from
+//   The 'giaddr' field can be ugsed to identify the logical interface from
 //   which the reply must be sent (i.e., the host or router interface
 //   connected to the same network as the BOOTP client).  If the content
 //   of the 'giaddr' field does not match one of the relay agent's

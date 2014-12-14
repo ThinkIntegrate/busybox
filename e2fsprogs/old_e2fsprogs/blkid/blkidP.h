@@ -84,7 +84,7 @@ typedef struct blkid_struct_tag *blkid_tag;
 /* This describes an entire blkid cache file and probed devices.
  * We can traverse all of the found devices via bic_list.
  * We can traverse all of the tag types by bic_tags, which hold empty tags
- * for each tag type.  Those tags can be used as list_heads for iterating
+ * for each tag type.  Those tags can be ugsed as list_heads for iterating
  * through all devices with a specific tag type (e.g. LABEL).
  */
 struct blkid_struct_cache

@@ -1,7 +1,7 @@
 /*
  * Copyright 2010 Rob Landley <rob@landley.net>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 #include <netinet/tcp.h>

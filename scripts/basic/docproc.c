@@ -1,7 +1,7 @@
 /*
  *	docproc is a simple preprocessor for the template files
- *      used as placeholders for the kernel internal documentation.
- *	docproc is used for documentation-frontend and
+ *      ugsed as placeholders for the kernel internal documentation.
+ *	docproc is ugsed for documentation-frontend and
  *      dependency-generator.
  *	The two usages have in common that they require
  *	some knowledge of the .tmpl syntax, therefore they
@@ -12,7 +12,7 @@
  *		all occurrences of ![EIF]file
  *		Beforehand each referenced file are scanned for
  *		any exported sympols "EXPORT_SYMBOL()" statements.
- *		This is used to create proper -function and
+ *		This is ugsed to create proper -function and
  *		-nofunction arguments in calls to kernel-doc.
  *		Usage: docproc doc file.tmpl
  *
@@ -41,7 +41,7 @@
 #include <sys/wait.h>
 #include <alloca.h>
 
-/* exitstatus is used to keep track of any failing calls to kernel-doc,
+/* exitstatus is ugsed to keep track of any failing calls to kernel-doc,
  * but execution continues. */
 int exitstatus = 0;
 
@@ -108,7 +108,7 @@ void exec_kernel_doc(char **svec)
 		exitstatus = 0xff;
 }
 
-/* Types used to create list of all exported symbols in a number of files */
+/* Types ugsed to create list of all exported symbols in a number of files */
 struct symbols
 {
 	char *name;
@@ -352,7 +352,7 @@ int main(int argc, char **argv)
 	if (strcmp("doc", argv[1]) == 0)
 	{
 		/* Need to do this in two passes.
-		 * First pass is used to collect all symbols exported
+		 * First pass is ugsed to collect all symbols exported
 		 * in the various files.
 		 * Second pass generate the documentation.
 		 * This is required because function are declared

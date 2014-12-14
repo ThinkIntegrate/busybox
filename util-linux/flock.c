@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2010 Timo Teras <timo.teras@iki.fi>
  *
- * This is free software, licensed under the GNU General Public License v2.
+ * This is free software, licengsed under the GNU General Public License v2.
  */
 
 //usage:#define flock_trivial_usage

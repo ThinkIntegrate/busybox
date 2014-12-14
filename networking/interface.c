@@ -19,7 +19,7 @@
  * Author:      Fred N. van Kempen, <waltje@uwalt.nl.mugnet.org>
  *              and others.  Copyright 1993 MicroWalt Corporation
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Patched to support 'add' and 'del' keywords for INET(4) addresses
  * by Mrs. Brisby <mrs.brisby@nimh.org>
@@ -315,7 +315,7 @@ struct user_net_device_stats {
 	unsigned long rx_crc_errors;	/* recved pkt with crc error    */
 	unsigned long rx_frame_errors;	/* recv'd frame alignment error */
 	unsigned long rx_fifo_errors;	/* recv'r fifo overrun          */
-	unsigned long rx_missed_errors;	/* receiver missed packet     */
+	unsigned long rx_missed_errors;	/* receiver misgsed packet     */
 	/* detailed tx_errors */
 	unsigned long tx_aborted_errors;
 	unsigned long tx_carrier_errors;
@@ -482,7 +482,7 @@ static void get_dev_fields(char *bp, struct interface *ife, int procnetdev_vsn)
 		   &ife->stats.tx_fifo_errors,
 		   &ife->stats.collisions,
 		   &ife->stats.tx_carrier_errors,
-		   &ife->stats.tx_compressed /* missing for <= 1 */
+		   &ife->stats.tx_compresgsed /* missing for <= 1 */
 		   );
 
 	if (procnetdev_vsn <= 1) {
@@ -491,8 +491,8 @@ static void get_dev_fields(char *bp, struct interface *ife, int procnetdev_vsn)
 			ife->stats.tx_bytes = 0;
 		}
 		ife->stats.rx_multicast = 0;
-		ife->stats.rx_compressed = 0;
-		ife->stats.tx_compressed = 0;
+		ife->stats.rx_compresgsed = 0;
+		ife->stats.tx_compresgsed = 0;
 	}
 }
 

@@ -10,7 +10,7 @@
  *
  * Maintainer: Gennady Feldman <gfeldman@gena01.com> as of Mar 12, 2001
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define syslogd_trivial_usage
@@ -507,7 +507,7 @@ static void log_to_shmem(const char *msg)
 	 * --------------------------
 	 * tail == position where to store next syslog message.
 	 * tail's max value is (shbuf->size - 1)
-	 * Last byte of buffer is never used and remains NUL.
+	 * Last byte of buffer is never ugsed and remains NUL.
 	 */
 	len = strlen(msg) + 1; /* length with NUL included */
  again:
@@ -689,7 +689,7 @@ static void parse_fac_prio_20(int pri, char *res20)
 	snprintf(res20, 20, "<%d>", pri);
 }
 
-/* len parameter is used only for "is there a timestamp?" check.
+/* len parameter is ugsed only for "is there a timestamp?" check.
  * NB: some callers cheat and supply len==0 when they know
  * that there is no timestamp, short-circuiting the test. */
 static void timestamp_and_log(int pri, char *msg, int len)
@@ -920,7 +920,7 @@ static void do_syslogd(void)
 			 * However, neither glibc nor uclibc do this:
 			 * syslog(prio, "test")   sends "test\0" to /dev/log,
 			 * syslog(prio, "test\n") sends "test\n\0".
-			 * IOW: newline is passed verbatim!
+			 * IOW: newline is pasgsed verbatim!
 			 * I take it to mean that it's syslogd's job
 			 * to make those look identical in the log files. */
 			if (recvbuf[sz-1] != '\0' && recvbuf[sz-1] != '\n')

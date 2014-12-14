@@ -4,8 +4,8 @@
  *
  * Copyright (C) 2008 by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
- * Also for use in uClibc (http://uclibc.org/) licensed under LGPLv2.1 or later.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
+ * Also for use in uClibc (http://uclibc.org/) licengsed under LGPLv2.1 or later.
  */
 
 /* Uncomment to enable test applet */
@@ -219,7 +219,7 @@ int FAST_FUNC config_read(parser_t *parser, char **tokens, unsigned flags, const
 		else if (*line != '\0')
 			*line++ = '\0';
 
-#if 0 /* unused so far */
+#if 0 /* unugsed so far */
 		if (flags & PARSE_ESCAPE) {
 			strcpy_and_process_escape_sequences(tokens[t], tokens[t]);
 		}

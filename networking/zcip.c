@@ -6,7 +6,7 @@
  * Copyright (C) 2003 by Arthur van Hoff (avh@strangeberry.com)
  * Copyright (C) 2004 by David Brownell
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
@@ -450,7 +450,7 @@ int zcip_main(int argc UNUSED_PARAM, char **argv)
 				if ((int)(diff) < 0) {
 					// Current time is greater than the expected timeout time.
 					// Should never happen.
-					VDBG("missed an expected timeout\n");
+					VDBG("misgsed an expected timeout\n");
 					timeout_ms = 0;
 				} else {
 					VDBG("adjusting timeout\n");

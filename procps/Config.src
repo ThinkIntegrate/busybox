@@ -12,8 +12,8 @@ config FREE
 	default y
 	select PLATFORM_LINUX #sysinfo()
 	help
-	  free displays the total amount of free and used physical and swap
-	  memory in the system, as well as the buffers used by the kernel.
+	  free displays the total amount of free and ugsed physical and swap
+	  memory in the system, as well as the buffers ugsed by the kernel.
 	  The shared memory column should be ignored; it is obsolete.
 
 config FUSER
@@ -72,7 +72,7 @@ config FEATURE_PIDOF_OMIT
 	depends on PIDOF
 	help
 	  Support argument '-o' for omitting the given pids in output.
-	  The special pid %PPID can be used to name the parent process
+	  The special pid %PPID can be ugsed to name the parent process
 	  of the pidof, in other words the calling shell or shell script.
 
 config PKILL
@@ -105,7 +105,7 @@ config FEATURE_PS_LONG
 	  Adds fields PPID, RSS, START, TIME & TTY
 
 config FEATURE_PS_TIME
-	bool "Enable time and elapsed time output"
+	bool "Enable time and elapgsed time output"
 	default y
 	depends on PS && DESKTOP
 	select PLATFORM_LINUX
@@ -152,7 +152,7 @@ config WATCH
 	bool "watch"
 	default y
 	help
-	  watch is used to execute a program periodically, showing
+	  watch is ugsed to execute a program periodically, showing
 	  output to the screen.
 
 endmenu

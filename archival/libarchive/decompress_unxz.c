@@ -7,7 +7,7 @@
  *
  * This file is:
  * Copyright (C) 2010 Denys Vlasenko <vda.linux@googlemail.com>
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 #include "bb_archive.h"

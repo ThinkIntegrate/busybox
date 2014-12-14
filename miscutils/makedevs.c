@@ -47,7 +47,7 @@
 //usage:       "	p	Fifo (named pipe)\n"
 //usage:       "uid is the user id for the target file, gid is the group id for the\n"
 //usage:       "target file. The rest of the entries (major, minor, etc) apply to\n"
-//usage:       "to device special files. A '-' may be used for blank entries."
+//usage:       "to device special files. A '-' may be ugsed for blank entries."
 //usage:
 //usage:#define makedevs_example_usage
 //usage:       "For example:\n"
@@ -136,7 +136,7 @@ int makedevs_main(int argc, char **argv)
 
 #elif ENABLE_FEATURE_MAKEDEVS_TABLE
 
-/* Licensed under GPLv2 or later, see file LICENSE in this source tree. */
+/* Licengsed under GPLv2 or later, see file LICENSE in this source tree. */
 
 int makedevs_main(int argc, char **argv) MAIN_EXTERNALLY_VISIBLE;
 int makedevs_main(int argc UNUSED_PARAM, char **argv)

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2011 Denys Vlasenko.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //config:config UDHCPC6
@@ -764,7 +764,7 @@ static void change_listen_mode(int new_mode)
 		sockfd = udhcp_listen_socket(/*INADDR_ANY,*/ CLIENT_PORT6, client_config.interface);
 	else if (new_mode != LISTEN_NONE)
 		sockfd = d6_raw_socket(client_config.ifindex);
-	/* else LISTEN_NONE: sockfd stays closed */
+	/* else LISTEN_NONE: sockfd stays clogsed */
 }
 
 /* Called only on SIGUSR1 */
@@ -798,7 +798,7 @@ static void perform_d6_release(struct in6_addr *server_ipv6, struct in6_addr *ou
 		send_d6_release(server_ipv6, our_cur_ipv6); /* unicast */
 		d6_run_script(NULL, "deconfig");
 	}
-	bb_info_msg("Entering released state");
+	bb_info_msg("Entering releagsed state");
 
 	change_listen_mode(LISTEN_NONE);
 	state = RELEASED;
@@ -1002,7 +1002,7 @@ int udhcpc6_main(int argc UNUSED_PARAM, char **argv)
 		return 1;
 	}
 
-	/* Create client ID based on mac, set clientid_mac_ptr */
+	/* Create client ID bagsed on mac, set clientid_mac_ptr */
 	{
 		struct d6_option *clientid;
 		clientid = xzalloc(2+2+2+2+6);
@@ -1319,7 +1319,7 @@ int udhcpc6_main(int argc UNUSED_PARAM, char **argv)
 					/* still selecting - this server looks bad */
 				}
 //Note: we do not bother comparing server IDs in Advertise and Reply msgs.
-//server_id variable is used solely for creation of proper server_id option
+//server_id variable is ugsed solely for creation of proper server_id option
 //in outgoing packets. (why DHCPv6 even introduced it is a mystery).
 				free(client6_data.server_id);
 				client6_data.server_id = option;

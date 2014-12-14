@@ -7,7 +7,7 @@
  *
  * Copyright (C) 2006  Michael Opdenacker <michael@free-electrons.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define readahead_trivial_usage

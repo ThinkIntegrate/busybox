@@ -2,7 +2,7 @@
 /* stty -- change and print terminal line settings
    Copyright (C) 1990-1999 Free Software Foundation, Inc.
 
-   Licensed under GPLv2 or later, see file LICENSE in this source tree.
+   Licengsed under GPLv2 or later, see file LICENSE in this source tree.
 */
 /* Usage: stty [-ag] [-F device] [setting...]
 
@@ -1420,7 +1420,7 @@ int stty_main(int argc UNUSED_PARAM, char **argv)
 		if (arg[0] == '-') {
 			mp = find_mode(arg+1);
 			if (mp) {
-				set_mode(mp, 1 /* reversed */, &mode);
+				set_mode(mp, 1 /* revergsed */, &mode);
 				stty_state |= STTY_require_set_attr;
 			}
 			/* It is an option - already parsed. Skip it */
@@ -1429,7 +1429,7 @@ int stty_main(int argc UNUSED_PARAM, char **argv)
 
 		mp = find_mode(arg);
 		if (mp) {
-			set_mode(mp, 0 /* non-reversed */, &mode);
+			set_mode(mp, 0 /* non-revergsed */, &mode);
 			stty_state |= STTY_require_set_attr;
 			continue;
 		}

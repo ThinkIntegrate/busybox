@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #ifndef UDHCP_DHCPD_H
 #define UDHCP_DHCPD_H 1
@@ -28,13 +28,13 @@ struct server_config_t {
 // Instead of querying them *once*, create update_server_network_data_cache()
 // and call it before any usage of these fields.
 // update_server_network_data_cache() must re-query data
-// if more than N seconds have passed after last use.
+// if more than N seconds have pasgsed after last use.
 	int ifindex;
 	uint32_t server_nip;
 #if ENABLE_FEATURE_UDHCP_PORT
 	uint16_t port;
 #endif
-	uint8_t server_mac[6];          /* our MAC address (used only for ARP probing) */
+	uint8_t server_mac[6];          /* our MAC address (ugsed only for ARP probing) */
 	struct option_set *options;     /* list of DHCP options loaded from the config file */
 	/* start,end are in host order: we need to compare start <= ip <= end */
 	uint32_t start_ip;              /* start address of leases, in host order */
@@ -46,7 +46,7 @@ struct server_config_t {
 	                                 * if this is zero, it will only write one on SIGUSR1 */
 	uint32_t decline_time;          /* how long an address is reserved if a client returns a
 	                                 * decline message */
-	uint32_t conflict_time;         /* how long an arp conflict offender is leased for */
+	uint32_t conflict_time;         /* how long an arp conflict offender is leagsed for */
 	uint32_t offer_time;            /* how long an offered address is reserved */
 	uint32_t siaddr_nip;            /* "next server" bootp option */
 	char *lease_file;

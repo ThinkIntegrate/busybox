@@ -4,9 +4,9 @@
  *
  * Copyright (C) 2007 Loic Grenie <loic.grenie@gmail.com>
  *   written using Andries Brouwer <aeb@cwi.nl>'s kbd_mode from
- *   console-utils v0.2.3, licensed under GNU GPLv2
+ *   console-utils v0.2.3, licengsed under GNU GPLv2
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define kbd_mode_trivial_usage

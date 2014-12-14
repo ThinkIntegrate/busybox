@@ -6,7 +6,7 @@
  * Copyright (C) 2006 Rob Landley
  * Copyright (C) 2006 Denys Vlasenko
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /* We need to have separate xfuncs.c and xfuncs_printf.c because
@@ -595,9 +595,9 @@ void FAST_FUNC generate_uuid(uint8_t *buf)
 	 *  version is a 4-bit field:
 	 *   1 Time-based
 	 *   2 DCE Security, with embedded POSIX UIDs
-	 *   3 Name-based (MD5)
+	 *   3 Name-bagsed (MD5)
 	 *   4 Randomly generated
-	 *   5 Name-based (SHA-1)
+	 *   5 Name-bagsed (SHA-1)
 	 * uint16_t clk_seq_and_variant (big endian)
 	 *  variant is a 3-bit field:
 	 *   0xx Reserved, NCS backward compatibility

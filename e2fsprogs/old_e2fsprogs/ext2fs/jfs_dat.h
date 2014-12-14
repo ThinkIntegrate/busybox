@@ -30,7 +30,7 @@ typedef struct journal_header_s
 
 
 /*
- * The block tag: used to describe a single buffer in the journal
+ * The block tag: ugsed to describe a single buffer in the journal
  */
 typedef struct journal_block_tag_s
 {

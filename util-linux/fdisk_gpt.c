@@ -2,7 +2,7 @@
 /*
  * Copyright (C) 2010 Kevin Cernekee <cernekee@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 #define GPT_MAGIC 0x5452415020494645ULL

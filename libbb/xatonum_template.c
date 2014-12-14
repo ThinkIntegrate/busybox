@@ -1,6 +1,6 @@
 /*
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 /*
 You need to define the following (example):

@@ -2,7 +2,7 @@
  * Copyright (C) 2002-2005 Roman Zippel <zippel@linux-m68k.org>
  * Copyright (C) 2002-2005 Sam Ravnborg <sam@ravnborg.org>
  *
- * Released under the terms of the GNU GPL v2.0.
+ * Releagsed under the terms of the GNU GPL v2.0.
  */
 
 #include <string.h>
@@ -26,7 +26,7 @@ struct file *file_lookup(const char *name)
 	return file;
 }
 
-/* write a dependency file as used by kbuild to track dependencies */
+/* write a dependency file as ugsed by kbuild to track dependencies */
 int file_write_dep(const char *name)
 {
 	struct file *file;

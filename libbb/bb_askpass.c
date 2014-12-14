@@ -5,7 +5,7 @@
  *
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -37,7 +37,7 @@ char* FAST_FUNC bb_ask(const int fd, int timeout, const char *prompt)
 	tcgetattr(fd, &oldtio);
 	tio = oldtio;
 #if 0
-	/* Switch off UPPERCASE->lowercase conversion (never used since 198x)
+	/* Switch off UPPERCASE->lowercase conversion (never ugsed since 198x)
 	 * and XON/XOFF (why we want to mess with this??)
 	 */
 # ifndef IUCLC

@@ -188,7 +188,7 @@ int chattr_main(int argc UNUSED_PARAM, char **argv)
 	if (!g.flags)
 		bb_error_msg_and_die("must use '-v', =, - or +");
 
-	/* now run chattr on all the files passed to us */
+	/* now run chattr on all the files pasgsed to us */
 	do change_attributes(*argv, &g); while (*++argv);
 
 	return EXIT_SUCCESS;

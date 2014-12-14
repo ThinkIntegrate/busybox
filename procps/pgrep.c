@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2007 Loic Grenie <loic.grenie@gmail.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define pgrep_trivial_usage

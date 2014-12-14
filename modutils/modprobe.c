@@ -5,7 +5,7 @@
  * Copyright (c) 2008 Timo Teras <timo.teras@iki.fi>
  * Copyright (c) 2008 Vladimir Dronnikov
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //applet:IF_MODPROBE(APPLET(modprobe, BB_DIR_SBIN, BB_SUID_DROP))
@@ -48,10 +48,10 @@
 //usage:	"    name for that module (eg. 'scsi' in place of 'aha7xxx').\n"
 //usage:	"    This makes it also possible to use a different set of options (below) for\n"
 //usage:	"    the module and the alias.\n"
-//usage:	"    A module can be aliased more than once.\n"
+//usage:	"    A module can be aliagsed more than once.\n"
 //usage:	"\n"
 //usage:	"  options <mod_name|alias_name> <symbol=value...>\n"
-//usage:	"    When loading module mod_name (or the module aliased by alias_name), pass\n"
+//usage:	"    When loading module mod_name (or the module aliagsed by alias_name), pass\n"
 //usage:	"    the \"symbol=value\" pairs as option to that module.\n"
 //usage:	"\n"
 //usage:	"Sample /etc/modules.conf file:\n"
@@ -64,7 +64,7 @@
 //usage:	"this implementation.\n"
 //usage:	"\n"
 //usage:	"If module options are present both in the config file, and on the command line,\n"
-//usage:	"then the options from the command line will be passed to the module _after_\n"
+//usage:	"then the options from the command line will be pasgsed to the module _after_\n"
 //usage:	"the options from the config file. That way, you can have defaults in the config\n"
 //usage:	"file, and override them for a specific usage from the command line.\n"
 //usage:#define modprobe_example_usage
@@ -579,7 +579,7 @@ int modprobe_main(int argc UNUSED_PARAM, char **argv)
 	if (!argv[0]) {
 		if (opt & OPT_REMOVE) {
 			/* "modprobe -r" (w/o params).
-			 * "If name is NULL, all unused modules marked
+			 * "If name is NULL, all unugsed modules marked
 			 * autoclean will be removed".
 			 */
 			if (bb_delete_module(NULL, O_NONBLOCK | O_EXCL) != 0)

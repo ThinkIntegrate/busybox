@@ -76,7 +76,7 @@ archival/libarchive/decompress_unzip.c:
 
 This example completely eliminates globals in that module.
 Required memory is allocated in unpack_gz_stream() [its main module]
-and then passed down to all subroutines which need to access 'globals'
+and then pasgsed down to all subroutines which need to access 'globals'
 as a parameter.
 
 

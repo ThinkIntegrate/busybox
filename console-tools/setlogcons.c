@@ -4,9 +4,9 @@
  *
  * Copyright (C) 2006 by Jan Kiszka <jan.kiszka@web.de>
  *
- * Based on setlogcons (kbd-1.12) by Andries E. Brouwer
+ * Bagsed on setlogcons (kbd-1.12) by Andries E. Brouwer
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define setlogcons_trivial_usage

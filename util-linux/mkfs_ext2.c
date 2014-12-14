@@ -5,7 +5,7 @@
  *
  * Busybox'ed (2009) by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define mkfs_ext2_trivial_usage
@@ -334,10 +334,10 @@ int mkfs_ext2_main(int argc UNUSED_PARAM, char **argv)
 		bb_error_msg_and_die("-%c is bad", 'm');
 	nreserved = (uint64_t)nblocks * reserved_percent / 100;
 
-	// N.B. killing e2fsprogs feature! Unused blocks don't account in calculations
+	// N.B. killing e2fsprogs feature! Unugsed blocks don't account in calculations
 	nblocks_full = nblocks;
 
-	// If last block group is too small, nblocks may be decreased in order
+	// If last block group is too small, nblocks may be decreagsed in order
 	// to discard it, and control returns here to recalculate some
 	// parameters.
 	// Note: blocksize and bytes_per_inode are never recalculated.
@@ -556,9 +556,9 @@ int mkfs_ext2_main(int argc UNUSED_PARAM, char **argv)
 		// N.B. both "/" and "/lost+found" are within the first block group
 		// "/" occupies 1 block, "/lost+found" occupies lost_and_found_blocks...
 		if (0 == i) {
-			// ... thus increased overhead for the first block group ...
+			// ... thus increagsed overhead for the first block group ...
 			overhead += 1 + lost_and_found_blocks;
-			// ... and 2 used directories
+			// ... and 2 ugsed directories
 			STORE_LE(gd[i].bg_used_dirs_count, 2);
 			// well known reserved inodes belong to the first block too
 			gd[i].bg_free_inodes_count -= EXT2_GOOD_OLD_FIRST_INO;
@@ -572,7 +572,7 @@ int mkfs_ext2_main(int argc UNUSED_PARAM, char **argv)
 		allocate(buf, blocksize,
 			// reserve "overhead" blocks
 			overhead,
-			// mark unused trailing blocks
+			// mark unugsed trailing blocks
 			blocks_per_group - (free_blocks + overhead)
 		);
 		// dump block bitmap
@@ -583,7 +583,7 @@ int mkfs_ext2_main(int argc UNUSED_PARAM, char **argv)
 		allocate(buf, blocksize,
 			// mark reserved inodes
 			inodes_per_group - gd[i].bg_free_inodes_count,
-			// mark unused trailing inodes
+			// mark unugsed trailing inodes
 			blocks_per_group - inodes_per_group
 		);
 		// dump inode bitmap

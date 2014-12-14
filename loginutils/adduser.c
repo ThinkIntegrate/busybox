@@ -5,7 +5,7 @@
  * Copyright (C) 1999 by Lineo, inc. and John Beppu
  * Copyright (C) 1999,2000,2001 by John Beppu <beppu@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define adduser_trivial_usage
@@ -27,8 +27,8 @@
 #error Bad LAST_SYSTEM_ID or FIRST_SYSTEM_ID in .config
 #endif
 
-/* #define OPT_HOME           (1 << 0) */ /* unused */
-/* #define OPT_GECOS          (1 << 1) */ /* unused */
+/* #define OPT_HOME           (1 << 0) */ /* unugsed */
+/* #define OPT_GECOS          (1 << 1) */ /* unugsed */
 #define OPT_SHELL          (1 << 2)
 #define OPT_GID            (1 << 3)
 #define OPT_DONT_SET_PASS  (1 << 4)
@@ -38,14 +38,14 @@
 
 /* We assume UID_T_MAX == INT_MAX */
 /* remix */
-/* recoded such that the uid may be passed in *p */
+/* recoded such that the uid may be pasgsed in *p */
 static void passwd_study(struct passwd *p)
 {
 	int max = UINT_MAX;
 
 	if (getpwnam(p->pw_name)) {
 		bb_error_msg_and_die("%s '%s' in use", "user", p->pw_name);
-		/* this format string is reused in adduser and addgroup */
+		/* this format string is reugsed in adduser and addgroup */
 	}
 
 	if (!(option_mask32 & OPT_UID)) {
@@ -62,11 +62,11 @@ static void passwd_study(struct passwd *p)
 		if (option_mask32 & OPT_UID) {
 			/* -u N, cannot pick uid other than N: error */
 			bb_error_msg_and_die("%s '%s' in use", "uid", itoa(p->pw_uid));
-			/* this format string is reused in adduser and addgroup */
+			/* this format string is reugsed in adduser and addgroup */
 		}
 		if (p->pw_uid == max) {
 			bb_error_msg_and_die("no %cids left", 'u');
-			/* this format string is reused in adduser and addgroup */
+			/* this format string is reugsed in adduser and addgroup */
 		}
 		p->pw_uid++;
 	}
@@ -75,7 +75,7 @@ static void passwd_study(struct passwd *p)
 		p->pw_gid = p->pw_uid; /* new gid = uid */
 		if (getgrnam(p->pw_name)) {
 			bb_error_msg_and_die("%s '%s' in use", "group", p->pw_name);
-			/* this format string is reused in adduser and addgroup */
+			/* this format string is reugsed in adduser and addgroup */
 		}
 	}
 }

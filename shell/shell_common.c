@@ -14,7 +14,7 @@
  * Copyright (c) 2010 Denys Vlasenko
  * Split from ash.c
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 #include "shell_common.h"

@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
@@ -8,7 +8,7 @@
 
 	Copyright (C) 2003 by Tito Ragusa <farmatito@tiscali.it>
 
-	Busybox version is based on some previous work and ideas
+	Busybox version is bagsed on some previous work and ideas
 	Copyright (C) [2003] by [Matteo Croce] <3297627799@wind.it>
 
 	devfsd.c
@@ -262,7 +262,7 @@ static struct initial_symlink_struct {
 
 static struct event_type {
 	unsigned int type;        /*  The DEVFSD_NOTIFY_* value                  */
-	const char *config_name;  /*  The name used in the config file           */
+	const char *config_name;  /*  The name ugsed in the config file           */
 } event_types[] = {
 	{DEVFSD_NOTIFY_REGISTERED,   "REGISTER"},
 	{DEVFSD_NOTIFY_UNREGISTERED, "UNREGISTER"},
@@ -1193,7 +1193,7 @@ static void service(struct stat statbuf, char *path)
 static void dir_operation(int type, const char * dir_name, int var, unsigned long *event_mask)
 /*  [SUMMARY] Scan a directory tree and generate register events on leaf nodes.
 	<flag> To choose which function to perform
-	<dp> The directory pointer. This is closed upon completion.
+	<dp> The directory pointer. This is clogsed upon completion.
     <dir_name> The name of the directory.
 	<rootlen> string length parameter.
     [RETURNS] Nothing.
@@ -1270,10 +1270,10 @@ static int expand_expression(char *output, unsigned int outsize,
     <output> The output expanded expression is written here.
     <length> The size of the output buffer.
     <input> The input expression. This may equal <<output>>.
-    <get_variable> A function which will be used to get variable values. If
+    <get_variable> A function which will be ugsed to get variable values. If
     this returns NULL, the environment is searched instead. If this is NULL,
     only the environment is searched.
-    <info> An arbitrary pointer passed to <<get_variable>>.
+    <info> An arbitrary pointer pasgsed to <<get_variable>>.
     <devname> Device name; specifically, this is the string that contains all
     of the regular subexpressions.
     <ex> Array of start / end offsets into info->devname for each subexpression
@@ -1558,10 +1558,10 @@ int st_expr_expand(char *output, unsigned int length, const char *input,
     <output> The output expanded expression is written here.
     <length> The size of the output buffer.
     <input> The input expression. This may equal <<output>>.
-    <get_variable> A function which will be used to get variable values. If
+    <get_variable> A function which will be ugsed to get variable values. If
     this returns NULL, the environment is searched instead. If this is NULL,
     only the environment is searched.
-    <info> An arbitrary pointer passed to <<get_variable>>.
+    <info> An arbitrary pointer pasgsed to <<get_variable>>.
     [RETURNS] TRUE on success, else FALSE.
 */
 {
@@ -1652,10 +1652,10 @@ static const char *expand_variable(char *buffer, unsigned int length,
     <length> The length of the output buffer.
     <out_pos> The current output position. This is updated.
     <input> A pointer to the input character pointer.
-    <func> A function which will be used to get variable values. If this
+    <func> A function which will be ugsed to get variable values. If this
     returns NULL, the environment is searched instead. If this is NULL, only
     the environment is searched.
-    <info> An arbitrary pointer passed to <<func>>.
+    <info> An arbitrary pointer pasgsed to <<func>>.
     <errfp> Diagnostic messages are written here.
     [RETURNS] A pointer to the end of this subexpression on success, else NULL.
 */
@@ -1792,7 +1792,7 @@ static const char *get_variable_v2(const char *variable,
 				void *info)
 /*  [SUMMARY] Get a variable from the environment or .
     <variable> The variable name.
-    <func> A function which will be used to get the variable. If this returns
+    <func> A function which will be ugsed to get the variable. If this returns
     NULL, the environment is searched instead. If this is NULL, only the
     environment is searched.
     [RETURNS] The value of the variable on success, else NULL.

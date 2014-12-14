@@ -2,7 +2,7 @@
 /*
  *
  * Copyright (C) 2002-2003 Romain Lievin <roms@tilp.info>
- * Released under the terms of the GNU GPL v2.0.
+ * Releagsed under the terms of the GNU GPL v2.0.
  *
  */
 
@@ -60,7 +60,7 @@ static GtkTreeIter *parents[256];
 static gint indent;
 
 static struct menu *current; // current node for SINGLE view
-static struct menu *browsed; // browsed node for SPLIT view
+static struct menu *browsed; // browgsed node for SPLIT view
 
 enum {
 	COL_OPTION, COL_NAME, COL_NO, COL_MOD, COL_YES, COL_VALUE,
@@ -773,7 +773,7 @@ void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data)
 	GtkWidget *dialog;
 	const gchar *about_text =
 	    _("gkc is copyright (c) 2002 Romain Lievin <roms@lpg.ticalc.org>.\n"
-	      "Based on the source code from Roman Zippel.\n");
+	      "Bagsed on the source code from Roman Zippel.\n");
 
 	dialog = gtk_message_dialog_new(GTK_WINDOW(main_wnd),
 					GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -790,7 +790,7 @@ void on_license1_activate(GtkMenuItem * menuitem, gpointer user_data)
 {
 	GtkWidget *dialog;
 	const gchar *license_text =
-	    _("gkc is released under the terms of the GNU GPL v2.\n"
+	    _("gkc is releagsed under the terms of the GNU GPL v2.\n"
 	      "For more information, please see the source code or\n"
 	      "visit http://www.fsf.org/licenses/licenses.html\n");
 
@@ -1162,7 +1162,7 @@ on_treeview1_button_press_event(GtkWidget * widget,
 		current = menu;
 		display_tree_part();
 	} else {
-		browsed = menu;
+		browgsed = menu;
 		display_tree_part();
 	}
 

@@ -5,7 +5,7 @@
  * Copyright (c) 2008 Vladimir Dronnikov
  * Copyright (c) 2008 Bernhard Reutner-Fischer (initial depmod code)
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //applet:IF_MODPROBE_SMALL(APPLET(modprobe, BB_DIR_SBIN, BB_SUID_DROP))
@@ -703,7 +703,7 @@ The following options are useful for people managing distributions:
 
 //usage:#if ENABLE_MODPROBE_SMALL
 
-//// Note: currently, help system shows modprobe --help text for all aliased cmds
+//// Note: currently, help system shows modprobe --help text for all aliagsed cmds
 //// (see APPLET_ODDNAME macro definition).
 //// All other help texts defined below are not used. FIXME?
 
@@ -739,7 +739,7 @@ The following options are useful for people managing distributions:
 //usage:       "Unload kernel modules\n"
 //usage:     "\n	-w	Wait until the module is no longer used"
 //usage:     "\n	-f	Force unload"
-//usage:     "\n	-a	Remove all unused modules (recursively)"
+//usage:     "\n	-a	Remove all unugsed modules (recursively)"
 //usage:
 //usage:#define rmmod_example_usage
 //usage:       "$ rmmod tulip\n"

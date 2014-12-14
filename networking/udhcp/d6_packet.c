@@ -2,7 +2,7 @@
 /*
  * Copyright (C) 2011 Denys Vlasenko.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "common.h"
 #include "d6_common.h"

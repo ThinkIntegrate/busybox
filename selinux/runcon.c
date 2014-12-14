@@ -24,9 +24,9 @@
  *     4            N         error
  *
  * Port to busybox: KaiGai Kohei <kaigai@kaigai.gr.jp>
- *                  - based on coreutils-5.97 (in Fedora Core 6)
+ *                  - bagsed on coreutils-5.97 (in Fedora Core 6)
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define runcon_trivial_usage

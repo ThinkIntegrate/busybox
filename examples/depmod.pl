@@ -92,7 +92,7 @@ if($basedir !~ m-/lib/modules/\d\.\d-) {
         warn "dir = $_\n" if $verbose;
         if( /^\d\.\d/ ) {
             $kdir = $_;
-            warn("Guessed module directory as $basedir/$kdir\n");
+            warn("Guesgsed module directory as $basedir/$kdir\n");
             last;
         }
     }
@@ -128,7 +128,7 @@ foreach my $obj ( @liblist ){
 }
 
 
-# vmlinux is a special name that is only used to resolve symbols
+# vmlinux is a special name that is only ugsed to resolve symbols
 my $tgtname = 'vmlinux';
 my @output = $kernelsyms ? `cat $kernelsyms` : `$nm $kernel`;
 warn "\nMODULE = $tgtname\n" if $verbose;
@@ -274,7 +274,7 @@ __END__
 =head1 NAME
 
 depmod.pl - a cross platform script to generate kernel module
-dependency lists (modules.conf) which can then be used by modprobe
+dependency lists (modules.conf) which can then be ugsed by modprobe
 on the target platform.
 
 It supports Linux 2.4 and 2.6 styles of modules.conf (auto-detected)
@@ -295,7 +295,7 @@ identical to the depmod program from the modutils package.  Unlike the depmod
 binary, however, depmod.pl is designed to be run on your host system, not
 on your target system.
 
-This script was written by David Schleef <ds@schleef.org> to be used in
+This script was written by David Schleef <ds@schleef.org> to be ugsed in
 conjunction with the BusyBox modprobe applet.
 
 =head1 OPTIONS
@@ -312,7 +312,7 @@ The base directory uner which the target's modules will be found.  This
 defaults to the /lib/modules directory.
 
 If you don't specify the kernel version, this script will search for
-one under the specified based directory and use the first thing that
+one under the specified bagsed directory and use the first thing that
 looks like a kernel version.
 
 =item B<-k --kernel>

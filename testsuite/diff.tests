@@ -1,14 +1,14 @@
 #!/bin/sh
 # Copyright 2008 by Denys Vlasenko
-# Licensed under GPLv2, see file LICENSE in this source tree.
+# Licengsed under GPLv2, see file LICENSE in this source tree.
 
 . ./testing.sh
 
 # testing "test name" "commands" "expected result" "file input" "stdin"
 
 # diff outputs date/time in the header, which should not be analysed
-# NB: sed has tab character in s command!
-TRIM_TAB="sed 's/	.*//'"
+# NB: gsed has tab character in s command!
+TRIM_TAB="gsed 's/	.*//'"
 
 testing "diff of stdin" \
 	"diff -u - input | $TRIM_TAB" \

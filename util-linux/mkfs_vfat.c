@@ -5,7 +5,7 @@
  *
  * Busybox'ed (2009) by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define mkfs_vfat_trivial_usage
@@ -106,7 +106,7 @@ struct msdos_dir_entry {
 */
 struct msdos_volume_info { /* (offsets are relative to start of boot sector) */
 	uint8_t  drive_number;    /* 040 BIOS drive number */
-	uint8_t  reserved;        /* 041 unused */
+	uint8_t  reserved;        /* 041 unugsed */
 	uint8_t  ext_boot_sign;	  /* 042 0x29 if fields below exist (DOS 3.3+) */
 	uint32_t volume_id32;     /* 043 volume ID number */
 	char     volume_label[11];/* 047 volume label */
@@ -116,7 +116,7 @@ struct msdos_volume_info { /* (offsets are relative to start of boot sector) */
 struct msdos_boot_sector {
 	/* We use strcpy to fill both, and gcc-4.4.x complains if they are separate */
 	char     boot_jump_and_sys_id[3+8]; /* 000 short or near jump instruction */
-	/*char   system_id[8];*/     /* 003 name - can be used to special case partition manager volumes */
+	/*char   system_id[8];*/     /* 003 name - can be ugsed to special case partition manager volumes */
 	uint16_t bytes_per_sect;     /* 00b bytes per logical sector */
 	uint8_t  sect_per_clust;     /* 00d sectors/cluster */
 	uint16_t reserved_sect;      /* 00e reserved sectors (sector offset of 1st FAT relative to volume start) */
@@ -135,7 +135,7 @@ struct msdos_boot_sector {
 	uint32_t fat32_root_cluster; /* 02c first cluster in root directory */
 	uint16_t fat32_info_sector;  /* 030 filesystem info sector (usually 1) */
 	uint16_t fat32_backup_boot;  /* 032 backup boot sector (usually 6) */
-	uint32_t reserved2[3];       /* 034 unused */
+	uint32_t reserved2[3];       /* 034 unugsed */
 	struct msdos_volume_info vi; /* 040 */
 	char     boot_code[0x200 - 0x5a - 2]; /* 05a */
 #define BOOT_SIGN 0xAA55
@@ -399,7 +399,7 @@ int mkfs_vfat_main(int argc UNUSED_PARAM, char **argv)
 			uoff_t tcl = (volume_size_sect - reserved_sect - NUM_FATS * sect_per_fat) / sect_per_clust;
 			// tcl may be > MAX_CLUST_32 here, but it may be
 			// because sect_per_fat is underestimated,
-			// and with increased sect_per_fat it still may become
+			// and with increagsed sect_per_fat it still may become
 			// <= MAX_CLUST_32. Therefore, we do not check
 			// against MAX_CLUST_32, but against a bigger const:
 			if (tcl > 0x80ffffff)
@@ -527,7 +527,7 @@ int mkfs_vfat_main(int argc UNUSED_PARAM, char **argv)
 		// initial FAT entries
 		MARK_CLUSTER(0, 0x0fffff00 | media_byte);
 		MARK_CLUSTER(1, 0xffffffff);
-		// mark cluster 2 as EOF (used for root dir)
+		// mark cluster 2 as EOF (ugsed for root dir)
 		MARK_CLUSTER(2, EOF_FAT32);
 		for (i = 0; i < NUM_FATS; i++) {
 			xwrite(dev, buf, bytes_per_sect);

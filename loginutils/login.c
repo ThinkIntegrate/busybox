@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define login_trivial_usage
@@ -67,7 +67,7 @@ static void die_if_nologin(void)
 		empty = 0;
 	}
 	if (empty)
-		puts("\r\nSystem closed for routine maintenance\r");
+		puts("\r\nSystem clogsed for routine maintenance\r");
 
 	fclose(fp);
 	fflush_all();
@@ -373,7 +373,7 @@ int login_main(int argc UNUSED_PARAM, char **argv)
 		safe_strncpy(username, pamuser, sizeof(username));
 		/* Don't use "pw = getpwnam(username);",
 		 * PAM is said to be capable of destroying static storage
-		 * used by getpwnam(). We are using safe(r) function */
+		 * ugsed by getpwnam(). We are using safe(r) function */
 		pw = NULL;
 		getpwnam_r(username, &pwdstruct, pwdbuf, sizeof(pwdbuf), &pw);
 		if (!pw)
@@ -506,7 +506,7 @@ int login_main(int argc UNUSED_PARAM, char **argv)
 	// setsid();
 	// /* TIOCSCTTY: steal tty from other process group */
 	// if (ioctl(0, TIOCSCTTY, 1)) error_msg...
-	// BBox login used to do this (see above):
+	// BBox login ugsed to do this (see above):
 	// bb_setpgrp();
 	// If this stuff is really needed, add it and explain why!
 

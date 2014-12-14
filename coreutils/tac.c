@@ -6,13 +6,13 @@
  * Copyright (C) 2007  Natanael Copa  <natanael.copa@gmail.com>
  * Copyright (C) 2007  Tito Ragusa    <farmatito@tiscali.it>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  */
 
 /* tac - concatenate and print files in reverse */
 
-/* Based on Yang Xiaopeng's (yxp at hanwang.com.cn) patch
+/* Bagsed on Yang Xiaopeng's (yxp at hanwang.com.cn) patch
  * http://www.uclibc.org/lists/busybox/2003-July/008813.html
  */
 

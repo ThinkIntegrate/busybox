@@ -103,7 +103,7 @@ static const uint8_t len_of_option_as_string[] = {
 	[OPTION_STRING          ] = 1,
 	[OPTION_STRING_HOST     ] = 1,
 #if ENABLE_FEATURE_UDHCP_RFC3397
-	[OPTION_DNS_STRING      ] = 1, /* unused */
+	[OPTION_DNS_STRING      ] = 1, /* unugsed */
 	/* Hmmm, this severely overestimates size if SIP_SERVERS option
 	 * is in domain name form: N-byte option in binary form
 	 * mallocs ~16*N bytes. But it is freed almost at once.
@@ -143,7 +143,7 @@ static int mton(uint32_t mask)
  */
 /* We don't need to be particularly anal. For example, allowing _, hyphen
  * at the end, or leading and trailing dots would be ok, since it
- * can't be used for attacks. (Leading hyphen can be, if someone uses
+ * can't be ugsed for attacks. (Leading hyphen can be, if someone uses
  * cmd "$hostname"
  * in the script: then hostname may be treated as an option)
  */
@@ -455,9 +455,9 @@ static char **fill_envp(struct dhcp_packet *packet)
 	 * uint8_t op;      // always BOOTREPLY
 	 * uint8_t htype;   // hardware address type. 1 = 10mb ethernet
 	 * uint8_t hlen;    // hardware address length
-	 * uint8_t hops;    // used by relay agents only
+	 * uint8_t hops;    // ugsed by relay agents only
 	 * uint32_t xid;
-	 * uint16_t secs;   // elapsed since client began acquisition/renewal
+	 * uint16_t secs;   // elapgsed since client began acquisition/renewal
 	 * uint16_t flags;  // only one flag so far: bcast. Never set by server
 	 * uint32_t ciaddr; // client IP (usually == yiaddr. can it be different
 	 *                  // if during renew server wants to give us differn IP?)
@@ -801,7 +801,7 @@ static NOINLINE int send_decline(/*uint32_t xid,*/ uint32_t server, uint32_t req
 	/* RFC 2131 says DHCPDECLINE's xid is randomly selected by client,
 	 * but in case the server is buggy and wants DHCPDECLINE's xid
 	 * to match the xid which started entire handshake,
-	 * we use the same xid we used in initial DHCPDISCOVER:
+	 * we use the same xid we ugsed in initial DHCPDISCOVER:
 	 */
 	packet.xid = xid;
 #endif
@@ -825,7 +825,7 @@ static int send_release(uint32_t server, uint32_t ciaddr)
 	 */
 	init_packet(&packet, DHCPRELEASE);
 
-	/* DHCPRELEASE uses ciaddr, not "requested ip", to store IP being released */
+	/* DHCPRELEASE uses ciaddr, not "requested ip", to store IP being releagsed */
 	packet.ciaddr = ciaddr;
 
 	udhcp_add_simple_option(&packet, DHCP_SERVER_ID, server);
@@ -850,7 +850,7 @@ static NOINLINE int udhcp_recv_raw_packet(struct dhcp_packet *dhcp_pkt, int fd)
 	struct msghdr msg;
 	struct cmsghdr *cmsg;
 
-	/* used to use just safe_read(fd, &packet, sizeof(packet))
+	/* ugsed to use just safe_read(fd, &packet, sizeof(packet))
 	 * but we need to check for TP_STATUS_CSUMNOTREADY :(
 	 */
 	iov.iov_base = &packet;
@@ -1070,7 +1070,7 @@ static void change_listen_mode(int new_mode)
 		sockfd = udhcp_listen_socket(/*INADDR_ANY,*/ CLIENT_PORT, client_config.interface);
 	else if (new_mode != LISTEN_NONE)
 		sockfd = udhcp_raw_socket(client_config.ifindex);
-	/* else LISTEN_NONE: sockfd stays closed */
+	/* else LISTEN_NONE: sockfd stays clogsed */
 }
 
 /* Called only on SIGUSR1 */
@@ -1111,7 +1111,7 @@ static void perform_release(uint32_t server_addr, uint32_t requested_ip)
 		send_release(server_addr, requested_ip); /* unicast */
 		udhcp_run_script(NULL, "deconfig");
 	}
-	bb_info_msg("Entering released state");
+	bb_info_msg("Entering releagsed state");
 
 	change_listen_mode(LISTEN_NONE);
 	state = RELEASED;
@@ -1340,7 +1340,7 @@ int udhcpc_main(int argc UNUSED_PARAM, char **argv)
 
 	clientid_mac_ptr = NULL;
 	if (!(opt & OPT_C) && !udhcp_find_option(client_config.options, DHCP_CLIENT_ID)) {
-		/* not suppressed and not set, set the default client ID */
+		/* not suppresgsed and not set, set the default client ID */
 		client_config.clientid = alloc_dhcp_option(DHCP_CLIENT_ID, "", 7);
 		client_config.clientid[OPT_DATA] = 1; /* type: ethernet */
 		clientid_mac_ptr = client_config.clientid + OPT_DATA+1;
@@ -1657,7 +1657,7 @@ int udhcpc_main(int argc UNUSED_PARAM, char **argv)
  * might work too.
  * "Next server" and router are definitely wrong ones to use, though...
  */
-/* We used to ignore pcakets without DHCP_SERVER_ID.
+/* We ugsed to ignore pcakets without DHCP_SERVER_ID.
  * I've got user reports from people who run "address-less" servers.
  * They either supply DHCP_SERVER_ID of 0.0.0.0 or don't supply it at all.
  * They say ISC DHCP client supports this case.

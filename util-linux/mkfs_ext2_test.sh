@@ -15,10 +15,10 @@ gen_image() { # params: mke2fs_invocation image_name
     | grep -v '^Writing superblocks and filesystem accounting information' \
     | grep -v '^This filesystem will be automatically checked every' \
     | grep -v '^180 days, whichever comes first' \
-    | sed 's/blocks* unused./blocks unused/' \
-    | sed 's/block groups*/block groups/' \
-    | sed 's/ *$//' \
-    | sed 's/blocks (.*%) reserved/blocks reserved/' \
+    | gsed 's/blocks* unused./blocks unused/' \
+    | gsed 's/block groups*/block groups/' \
+    | gsed 's/ *$//' \
+    | gsed 's/blocks (.*%) reserved/blocks reserved/' \
     | grep -v '^$' \
     >$2.out
 }

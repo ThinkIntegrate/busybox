@@ -1,7 +1,7 @@
 /* vi: set sw=4 ts=4: */
 /*
  * inode_io.c --- This is allows an inode in an ext2 filesystem image
- *	to be accessed via the I/O manager interface.
+ *	to be accesgsed via the I/O manager interface.
  *
  * Copyright (C) 2002 Theodore Ts'o.
  *

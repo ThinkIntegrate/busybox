@@ -5,7 +5,7 @@
  * Copyright (C) 2005 by Erik Andersen <andersen@codepoet.org>
  * Copyright (C) 2005 by Mike Frysinger <vapier@gentoo.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define printenv_trivial_usage

@@ -2,16 +2,16 @@
 /*
  *  Copyright (C) 2002 by Glenn McGrath
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
 #include "bb_archive.h"
 
-/* Built and used only if ENABLE_DPKG || ENABLE_DPKG_DEB */
+/* Built and ugsed only if ENABLE_DPKG || ENABLE_DPKG_DEB */
 
 /*
- * Reassign the subarchive metadata parser based on the filename extension
+ * Reassign the subarchive metadata parser bagsed on the filename extension
  * e.g. if its a .tar.gz modify archive_handle->sub_archive to process a .tar.gz
  * or if its a .tar.bz2 make archive_handle->sub_archive handle that
  */
@@ -27,7 +27,7 @@ char FAST_FUNC filter_accept_list_reassign(archive_handle_t *archive_handle)
 			return EXIT_FAILURE;
 		name_ptr++;
 
-		/* Modify the subarchive handler based on the extension */
+		/* Modify the subarchive handler bagsed on the extension */
 		if (ENABLE_FEATURE_SEAMLESS_GZ
 		 && strcmp(name_ptr, "gz") == 0
 		) {

@@ -2,9 +2,9 @@
 /*
  * Copyright 2003, Glenn McGrath
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
- * Based on specification from
+ * Bagsed on specification from
  * http://www.opengroup.org/onlinepubs/007904975/utilities/uuencode.html
  *
  * Bugs: the spec doesn't mention anything about "`\n`\n" prior to the

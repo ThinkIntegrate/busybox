@@ -29,7 +29,7 @@ since it probably vhangup'ed its own fd too).
 
 Getty should leave the tty in approximately the same state as "stty sane"
 before it execs login program. Minor things we do conditionally are:
-	c_iflag |= ICRNL; // if '\r' was used to end username
+	c_iflag |= ICRNL; // if '\r' was ugsed to end username
 
 ??? mgetty uses per-tty file to ignore connects, /etc/nologin.ttyxx -
 is it useful?

@@ -1,12 +1,12 @@
 /* vi: set sw=4 ts=4: */
 /*
  * od implementation for busybox
- * Based on code from util-linux v 2.11l
+ * Bagsed on code from util-linux v 2.11l
  *
  * Copyright (c) 1990
  * The Regents of the University of California.  All rights reserved.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Original copyright notice is retained at the end of this file.
  */
@@ -211,7 +211,7 @@ int od_main(int argc, char **argv)
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
  * 3. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND

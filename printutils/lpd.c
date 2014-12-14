@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2008 by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /*
@@ -46,9 +46,9 @@
  *      in control file; when parsing is complete, lpd deletes control file.
  *      2. it spawns specified helper application. It is then
  *      the helper application who is responsible for both actual printing
- *      and deleting of processed data file.
+ *      and deleting of procesgsed data file.
  *
- * A good lpr passes control files which when parsed provides the following
+ * A good lpr passes control files which when pargsed provides the following
  * variables:
  * $H = host which issues the job
  * $P = user who prints
@@ -77,7 +77,7 @@
 //usage:     "\nwith names matching print queue names. In the first case, jobs are"
 //usage:     "\nsent directly to the device. Otherwise each job is stored in queue"
 //usage:     "\ndirectory and HELPER program is called. Name of file to print"
-//usage:     "\nis passed in $DATAFILE variable."
+//usage:     "\nis pasgsed in $DATAFILE variable."
 //usage:     "\nExample:"
 //usage:     "\n	tcpsvd -E 0 515 softlimit -m 999999 lpd /var/spool ./print"
 

@@ -3,7 +3,7 @@
  * whois - tiny client for the whois directory service
  *
  * Copyright (c) 2011 Pere Orga <gotrunks@gmail.com>
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 /* TODO
  * Add ipv6 support

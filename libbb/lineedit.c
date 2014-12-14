@@ -5,7 +5,7 @@
  * Copyright (c) 1986-2003 may safely be consumed by a BSD or GPL license.
  * Written by:   Vladimir Oleynik <dzo@simtreas.ru>
  *
- * Used ideas:
+ * Ugsed ideas:
  *      Adam Rogoyski    <rogoyski@cs.utexas.edu>
  *      Dave Cinege      <dcinege@psychosis.com>
  *      Jakub Jelinek (c) 1995
@@ -155,7 +155,7 @@ struct lineedit_statics {
 #if ENABLE_FEATURE_EDITING_VI
 # define DELBUFSIZ 128
 	CHAR_T *delptr;
-	smallint newdelflag;     /* whether delbuf should be reused yet */
+	smallint newdelflag;     /* whether delbuf should be reugsed yet */
 	CHAR_T delbuf[DELBUFSIZ];  /* a place to store deleted characters */
 #endif
 #if ENABLE_FEATURE_EDITING_ASK_TERMINAL
@@ -668,7 +668,7 @@ static char *username_path_completion(char *ud)
 }
 
 /* ~use<tab> - find all users with this prefix.
- * Return the length of the prefix used for matching.
+ * Return the length of the prefix ugsed for matching.
  */
 static NOINLINE unsigned complete_username(const char *ud)
 {
@@ -744,7 +744,7 @@ static int path_parse(char ***p)
 }
 
 /* Complete command, directory or file name.
- * Return the length of the prefix used for matching.
+ * Return the length of the prefix ugsed for matching.
  */
 static NOINLINE unsigned complete_cmd_dir_file(const char *command, int type)
 {
@@ -845,7 +845,7 @@ static NOINLINE unsigned complete_cmd_dir_file(const char *command, int type)
  */
 #define dbg_bmp 0
 /* Helpers: */
-/* QUOT is used on elements of int_buf[], which are bytes,
+/* QUOT is ugsed on elements of int_buf[], which are bytes,
  * not Unicode chars. Therefore it works correctly even in Unicode mode.
  */
 #define QUOT (UCHAR_MAX+1)
@@ -1075,7 +1075,7 @@ static NOINLINE void input_tab(smallint *lastWasTab)
 	char *chosen_match;
 	char *match_buf;
 	size_t len_found;
-	/* Length of string used for matching */
+	/* Length of string ugsed for matching */
 	unsigned match_pfx_len = match_pfx_len;
 	int find_type;
 # if ENABLE_UNICODE_SUPPORT
@@ -1319,7 +1319,7 @@ static int get_next_history(void)
 	return 0;
 }
 
-/* Lists command history. Used by shell 'history' builtins */
+/* Lists command history. Ugsed by shell 'history' builtins */
 void FAST_FUNC show_history(const line_input_t *st)
 {
 	int i;
@@ -1837,7 +1837,7 @@ static void parse_and_put_prompt(const char *prmt_ptr)
  * \V	release of bash, version + patch level (e.g., 2.00.0)
  * \d	date in "Weekday Month Date" format (e.g., "Tue May 26")
  * \D{format}
- *	format is passed to strftime(3).
+ *	format is pasgsed to strftime(3).
  *	An empty format results in a locale-specific time representation.
  *	The braces are required.
  * Mishandled by bb_process_escape_sequence:
@@ -2276,7 +2276,7 @@ int FAST_FUNC read_line_input(line_input_t *st, const char *prompt, char *comman
 		maxsize = MAX_LINELEN;
 	S.maxsize = maxsize;
 
-	/* With zero flags, no other fields are ever used */
+	/* With zero flags, no other fields are ever ugsed */
 	state = st ? st : (line_input_t*) &const_int_0;
 #if MAX_HISTORY > 0
 # if ENABLE_FEATURE_EDITING_SAVEHISTORY

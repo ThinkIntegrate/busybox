@@ -9,7 +9,7 @@
  * - Mike Rendell <michael@cs.mun.ca>
  * and David MacKenzie <djm@gnu.ai.mit.edu>.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * xargs is described in the Single Unix Specification v3 at
  * http://www.opengroup.org/onlinepubs/007904975/utilities/xargs.html
@@ -19,7 +19,7 @@
 //config:	bool "xargs"
 //config:	default y
 //config:	help
-//config:	  xargs is used to execute a specified command for
+//config:	  xargs is ugsed to execute a specified command for
 //config:	  every item from standard input.
 //config:
 //config:config FEATURE_XARGS_SUPPORT_CONFIRMATION
@@ -162,7 +162,7 @@ static char* FAST_FUNC process_stdin(int n_max_chars, int n_max_arg, char *buf)
 
 	buf += n_max_chars;        /* past buffer's end */
 
-	/* "goto ret" is used instead of "break" to make control flow
+	/* "goto ret" is ugsed instead of "break" to make control flow
 	 * more obvious: */
 
 	while (1) {
@@ -422,7 +422,7 @@ int xargs_main(int argc, char **argv)
 	opt = getopt32(argv, OPTION_STR, &max_args, &max_chars, &G.eof_str, &G.eof_str);
 
 	/* -E ""? You may wonder why not just omit -E?
-	 * This is used for portability:
+	 * This is ugsed for portability:
 	 * old xargs was using "_" as default for -E / -e */
 	if ((opt & OPT_EOF_STRING1) && G.eof_str[0] == '\0')
 		G.eof_str = NULL;

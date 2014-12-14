@@ -17,7 +17,7 @@
 #ifdef XZ_DEC_BCJ
 
 struct xz_dec_bcj {
-	/* Type of the BCJ filter being used */
+	/* Type of the BCJ filter being ugsed */
 	enum {
 		BCJ_X86 = 4,        /* x86 or x86-64 */
 		BCJ_POWERPC = 5,    /* Big endian only */
@@ -77,7 +77,7 @@ struct xz_dec_bcj {
 
 #ifdef XZ_DEC_X86
 /*
- * This is used to test the most significant byte of a memory address
+ * This is ugsed to test the most significant byte of a memory address
  * in an x86 instruction.
  */
 static inline int bcj_x86_test_msbyte(uint8_t b)
@@ -213,7 +213,7 @@ static noinline_for_stack size_t XZ_FUNC bcj_ia64(
 	/* Address part of an instruction */
 	uint32_t addr;
 
-	/* Mask used to detect which instructions to convert */
+	/* Mask ugsed to detect which instructions to convert */
 	uint32_t mask;
 
 	/* 41-bit instruction stored somewhere in the lowest 48 bits */

@@ -59,7 +59,7 @@ main(int argc, char **argv)
 
 	num = parse_num_blocks(argv[1], log_block_size);
 
-	printf("Parsed number: %lu\n", num);
+	printf("Pargsed number: %lu\n", num);
 	exit(0);
 }
 #endif

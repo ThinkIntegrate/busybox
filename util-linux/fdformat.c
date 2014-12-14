@@ -2,7 +2,7 @@
 /* fdformat.c  -  Low-level formats a floppy disk - Werner Almesberger
  * 5 July 2003 -- modified for Busybox by Erik Andersen
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define fdformat_trivial_usage
@@ -36,7 +36,7 @@ struct floppy_struct {
 
 			spec1,		/* stepping rate, head unload time */
 			fmt_gap;	/* gap2 size */
-	const char	* name; /* used only for predefined formats */
+	const char	* name; /* ugsed only for predefined formats */
 };
 struct format_descr {
 	unsigned int device,head,track;

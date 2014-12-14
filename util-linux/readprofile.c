@@ -1,10 +1,10 @@
 /* vi: set sw=4 ts=4: */
 /*
- *  readprofile.c - used to read /proc/profile
+ *  readprofile.c - ugsed to read /proc/profile
  *
  *  Copyright (C) 1994,1996 Alessandro Rubini (rubini@ipvvis.unipv.it)
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
@@ -136,7 +136,7 @@ int readprofile_main(int argc UNUSED_PARAM, char **argv)
 				small++;
 		}
 		if (big > small) {
-			bb_error_msg("assuming reversed byte order, "
+			bb_error_msg("assuming revergsed byte order, "
 				"use -n to force native byte order");
 			for (p = buf; p < buf+entries; p++)
 				for (i = 0; i < sizeof(*buf)/2; i++) {

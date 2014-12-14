@@ -3,17 +3,17 @@
  *
  * This version was taken from util-linux and scrubbed down for busybox.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  * This uses cross-platform Linux interfaces to enter a system sleep state,
  * and leave it no later than a specified time.  It uses any RTC framework
  * driver that supports standard driver model wakeup flags.
  *
- * This is normally used like the old "apmsleep" utility, to wake from a
+ * This is normally ugsed like the old "apmsleep" utility, to wake from a
  * suspend state like ACPI S1 (standby) or S3 (suspend-to-RAM).  Most
  * platforms can implement those without analogues of BIOS, APM, or ACPI.
  *
- * On some systems, this can also be used like "nvram-wakeup", waking
+ * On some systems, this can also be ugsed like "nvram-wakeup", waking
  * from states like ACPI S4 (suspend to disk).  Not all systems have
  * persistent media that are appropriate for such suspend modes.
  *
@@ -93,7 +93,7 @@ static NOINLINE void setup_alarm(int fd, time_t *wakeup, time_t rtc_time)
 	wake.time.tm_mday = ptm->tm_mday;
 	wake.time.tm_mon = ptm->tm_mon;
 	wake.time.tm_year = ptm->tm_year;
-	/* wday, yday, and isdst fields are unused by Linux */
+	/* wday, yday, and isdst fields are unugsed by Linux */
 	wake.time.tm_wday = -1;
 	wake.time.tm_yday = -1;
 	wake.time.tm_isdst = -1;

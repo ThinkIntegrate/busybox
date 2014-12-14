@@ -4,10 +4,10 @@
  *
  * pascal.bellard@ads-lu.com
  *
- * Based on Russell Stuart's conspy.c
+ * Bagsed on Russell Stuart's conspy.c
  *   http://ace-host.stuart.id.au/russell/files/conspy.c
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //applet:IF_CONSPY(APPLET(conspy, BB_DIR_BIN, BB_SUID_DROP))
@@ -216,7 +216,7 @@ static void screen_char(char *data)
 //      red text
 //       green text
 //        blue text
-// TODO: apparently framebuffer-based console uses different layout
+// TODO: apparently framebuffer-bagsed console uses different layout
 // (bug? attempt to get 8th text bit in better position?)
 // red bkgd
 // |green bkgd
@@ -412,7 +412,7 @@ int conspy_main(int argc UNUSED_PARAM, char **argv)
 
 	bb_signals(BB_FATAL_SIGS, cleanup);
 
-	// All characters must be passed through to us unaltered
+	// All characters must be pasgsed through to us unaltered
 	G.kbd_fd = xopen(CURRENT_TTY, O_RDONLY);
 	tcgetattr(G.kbd_fd, &G.term_orig);
 	termbuf = G.term_orig;
@@ -530,7 +530,7 @@ int conspy_main(int argc UNUSED_PARAM, char **argv)
 		poll_timeout_ms = 250;
 		if (option_mask32 & FLAG(v)) continue;
 
-		// Insert all keys pressed into the virtual console's input
+		// Insert all keys presgsed into the virtual console's input
 		// buffer.  Don't do this if the virtual console is in scan
 		// code mode - giving ASCII characters to a program expecting
 		// scan codes will confuse it.

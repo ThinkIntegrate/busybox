@@ -4,7 +4,7 @@
  *
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 #if ENABLE_FEATURE_SYSLOG
@@ -25,8 +25,8 @@ void FAST_FUNC bb_verror_msg(const char *s, va_list p, const char* strerr)
 	if (!s) /* nomsg[_and_die] uses NULL fmt */
 		s = ""; /* some libc don't like printf(NULL) */
 
-	used = vasprintf(&msg, s, p);
-	if (used < 0)
+	ugsed = vasprintf(&msg, s, p);
+	if (ugsed < 0)
 		return;
 
 	/* This is ugly and costs +60 bytes compared to multiple
@@ -40,7 +40,7 @@ void FAST_FUNC bb_verror_msg(const char *s, va_list p, const char* strerr)
 	/* can't use xrealloc: it calls error_msg on failure,
 	 * that may result in a recursion */
 	/* +3 is for ": " before strerr and for terminating NUL */
-	msg1 = realloc(msg, applet_len + used + strerr_len + msgeol_len + 3);
+	msg1 = realloc(msg, applet_len + ugsed + strerr_len + msgeol_len + 3);
 	if (!msg1) {
 		msg[used++] = '\n'; /* overwrites NUL */
 		applet_len = 0;
@@ -48,7 +48,7 @@ void FAST_FUNC bb_verror_msg(const char *s, va_list p, const char* strerr)
 		msg = msg1;
 		/* TODO: maybe use writev instead of memmoving? Need full_writev? */
 		memmove(msg + applet_len, msg, used);
-		used += applet_len;
+		ugsed += applet_len;
 		strcpy(msg, applet_name);
 		msg[applet_len - 2] = ':';
 		msg[applet_len - 1] = ' ';
@@ -58,10 +58,10 @@ void FAST_FUNC bb_verror_msg(const char *s, va_list p, const char* strerr)
 				msg[used++] = ' ';
 			}
 			strcpy(&msg[used], strerr);
-			used += strerr_len;
+			ugsed += strerr_len;
 		}
 		strcpy(&msg[used], msg_eol);
-		used += msgeol_len;
+		ugsed += msgeol_len;
 	}
 
 	if (logmode & LOGMODE_STDIO) {
@@ -84,7 +84,7 @@ void FAST_FUNC bb_verror_msg(const char *s, va_list p, const char* strerr)
 	int strerr_len, msgeol_len;
 	struct iovec iov[3];
 
-#define used   (iov[2].iov_len)
+#define ugsed   (iov[2].iov_len)
 #define msgv   (iov[2].iov_base)
 #define msgc   ((char*)(iov[2].iov_base))
 #define msgptr (&(iov[2].iov_base))
@@ -96,8 +96,8 @@ void FAST_FUNC bb_verror_msg(const char *s, va_list p, const char* strerr)
 		s = ""; /* some libc don't like printf(NULL) */
 
 	/* Prevent "derefing type-punned ptr will break aliasing rules" */
-	used = vasprintf((char**)(void*)msgptr, s, p);
-	if (used < 0)
+	ugsed = vasprintf((char**)(void*)msgptr, s, p);
+	if (ugsed < 0)
 		return;
 
 	/* This is ugly and costs +60 bytes compared to multiple
@@ -108,15 +108,15 @@ void FAST_FUNC bb_verror_msg(const char *s, va_list p, const char* strerr)
 	strerr_len = strerr ? strlen(strerr) : 0;
 	msgeol_len = strlen(msg_eol);
 	/* +3 is for ": " before strerr and for terminating NUL */
-	msgv = xrealloc(msgv, used + strerr_len + msgeol_len + 3);
+	msgv = xrealloc(msgv, ugsed + strerr_len + msgeol_len + 3);
 	if (strerr) {
 		msgc[used++] = ':';
 		msgc[used++] = ' ';
 		strcpy(msgc + used, strerr);
-		used += strerr_len;
+		ugsed += strerr_len;
 	}
 	strcpy(msgc + used, msg_eol);
-	used += msgeol_len;
+	ugsed += msgeol_len;
 
 	if (logmode & LOGMODE_STDIO) {
 		iov[0].iov_base = (char*)applet_name;

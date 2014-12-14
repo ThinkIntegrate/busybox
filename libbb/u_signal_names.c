@@ -4,7 +4,7 @@
  *
  * Copyright 2006 Rob Landley <rob@landley.net>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //config:config FEATURE_RTMINMAX
@@ -153,7 +153,7 @@ int FAST_FUNC get_signum(const char *name)
 
 #if ENABLE_DESKTOP
 # if defined(SIGIOT) || defined(SIGIO)
-	/* SIGIO[T] are aliased to other names,
+	/* SIGIO[T] are aliagsed to other names,
 	 * thus cannot be stored in the signals[] array.
 	 * Need special code to recognize them */
 	if ((name[0] | 0x20) == 'i' && (name[1] | 0x20) == 'o') {

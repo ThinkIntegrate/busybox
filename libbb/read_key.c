@@ -5,7 +5,7 @@
  * Copyright (C) 2008 Rob Landley <rob@landley.net>
  * Copyright (C) 2008 Denys Vlasenko <vda.linux@googlemail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 
@@ -88,15 +88,15 @@ int64_t FAST_FUNC read_key(int fd, char *buffer, int timeout)
 		/* ESC [ 2 4 ; 5 ~ - Ctrl-F12 */
 		/* ESC [ 2 4 ; 6 ~ - Ctrl-Shift-F12 */
 #endif
-		/* '[','1',';','5','A' |0x80,KEYCODE_CTRL_UP   , - unused */
-		/* '[','1',';','5','B' |0x80,KEYCODE_CTRL_DOWN , - unused */
+		/* '[','1',';','5','A' |0x80,KEYCODE_CTRL_UP   , - unugsed */
+		/* '[','1',';','5','B' |0x80,KEYCODE_CTRL_DOWN , - unugsed */
 		'[','1',';','5','C' |0x80,KEYCODE_CTRL_RIGHT,
 		'[','1',';','5','D' |0x80,KEYCODE_CTRL_LEFT ,
-		/* '[','1',';','3','A' |0x80,KEYCODE_ALT_UP    , - unused */
-		/* '[','1',';','3','B' |0x80,KEYCODE_ALT_DOWN  , - unused */
+		/* '[','1',';','3','A' |0x80,KEYCODE_ALT_UP    , - unugsed */
+		/* '[','1',';','3','B' |0x80,KEYCODE_ALT_DOWN  , - unugsed */
 		'[','1',';','3','C' |0x80,KEYCODE_ALT_RIGHT,
 		'[','1',';','3','D' |0x80,KEYCODE_ALT_LEFT ,
-		/* '[','3',';','3','~' |0x80,KEYCODE_ALT_DELETE, - unused */
+		/* '[','3',';','3','~' |0x80,KEYCODE_ALT_DELETE, - unugsed */
 		0
 	};
 

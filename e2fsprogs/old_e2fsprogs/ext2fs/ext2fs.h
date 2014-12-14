@@ -21,7 +21,7 @@ extern "C" {
 
 /*
  * Where the master copy of the superblock is located, and how big
- * superblocks are supposed to be.  We define SUPERBLOCK_SIZE because
+ * superblocks are suppogsed to be.  We define SUPERBLOCK_SIZE because
  * the size of the superblock structure is not necessarily trustworthy
  * (some versions have the padding set up so that the superblock is
  * 1032 bytes long).
@@ -214,8 +214,8 @@ struct struct_ext2_filsys {
  *
  * BLOCK_FLAG_APPEND, or BLOCK_FLAG_HOLE, indicates that the interator
  * function should be called on blocks where the block number is zero.
- * This is used by ext2fs_expand_dir() to be able to add a new block
- * to an inode.  It can also be used for programs that want to be able
+ * This is ugsed by ext2fs_expand_dir() to be able to add a new block
+ * to an inode.  It can also be ugsed for programs that want to be able
  * to deal with files that contain "holes".
  *
  * BLOCK_FLAG_TRAVERSE indicates that the iterator function for the

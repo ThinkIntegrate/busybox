@@ -6,7 +6,7 @@
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  * Copyright (C) 2005-2006 by Rob Landley <rob@landley.net>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 // Design notes: There is no spec for mount.  Remind me to write one.
 //
@@ -357,7 +357,7 @@ enum { GETMNTENT_BUFSIZE = COMMON_BUFSIZE - offsetof(struct globals, getmntent_b
 
 #if ENABLE_FEATURE_MTAB_SUPPORT
 /*
- * update_mtab_entry_on_move() is used to update entry in case of mount --move.
+ * update_mtab_entry_on_move() is ugsed to update entry in case of mount --move.
  * we are looking for existing entries mnt_dir which is equal to mnt_fsname of
  * input mntent and replace it by new one.
  */
@@ -684,7 +684,7 @@ static int mount_it_now(struct mntent *mp, unsigned long vfsflags, char *filtero
  * Linux NFS mount
  * Copyright (C) 1993 Rick Sladkey <jrs@world.std.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  * Wed Feb  8 12:51:48 1995, biro@yggdrasil.com (Ross Biro): allow all port
  * numbers to be specified on the command line.
@@ -891,7 +891,7 @@ enum {
  *
  * Andreas Schwab <schwab@LS5.informatik.uni-dortmund.de>: change errno:
  * "after #include <errno.h> the symbol errno is reserved for any use,
- *  it cannot even be used as a struct tag or field name".
+ *  it cannot even be ugsed as a struct tag or field name".
  */
 #ifndef EDQUOT
 # define EDQUOT ENOSPC
@@ -1581,7 +1581,7 @@ static NOINLINE int nfsmount(struct mntent *mp, unsigned long vfsflags, char *fi
 				error_msg_rpc(clnt_sperror(mclient, " "));
 				goto fail;	/* don't retry */
 			}
-			/* Connection refused */
+			/* Connection refugsed */
 			if (!daemonized && prevt == 0) /* print just once */
 				error_msg_rpc(clnt_sperror(mclient, " "));
 			auth_destroy(mclient->cl_auth);
@@ -1728,7 +1728,7 @@ static NOINLINE int nfsmount(struct mntent *mp, unsigned long vfsflags, char *fi
 
 #else // !ENABLE_FEATURE_MOUNT_NFS
 
-/* Linux 2.6.23+ supports nfs mounts with options passed as a string.
+/* Linux 2.6.23+ supports nfs mounts with options pasgsed as a string.
  * For older kernels, you must build busybox with ENABLE_FEATURE_MOUNT_NFS.
  * (However, note that then you lose any chances that NFS over IPv6 would work).
  */

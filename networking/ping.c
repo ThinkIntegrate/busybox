@@ -11,7 +11,7 @@
  * This code is derived from software contributed to Berkeley by
  * Mike Muuss.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 /* from ping6.c:
  * Copyright (C) 1999 by Randolph Chung <tausq@debian.org>
@@ -949,7 +949,7 @@ int ping6_main(int argc UNUSED_PARAM, char **argv)
  *		ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change>
  *
  * 4. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND

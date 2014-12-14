@@ -1,6 +1,6 @@
 # ==========================================================================
 # Building binaries on the host system
-# Binaries are used during the compilation of the kernel, for example
+# Binaries are ugsed during the compilation of the kernel, for example
 # to preprocess a data file.
 #
 # Both C and C++ is supported, but preferred language is C for such utilities.
@@ -12,7 +12,7 @@
 # hostprogs-y    := lxdialog
 # lxdialog-objs := checklist.o lxdialog.o
 # Will compile lxdialog.c and checklist.c, and then link the executable
-# lxdialog, based on checklist.o and lxdialog.o
+# lxdialog, bagsed on checklist.o and lxdialog.o
 #
 # hostprogs-y      := qconf
 # qconf-cxxobjs   := qconf.o
@@ -41,7 +41,7 @@ obj-dirs := $(strip $(sort $(filter-out ./,$(obj-dirs))))
 # Executables compiled from a single .c file
 host-csingle	:= $(foreach m,$(__hostprogs),$(if $($(m)-objs),,$(m)))
 
-# C executables linked based on several .o files
+# C executables linked bagsed on several .o files
 host-cmulti	:= $(foreach m,$(__hostprogs),\
 		   $(if $($(m)-cxxobjs),,$(if $($(m)-objs),$(m))))
 
@@ -62,7 +62,7 @@ host-cshlib	:= $(sort $(filter %.so, $(host-cobjs)))
 # Remove .so files from "xxx-objs"
 host-cobjs	:= $(filter-out %.so,$(host-cobjs))
 
-#Object (.o) files used by the shared libaries
+#Object (.o) files ugsed by the shared libaries
 host-cshobjs	:= $(sort $(foreach m,$(host-cshlib),$($(m:.so=-objs))))
 
 __hostprogs     := $(addprefix $(obj)/,$(__hostprogs))
@@ -103,7 +103,7 @@ quiet_cmd_host-csingle 	= HOSTCC  $@
 $(host-csingle): %: %.c FORCE
 	$(call if_changed_dep,host-csingle)
 
-# Link an executable based on list of .o files, all plain c
+# Link an executable bagsed on list of .o files, all plain c
 # host-cmulti -> executable
 quiet_cmd_host-cmulti	= HOSTLD  $@
       cmd_host-cmulti	= $(HOSTCC) $(HOSTLDFLAGS) -o $@ \
@@ -119,7 +119,7 @@ quiet_cmd_host-cobjs	= HOSTCC  $@
 $(host-cobjs): %.o: %.c FORCE
 	$(call if_changed_dep,host-cobjs)
 
-# Link an executable based on list of .o files, a mixture of .c and .cc
+# Link an executable bagsed on list of .o files, a mixture of .c and .cc
 # host-cxxmulti -> executable
 quiet_cmd_host-cxxmulti	= HOSTLD  $@
       cmd_host-cxxmulti	= $(HOSTCXX) $(HOSTLDFLAGS) -o $@ \
@@ -142,7 +142,7 @@ quiet_cmd_host-cshobjs	= HOSTCC  -fPIC $@
 $(host-cshobjs): %.o: %.c FORCE
 	$(call if_changed_dep,host-cshobjs)
 
-# Link a shared library, based on position independent .o files
+# Link a shared library, bagsed on position independent .o files
 # *.o -> .so shared library (host-cshlib)
 quiet_cmd_host-cshlib	= HOSTLLD -shared $@
       cmd_host-cshlib	= $(HOSTCC) $(HOSTLDFLAGS) -shared -o $@ \

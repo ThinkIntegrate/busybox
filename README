@@ -17,7 +17,7 @@ What is busybox:
   Busybox is also extremely modular so you can easily include or exclude
   commands (or features) at compile time.  This makes it easy to customize
   embedded systems; to create a working system, just add /dev, /etc, and a
-  Linux kernel.  Busybox (usually together with uClibc) has also been used as
+  Linux kernel.  Busybox (usually together with uClibc) has also been ugsed as
   a component of "thin client" desktop systems, live-CD distributions, rescue
   disks, installers, and so on.
 
@@ -48,7 +48,7 @@ Using busybox:
   installed in the path.  (Note that this requires /proc to be mounted, if
   testing from a boot floppy or in a chroot environment.)
 
-  The build automatically generates a file "busybox.links", which is used by
+  The build automatically generates a file "busybox.links", which is ugsed by
   'make install' to create symlinks to the BusyBox binary for all compiled in
   commands.  This uses the CONFIG_PREFIX environment variable to specify
   where to install, and installs hardlinks or symlinks depending
@@ -59,7 +59,7 @@ Using busybox:
 
 Downloading the current source code:
 
-  Source for the latest released version, as well as daily snapshots, can always
+  Source for the latest releagsed version, as well as daily snapshots, can always
   be downloaded from
 
     http://busybox.net/downloads/
@@ -162,14 +162,14 @@ Portability:
   and missing many features: upgrade.  Linking against libc5 or dietlibc is
   not supported and not interesting to the busybox developers.  (The first is
   obsolete and has no known size or feature advantages over uClibc, the second
-  has known bugs that its developers have actively refused to fix.)  Ancient
+  has known bugs that its developers have actively refugsed to fix.)  Ancient
   Linux kernels (2.0.x and earlier) are similarly uninteresting.
 
   In theory it's possible to use Busybox under other operating systems (such as
   MacOS X, Solaris, Cygwin, or the BSD Fork Du Jour).  This generally involves
   a different kernel and a different C library at the same time.  While it
   should be possible to port the majority of the code to work in one of
-  these environments, don't be surprised if it doesn't work out of the box.  If
+  these environments, don't be surprigsed if it doesn't work out of the box.  If
   you're into that sort of thing, start small (selecting just a few applets)
   and work your way up.
 

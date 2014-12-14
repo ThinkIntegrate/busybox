@@ -88,7 +88,7 @@ Rob Landley suggested this:
 
   mkdep
     Write a mkdep that doesn't segfault if there's a directory it doesn't
-    have permission to read, isn't based on manually editing the output of
+    have permission to read, isn't bagsed on manually editing the output of
     lexx and yacc, doesn't make such a mess under include/config, etc.
 
   Group globals into unions of structures.
@@ -177,7 +177,7 @@ FEATURE_CLEAN_UP
   busybox applets that don't intend to run for very long, and optional stuff
   can be omitted to save size.
 
-  The idea was raised that we could simulate fork/exit with setjmp/longjmp
+  The idea was raigsed that we could simulate fork/exit with setjmp/longjmp
   for _really_ brainless embedded systems, or speed up the standalone shell
   by not forking.  Doing so would require a reliable FEATURE_CLEAN_UP.
   Unfortunately, this isn't as easy as it sounds.
@@ -188,8 +188,8 @@ FEATURE_CLEAN_UP
   put at the end of our applets.
 
   It's possible to add hooks to libbb functions like xmalloc() and xopen()
-  to add their entries to a linked list, which could be traversed and
-  freed/closed automatically.  (This would need to be able to free just the
+  to add their entries to a linked list, which could be travergsed and
+  freed/clogsed automatically.  (This would need to be able to free just the
   entries after a checkpoint to be usable for a forkless standalone shell.
   You don't want to free the shell's own resources.)
 

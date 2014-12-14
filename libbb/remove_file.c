@@ -4,12 +4,12 @@
  *
  * Copyright (C) 2001 Matt Kraai <kraai@alumni.carnegiemellon.edu>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
 
-/* Used from NOFORK applets. Must not allocate anything */
+/* Ugsed from NOFORK applets. Must not allocate anything */
 
 int FAST_FUNC remove_file(const char *path, int flags)
 {

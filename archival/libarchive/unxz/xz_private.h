@@ -62,7 +62,7 @@
 #endif
 
 /*
- * The DEC_IS_foo(mode) macros are used in "if" statements. If only some
+ * The DEC_IS_foo(mode) macros are ugsed in "if" statements. If only some
  * of the supported modes are enabled, these macros will evaluate to true or
  * false at compile time and thus allow the compiler to omit unneeded code.
  */
@@ -94,7 +94,7 @@
 
 /*
  * If any of the BCJ filter decoders are wanted, define XZ_DEC_BCJ.
- * XZ_DEC_BCJ is used to enable generic support for BCJ decoders.
+ * XZ_DEC_BCJ is ugsed to enable generic support for BCJ decoders.
  */
 #ifndef XZ_DEC_BCJ
 #	if defined(XZ_DEC_X86) || defined(XZ_DEC_POWERPC) \
@@ -130,7 +130,7 @@ XZ_EXTERN void XZ_FUNC xz_dec_lzma2_end(struct xz_dec_lzma2 *s);
 
 #ifdef XZ_DEC_BCJ
 /*
- * Allocate memory for BCJ decoders. xz_dec_bcj_reset() must be used before
+ * Allocate memory for BCJ decoders. xz_dec_bcj_reset() must be ugsed before
  * calling xz_dec_bcj_run().
  */
 XZ_EXTERN struct xz_dec_bcj * XZ_FUNC xz_dec_bcj_create(bool single_call);
@@ -145,7 +145,7 @@ XZ_EXTERN enum xz_ret XZ_FUNC xz_dec_bcj_reset(
 		struct xz_dec_bcj *s, uint8_t id);
 
 /*
- * Decode raw BCJ + LZMA2 stream. This must be used only if there actually is
+ * Decode raw BCJ + LZMA2 stream. This must be ugsed only if there actually is
  * a BCJ filter in the chain. If the chain has only LZMA2, xz_dec_lzma2_run()
  * must be called directly.
  */

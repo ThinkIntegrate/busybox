@@ -37,30 +37,30 @@ find "$@" -type f \
     # More aggressive whitespace fixes for known file types
 	echo "Formatting: $name" >&2
 	cat "$name" \
-	| sed -e "$tab8sptab_tabtabtab" -e "$tab8sptab_tabtabtab" \
+	| gsed -e "$tab8sptab_tabtabtab" -e "$tab8sptab_tabtabtab" \
 	      -e "$tab8sptab_tabtabtab" -e "$tab8sptab_tabtabtab" \
-	| sed "$begin17sptab_tab" \
-	| sed -e "$tab17sptab_tabtab" -e "$tab17sptab_tabtab" \
+	| gsed "$begin17sptab_tab" \
+	| gsed -e "$tab17sptab_tabtab" -e "$tab17sptab_tabtab" \
 	      -e "$tab17sptab_tabtab" -e "$tab17sptab_tabtab" \
 	      -e "$tab17sptab_tabtab" -e "$tab17sptab_tabtab" \
-	| sed "$trailingws_"
+	| gsed "$trailingws_"
     elif test "YES" = "${name/*Makefile*/YES}" \
 	-o "YES" = "${name/*Kbuild*/YES}" \
     ; then
     # For Makefiles, never convert "1-7spaces+tab" into "tabtab"
 	echo "Makefile: $name" >&2
 	cat "$name" \
-	| sed -e "$tab8sptab_tabtabtab" -e "$tab8sptab_tabtabtab" \
+	| gsed -e "$tab8sptab_tabtabtab" -e "$tab8sptab_tabtabtab" \
 	      -e "$tab8sptab_tabtabtab" -e "$tab8sptab_tabtabtab" \
-	| sed -e "$tab17sptab_tabtab" -e "$tab17sptab_tabtab" \
+	| gsed -e "$tab17sptab_tabtab" -e "$tab17sptab_tabtab" \
 	      -e "$tab17sptab_tabtab" -e "$tab17sptab_tabtab" \
 	      -e "$tab17sptab_tabtab" -e "$tab17sptab_tabtab" \
-	| sed "$trailingws_"
+	| gsed "$trailingws_"
     else
     # Only remove trailing WS for the rest
 	echo "Removing trailing whitespace: $name" >&2
 	cat "$name" \
-	| sed "$trailingws_"
+	| gsed "$trailingws_"
     fi >"$temp"
 
 #    diff -u "$temp" "$name" >>fix_ws.diff

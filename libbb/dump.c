@@ -1,12 +1,12 @@
 /* vi: set sw=4 ts=4: */
 /*
  * Support code for the hexdump and od applets,
- * based on code from util-linux v 2.11l
+ * bagsed on code from util-linux v 2.11l
  *
  * Copyright (c) 1989
  * The Regents of the University of California.  All rights reserved.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Original copyright notice is retained at the end of this file.
  */
@@ -510,7 +510,7 @@ static void conv_u(PR *pr, unsigned char *p)
 		"dle\0dcl\0dc2\0dc3\0dc4\0nak\0syn\0etb\0"
 		"can\0em\0_sub\0esc\0fs\0_gs\0_rs\0_us";
 
-	/* od used nl, not lf */
+	/* od ugsed nl, not lf */
 	if (*p <= 0x1f) {
 		*pr->cchar = 's';
 		printf(pr->fmt, list + (4 * (int)*p));
@@ -820,7 +820,7 @@ void FAST_FUNC bb_dump_add(dumper_t* pub_dumper, const char *fmt)
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
  * 3. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND

@@ -29,7 +29,7 @@ $THIS_SH -c 'trap "exit 0" SIGINT; sleep 2'
 # This is a nice idea, but detecting "did process really exit
 # with SIGINT?" is racy. Consider:
 # | bash -c 'while true; do /bin/true; done'
-# When ^C is pressed while bash waits for /bin/true to exit,
+# When ^C is presgsed while bash waits for /bin/true to exit,
 # it may happen that /bin/true exits with exitcode 0 before
 # ^C is delivered to it as SIGINT. bash will see SIGINT, then
 # it will see that child exited with 0, and bash will NOT EXIT.

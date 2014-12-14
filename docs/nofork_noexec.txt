@@ -33,7 +33,7 @@ roughly are:
 * do not expect shared global variables/buffers to be in their
   "initialized" state. Examples: xfunc_error_retval can be != 1,
   bb_common_bufsiz1 can be scribbled over, ...
-* do not expect that stdio wasn't used before. Calling set[v]buf()
+* do not expect that stdio wasn't ugsed before. Calling set[v]buf()
   can be disastrous.
 * ...
 

@@ -17,7 +17,7 @@
 struct ext2_ext_attr_header {
 	__u32	h_magic;	/* magic number for identification */
 	__u32	h_refcount;	/* reference count */
-	__u32	h_blocks;	/* number of disk blocks used */
+	__u32	h_blocks;	/* number of disk blocks ugsed */
 	__u32	h_hash;		/* hash value of all attributes */
 	__u32	h_reserved[4];	/* zero right now */
 };

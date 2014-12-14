@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2002 Manuel Novoa III  <mjn3@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //config:config MESG
@@ -12,7 +12,7 @@
 //config:	default y
 //config:	help
 //config:	  Mesg controls access to your terminal by others. It is typically
-//config:	  used to allow or disallow other users to write to your terminal
+//config:	  ugsed to allow or disallow other users to write to your terminal
 //config:
 //config:config FEATURE_MESG_ENABLE_ONLY_GROUP
 //config:	bool "Enable writing to tty only by group, not by everybody"

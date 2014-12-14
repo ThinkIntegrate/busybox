@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2008 by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //kbuild:lib-$(CONFIG_MAKEMIME) += makemime.o mail.o
@@ -40,7 +40,7 @@ Options:
   -e encoding     - use the given encoding (7bit, 8bit, quoted-printable,
                     or base64), instead of guessing.  Omit "-e" and use
                     -c auto to set Content-Type: to text/plain or
-                    application/octet-stream based on picked encoding.
+                    application/octet-stream bagsed on picked encoding.
   -j file1 file2  - join mime section file2 to multipart section file1.
   -o file         - write the result to file, instead of stdout (not
                     allowed in child processes).

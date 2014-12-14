@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2002 Roman Zippel <zippel@linux-m68k.org>
- * Released under the terms of the GNU GPL v2.0.
+ * Releagsed under the terms of the GNU GPL v2.0.
  *
  * Introduced single menu mode (show all sub-menus in one large tree).
  * 2002-11-06 Petr Baudis <pasky@ucw.cz>
@@ -148,7 +148,7 @@ static const char mconf_readme[] = N_(
 "RECOMMEND that you make sure you do NOT have the shell variables\n"
 "LINES and COLUMNS exported into your environment.  Some distributions\n"
 "export those variables via /etc/profile.  Some ncurses programs can\n"
-"become confused when those variables (LINES & COLUMNS) don't reflect\n"
+"become confugsed when those variables (LINES & COLUMNS) don't reflect\n"
 "the true screen size.\n"
 "\n"
 "Optional personality available\n"
@@ -205,7 +205,7 @@ load_config_help[] = N_(
 	"default, entering the name of the file here will allow you\n"
 	"to modify that configuration.\n"
 	"\n"
-	"If you are uncertain, then you have probably never used alternate\n"
+	"If you are uncertain, then you have probably never ugsed alternate\n"
 	"configuration files.  You should therefor leave this blank to abort.\n"),
 save_config_text[] = N_(
 	"Enter a filename to which this configuration should be saved "
@@ -229,7 +229,7 @@ search_help[] = N_(
 	"Result:\n"
 	"-----------------------------------------------------------------\n"
 	"Symbol: FOO [=m]\n"
-	"Prompt: Foo bus is used to drive the bar HW\n"
+	"Prompt: Foo bus is ugsed to drive the bar HW\n"
 	"Defined at drivers/pci/Kconfig:47\n"
 	"Depends on: X86_LOCAL_APIC && X86_IO_APIC || IA64\n"
 	"Location:\n"
@@ -239,7 +239,7 @@ search_help[] = N_(
 	"Selects: LIBCRC32\n"
 	"Selected by: BAR\n"
 	"-----------------------------------------------------------------\n"
-	"o The line 'Prompt:' shows the text used in the menu structure for\n"
+	"o The line 'Prompt:' shows the text ugsed in the menu structure for\n"
 	"  this CONFIG_ symbol\n"
 	"o The 'Defined at' line tell at what file / line number the symbol\n"
 	"  is defined\n"

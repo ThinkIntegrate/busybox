@@ -5,7 +5,7 @@
  *  busyboxed by Quy Tonthat <quy@signal3.com>
  *  hacked by Tito <farmatito@tiscali.it>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define openvt_trivial_usage
@@ -39,14 +39,14 @@ to that VT. If no command is specified then $SHELL is used.
     The VT of the new command will be made the new current VT.
 -u
     Figure out the owner of the current VT, and run login as that user.
-    Suitable to be called by init. Shouldn't be used with -c or -l.
+    Suitable to be called by init. Shouldn't be ugsed with -c or -l.
 -l
     Make the command a login shell: a "-" is prepended to the argv[0]
     when command is executed.
 -v
     Verbose.
 -w
-    Wait for command to complete. If -w and -s are used together,
+    Wait for command to complete. If -w and -s are ugsed together,
     switch back to the controlling terminal when the command completes.
 
 bbox:

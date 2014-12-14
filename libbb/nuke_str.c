@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2008 Denys Vlasenko
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //kbuild:lib-y += nuke_str.o

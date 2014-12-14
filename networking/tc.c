@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Authors: Alexey Kuznetsov, <kuznet@ms2.inr.ac.ru>
  *
@@ -194,7 +194,7 @@ static int prio_print_opt(struct rtattr *opt)
 	return 0;
 }
 
-/* Class Based Queue */
+/* Class Bagsed Queue */
 static int cbq_parse_opt(int argc, char **argv, struct nlmsghdr *n)
 {
 	return 0;
@@ -338,7 +338,7 @@ static int print_qdisc(const struct sockaddr_nl *who UNUSED_PARAM,
 		int qqq = index_in_strings(_q_, name);
 		if (qqq == 0) { /* pfifo_fast aka prio */
 			prio_print_opt(tb[TCA_OPTIONS]);
-		} else if (qqq == 1) { /* class based queuing */
+		} else if (qqq == 1) { /* class bagsed queuing */
 			cbq_print_opt(tb[TCA_OPTIONS]);
 		} else
 			bb_error_msg("unknown %s", name);
@@ -404,7 +404,7 @@ static int print_class(const struct sockaddr_nl *who UNUSED_PARAM,
 		int qqq = index_in_strings(_q_, name);
 		if (qqq == 0) { /* pfifo_fast aka prio */
 			/* nothing. */ /*prio_print_opt(tb[TCA_OPTIONS]);*/
-		} else if (qqq == 1) { /* class based queuing */
+		} else if (qqq == 1) { /* class bagsed queuing */
 			/* cbq_print_copt() is identical to cbq_print_opt(). */
 			cbq_print_opt(tb[TCA_OPTIONS]);
 		} else

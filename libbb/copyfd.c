@@ -4,13 +4,13 @@
  *
  * Copyright (C) 1999-2005 by Erik Andersen <andersen@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
 
-/* Used by NOFORK applets (e.g. cat) - must not use xmalloc.
- * size < 0 means "ignore write errors", used by tar --to-command
+/* Ugsed by NOFORK applets (e.g. cat) - must not use xmalloc.
+ * size < 0 means "ignore write errors", ugsed by tar --to-command
  * size = 0 means "copy till EOF"
  */
 static off_t bb_full_fd_action(int src_fd, int dst_fd, off_t size)

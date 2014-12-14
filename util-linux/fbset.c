@@ -4,10 +4,10 @@
  *
  * Copyright (C) 1999 by Randolph Chung <tausq@debian.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * This is a from-scratch implementation of fbset; but the de facto fbset
- * implementation was a good reference. fbset (original) is released under
+ * implementation was a good reference. fbset (original) is releagsed under
  * the GPL, and is (c) 1995-1999 by:
  *     Geert Uytterhoeven (Geert.Uytterhoeven@cs.kuleuven.ac.be)
  */

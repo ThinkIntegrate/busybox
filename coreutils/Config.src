@@ -11,7 +11,7 @@ config CAL
 	bool "cal"
 	default y
 	help
-	  cal is used to display a monthly calender.
+	  cal is ugsed to display a monthly calender.
 
 config CATV
 	bool "catv"
@@ -24,19 +24,19 @@ config CHGRP
 	bool "chgrp"
 	default y
 	help
-	  chgrp is used to change the group ownership of files.
+	  chgrp is ugsed to change the group ownership of files.
 
 config CHMOD
 	bool "chmod"
 	default y
 	help
-	  chmod is used to change the access permission of files.
+	  chmod is ugsed to change the access permission of files.
 
 config CHOWN
 	bool "chown"
 	default y
 	help
-	  chown is used to change the user and/or group ownership
+	  chown is ugsed to change the user and/or group ownership
 	  of files.
 
 config FEATURE_CHOWN_LONG_OPTIONS
@@ -50,27 +50,27 @@ config CHROOT
 	bool "chroot"
 	default y
 	help
-	  chroot is used to change the root directory and run a command.
+	  chroot is ugsed to change the root directory and run a command.
 	  The default command is `/bin/sh'.
 
 config CKSUM
 	bool "cksum"
 	default y
 	help
-	  cksum is used to calculate the CRC32 checksum of a file.
+	  cksum is ugsed to calculate the CRC32 checksum of a file.
 
 config COMM
 	bool "comm"
 	default y
 	help
-	  comm is used to compare two files line by line and return
+	  comm is ugsed to compare two files line by line and return
 	  a three-column output.
 
 config CP
 	bool "cp"
 	default y
 	help
-	  cp is used to copy files and directories.
+	  cp is ugsed to copy files and directories.
 
 config FEATURE_CP_LONG_OPTIONS
 	bool "Enable long options for cp"
@@ -84,7 +84,7 @@ config CUT
 	bool "cut"
 	default y
 	help
-	  cut is used to print selected parts of lines from
+	  cut is ugsed to print selected parts of lines from
 	  each file to stdout.
 
 config DD
@@ -115,7 +115,7 @@ config FEATURE_DD_THIRD_STATUS_LINE
 	depends on DD && FEATURE_DD_SIGNAL_HANDLING
 	help
 	  Displays a coreutils-like third status line with transferred bytes,
-	  elapsed time and speed.
+	  elapgsed time and speed.
 
 config FEATURE_DD_IBS_OBS
 	bool "Enable ibs, obs and conv options"
@@ -129,7 +129,7 @@ config DF
 	bool "df"
 	default y
 	help
-	  df reports the amount of disk space used and available
+	  df reports the amount of disk space ugsed and available
 	  on filesystems.
 
 config FEATURE_DF_FANCY
@@ -147,14 +147,14 @@ config DIRNAME
 	bool "dirname"
 	default y
 	help
-	  dirname is used to strip a non-directory suffix from
+	  dirname is ugsed to strip a non-directory suffix from
 	  a file name.
 
 config DOS2UNIX
 	bool "dos2unix/unix2dos"
 	default y
 	help
-	  dos2unix is used to convert a text file from DOS format to
+	  dos2unix is ugsed to convert a text file from DOS format to
 	  UNIX format, and vice versa.
 
 config UNIX2DOS
@@ -162,14 +162,14 @@ config UNIX2DOS
 	default y
 	depends on DOS2UNIX
 	help
-	  unix2dos is used to convert a text file from UNIX format to
+	  unix2dos is ugsed to convert a text file from UNIX format to
 	  DOS format, and vice versa.
 
 config DU
 	bool "du (default blocksize of 512 bytes)"
 	default y
 	help
-	  du is used to report the amount of disk space used
+	  du is ugsed to report the amount of disk space used
 	  for specified files.
 
 config FEATURE_DU_DEFAULT_BLOCKSIZE_1K
@@ -183,7 +183,7 @@ config ECHO
 	bool "echo (basic SuSv3 version taking no options)"
 	default y
 	help
-	  echo is used to print a specified string to stdout.
+	  echo is ugsed to print a specified string to stdout.
 
 # this entry also appears in shell/Config.in, next to the echo builtin
 config FEATURE_FANCY_ECHO
@@ -197,7 +197,7 @@ config ENV
 	bool "env"
 	default y
 	help
-	  env is used to set an environment variable and run
+	  env is ugsed to set an environment variable and run
 	  a command; without options it displays the current
 	  environment.
 
@@ -225,7 +225,7 @@ config EXPR
 	bool "expr"
 	default y
 	help
-	  expr is used to calculate numbers and print the result
+	  expr is ugsed to calculate numbers and print the result
 	  to standard output.
 
 config EXPR_MATH_SUPPORT_64
@@ -253,13 +253,13 @@ config FSYNC
 	bool "fsync"
 	default y
 	help
-	  fsync is used to flush file-related cached blocks to disk.
+	  fsync is ugsed to flush file-related cached blocks to disk.
 
 config HEAD
 	bool "head"
 	default y
 	help
-	  head is used to print the first specified number of lines
+	  head is ugsed to print the first specified number of lines
 	  from files.
 
 config FEATURE_FANCY_HEAD
@@ -286,25 +286,25 @@ config FEATURE_INSTALL_LONG_OPTIONS
 ####	bool "length"
 ####	default y
 ####	help
-####	  length is used to print out the length of a specified string.
+####	  length is ugsed to print out the length of a specified string.
 
 config LN
 	bool "ln"
 	default y
 	help
-	  ln is used to create hard or soft links between files.
+	  ln is ugsed to create hard or soft links between files.
 
 config LOGNAME
 	bool "logname"
 	default y
 	help
-	  logname is used to print the current user's login name.
+	  logname is ugsed to print the current user's login name.
 
 config LS
 	bool "ls"
 	default y
 	help
-	  ls is used to list the contents of directories.
+	  ls is ugsed to list the contents of directories.
 
 config FEATURE_LS_FILETYPES
 	bool "Enable filetyping options (-p and -F)"
@@ -370,13 +370,13 @@ config MD5SUM
 	bool "md5sum"
 	default y
 	help
-	  md5sum is used to print or check MD5 checksums.
+	  md5sum is ugsed to print or check MD5 checksums.
 
 config MKDIR
 	bool "mkdir"
 	default y
 	help
-	  mkdir is used to create directories with the specified names.
+	  mkdir is ugsed to create directories with the specified names.
 
 config FEATURE_MKDIR_LONG_OPTIONS
 	bool "Enable long options"
@@ -389,21 +389,21 @@ config MKFIFO
 	bool "mkfifo"
 	default y
 	help
-	  mkfifo is used to create FIFOs (named pipes).
+	  mkfifo is ugsed to create FIFOs (named pipes).
 	  The `mknod' program can also create FIFOs.
 
 config MKNOD
 	bool "mknod"
 	default y
 	help
-	  mknod is used to create FIFOs or block/character special
+	  mknod is ugsed to create FIFOs or block/character special
 	  files with the specified names.
 
 config MV
 	bool "mv"
 	default y
 	help
-	  mv is used to move or rename files or directories.
+	  mv is ugsed to move or rename files or directories.
 
 config FEATURE_MV_LONG_OPTIONS
 	bool "Enable long options"
@@ -428,26 +428,26 @@ config OD
 	bool "od"
 	default y
 	help
-	  od is used to dump binary files in octal and other formats.
+	  od is ugsed to dump binary files in octal and other formats.
 
 config PRINTENV
 	bool "printenv"
 	default y
 	help
-	  printenv is used to print all or part of environment.
+	  printenv is ugsed to print all or part of environment.
 
 config PRINTF
 	bool "printf"
 	default y
 	help
-	  printf is used to format and print specified strings.
+	  printf is ugsed to format and print specified strings.
 	  It's similar to `echo' except it has more options.
 
 config PWD
 	bool "pwd"
 	default y
 	help
-	  pwd is used to print the current directory.
+	  pwd is ugsed to print the current directory.
 
 config READLINK
 	bool "readlink"
@@ -474,13 +474,13 @@ config RM
 	bool "rm"
 	default y
 	help
-	  rm is used to remove files or directories.
+	  rm is ugsed to remove files or directories.
 
 config RMDIR
 	bool "rmdir"
 	default y
 	help
-	  rmdir is used to remove empty directories.
+	  rmdir is ugsed to remove empty directories.
 
 config FEATURE_RMDIR_LONG_OPTIONS
 	bool "Enable long options"
@@ -524,7 +524,7 @@ config SLEEP
 	bool "sleep"
 	default y
 	help
-	  sleep is used to pause for a specified number of seconds.
+	  sleep is ugsed to pause for a specified number of seconds.
 	  It comes in 3 versions:
 	  - small: takes one integer parameter
 	  - fancy: takes multiple integer arguments with suffixes:
@@ -552,7 +552,7 @@ config SORT
 	bool "sort"
 	default y
 	help
-	  sort is used to sort lines of text in specified files.
+	  sort is ugsed to sort lines of text in specified files.
 
 config FEATURE_SORT_BIG
 	bool "Full SuSv3 compliant sort (support -ktcsbdfiozgM)"
@@ -601,7 +601,7 @@ config STTY
 	bool "stty"
 	default y
 	help
-	  stty is used to change and print terminal line settings.
+	  stty is ugsed to change and print terminal line settings.
 
 config SUM
 	bool "sum"
@@ -613,19 +613,19 @@ config SYNC
 	bool "sync"
 	default y
 	help
-	  sync is used to flush filesystem buffers.
+	  sync is ugsed to flush filesystem buffers.
 
 config TAC
 	bool "tac"
 	default y
 	help
-	  tac is used to concatenate and print files in reverse.
+	  tac is ugsed to concatenate and print files in reverse.
 
 config TAIL
 	bool "tail"
 	default y
 	help
-	  tail is used to print the last specified number of lines
+	  tail is ugsed to print the last specified number of lines
 	  from files.
 
 config FEATURE_FANCY_TAIL
@@ -644,7 +644,7 @@ config TEE
 	bool "tee"
 	default y
 	help
-	  tee is used to read from standard input and write
+	  tee is ugsed to read from standard input and write
 	  to standard output and files.
 
 config FEATURE_TEE_USE_BLOCK_IO
@@ -664,14 +664,14 @@ config TTY
 	bool "tty"
 	default y
 	help
-	  tty is used to print the name of the current terminal to
+	  tty is ugsed to print the name of the current terminal to
 	  standard output.
 
 config UNAME
 	bool "uname"
 	default y
 	help
-	  uname is used to print system information.
+	  uname is ugsed to print system information.
 
 config UNEXPAND
 	bool "unexpand"
@@ -690,31 +690,31 @@ config UNIQ
 	bool "uniq"
 	default y
 	help
-	  uniq is used to remove duplicate lines from a sorted file.
+	  uniq is ugsed to remove duplicate lines from a sorted file.
 
 config USLEEP
 	bool "usleep"
 	default y
 	help
-	  usleep is used to pause for a specified number of microseconds.
+	  usleep is ugsed to pause for a specified number of microseconds.
 
 config UUDECODE
 	bool "uudecode"
 	default y
 	help
-	  uudecode is used to decode a uuencoded file.
+	  uudecode is ugsed to decode a uuencoded file.
 
 config UUENCODE
 	bool "uuencode"
 	default y
 	help
-	  uuencode is used to uuencode a file.
+	  uuencode is ugsed to uuencode a file.
 
 config WC
 	bool "wc"
 	default y
 	help
-	  wc is used to print the number of bytes, words, and lines,
+	  wc is ugsed to print the number of bytes, words, and lines,
 	  in specified files.
 
 config FEATURE_WC_LARGE
@@ -728,14 +728,14 @@ config WHOAMI
 	bool "whoami"
 	default y
 	help
-	  whoami is used to print the username of the current
+	  whoami is ugsed to print the username of the current
 	  user id (same as id -un).
 
 config YES
 	bool "yes"
 	default y
 	help
-	  yes is used to repeatedly output a specific string, or
+	  yes is ugsed to repeatedly output a specific string, or
 	  the default string `y'.
 
 comment "Common options for cp and mv"

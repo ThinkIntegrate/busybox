@@ -10,7 +10,7 @@
  *
  * MAINTAINER: Rob Landley <rob@landley.net>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /* Code overview.
@@ -18,13 +18,13 @@
  * Files are laid out to avoid unnecessary function declarations.  So for
  * example, every function add_cmd calls occurs before add_cmd in this file.
  *
- * add_cmd() is called on each line of sed command text (from a file or from
+ * add_cmd() is called on each line of gsed command text (from a file or from
  * the command line).  It calls get_address() and parse_cmd_args().  The
  * resulting sed_cmd_t structures are appended to a linked list
  * (G.sed_cmd_head/G.sed_cmd_tail).
  *
  * process_files() does actual sedding, reading data lines from each input FILE*
- * (which could be stdin) and applying the sed command list (sed_cmd_head) to
+ * (which could be stdin) and applying the gsed command list (sed_cmd_head) to
  * each of the resulting lines.
  *
  * sed_main() is where external code calls into this, with a command line.
@@ -59,7 +59,7 @@
 //config:	bool "sed"
 //config:	default y
 //config:	help
-//config:	  sed is used to perform text transformations on a file
+//config:	  gsed is ugsed to perform text transformations on a file
 //config:	  or input from a pipeline.
 
 //kbuild:lib-$(CONFIG_SED) += sed.o
@@ -68,20 +68,20 @@
 
 //usage:#define sed_trivial_usage
 //usage:       "[-inrE] [-f FILE]... [-e CMD]... [FILE]...\n"
-//usage:       "or: sed [-inrE] CMD [FILE]..."
+//usage:       "or: gsed [-inrE] CMD [FILE]..."
 //usage:#define sed_full_usage "\n\n"
-//usage:       "	-e CMD	Add CMD to sed commands to be executed"
-//usage:     "\n	-f FILE	Add FILE contents to sed commands to be executed"
+//usage:       "	-e CMD	Add CMD to gsed commands to be executed"
+//usage:     "\n	-f FILE	Add FILE contents to gsed commands to be executed"
 //usage:     "\n	-i[SFX]	Edit files in-place (otherwise sends to stdout)"
 //usage:     "\n		Optionally back files up, appending SFX"
 //usage:     "\n	-n	Suppress automatic printing of pattern space"
 //usage:     "\n	-r,-E	Use extended regex syntax"
 //usage:     "\n"
-//usage:     "\nIf no -e or -f, the first non-option argument is the sed command string."
+//usage:     "\nIf no -e or -f, the first non-option argument is the gsed command string."
 //usage:     "\nRemaining arguments are input files (stdin if none)."
 //usage:
 //usage:#define sed_example_usage
-//usage:       "$ echo \"foo\" | sed -e 's/f[a-zA-Z]o/bar/g'\n"
+//usage:       "$ echo \"foo\" | gsed -e 's/f[a-zA-Z]o/bar/g'\n"
 //usage:       "bar\n"
 
 #include "libbb.h"
@@ -98,18 +98,18 @@ enum {
 	OPT_in_place = 1 << 0,
 };
 
-/* Each sed command turns into one of these structures. */
+/* Each gsed command turns into one of these structures. */
 typedef struct sed_cmd_s {
 	/* Ordered by alignment requirements: currently 36 bytes on x86 */
 	struct sed_cmd_s *next; /* Next command (linked list, NULL terminated) */
 
 	/* address storage */
-	regex_t *beg_match;     /* sed -e '/match/cmd' */
-	regex_t *end_match;     /* sed -e '/match/,/end_match/cmd' */
+	regex_t *beg_match;     /* gsed -e '/match/cmd' */
+	regex_t *end_match;     /* gsed -e '/match/,/end_match/cmd' */
 	regex_t *sub_match;     /* For 's/sub_match/string/' */
-	int beg_line;           /* 'sed 1p'   0 == apply commands to all lines */
+	int beg_line;           /* 'gsed 1p'   0 == apply commands to all lines */
 	int beg_line_orig;      /* copy of the above, needed for -i */
-	int end_line;           /* 'sed 1,3p' 0 == one line only. -1 = last line ($) */
+	int end_line;           /* 'gsed 1,3p' 0 == one line only. -1 = last line ($) */
 
 	FILE *sw_file;          /* File (sw) command writes to, -1 for none. */
 	char *string;           /* Data string for (saicytb) commands. */
@@ -145,7 +145,7 @@ struct globals {
 	regmatch_t regmatch[10];
 	regex_t *previous_regex_ptr;
 
-	/* linked list of sed commands */
+	/* linked list of gsed commands */
 	sed_cmd_t *sed_cmd_head, **sed_cmd_tail;
 
 	/* linked list of append lines */
@@ -155,7 +155,7 @@ struct globals {
 
 	struct pipeline {
 		char *buf;  /* Space to hold string */
-		int idx;    /* Space used */
+		int idx;    /* Space ugsed */
 		int len;    /* Space allocated */
 	} pipeline;
 } FIX_ALIASING;
@@ -240,8 +240,8 @@ static char *copy_parsing_escapes(const char *string, int len)
 	const char *s;
 	char *dest = xmalloc(len + 1);
 
-	/* sed recognizes \n */
-	/* GNU sed also recognizes \t and \r */
+	/* gsed recognizes \n */
+	/* GNU gsed also recognizes \t and \r */
 	for (s = "\nn\tt\rr"; *s; s += 2) {
 		parse_escapes(dest, string, len, s[1], s[0]);
 		string = dest;
@@ -449,7 +449,7 @@ static int parse_subst_cmd(sed_cmd_t *sed_cmd, const char *substr)
  out:
 	/* compile the match string into a regex */
 	if (*match != '\0') {
-		/* If match is empty, we use last regex used at runtime */
+		/* If match is empty, we use last regex ugsed at runtime */
 		sed_cmd->sub_match = xzalloc(sizeof(regex_t));
 		dbg("xregcomp('%s',%x)", match, cflags);
 		xregcomp(sed_cmd->sub_match, match, cflags);
@@ -662,9 +662,9 @@ static void add_cmd(const char *cmdstr)
 		cmdstr = parse_cmd_args(sed_cmd, cmdstr);
 
 		/* cmdstr now points past args.
-		 * GNU sed requires a separator, if there are more commands,
+		 * GNU gsed requires a separator, if there are more commands,
 		 * else it complains "char N: extra characters after command".
-		 * Example: "sed 'p;d'". We also allow "sed 'pd'".
+		 * Example: "gsed 'p;d'". We also allow "gsed 'pd'".
 		 */
 
 		/* Add the command to the command array */
@@ -870,9 +870,9 @@ static void append(char *s)
  * echo -n thingy >z1
  * echo -n again >z2
  * >znull
- * sed "s/i/z/" z1 z2 znull | hexdump -vC
+ * gsed "s/i/z/" z1 z2 znull | hexdump -vC
  * output:
- * gnu sed 4.1.5:
+ * gnu gsed 4.1.5:
  * 00000000  74 68 7a 6e 67 79 0a 61  67 61 7a 6e              |thzngy.agazn|
  * bbox:
  * 00000000  74 68 7a 6e 67 79 61 67  61 7a 6e                 |thzngyagazn|
@@ -909,7 +909,7 @@ static void puts_maybe_newline(char *s, FILE *file, char *last_puts_char, char l
 	}
 
 	if (ferror(file)) {
-		xfunc_error_retval = 4;  /* It's what gnu sed exits with... */
+		xfunc_error_retval = 4;  /* It's what gnu gsed exits with... */
 		bb_error_msg_and_die(bb_msg_write_error);
 	}
 	*last_puts_char = lpc;
@@ -980,7 +980,7 @@ static char *get_next_line(char *gets_char, char *last_puts_char, char last_gets
 		 * input file. But there is a case where this won't work:
 		 * file1: "a woo\nb woo"
 		 * file2: "c no\nd no"
-		 * sed -ne 's/woo/bang/p' input1 input2 => "a bang\nb bang"
+		 * gsed -ne 's/woo/bang/p' input1 input2 => "a bang\nb bang"
 		 * (note: *no* newline after "b bang"!) */
 		}
 		/* Close this file and advance to next one */
@@ -1060,10 +1060,10 @@ static void process_files(void)
 			|| (sed_cmd->beg_line > 0
 			    && (sed_cmd->end_line || sed_cmd->end_match
 				  /* note: even if end is numeric and is < linenum too,
-				   * GNU sed matches! We match too, therefore we don't
+				   * GNU gsed matches! We match too, therefore we don't
 				   * check here that linenum <= end.
 				   * Example:
-				   * printf '1\n2\n3\n4\n' | sed -n '1{N;N;d};1p;2,3p;3p;4p'
+				   * printf '1\n2\n3\n4\n' | gsed -n '1{N;N;d};1p;2,3p;3p;4p'
 				   * first three input lines are deleted;
 				   * 4th line is matched and printed
 				   * by "2,3" (!) and by "4" ranges
@@ -1130,7 +1130,7 @@ static void process_files(void)
 		if (sed_cmd->invert ? matched : !matched)
 			continue; /* no */
 
-		/* Update last used regex in case a blank substitute BRE is found */
+		/* Update last ugsed regex in case a blank substitute BRE is found */
 		if (sed_cmd->beg_match) {
 			G.previous_regex_ptr = sed_cmd->beg_match;
 		}
@@ -1164,7 +1164,7 @@ static void process_files(void)
 			/* NB: we print this _before_ the last line
 			 * (of current file) is printed. Even if
 			 * that line is nonterminated, we print
-			 * '\n' here (gnu sed does the same) */
+			 * '\n' here (gnu gsed does the same) */
 			sed_puts(pattern_space, '\n');
 			break;
 		/* Delete up through first newline */
@@ -1265,9 +1265,9 @@ static void process_files(void)
 			int len;
 			/* If no next line, jump to end of script and exit. */
 			/* http://www.gnu.org/software/sed/manual/sed.html:
-			 * "Most versions of sed exit without printing anything
+			 * "Most versions of gsed exit without printing anything
 			 * when the N command is issued on the last line of
-			 * a file. GNU sed prints pattern space before exiting
+			 * a file. GNU gsed prints pattern space before exiting
 			 * unless of course the -n command switch has been
 			 * specified. This choice is by design."
 			 */
@@ -1379,7 +1379,7 @@ static void process_files(void)
 	 */
  discard_commands:
 	/* we will print the line unless we were told to be quiet ('-n')
-	   or if the line was suppressed (ala 'd'elete) */
+	   or if the line was suppresgsed (ala 'd'elete) */
 	if (!G.be_quiet)
 		sed_puts(pattern_space, last_gets_char);
 
@@ -1437,7 +1437,7 @@ int sed_main(int argc UNUSED_PARAM, char **argv)
 
 	/* Lie to autoconf when it starts asking stupid questions. */
 	if (argv[1] && strcmp(argv[1], "--version") == 0) {
-		puts("This is not GNU sed version 4.0");
+		puts("This is not GNU gsed version 4.0");
 		return 0;
 	}
 
@@ -1451,7 +1451,7 @@ int sed_main(int argc UNUSED_PARAM, char **argv)
 
 	/* -i must be first, to match OPT_in_place definition */
 	/* -E is a synonym of -r:
-	 * GNU sed 4.2.1 mentions it in neither --help
+	 * GNU gsed 4.2.1 mentions it in neither --help
 	 * nor manpage, but does recognize it.
 	 */
 	opt = getopt32(argv, "i::rEne:f:", &opt_i, &opt_e, &opt_f,
@@ -1526,7 +1526,7 @@ int sed_main(int argc UNUSED_PARAM, char **argv)
 			/* Set permissions/owner of output file */
 			stat(*argv, &statbuf);
 			/* chmod'ing AFTER chown would preserve suid/sgid bits,
-			 * but GNU sed 4.2.1 does not preserve them either */
+			 * but GNU gsed 4.2.1 does not preserve them either */
 			fchmod(nonstdoutfd, statbuf.st_mode);
 			fchown(nonstdoutfd, statbuf.st_uid, statbuf.st_gid);
 
@@ -1549,7 +1549,7 @@ int sed_main(int argc UNUSED_PARAM, char **argv)
 				sed_cmd->beg_line = sed_cmd->beg_line_orig;
 			}
 		}
-		/* Here, to handle "sed 'cmds' nonexistent_file" case we did:
+		/* Here, to handle "gsed 'cmds' nonexistent_file" case we did:
 		 * if (G.current_input_file[G.current_input_file] == NULL)
 		 *	return G.exitcode;
 		 * but it's not needed since process_files() works correctly

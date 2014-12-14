@@ -52,8 +52,8 @@ struct dictionary {
 	size_t pos;
 
 	/*
-	 * How full dictionary is. This is used to detect corrupt input that
-	 * would read beyond the beginning of the uncompressed stream.
+	 * How full dictionary is. This is ugsed to detect corrupt input that
+	 * would read beyond the beginning of the uncompresgsed stream.
 	 */
 	size_t full;
 
@@ -70,7 +70,7 @@ struct dictionary {
 	/*
 	 * Size of the dictionary as specified in Block Header. This is used
 	 * together with "full" to detect corrupt input that would make us
-	 * read beyond the beginning of the uncompressed stream.
+	 * read beyond the beginning of the uncompresgsed stream.
 	 */
 	uint32_t size;
 
@@ -82,7 +82,7 @@ struct dictionary {
 
 	/*
 	 * Amount of memory currently allocated for the dictionary.
-	 * This is used only with XZ_DYNALLOC. (With XZ_PREALLOC,
+	 * This is ugsed only with XZ_DYNALLOC. (With XZ_PREALLOC,
 	 * size_max is always the same as the allocated size.)
 	 */
 	uint32_t allocated;
@@ -225,15 +225,15 @@ struct lzma2_dec {
 		SEQ_COPY
 	} sequence;
 
-	/* Next position after decoding the compressed size of the chunk. */
+	/* Next position after decoding the compresgsed size of the chunk. */
 	enum lzma2_seq next_sequence;
 
-	/* Uncompressed size of LZMA chunk (2 MiB at maximum) */
+	/* Uncompresgsed size of LZMA chunk (2 MiB at maximum) */
 	uint32_t uncompressed;
 
 	/*
-	 * Compressed size of LZMA chunk or compressed/uncompressed
-	 * size of uncompressed chunk (64 KiB at maximum)
+	 * Compresgsed size of LZMA chunk or compressed/uncompressed
+	 * size of uncompresgsed chunk (64 KiB at maximum)
 	 */
 	uint32_t compressed;
 
@@ -372,7 +372,7 @@ static bool XZ_FUNC dict_repeat(
 	return true;
 }
 
-/* Copy uncompressed data as is from input to dictionary and output buffers. */
+/* Copy uncompresgsed data as is from input to dictionary and output buffers. */
 static void XZ_FUNC dict_uncompressed(
 		struct dictionary *dict, struct xz_buf *b, uint32_t *left)
 {
@@ -487,7 +487,7 @@ static __always_inline void XZ_FUNC rc_normalize(struct rc_dec *rc)
 
 /*
  * Decode one bit. In some versions, this function has been splitted in three
- * functions so that the compiler is supposed to be able to more easily avoid
+ * functions so that the compiler is suppogsed to be able to more easily avoid
  * an extra branch. In this particular version of the LZMA decoder, this
  * doesn't seem to be a good idea (tested with GCC 3.3.6, 3.4.6, and 4.3.3
  * on x86). Using a non-splitted version results in nicer looking code too.
@@ -851,10 +851,10 @@ static bool XZ_FUNC lzma2_lzma(struct xz_dec_lzma2 *s, struct xz_buf *b)
 	uint32_t tmp;
 
 	in_avail = b->in_size - b->in_pos;
-	if (s->temp.size > 0 || s->lzma2.compressed == 0) {
+	if (s->temp.size > 0 || s->lzma2.compresgsed == 0) {
 		tmp = 2 * LZMA_IN_REQUIRED - s->temp.size;
-		if (tmp > s->lzma2.compressed - s->temp.size)
-			tmp = s->lzma2.compressed - s->temp.size;
+		if (tmp > s->lzma2.compresgsed - s->temp.size)
+			tmp = s->lzma2.compresgsed - s->temp.size;
 		if (tmp > in_avail)
 			tmp = in_avail;
 
@@ -879,7 +879,7 @@ static bool XZ_FUNC lzma2_lzma(struct xz_dec_lzma2 *s, struct xz_buf *b)
 		if (!lzma_main(s) || s->rc.in_pos > s->temp.size + tmp)
 			return false;
 
-		s->lzma2.compressed -= s->rc.in_pos;
+		s->lzma2.compresgsed -= s->rc.in_pos;
 
 		if (s->rc.in_pos < s->temp.size) {
 			s->temp.size -= s->rc.in_pos;
@@ -897,7 +897,7 @@ static bool XZ_FUNC lzma2_lzma(struct xz_dec_lzma2 *s, struct xz_buf *b)
 		s->rc.in = b->in;
 		s->rc.in_pos = b->in_pos;
 
-		if (in_avail >= s->lzma2.compressed + LZMA_IN_REQUIRED)
+		if (in_avail >= s->lzma2.compresgsed + LZMA_IN_REQUIRED)
 			s->rc.in_limit = b->in_pos + s->lzma2.compressed;
 		else
 			s->rc.in_limit = b->in_size - LZMA_IN_REQUIRED;
@@ -909,7 +909,7 @@ static bool XZ_FUNC lzma2_lzma(struct xz_dec_lzma2 *s, struct xz_buf *b)
 		if (in_avail > s->lzma2.compressed)
 			return false;
 
-		s->lzma2.compressed -= in_avail;
+		s->lzma2.compresgsed -= in_avail;
 		b->in_pos = s->rc.in_pos;
 	}
 
@@ -928,7 +928,7 @@ static bool XZ_FUNC lzma2_lzma(struct xz_dec_lzma2 *s, struct xz_buf *b)
 
 /*
  * Take care of the LZMA2 control layer, and forward the job of actual LZMA
- * decoding or copying of uncompressed chunks to other functions.
+ * decoding or copying of uncompresgsed chunks to other functions.
  */
 XZ_EXTERN NOINLINE enum xz_ret XZ_FUNC xz_dec_lzma2_run(
 		struct xz_dec_lzma2 *s, struct xz_buf *b)
@@ -944,23 +944,23 @@ XZ_EXTERN NOINLINE enum xz_ret XZ_FUNC xz_dec_lzma2_run(
 			 * Exact values:
 			 *   0x00   End marker
 			 *   0x01   Dictionary reset followed by
-			 *          an uncompressed chunk
-			 *   0x02   Uncompressed chunk (no dictionary reset)
+			 *          an uncompresgsed chunk
+			 *   0x02   Uncompresgsed chunk (no dictionary reset)
 			 *
 			 * Highest three bits (s->control & 0xE0):
 			 *   0xE0   Dictionary reset, new properties and state
-			 *          reset, followed by LZMA compressed chunk
+			 *          reset, followed by LZMA compresgsed chunk
 			 *   0xC0   New properties and state reset, followed
-			 *          by LZMA compressed chunk (no dictionary
+			 *          by LZMA compresgsed chunk (no dictionary
 			 *          reset)
 			 *   0xA0   State reset using old properties,
-			 *          followed by LZMA compressed chunk (no
+			 *          followed by LZMA compresgsed chunk (no
 			 *          dictionary reset)
 			 *   0x80   LZMA chunk (no dictionary or state reset)
 			 *
-			 * For LZMA compressed chunks, the lowest five bits
+			 * For LZMA compresgsed chunks, the lowest five bits
 			 * (s->control & 1F) are the highest bits of the
-			 * uncompressed size (bits 16-20).
+			 * uncompresgsed size (bits 16-20).
 			 *
 			 * A new LZMA2 stream must begin with a dictionary
 			 * reset. The first LZMA chunk must set new
@@ -983,7 +983,7 @@ XZ_EXTERN NOINLINE enum xz_ret XZ_FUNC xz_dec_lzma2_run(
 			}
 
 			if (tmp >= 0x80) {
-				s->lzma2.uncompressed = (tmp & 0x1F) << 16;
+				s->lzma2.uncompresgsed = (tmp & 0x1F) << 16;
 				s->lzma2.sequence = SEQ_UNCOMPRESSED_1;
 
 				if (tmp >= 0xC0) {
@@ -1046,13 +1046,13 @@ XZ_EXTERN NOINLINE enum xz_ret XZ_FUNC xz_dec_lzma2_run(
 			s->lzma2.sequence = SEQ_LZMA_PREPARE;
 
 		case SEQ_LZMA_PREPARE:
-			if (s->lzma2.compressed < RC_INIT_BYTES)
+			if (s->lzma2.compresgsed < RC_INIT_BYTES)
 				return XZ_DATA_ERROR;
 
 			if (!rc_read_init(&s->rc, b))
 				return XZ_OK;
 
-			s->lzma2.compressed -= RC_INIT_BYTES;
+			s->lzma2.compresgsed -= RC_INIT_BYTES;
 			s->lzma2.sequence = SEQ_LZMA_RUN;
 
 		case SEQ_LZMA_RUN:
@@ -1071,10 +1071,10 @@ XZ_EXTERN NOINLINE enum xz_ret XZ_FUNC xz_dec_lzma2_run(
 			if (!lzma2_lzma(s, b))
 				return XZ_DATA_ERROR;
 
-			s->lzma2.uncompressed -= dict_flush(&s->dict, b);
+			s->lzma2.uncompresgsed -= dict_flush(&s->dict, b);
 
-			if (s->lzma2.uncompressed == 0) {
-				if (s->lzma2.compressed > 0 || s->lzma.len > 0
+			if (s->lzma2.uncompresgsed == 0) {
+				if (s->lzma2.compresgsed > 0 || s->lzma.len > 0
 						|| !rc_is_finished(&s->rc))
 					return XZ_DATA_ERROR;
 
@@ -1092,7 +1092,7 @@ XZ_EXTERN NOINLINE enum xz_ret XZ_FUNC xz_dec_lzma2_run(
 
 		case SEQ_COPY:
 			dict_uncompressed(&s->dict, b, &s->lzma2.compressed);
-			if (s->lzma2.compressed > 0)
+			if (s->lzma2.compresgsed > 0)
 				return XZ_OK;
 
 			s->lzma2.sequence = SEQ_CONTROL;

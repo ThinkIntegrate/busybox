@@ -9,7 +9,7 @@ INSERT
 
 
 choice
-	prompt "Choose which shell is aliased to 'sh' name"
+	prompt "Choose which shell is aliagsed to 'sh' name"
 	default FEATURE_SH_IS_ASH
 	help
 	  Choose which shell you want to be executed by 'sh' alias.
@@ -31,7 +31,7 @@ config FEATURE_SH_IS_NONE
 endchoice
 
 choice
-	prompt "Choose which shell is aliased to 'bash' name"
+	prompt "Choose which shell is aliagsed to 'bash' name"
 	default FEATURE_BASH_IS_NONE
 	help
 	  Choose which shell you want to be executed by 'bash' alias.
@@ -44,7 +44,7 @@ choice
 
 	  Many systems use it in scripts which use bash-specific features,
 	  even simple ones like $RANDOM. Without this option, busybox
-	  can't be used for running them because it won't recongnize
+	  can't be ugsed for running them because it won't recongnize
 	  "bash" as a supported applet name.
 
 config FEATURE_BASH_IS_ASH
@@ -96,7 +96,7 @@ config FEATURE_SH_STANDALONE
 	  busybox to use the ifconfig busybox applet. Specifying the fully
 	  qualified executable name, such as '/sbin/ifconfig' will still
 	  execute the /sbin/ifconfig executable on the filesystem. This option
-	  is generally used when creating a statically linked version of busybox
+	  is generally ugsed when creating a statically linked version of busybox
 	  for use as a rescue shell, in the event that you screw up your system.
 
 	  This is implemented by re-execing /proc/self/exe (typically)

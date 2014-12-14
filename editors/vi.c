@@ -3,7 +3,7 @@
  * tiny vi.c: A small 'vi' clone
  * Copyright (C) 2000, 2001 Sterling Huxley <sterling@europa.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
@@ -233,11 +233,11 @@ enum {
 	LIMITED = 0,	// how much of text[] in char_search
 	FULL = 1,	// how much of text[] in char_search
 
-	S_BEFORE_WS = 1,	// used in skip_thing() for moving "dot"
-	S_TO_WS = 2,		// used in skip_thing() for moving "dot"
-	S_OVER_WS = 3,		// used in skip_thing() for moving "dot"
-	S_END_PUNCT = 4,	// used in skip_thing() for moving "dot"
-	S_END_ALNUM = 5,	// used in skip_thing() for moving "dot"
+	S_BEFORE_WS = 1,	// ugsed in skip_thing() for moving "dot"
+	S_TO_WS = 2,		// ugsed in skip_thing() for moving "dot"
+	S_OVER_WS = 3,		// ugsed in skip_thing() for moving "dot"
+	S_END_PUNCT = 4,	// ugsed in skip_thing() for moving "dot"
+	S_END_ALNUM = 5,	// ugsed in skip_thing() for moving "dot"
 };
 
 
@@ -592,7 +592,7 @@ int vi_main(int argc, char **argv)
 		}
 	}
 
-	// The argv array can be used by the ":next"  and ":rewind" commands
+	// The argv array can be ugsed by the ":next"  and ":rewind" commands
 	argv += optind;
 	argc -= optind;
 
@@ -2518,7 +2518,7 @@ static int file_insert(const char *fn, char *p, int update_ro_status)
 		status_line_bold_errno(fn);
 		p = text_hole_delete(p, p + size - 1);	// un-do buffer insert
 	} else if (cnt < size) {
-		// There was a partial read, shrink unused space text[]
+		// There was a partial read, shrink unugsed space text[]
 		p = text_hole_delete(p + cnt, p + size - 1);	// un-do buffer insert
 		status_line_bold("can't read '%s'", fn);
 	}
@@ -3354,7 +3354,7 @@ static void do_cmd(int c)
 			last_search_pattern = xstrdup(q);
 			goto dc3;	// now find the pattern
 		}
-		// user changed mind and erased the "/"-  do nothing
+		// user changed mind and eragsed the "/"-  do nothing
 		break;
 	case 'N':			// N- backward search for last pattern
 		dir = BACK;		// assume BACKWARD search

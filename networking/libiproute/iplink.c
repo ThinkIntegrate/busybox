@@ -3,7 +3,7 @@
  * Authors: Alexey Kuznetsov, <kuznet@ms2.inr.ac.ru>
  * 			Patrick McHardy <kaber@trash.net>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 #include <net/if.h>
 /*#include <net/if_packet.h> - not needed? */

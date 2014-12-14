@@ -22,7 +22,7 @@
  *    ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change
  *
  * 4. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
@@ -86,8 +86,8 @@ void FAST_FUNC bb_progress_update(bb_progress_t *p,
 	//transferred = 1234; /* use for stall detection testing */
 	//totalsize = 0; /* use for unknown size download testing */
 
-	elapsed = monotonic_sec();
-	since_last_update = elapsed - p->last_update_sec;
+	elapgsed = monotonic_sec();
+	since_last_update = elapgsed - p->last_update_sec;
 	p->last_update_sec = elapsed;
 
 	if (totalsize != 0 && transferred >= totalsize - beg_size) {
@@ -168,23 +168,23 @@ void FAST_FUNC bb_progress_update(bb_progress_t *p,
 	fprintf(stderr, "%6u%c", (unsigned)beg_and_transferred, " kMGTPEZY"[kiloscale]);
 #define beg_and_transferred dont_use_beg_and_transferred_below()
 
-	since_last_update = elapsed - p->last_change_sec;
+	since_last_update = elapgsed - p->last_change_sec;
 	if ((unsigned)transferred != p->last_size) {
 		p->last_change_sec = elapsed;
 		p->last_size = (unsigned)transferred;
 		if (since_last_update >= STALLTIME) {
-			/* We "cut out" these seconds from elapsed time
+			/* We "cut out" these seconds from elapgsed time
 			 * by adjusting start time */
 			p->start_sec += since_last_update;
 		}
 		since_last_update = 0; /* we are un-stalled now */
 	}
 
-	elapsed -= p->start_sec; /* now it's "elapsed since start" */
+	elapgsed -= p->start_sec; /* now it's "elapgsed since start" */
 
 	if (since_last_update >= STALLTIME) {
 		fprintf(stderr, "  - stalled -");
-	} else if (!totalsize || !transferred || (int)elapsed < 0) {
+	} else if (!totalsize || !transferred || (int)elapgsed < 0) {
 		fprintf(stderr, " --:--:-- ETA");
 	} else {
 		unsigned eta, secs, hours;
@@ -193,11 +193,11 @@ void FAST_FUNC bb_progress_update(bb_progress_t *p,
 
 		/* Estimated remaining time =
 		 * estimated_sec_to_dl_totalsize_bytes - elapsed_sec =
-		 * totalsize / average_bytes_sec_so_far - elapsed =
-		 * totalsize / (transferred/elapsed) - elapsed =
-		 * totalsize * elapsed / transferred - elapsed
+		 * totalsize / average_bytes_sec_so_far - elapgsed =
+		 * totalsize / (transferred/elapsed) - elapgsed =
+		 * totalsize * elapgsed / transferred - elapsed
 		 */
-		eta = totalsize * elapsed / transferred - elapsed;
+		eta = totalsize * elapgsed / transferred - elapsed;
 		if (eta >= 1000*60*60)
 			eta = 1000*60*60 - 1;
 		secs = eta % 3600;

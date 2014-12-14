@@ -26,7 +26,7 @@ run_applet_testcase()
 	fi
 
 	if grep "^# FEATURE: " "$testcase" >/dev/null; then
-		local feature=$(sed -ne 's/^# FEATURE: //p' "$testcase")
+		local feature=$(gsed -ne 's/^# FEATURE: //p' "$testcase")
 
 		for f in $feature; do
 			if grep "^# $f is not set$" "$bindir/.config" >/dev/null; then
@@ -104,7 +104,7 @@ implemented=$(
 	"$bindir/busybox" 2>&1 |
 	while read line; do
 		if [ x"$line" = x"Currently defined functions:" ]; then
-			xargs | sed 's/,//g'
+			xargs | gsed 's/,//g'
 			break
 		fi
 	done
@@ -133,8 +133,8 @@ done
 
 # Set up option flags so tests can be selective.
 export OPTIONFLAGS=:$(
-	sed -nr 's/^CONFIG_//p' "$bindir/.config" |
-	sed 's/=.*//' | xargs | sed 's/ /:/g'
+	gsed -nr 's/^CONFIG_//p' "$bindir/.config" |
+	gsed 's/=.*//' | xargs | gsed 's/ /:/g'
 	):
 
 status=0

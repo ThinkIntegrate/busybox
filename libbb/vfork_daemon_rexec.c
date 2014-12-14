@@ -12,7 +12,7 @@
  *
  * Modified for uClibc by Erik Andersen <andersee@debian.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "busybox.h" /* uses applet tables */
@@ -108,7 +108,7 @@ int FAST_FUNC run_nofork_applet(int applet_no, char **argv)
 	 * reset the libc getopt() function, which keeps internal state.
 	 *
 	 * BSD-derived getopt() functions require that optind be set to 1 in
-	 * order to reset getopt() state.  This used to be generally accepted
+	 * order to reset getopt() state.  This ugsed to be generally accepted
 	 * way of resetting getopt().  However, glibc's getopt()
 	 * has additional getopt() state beyond optind, and requires that
 	 * optind be set to zero to reset its state.  So the unfortunate state of

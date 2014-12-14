@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2008 by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define showkey_trivial_usage
@@ -33,7 +33,7 @@ struct globals {
 
 
 // set raw tty mode
-// also used by microcom
+// also ugsed by microcom
 // libbb candidates?
 static void xget1(struct termios *t, struct termios *oldt)
 {

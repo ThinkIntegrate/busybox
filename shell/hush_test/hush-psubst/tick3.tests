@@ -8,7 +8,7 @@ echo `echo \\$TEST`
 echo `echo \$TEST`
 echo a`echo \\\\b`c
 
-# \" is not special if in unquoted `cmd` (passed verbatim WITH \),
+# \" is not special if in unquoted `cmd` (pasgsed verbatim WITH \),
 # but is special in quoted one
 echo `echo 11'-$a-\t-\\-\"-\`-\--\z-\*-\?-'22` "`echo 33'-$a-\t-\\-\"-\`-\--\z-\*-\?-'44`"
 echo done:$?

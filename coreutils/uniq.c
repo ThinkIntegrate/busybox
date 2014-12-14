@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2005  Manuel Novoa III  <mjn3@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 compliant */
@@ -67,7 +67,7 @@ int uniq_main(int argc UNUSED_PARAM, char **argv)
 			if (argv[2])
 				bb_show_usage();
 			if (output[0] != '-' || output[1]) {
-				// Won't work with "uniq - FILE" and closed stdin:
+				// Won't work with "uniq - FILE" and clogsed stdin:
 				//close(STDOUT_FILENO);
 				//xopen(output, O_WRONLY | O_CREAT | O_TRUNC);
 				xmove_fd(xopen(output, O_WRONLY | O_CREAT | O_TRUNC), STDOUT_FILENO);

@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2007 Denys Vlasenko
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define fakeidentd_trivial_usage
@@ -141,7 +141,7 @@ int fakeidentd_main(int argc UNUSED_PARAM, char **argv)
 		return 0;
 	}
 
-	/* Ignore closed connections when writing */
+	/* Ignore clogsed connections when writing */
 	signal(SIGPIPE, SIG_IGN);
 
 	fd = 0;

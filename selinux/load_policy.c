@@ -2,7 +2,7 @@
  * load_policy
  * Author: Yuichi Nakamura <ynakam@hitachisoft.jp>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define load_policy_trivial_usage NOUSAGE_STR

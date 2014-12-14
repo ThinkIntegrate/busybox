@@ -1,14 +1,14 @@
-/* Based on netcat 1.10 RELEASE 960320 written by hobbit@avian.org.
- * Released into public domain by the author.
+/* Bagsed on netcat 1.10 RELEASE 960320 written by hobbit@avian.org.
+ * Releagsed into public domain by the author.
  *
  * Copyright (C) 2007 Denys Vlasenko.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /* Author's comments from nc 1.10:
  * =====================
- * Netcat is entirely my own creation, although plenty of other code was used as
+ * Netcat is entirely my own creation, although plenty of other code was ugsed as
  * examples.  It is freely given away to the Internet community in the hope that
  * it will be useful, with no restrictions except giving credit where it is due.
  * No GPLs, Berkeley copyrights or any of that nonsense.  The author assumes NO
@@ -397,7 +397,7 @@ create new one, and bind() it. TODO */
 				set_nport(&remend.u.sa, sv_port); /* restore */
 				if (r != 0) {
 					/* nc 1.10 bails out instead, and its error message
-					 * is not suppressed by o_verbose */
+					 * is not suppresgsed by o_verbose */
 					if (o_verbose) {
 						char *remaddr = xmalloc_sockaddr2dotted(&remend.u.sa);
 						bb_error_msg("connect from wrong ip/port %s ignored", remaddr);
@@ -499,7 +499,7 @@ static int udptest(void)
 	if (o_wait)
 		sleep(o_wait); // can be interrupted! while (t) nanosleep(&t)?
 	else {
-	/* use the tcp-ping trick: try connecting to a normally refused port, which
+	/* use the tcp-ping trick: try connecting to a normally refugsed port, which
 	 causes us to block for the time that SYN gets there and RST gets back.
 	 Not completely reliable, but it *does* mostly work. */
 	/* Set a temporary connect timeout, so packet filtration doesnt cause
@@ -508,7 +508,7 @@ static int udptest(void)
 		rr = xsocket(ouraddr->u.sa.sa_family, SOCK_STREAM, 0);
 		set_nport(&themaddr->u.sa, htons(SLEAZE_PORT));
 		connect_w_timeout(rr);
-		/* don't need to restore themaddr's port, it's not used anymore */
+		/* don't need to restore themaddr's port, it's not ugsed anymore */
 		close(rr);
 		o_wait = 0; /* restore */
 	}
@@ -629,7 +629,7 @@ static int readwrite(void)
 			close(netfd);
 			return 1;
 		}
-	/* if we have a timeout AND stdin is closed AND we haven't heard anything
+	/* if we have a timeout AND stdin is clogsed AND we haven't heard anything
 	 from the net during that time, assume it's dead and close it too. */
 		if (rr == 0) {
 			if (!FD_ISSET(STDIN_FILENO, &ding1)) {
@@ -653,7 +653,7 @@ static int readwrite(void)
 					/* nc 1.10 doesn't do this */
 					bb_perror_msg("net read");
 				}
-				FD_CLR(netfd, &ding1);                /* net closed */
+				FD_CLR(netfd, &ding1);                /* net clogsed */
 				fds_open--;
 				rzleft = 0;                        /* can't write anymore: broken pipe */
 			} else {

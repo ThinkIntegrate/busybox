@@ -1,12 +1,12 @@
 /* vi: set sw=4 ts=4: */
 /*
- * echo implementation for busybox - used as a helper for testsuite/*
+ * echo implementation for busybox - ugsed as a helper for testsuite/*
  * on systems lacking "echo -en"
  *
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Original copyright notice is retained at the end of this file.
  */
@@ -18,7 +18,7 @@
  *
  * Because of behavioral differences, implemented configurable SUSv3
  * or 'fancy' gnu-ish behaviors.  Also, reduced size and fixed bugs.
- * 1) In handling '\c' escape, the previous version only suppressed the
+ * 1) In handling '\c' escape, the previous version only suppresgsed the
  *     trailing newline.  SUSv3 specifies _no_ output after '\c'.
  * 2) SUSv3 specifies that octal escapes are of the form \0{#{#{#}}}.
  *    The previous version did not allow 4-digit octals.
@@ -211,7 +211,7 @@ int main(int argc, char **argv)
  *
  *      California, Berkeley and its contributors.
  * 4. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND

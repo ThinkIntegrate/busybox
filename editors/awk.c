@@ -4,14 +4,14 @@
  *
  * Copyright (C) 2002 by Dmitry Zakharov <dmit@crp.bank.gov.ua>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //config:config AWK
 //config:	bool "awk"
 //config:	default y
 //config:	help
-//config:	  Awk is used as a pattern scanning and processing language. This is
+//config:	  Awk is ugsed as a pattern scanning and processing language. This is
 //config:	  the BusyBox implementation of that programming language.
 //config:
 //config:config FEATURE_AWK_LIBM
@@ -481,7 +481,7 @@ struct globals {
 	const char *g_progname;
 	int g_lineno;
 	int nfields;
-	int maxfields; /* used in fsrealloc() only */
+	int maxfields; /* ugsed in fsrealloc() only */
 	var *Fields;
 	nvblock *g_cb;
 	char *g_pos;
@@ -494,12 +494,12 @@ struct globals {
 	smallint t_rollback;
 };
 struct globals2 {
-	uint32_t t_info; /* often used */
+	uint32_t t_info; /* often ugsed */
 	uint32_t t_tclass;
 	char *t_string;
 	int t_lineno;
 
-	var *intvar[NUM_INTERNAL_VARS]; /* often used */
+	var *intvar[NUM_INTERNAL_VARS]; /* often ugsed */
 
 	/* former statics from various functions */
 	char *split_f0__fstrings;
@@ -520,7 +520,7 @@ struct globals2 {
 
 	tsplitter exec_builtin__tspl;
 
-	/* biggest and least used members go last */
+	/* biggest and least ugsed members go last */
 	tsplitter fsplitter, rsplitter;
 };
 #define G1 (ptr_to_globals[-1])
@@ -922,7 +922,7 @@ static double getvar_i(var *v)
 	return v->number;
 }
 
-/* Used for operands of bitwise ops */
+/* Ugsed for operands of bitwise ops */
 static unsigned long getvar_i_int(var *v)
 {
 	double d = getvar_i(v);
@@ -1670,7 +1670,7 @@ static regex_t *as_regex(node *op, regex_t *preg)
 	/* Testcase where REG_EXTENDED fails (unpaired '{'):
 	 * echo Hi | awk 'gsub("@(samp|code|file)\{","");'
 	 * gawk 3.1.5 eats this. We revert to ~REG_EXTENDED
-	 * (maybe gsub is not supposed to use REG_EXTENDED?).
+	 * (maybe gsub is not suppogsed to use REG_EXTENDED?).
 	 */
 	if (regcomp(preg, s, cflags)) {
 		cflags &= ~REG_EXTENDED;
@@ -2546,11 +2546,11 @@ static var *evaluate(node *op, var *res)
 			}
 			break;
 
-		/* just evaluate an expression, also used as unconditional jump */
+		/* just evaluate an expression, also ugsed as unconditional jump */
 		case XC( OC_EXEC ):
 			break;
 
-		/* branch, used in if-else and various loops */
+		/* branch, ugsed in if-else and various loops */
 		case XC( OC_BR ):
 			op = istrue(L.v) ? op->a.n : op->r.n;
 			break;

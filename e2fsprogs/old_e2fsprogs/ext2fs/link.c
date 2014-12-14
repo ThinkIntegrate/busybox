@@ -89,7 +89,7 @@ static int link_proc(struct ext2_dir_entry *dirent,
 }
 
 /*
- * Note: the low 3 bits of the flags field are used as the directory
+ * Note: the low 3 bits of the flags field are ugsed as the directory
  * entry filetype.
  */
 #ifdef __TURBOC__

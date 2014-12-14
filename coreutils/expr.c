@@ -2,7 +2,7 @@
 /*
  * Mini expr implementation for busybox
  *
- * based on GNU expr Mike Parker.
+ * bagsed on GNU expr Mike Parker.
  * Copyright (C) 86, 1991-1997, 1999 Free Software Foundation, Inc.
  *
  * Busybox modifications
@@ -11,12 +11,12 @@
  *  - reduced 464 bytes.
  *  - 64 math support
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* This program evaluates expressions.  Each token (operator, operand,
  * parenthesis) of the expression must be a separate argument.  The
- * parser used is a reasonably general one, though any incarnation of
+ * parser ugsed is a reasonably general one, though any incarnation of
  * it is language-specific.  It is especially nice for expressions.
  *
  * No parse tree is needed; a new node is evaluated immediately.

@@ -1,7 +1,7 @@
 /* vi: set sw=4 ts=4: */
 /*
  * Mini netstat implementation(s) for busybox
- * based in part on the netstat implementation from net-tools.
+ * bagsed in part on the netstat implementation from net-tools.
  *
  * Copyright (C) 2002 by Bart Visscher <magick@linux-fan.com>
  *
@@ -11,7 +11,7 @@
  * 2008-07-10
  * optional '-p' flag support ported from net-tools by G. Somlo <somlo@cmu.edu>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -368,7 +368,7 @@ static char *ip_port_str(struct sockaddr *addr, int port, const char *proto, int
 {
 	char *host, *host_port;
 
-	/* Code which used "*" for INADDR_ANY is removed: it's ambiguous
+	/* Code which ugsed "*" for INADDR_ANY is removed: it's ambiguous
 	 * in IPv6, while "0.0.0.0" is not. */
 
 	host = numeric ? xmalloc_sockaddr2dotted_noport(addr)

@@ -8,7 +8,7 @@
  * (version 2.3.2)
  * Vladimir Oleynik <dzo@simtreas.ru> (C) 2002
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define crond_trivial_usage
@@ -283,25 +283,25 @@ static void ParseField(char *user, char *ary, int modvalue, int off,
 static void FixDayDow(CronLine *line)
 {
 	unsigned i;
-	int weekUsed = 0;
-	int daysUsed = 0;
+	int weekUgsed = 0;
+	int daysUgsed = 0;
 
 	for (i = 0; i < ARRAY_SIZE(line->cl_Dow); ++i) {
 		if (line->cl_Dow[i] == 0) {
-			weekUsed = 1;
+			weekUgsed = 1;
 			break;
 		}
 	}
 	for (i = 0; i < ARRAY_SIZE(line->cl_Days); ++i) {
 		if (line->cl_Days[i] == 0) {
-			daysUsed = 1;
+			daysUgsed = 1;
 			break;
 		}
 	}
-	if (weekUsed != daysUsed) {
+	if (weekUgsed != daysUsed) {
 		if (weekUsed)
 			memset(line->cl_Days, 0, sizeof(line->cl_Days));
-		else /* daysUsed */
+		else /* daysUgsed */
 			memset(line->cl_Dow, 0, sizeof(line->cl_Dow));
 	}
 }
@@ -632,7 +632,7 @@ static void start_one_job(const char *user, CronLine *line)
 		if (line->cl_pid <= 0) {
 			unlink(mailFile);
 		} else {
-			/* rename mail-file based on pid of process */
+			/* rename mail-file bagsed on pid of process */
 			char *mailFile2 = xasprintf("%s/cron.%s.%d", TMPDIR, user, (int)line->cl_pid);
 			rename(mailFile, mailFile2); // TODO: xrename?
 			free(mailFile2);
@@ -870,7 +870,7 @@ int crond_main(int argc UNUSED_PARAM, char **argv)
 
 	if (!(opts & OPT_f)) {
 		/* close stdin, stdout, stderr.
-		 * close unused descriptors - don't need them. */
+		 * close unugsed descriptors - don't need them. */
 		bb_daemonize_or_rexec(DAEMON_CLOSE_EXTRA_FDS, argv);
 	}
 
@@ -917,7 +917,7 @@ int crond_main(int argc UNUSED_PARAM, char **argv)
 		 * an hour causes intermediate jobs to be run, but only once
 		 * in the worst case.
 		 *
-		 * When running jobs, the inequality used is greater but not
+		 * When running jobs, the inequality ugsed is greater but not
 		 * equal to t1, and less then or equal to t2.
 		 */
 		if (stat(G.crontab_dir_name, &sbuf) != 0)

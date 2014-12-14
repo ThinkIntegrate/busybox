@@ -16,7 +16,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
- * 3. The name of the author may not be used to endorse or promote
+ * 3. The name of the author may not be ugsed to endorse or promote
  *    products derived from this software without specific prior
  *    written permission.
  *
@@ -150,7 +150,7 @@ main(int argc, char **argv)
 		bb_putchar('\n');
 	}
 	if (type != 1) {
-		printf("Warning: not a time-based UUID, so UUID time "
+		printf("Warning: not a time-bagsed UUID, so UUID time "
 		       "decoding will likely not work!\n");
 	}
 	printf("UUID time is: (%ld, %ld): %s\n", tv.tv_sec, tv.tv_usec,

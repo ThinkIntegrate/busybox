@@ -62,7 +62,7 @@ echo Done;exit
 # UNFIXED BUG. bash apparently will expand $i even in terminating delimiter.
 # http://www.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html
 # does not mandate this behavior.
-# This is not likely to be used much in real-world.
+# This is not likely to be ugsed much in real-world.
 
 cat <<\shell_test_$i
 Here1

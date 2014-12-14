@@ -200,7 +200,7 @@ config LOGIN
 	default y
 	select FEATURE_SYSLOG
 	help
-	  login is used when signing onto a system.
+	  login is ugsed when signing onto a system.
 
 	  Note that Busybox binary must be setuid root for this applet to
 	  work properly.
@@ -236,7 +236,7 @@ config FEATURE_NOLOGIN
 	default y
 	depends on LOGIN
 	help
-	  The file /etc/nologin is used by (some versions of) login(1).
+	  The file /etc/nologin is ugsed by (some versions of) login(1).
 	  If it exists, non-root logins are prohibited.
 
 config FEATURE_SECURETTY
@@ -244,7 +244,7 @@ config FEATURE_SECURETTY
 	default y
 	depends on LOGIN
 	help
-	  The file /etc/securetty is used by (some versions of) login(1).
+	  The file /etc/securetty is ugsed by (some versions of) login(1).
 	  The file contains the device names of tty lines (one per line,
 	  without leading /dev/) on which root is allowed to login.
 
@@ -295,7 +295,7 @@ config SU
 	default y
 	select FEATURE_SYSLOG
 	help
-	  su is used to become another user during a login session.
+	  su is ugsed to become another user during a login session.
 	  Invoked without a username, su defaults to becoming the super user.
 
 	  Note that Busybox binary must be setuid root for this applet to

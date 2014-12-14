@@ -1,6 +1,6 @@
 /* mini man implementation for busybox
  * Copyright (C) 2008 Denys Vlasenko <vda.linux@googlemail.com>
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define man_trivial_usage
@@ -91,7 +91,7 @@ static int run_pipe(const char *pager, char *man_filename, int man, int level)
 		}
 
 		/* Links do not have .gz extensions, even if manpage
-		 * is compressed */
+		 * is compresgsed */
 		man_filename = xasprintf("%s/%s", man_filename, linkname);
 		free(line);
 		/* Note: we leak "new" man_filename string as well... */

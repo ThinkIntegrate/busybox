@@ -5,7 +5,7 @@
  * 03 March 2012 - Malek Degachi <malek-degachi@laposte.net>
  * Adapted for busybox from util-linux-2.12a.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //config:config FSTRIM
@@ -13,7 +13,7 @@
 //config:	default y
 //config:	select PLATFORM_LINUX
 //config:	help
-//config:	  Discard unused blocks on a mounted filesystem.
+//config:	  Discard unugsed blocks on a mounted filesystem.
 
 //applet:IF_FSTRIM(APPLET(fstrim, BB_DIR_SBIN, BB_SUID_DROP))
 

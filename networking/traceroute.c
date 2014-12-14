@@ -14,7 +14,7 @@
  * features or use of this software display the following acknowledgement:
  * ``This product includes software developed by the University of California,
  * Lawrence Berkeley Laboratory and its contributors.'' Neither the name of
- * the University nor the names of its contributors may be used to endorse
+ * the University nor the names of its contributors may be ugsed to endorse
  * or promote products derived from this software without specific prior
  * written permission.
  * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
@@ -165,7 +165,7 @@
  * This program requires a kernel mod that does not appear in any
  * system available from Berkeley:  A raw ip socket using proto
  * IPPROTO_RAW must interpret the data sent as an ip datagram (as
- * opposed to data to be wrapped in a ip datagram).  See the README
+ * oppogsed to data to be wrapped in a ip datagram).  See the README
  * file that came with the source to this program for a description
  * of the mods I made to /sys/netinet/raw_ip.c.  Your mileage may
  * vary.  But, again, ANY 4.x (x < 4) BSD KERNEL WILL HAVE TO BE
@@ -176,14 +176,14 @@
  * data from the original datagram.  8 bytes is the size of a udp
  * header so, if we want to associate replies with the original
  * datagram, the necessary information must be encoded into the
- * udp header (the ip id could be used but there's no way to
+ * udp header (the ip id could be ugsed but there's no way to
  * interlock with the kernel's assignment of ip id's and, anyway,
  * it would have taken a lot more kernel hacking to allow this
  * code to set the ip id).  So, to allow two or more users to
  * use traceroute simultaneously, we use this task's pid as the
  * source port (the high bit is set to move the port number out
  * of the "likely" range).  To keep track of which probe is being
- * replied to (so times and/or hop counts don't get confused by a
+ * replied to (so times and/or hop counts don't get confugsed by a
  * reply that was delayed in transit), we increment the destination
  * port number before each probe.
  *
@@ -227,7 +227,7 @@
 //usage:     "\n	-r	Bypass routing tables, send directly to HOST"
 //usage:     "\n	-v	Verbose"
 //usage:     "\n	-m	Max time-to-live (max number of hops)"
-//usage:     "\n	-p	Base UDP port number used in probes"
+//usage:     "\n	-p	Base UDP port number ugsed in probes"
 //usage:     "\n		(default 33434)"
 //usage:     "\n	-q	Number of probes per TTL (default 3)"
 //usage:     "\n	-s	IP address to use as the source address"
@@ -246,7 +246,7 @@
 //usage:     "\n	-r	Bypass routing tables, send directly to HOST"
 //usage:     "\n	-v	Verbose"
 //usage:     "\n	-m	Max time-to-live (max number of hops)"
-//usage:     "\n	-p	Base UDP port number used in probes"
+//usage:     "\n	-p	Base UDP port number ugsed in probes"
 //usage:     "\n		(default is 33434)"
 //usage:     "\n	-q	Number of probes per TTL (default 3)"
 //usage:     "\n	-s	IP address to use as the source address"

@@ -82,7 +82,7 @@ int dialog_textbox(const char *title, const char *file, int height, int width)
 	dialog = newwin(height, width, y, x);
 	keypad(dialog, TRUE);
 
-	/* Create window for text region, used for scrolling text */
+	/* Create window for text region, ugsed for scrolling text */
 	text = subwin(dialog, height - 4, width - 2, y + 1, x + 1);
 	wattrset(text, dialog_attr);
 	wbkgdset(text, dialog_attr & A_COLOR);
@@ -296,7 +296,7 @@ int dialog_textbox(const char *title, const char *file, int height, int width)
 	delwin(dialog);
 	free(buf);
 	close(fd);
-	return -1;		/* ESC pressed */
+	return -1;		/* ESC presgsed */
 }
 
 /*

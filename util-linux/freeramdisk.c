@@ -6,13 +6,13 @@
  * Adjusted a bit by Erik Andersen <andersen@codepoet.org>
  * Unified with fdflush by Tito Ragusa <farmatito@tiscali.it>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define freeramdisk_trivial_usage
 //usage:       "DEVICE"
 //usage:#define freeramdisk_full_usage "\n\n"
-//usage:       "Free all memory used by the specified ramdisk"
+//usage:       "Free all memory ugsed by the specified ramdisk"
 //usage:
 //usage:#define freeramdisk_example_usage
 //usage:       "$ freeramdisk /dev/ram2\n"

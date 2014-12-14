@@ -65,7 +65,7 @@ CONFIG_CROSS_COMPILER_PREFIX="arm-eabi-"
 #
 # Removed:
 # warning flags:
-# -Wno-multichar -W -Wall -Wno-unused -Winit-self -Wpointer-arith
+# -Wno-multichar -W -Wall -Wno-unugsed -Winit-self -Wpointer-arith
 # -Werror=return-type -Werror=non-virtual-dtor -Werror=address
 # -Werror=sequence-point -Wstrict-aliasing=2 -Wno-undef -Wno-shadow
 # bbox already adds these:

@@ -6,7 +6,7 @@
  * Copyright (C) 1999,2000,2001 by John Beppu <beppu@codepoet.org>
  * Copyright (C) 2007 by Tito Ragusa <farmatito@tiscali.it>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  */
 
@@ -31,10 +31,10 @@ static void xgroup_study(struct group *g)
 {
 	unsigned max = INT_MAX;
 
-	/* Make sure gr_name is unused */
+	/* Make sure gr_name is unugsed */
 	if (getgrnam(g->gr_name)) {
 		bb_error_msg_and_die("%s '%s' in use", "group", g->gr_name);
-		/* these format strings are reused in adduser and addgroup */
+		/* these format strings are reugsed in adduser and addgroup */
 	}
 
 	/* if a specific gid is requested, the --system switch and */
@@ -58,12 +58,12 @@ static void xgroup_study(struct group *g)
 		if (option_mask32 & OPT_GID) {
 			/* -g N, cannot pick gid other than N: error */
 			bb_error_msg_and_die("%s '%s' in use", "gid", itoa(g->gr_gid));
-			/* this format strings is reused in adduser and addgroup */
+			/* this format strings is reugsed in adduser and addgroup */
 		}
 		if (g->gr_gid == max) {
 			/* overflowed: error */
 			bb_error_msg_and_die("no %cids left", 'g');
-			/* this format string is reused in adduser and addgroup */
+			/* this format string is reugsed in adduser and addgroup */
 		}
 		g->gr_gid++;
 	}

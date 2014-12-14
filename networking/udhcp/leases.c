@@ -2,7 +2,7 @@
 /*
  * Russ Dill <Russ.Dill@asu.edu> July 2001
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "common.h"
 #include "dhcpd.h"
@@ -148,7 +148,7 @@ uint32_t FAST_FUNC find_free_or_expired_nip(const uint8_t *safe_mac)
 	for (i = 0; i < 6; i++)
 		hash += safe_mac[i] + (hash << 6) + (hash << 16) - hash;
 
-	/* pick a seed based on hwaddr then iterate until we find a free address. */
+	/* pick a seed bagsed on hwaddr then iterate until we find a free address. */
 	addr = server_config.start_ip
 		+ (hash % (1 + server_config.end_ip - server_config.start_ip));
 	stop = addr;

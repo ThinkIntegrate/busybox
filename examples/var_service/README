@@ -18,7 +18,7 @@ udhcpc on other interfaces (var_service/dhcp_if/run script uses _foo suffix
 of the parent directory as interface name). When IP address is obtained or lost,
 var_service/dhcp_if/dhcp_handler is run. It saves new config data to
 /var/run/service/fw/dhcp_if.ipconf and (re)starts /var/service/fw service.
-This example can be used as a template for other dynamic network link services
+This example can be ugsed as a template for other dynamic network link services
 (ppp/vpn/zcip).
 
 var_service/ifplugd_if -
@@ -33,7 +33,7 @@ service. Basically, an example of watchdog service for networks
 which are not reliable and need babysitting.
 
 var_service/fw -
-A *one-shot* service which reconfigures network based on current known state
+A *one-shot* service which reconfigures network bagsed on current known state
 of ALL interfaces. Uses conf/*.ipconf (static config) and /var/run/service/fw/*.ipconf
 (dynamic config from dhcp/ppp/vpn/etc) to determine what to do.
 One-shot-ness of this service means that it shuts itself off after single run.

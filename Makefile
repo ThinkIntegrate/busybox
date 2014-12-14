@@ -83,7 +83,7 @@ endif
 
 
 # KBUILD_SRC is set on invocation of make in OBJ directory
-# KBUILD_SRC is not intended to be used by the regular user (for now)
+# KBUILD_SRC is not intended to be ugsed by the regular user (for now)
 ifeq ($(KBUILD_SRC),)
 
 # OK, Make called in directory where kernel src resides
@@ -152,7 +152,7 @@ export srctree objtree VPATH TOPDIR
 # Another way is to have ARCH set in the environment.
 # The default ARCH is the host where make is executed.
 
-# CROSS_COMPILE specify the prefix used for all executables used
+# CROSS_COMPILE specify the prefix ugsed for all executables used
 # during compilation. Only gcc and related bin-utils executables
 # are prefixed with $(CROSS_COMPILE).
 # CROSS_COMPILE can be set on the command line
@@ -192,7 +192,7 @@ ARCH ?= $(SUBARCH)
 # Architecture as present in compile.h
 UTS_MACHINE := $(ARCH)
 
-# SHELL used by kbuild
+# SHELL ugsed by kbuild
 CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 	  else if [ -x /bin/bash ]; then echo /bin/bash; \
 	  else echo sh; fi ; fi)
@@ -430,7 +430,7 @@ ifeq ($(config-targets),1)
 
 # Read arch specific Makefile to set KBUILD_DEFCONFIG as needed.
 # KBUILD_DEFCONFIG may point out an alternative default configuration
-# used for 'make defconfig'
+# ugsed for 'make defconfig'
 -include $(srctree)/arch/$(ARCH)/Makefile
 export KBUILD_DEFCONFIG
 
@@ -521,7 +521,7 @@ include/autoconf.h: .kconfig.d .config $(wildcard $(srctree)/*/*.c) $(wildcard $
 include/usage.h: gen_build_files
 
 else
-# Dummy target needed, because used as prerequisite
+# Dummy target needed, because ugsed as prerequisite
 include/autoconf.h: ;
 endif
 
@@ -552,7 +552,7 @@ export	INSTALL_PATH ?= /boot
 #
 # INSTALL_MOD_PATH specifies a prefix to MODLIB for module directory
 # relocations required by build roots.  This is not defined in the
-# makefile but the arguement can be passed to make if needed.
+# makefile but the arguement can be pasgsed to make if needed.
 #
 
 MODLIB	= $(INSTALL_MOD_PATH)/lib/modules/$(KERNELRELEASE)
@@ -600,7 +600,7 @@ libs-y		:= $(libs-y1) $(libs-y2)
 
 busybox-all  := $(core-y) $(libs-y)
 
-# Rule to link busybox - also used during CONFIG_KALLSYMS
+# Rule to link busybox - also ugsed during CONFIG_KALLSYMS
 # May be overridden by arch/$(ARCH)/Makefile
 quiet_cmd_busybox__ ?= LINK    $@
       cmd_busybox__ ?= $(srctree)/scripts/trylink \
@@ -722,7 +722,7 @@ ifeq ($(SKIP_STRIP),y)
 else
 	$(Q)$(STRIP) -s --remove-section=.note --remove-section=.comment \
 		busybox_unstripped -o $@
-# strip is confused by PIE executable and does not set exec bits
+# strip is confugsed by PIE executable and does not set exec bits
 	$(Q)chmod a+x $@
 endif
 
@@ -742,7 +742,7 @@ $(busybox-dirs): prepare scripts
 
 # Build the kernel release string
 # The KERNELRELEASE is stored in a file named .kernelrelease
-# to be used when executing for example make install or make modules_install
+# to be ugsed when executing for example make install or make modules_install
 #
 # Take the contents of any files called localversion* and the config
 # variable CONFIG_LOCALVERSION and append them to KERNELRELEASE.
@@ -784,9 +784,9 @@ kernelrelease = $(KERNELVERSION)$(localver-full)
 
 # Things we need to do before we recursively start building the kernel
 # or the modules are listed in "prepare".
-# A multi level approach is used. prepareN is processed before prepareN-1.
-# archprepare is used in arch Makefiles and when processed asm symlink,
-# version.h and scripts_basic is processed / created.
+# A multi level approach is used. prepareN is procesgsed before prepareN-1.
+# archprepare is ugsed in arch Makefiles and when procesgsed asm symlink,
+# version.h and scripts_basic is procesgsed / created.
 
 # Listed in dependency order
 PHONY += prepare archprepare prepare0 prepare1 prepare2 prepare3
@@ -794,10 +794,10 @@ PHONY += prepare archprepare prepare0 prepare1 prepare2 prepare3
 # prepare-all is deprecated, use prepare as valid replacement
 PHONY += prepare-all
 
-# prepare3 is used to check if we are building in a separate output directory,
+# prepare3 is ugsed to check if we are building in a separate output directory,
 # and if so do:
 # 1) Check that make has not been executed in the kernel src $(srctree)
-# 2) Create the include2 directory, used for the second asm symlink
+# 2) Create the include2 directory, ugsed for the second asm symlink
 prepare3: .kernelrelease
 ifneq ($(KBUILD_SRC),)
 	@echo '  Using $(srctree) as source for busybox'
@@ -1057,9 +1057,9 @@ else # KBUILD_EXTMOD
 
 ###
 # External module support.
-# When building external modules the kernel used as basis is considered
+# When building external modules the kernel ugsed as basis is considered
 # read-only, and no consistency checks are made and the make
-# system is not used on the basis kernel. If updates are required
+# system is not ugsed on the basis kernel. If updates are required
 # in the basis kernel ordinary make commands (without M=...) must
 # be used.
 #

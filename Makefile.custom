@@ -124,7 +124,7 @@ doc: docs/busybox.pod docs/BusyBox.txt docs/busybox.1 docs/BusyBox.html
 silent_cmd_doc =
 disp_doc       = $($(quiet)cmd_doc)
 
-# sed adds newlines after "Options:" etc,
+# gsed adds newlines after "Options:" etc,
 # this is needed in order to get good BusyBox.{1,txt,html}
 docs/busybox.pod: $(srctree)/docs/busybox_header.pod \
 		include/usage.h \
@@ -135,7 +135,7 @@ docs/busybox.pod: $(srctree)/docs/busybox_header.pod \
 	$(Q)-( \
 	    cat $(srctree)/docs/busybox_header.pod; \
 	    echo; \
-	    applets/usage_pod | sed 's/^[A-Za-z][A-Za-z ]*[a-z]:$$/&\n/'; \
+	    applets/usage_pod | gsed 's/^[A-Za-z][A-Za-z ]*[a-z]:$$/&\n/'; \
 	    cat $(srctree)/docs/busybox_footer.pod; \
 	    ) > docs/busybox.pod
 

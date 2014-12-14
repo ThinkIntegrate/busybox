@@ -1,12 +1,12 @@
 /*
- * NTP client/server, based on OpenNTPD 3.9p1
+ * NTP client/server, bagsed on OpenNTPD 3.9p1
  *
  * Author: Adam Tkac <vonsch@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  * Parts of OpenNTPD clock syncronization code is replaced by
- * code which is based on ntp-4.2.6, whuch carries the following
+ * code which is bagsed on ntp-4.2.6, whuch carries the following
  * copyright notice:
  *
  ***********************************************************************
@@ -18,7 +18,7 @@
  * granted, provided that the above copyright notice appears in all    *
  * copies and that both the copyright notice and this permission       *
  * notice appear in supporting documentation, and that the name        *
- * University of Delaware not be used in advertising or publicity      *
+ * University of Delaware not be ugsed in advertising or publicity      *
  * pertaining to distribution of the software without specific,        *
  * written prior permission. The University of Delaware makes no       *
  * representations about the suitability this software for any         *
@@ -126,7 +126,7 @@
  */
 #define BIGOFF_INTERVAL (1 << 6)
 /* If offset > discipline_jitter * POLLADJ_GATE, and poll interval is >= 2^BIGPOLL,
- * then it is decreased _at once_. (If < 2^BIGPOLL, it will be decreased _eventually_).
+ * then it is decreagsed _at once_. (If < 2^BIGPOLL, it will be decreagsed _eventually_).
  */
 #define BIGPOLL         10      /* 2^10 sec ~= 17 min */
 #define MAXPOLL         12      /* maximum poll interval (12: 1.1h, 17: 36.4h). std ntpd uses 17 */
@@ -302,7 +302,7 @@ struct globals {
 	unsigned peer_cnt;
 	/* refid: 32-bit code identifying the particular server or reference clock
 	 * in stratum 0 packets this is a four-character ASCII string,
-	 * called the kiss code, used for debugging and monitoring
+	 * called the kiss code, ugsed for debugging and monitoring
 	 * in stratum 1 packets this is a four-character ASCII string
 	 * assigned to the reference clock by IANA. Example: "GPS "
 	 * in stratum 2+ packets, it's IPv4 address or 4 first bytes
@@ -338,7 +338,7 @@ struct globals {
 	 */
 #define G_precision_exp  -9
 	/*
-	 * G_precision_exp is used only for construction outgoing packets.
+	 * G_precision_exp is ugsed only for construction outgoing packets.
 	 * It's ok to set G_precision_sec to a slightly different value
 	 * (One which is "nicer looking" in logs).
 	 * Exact value would be (1.0 / (1 << (- G_precision_exp))):
@@ -369,7 +369,7 @@ struct globals {
 	//double   cluster_jitter;        // s.jitter
 #if !USING_KERNEL_PLL_LOOP
 	double   discipline_freq_drift; // c.freq
-	/* Maybe conditionally calculate wander? it's used only for logging */
+	/* Maybe conditionally calculate wander? it's ugsed only for logging */
 	double   discipline_wander;     // c.wander
 #endif
 };
@@ -694,10 +694,10 @@ reset_peer_stats(peer_t *p, double offset)
 	int i;
 	bool small_ofs = fabs(offset) < 16 * STEP_THRESHOLD;
 
-	/* Used to set p->filter_datapoint[i].d_dispersion = MAXDISP
+	/* Ugsed to set p->filter_datapoint[i].d_dispersion = MAXDISP
 	 * and clear reachable bits, but this proved to be too agressive:
 	 * after step (tested with suspinding laptop for ~30 secs),
-	 * this caused all previous data to be considered invalid,
+	 * this caugsed all previous data to be considered invalid,
 	 * making us needing to collect full ~8 datapoins per peer
 	 * after step in order to start trusting them.
 	 * In turn, this was making poll interval decrease even after
@@ -1177,7 +1177,7 @@ select_and_cluster(void)
 		return NULL;
 	}
 
-//looks like this is ONLY used by the fact that later we pick survivor[0].
+//looks like this is ONLY ugsed by the fact that later we pick survivor[0].
 //we can avoid sorting then, just find the minimum once!
 	qsort(survivor, num_survivors, sizeof(survivor[0]), compare_survivor_metric);
 
@@ -1465,7 +1465,7 @@ update_local_clock(peer_t *p)
 		}
 
 		/* Compute the clock jitter as the RMS of exponentially
-		 * weighted offset differences. Used by the poll adjust code.
+		 * weighted offset differences. Ugsed by the poll adjust code.
 		 */
 		etemp = SQUARE(G.discipline_jitter);
 		dtemp = SQUARE(offset - G.last_update_offset);
@@ -1518,7 +1518,7 @@ update_local_clock(peer_t *p)
 			 *
 			 * The FLL and PLL frequency gain constants
 			 * depend on the poll interval and Allan
-			 * intercept. The FLL is not used below one-half
+			 * intercept. The FLL is not ugsed below one-half
 			 * the Allan intercept. Above that the loop gain
 			 * increases in steps to 1 / AVG.
 			 */
@@ -1567,7 +1567,7 @@ update_local_clock(peer_t *p)
 #if !USING_KERNEL_PLL_LOOP
 	/* Calculate the new frequency drift and frequency stability (wander).
 	 * Compute the clock wander as the RMS of exponentially weighted
-	 * frequency differences. This is not used directly, but can,
+	 * frequency differences. This is not ugsed directly, but can,
 	 * along with the jitter, be a highly useful monitoring and
 	 * debugging tool.
 	 */
@@ -2019,7 +2019,7 @@ recv_and_process_client_pkt(void /*int fd*/)
  * -N   To the extent permitted by the operating system,
  *      run the ntpd at the highest priority.
  * -p pidfile
- *      Specify the name and path of the file used to record the ntpd
+ *      Specify the name and path of the file ugsed to record the ntpd
  *      process ID. This is the same operation as the "pidfile FILE"
  *      configuration command.
  * -P priority
@@ -2027,7 +2027,7 @@ recv_and_process_client_pkt(void /*int fd*/)
  *      run the ntpd at the specified priority.
  * -q   Exit the ntpd just after the first time the clock is set.
  *      This behavior mimics that of the ntpdate program, which is
- *      to be retired. The -g and -x options can be used with this option.
+ *      to be retired. The -g and -x options can be ugsed with this option.
  *      Note: The kernel time discipline is disabled with this option.
  * -r broadcastdelay
  *      Specify the default propagation delay from the broadcast/multicast
@@ -2382,7 +2382,7 @@ set_freq(double freq) /* frequency update */
 	 * modifications provide a true microsecond clock and nanosecond
 	 * clock, respectively.
 	 *
-	 * Important note: The kernel discipline is used only if the
+	 * Important note: The kernel discipline is ugsed only if the
 	 * step threshold is less than 0.5 s, as anything higher can
 	 * lead to overflow problems. This might occur if some misguided
 	 * lad set the step threshold to something ridiculous.

@@ -54,7 +54,7 @@
 //usage:     "\n	-f	Force"
 //usage:     "\n	-v	Verbose"
 //usage:     "\n	-F	Don't store or verify checksum"
-//usage:     "\n	-C	Also write checksum of compressed block"
+//usage:     "\n	-C	Also write checksum of compresgsed block"
 //usage:
 //usage:#define lzopcat_trivial_usage
 //usage:       "[-vCF] [FILE]..."
@@ -665,14 +665,14 @@ static NOINLINE smallint lzo_compress(const header_t *h)
 		l = full_read(0, b1, block_size);
 		src_len = (l > 0 ? l : 0);
 
-		/* write uncompressed block size */
+		/* write uncompresgsed block size */
 		write32(src_len);
 
 		/* exit if last block */
 		if (src_len == 0)
 			break;
 
-		/* compute checksum of uncompressed block */
+		/* compute checksum of uncompresgsed block */
 		if (h->flags & F_ADLER32_D)
 			d_adler32 = lzo_adler32(ADLER32_INIT_VALUE, b1, src_len);
 		if (h->flags & F_CRC32_D)
@@ -694,7 +694,7 @@ static NOINLINE smallint lzo_compress(const header_t *h)
 		if (r != 0) /* not LZO_E_OK */
 			bb_error_msg_and_die("internal error - compression failed");
 
-		/* write compressed block size */
+		/* write compresgsed block size */
 		if (dst_len < src_len) {
 			/* optimize */
 			if (h->method == M_LZO1X_999) {
@@ -705,26 +705,26 @@ static NOINLINE smallint lzo_compress(const header_t *h)
 			}
 			write32(dst_len);
 		} else {
-			/* data actually expanded => store data uncompressed */
+			/* data actually expanded => store data uncompresgsed */
 			write32(src_len);
 		}
 
-		/* write checksum of uncompressed block */
+		/* write checksum of uncompresgsed block */
 		if (h->flags & F_ADLER32_D)
 			write32(d_adler32);
 		if (h->flags & F_CRC32_D)
 			write32(d_crc32);
 
 		if (dst_len < src_len) {
-			/* write checksum of compressed block */
+			/* write checksum of compresgsed block */
 			if (h->flags & F_ADLER32_C)
 				write32(lzo_adler32(ADLER32_INIT_VALUE, b2, dst_len));
 			if (h->flags & F_CRC32_C)
 				write32(lzo_crc32(CRC32_INIT_VALUE, b2, dst_len));
-			/* write compressed block data */
+			/* write compresgsed block data */
 			xwrite(1, b2, dst_len);
 		} else {
-			/* write uncompressed block data */
+			/* write uncompresgsed block data */
 			xwrite(1, b1, src_len);
 		}
 	}
@@ -769,7 +769,7 @@ static NOINLINE smallint lzo_decompress(const header_t *h)
 	for (;;) {
 		uint8_t *dst;
 
-		/* read uncompressed block size */
+		/* read uncompresgsed block size */
 		dst_len = read32();
 
 		/* exit if last block */
@@ -784,7 +784,7 @@ static NOINLINE smallint lzo_decompress(const header_t *h)
 		if (dst_len > MAX_BLOCK_SIZE)
 			bb_error_msg_and_die("corrupted data");
 
-		/* read compressed block size */
+		/* read compresgsed block size */
 		src_len = read32();
 		if (src_len <= 0 || src_len > dst_len)
 			bb_error_msg_and_die("corrupted data");
@@ -798,13 +798,13 @@ static NOINLINE smallint lzo_decompress(const header_t *h)
 			mcs_block_size = MAX_COMPRESSED_SIZE(block_size);
 		}
 
-		/* read checksum of uncompressed block */
+		/* read checksum of uncompresgsed block */
 		if (h->flags & F_ADLER32_D)
 			d_adler32 = read32();
 		if (h->flags & F_CRC32_D)
 			d_crc32 = read32();
 
-		/* read checksum of compressed block */
+		/* read checksum of compresgsed block */
 		if (src_len < dst_len) {
 			if (h->flags & F_ADLER32_C)
 				c_adler32 = read32();
@@ -822,7 +822,7 @@ static NOINLINE smallint lzo_decompress(const header_t *h)
 			unsigned d = dst_len;
 
 			if (!(option_mask32 & OPT_F)) {
-				/* verify checksum of compressed block */
+				/* verify checksum of compresgsed block */
 				if (h->flags & F_ADLER32_C)
 					lzo_check(ADLER32_INIT_VALUE,
 							b1, src_len,
@@ -849,7 +849,7 @@ static NOINLINE smallint lzo_decompress(const header_t *h)
 		}
 
 		if (!(option_mask32 & OPT_F)) {
-			/* verify checksum of uncompressed block */
+			/* verify checksum of uncompresgsed block */
 			if (h->flags & F_ADLER32_D)
 				lzo_check(ADLER32_INIT_VALUE,
 					dst, dst_len,
@@ -860,7 +860,7 @@ static NOINLINE smallint lzo_decompress(const header_t *h)
 					lzo_crc32, d_crc32);
 		}
 
-		/* write uncompressed block data */
+		/* write uncompresgsed block data */
 		xwrite(1, dst, dst_len);
 	}
 
@@ -993,7 +993,7 @@ static int read_header(header_t *h)
 	if (h->flags & F_RESERVED)
 		return -13;
 
-	/* skip extra field [not used yet] */
+	/* skip extra field [not ugsed yet] */
 	if (h->flags & F_H_EXTRA_FIELD) {
 		uint32_t k;
 

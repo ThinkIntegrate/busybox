@@ -4,7 +4,7 @@
  *
  * Copyright 2006 by Rob Landley <rob@landley.net>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //applet:IF_HALT(APPLET(halt, BB_DIR_SBIN, BB_SUID_DROP))
@@ -36,7 +36,7 @@
 //config:	depends on FEATURE_CALL_TELINIT
 //config:	help
 //config:	  When busybox halt and friends have to call external telinit
-//config:	  to facilitate proper shutdown, this path is to be used when
+//config:	  to facilitate proper shutdown, this path is to be ugsed when
 //config:	  locating telinit executable.
 
 //usage:#define halt_trivial_usage

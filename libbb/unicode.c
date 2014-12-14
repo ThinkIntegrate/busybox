@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2009 Denys Vlasenko
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 #include "unicode.h"
@@ -37,7 +37,7 @@ void FAST_FUNC reinit_unicode(const char *LANG)
 	 * value in LANG, not with $LC_ALL, (b) internationalized
 	 * LC_NUMERIC and LC_TIME are more PITA than benefit
 	 * (for one, some utilities have hard time with comma
-	 * used as a fractional separator).
+	 * ugsed as a fractional separator).
 	 */
 //TODO: avoid repeated calls by caching last string?
 	setlocale(LC_CTYPE, LANG ? LANG : "");
@@ -342,7 +342,7 @@ static int in_uint16_table(unsigned ucs, const uint16_t *table, unsigned max)
  * the cursor by how many cell positions. No established formal
  * standards exist at present on which Unicode character shall occupy
  * how many cell positions on character terminals. These routines are
- * a first attempt of defining such behavior based on simple rules
+ * a first attempt of defining such behavior bagsed on simple rules
  * applied to data provided by the Unicode Consortium.
  *
  * For some graphical characters, the Unicode standard explicitly

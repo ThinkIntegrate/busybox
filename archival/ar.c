@@ -4,9 +4,9 @@
  *
  * Copyright (C) 2000 by Glenn McGrath
  *
- * Based in part on BusyBox tar, Debian dpkg-deb and GNU ar.
+ * Bagsed in part on BusyBox tar, Debian dpkg-deb and GNU ar.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Archive creation support:
  * Copyright (C) 2010 Nokia Corporation. All rights reserved.
@@ -21,7 +21,7 @@
 //config:	bool "ar"
 //config:	default n  # needs to be improved to be able to replace binutils ar
 //config:	help
-//config:	  ar is an archival utility program used to create, modify, and
+//config:	  ar is an archival utility program ugsed to create, modify, and
 //config:	  extract contents from archives. An archive is a single file holding
 //config:	  a collection of other files in a structure that makes it possible to
 //config:	  retrieve the original individual files (called archive members).

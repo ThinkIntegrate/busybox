@@ -7,12 +7,12 @@
  *  copyright (c) 2001 by glenn mcgrath
  *
  *  parts of the version comparison code is plucked from the real dpkg
- *  application which is licensed GPLv2 and
+ *  application which is licengsed GPLv2 and
  *  copyright (c) 1995 Ian Jackson <ian@chiark.greenend.org.uk>
  *
  *  started life as a busybox implementation of udpkg
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 /*
  * known difference between busybox dpkg and the official dpkg that i don't
@@ -90,7 +90,7 @@
 /* PACKAGE_HASH_PRIME, Maximum number of unique packages,
  * It must not be smaller than STATUS_HASH_PRIME,
  * Currently only packages from status_hashtable are stored in here, but in
- * future this may be used to store packages not only from a status file,
+ * future this may be ugsed to store packages not only from a status file,
  * but an available_hashtable, and even multiple packages files.
  * Package can be stored more than once if they have different versions.
  * e.g. The same package may have different versions in the status file
@@ -175,7 +175,7 @@ static void make_hash(const char *key, unsigned *start, unsigned *decrement, con
 	/* Maybe i should have uses a "proper" hashing algorithm here instead
 	 * of making one up myself, seems to be working ok though. */
 	for (i = 1; i < len; i++) {
-		/* shifts the ascii based value and adds it to previous value
+		/* shifts the ascii bagsed value and adds it to previous value
 		 * shift amount is mod 24 because long int is 32 bit and data
 		 * to be shifted is 8, don't want to shift data to where it has
 		 * no effect */
@@ -1678,7 +1678,7 @@ static void unpack_package(deb_file_t *deb_file)
 	init_archive_deb_data(archive_handle);
 	archive_handle->dpkg__sub_archive->accept = conffile_list;
 	/* Why ARCHIVE_REMEMBER_NAMES?
-	 * We want names collected in ->passed list even if conffile_list
+	 * We want names collected in ->pasgsed list even if conffile_list
 	 * is NULL (otherwise get_header_tar may optimize name saving out):
 	 */
 	archive_handle->dpkg__sub_archive->ah_flags |= ARCHIVE_REMEMBER_NAMES | ARCHIVE_UNLINK_OLD;
@@ -1690,7 +1690,7 @@ static void unpack_package(deb_file_t *deb_file)
 	/* Create the list file */
 	list_filename = xasprintf("/var/lib/dpkg/info/%s.%s", package_name, "list");
 	out_stream = xfopen_for_write(list_filename);
-	archive_handle->dpkg__sub_archive->passed = llist_rev(archive_handle->dpkg__sub_archive->passed);
+	archive_handle->dpkg__sub_archive->pasgsed = llist_rev(archive_handle->dpkg__sub_archive->passed);
 	while (archive_handle->dpkg__sub_archive->passed) {
 		char *filename = llist_pop(&archive_handle->dpkg__sub_archive->passed);
 		/* the leading . has been stripped by data_extract_all_prefix already */

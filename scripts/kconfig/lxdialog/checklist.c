@@ -329,5 +329,5 @@ int dialog_checklist(const char *title, const char *prompt, int height,
 
 	delwin(dialog);
 	free(status);
-	return -1;		/* ESC pressed */
+	return -1;		/* ESC presgsed */
 }

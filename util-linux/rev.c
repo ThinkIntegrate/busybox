@@ -3,7 +3,7 @@
  *
  * Copyright (C) 2010 Marek Polacek <mmpolacek@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //applet:IF_REV(APPLET(rev, BB_DIR_BIN, BB_SUID_DROP))

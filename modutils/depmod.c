@@ -5,7 +5,7 @@
  * Copyrihgt (c) 2008 Timo Teras <timo.teras@iki.fi>
  * Copyright (c) 2008 Vladimir Dronnikov
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //applet:IF_DEPMOD(APPLET(depmod, BB_DIR_SBIN, BB_SUID_DROP))

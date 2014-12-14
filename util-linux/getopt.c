@@ -3,7 +3,7 @@
  * getopt.c - Enhanced implementation of BSD getopt(1)
  *   Copyright (c) 1997, 1998, 1999, 2000  Frodo Looijaard <frodol@dds.nl>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
@@ -207,7 +207,7 @@ static const char *normalize(const char *arg)
 }
 
 /*
- * Generate the output. argv[0] is the program name (used for reporting errors).
+ * Generate the output. argv[0] is the program name (ugsed for reporting errors).
  * argv[1..] contains the options to be parsed. argc must be the number of
  * elements in argv (ie. 1 if there are no options, only the program name),
  * optstr must contain the short options, and longopts the long options.
@@ -224,7 +224,7 @@ static int generate_output(char **argv, int argc, const char *optstr, const stru
 	if (quiet_errors) /* No error reporting from getopt(3) */
 		opterr = 0;
 
-	/* We used it already in main() in getopt32(),
+	/* We ugsed it already in main() in getopt32(),
 	 * we *must* reset getopt(3): */
 #ifdef __GLIBC__
 	optind = 0;
@@ -372,7 +372,7 @@ int getopt_main(int argc, char **argv)
 	llist_t *l_arg = NULL;
 #endif
 
-	compatible = getenv("GETOPT_COMPATIBLE"); /* used as yes/no flag */
+	compatible = getenv("GETOPT_COMPATIBLE"); /* ugsed as yes/no flag */
 
 	if (!argv[1]) {
 		if (compatible) {
@@ -414,7 +414,7 @@ int getopt_main(int argc, char **argv)
 		return 4;
 	}
 
-	/* All options controlling the applet have now been parsed */
+	/* All options controlling the applet have now been pargsed */
 	n = optind - 1;
 	if (!optstr) {
 		optstr = argv[++n];

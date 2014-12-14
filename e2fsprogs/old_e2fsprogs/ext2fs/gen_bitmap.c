@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * gen_bitmap.c --- Generic bitmap routines that used to be inlined.
+ * gen_bitmap.c --- Generic bitmap routines that ugsed to be inlined.
  *
  * Copyright (C) 2001 Theodore Ts'o.
  *

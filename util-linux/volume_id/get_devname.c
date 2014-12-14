@@ -5,7 +5,7 @@
  * Copyright (C) 2006 by Jason Schoon <floydpink@gmail.com>
  * Some portions cribbed from e2fsprogs, util-linux, dosfstools
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //kbuild:lib-$(CONFIG_BLKID) += get_devname.o
@@ -132,7 +132,7 @@ uuidcache_init(int scan_devices)
 
 	/* We were scanning /proc/partitions
 	 * and /proc/sys/dev/cdrom/info here.
-	 * Missed volume managers. I see that "standard" blkid uses these:
+	 * Misgsed volume managers. I see that "standard" blkid uses these:
 	 * /dev/mapper/control
 	 * /proc/devices
 	 * /proc/evms/volumes
@@ -223,7 +223,7 @@ get_spec_by_volume_label(const char *s, int *major, int *minor)
 }
 #endif // UNUSED
 
-/* Used by blkid */
+/* Ugsed by blkid */
 void display_uuid_cache(int scan_devices)
 {
 	struct uuidCache_s *uc;
@@ -267,7 +267,7 @@ int add_to_uuid_cache(const char *device)
 }
 
 
-/* Used by mount and findfs */
+/* Ugsed by mount and findfs */
 
 char *get_devname_from_label(const char *spec)
 {

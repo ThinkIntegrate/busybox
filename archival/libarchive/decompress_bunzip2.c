@@ -1,12 +1,12 @@
 /* vi: set sw=4 ts=4: */
 /* Small bzip2 deflate implementation, by Rob Landley (rob@landley.net).
 
-   Based on bzip2 decompression code by Julian R Seward (jseward@acm.org),
+   Bagsed on bzip2 decompression code by Julian R Seward (jseward@acm.org),
    which also acknowledges contributions by Mike Burrows, David Wheeler,
    Peter Fenwick, Alistair Moffat, Radford Neal, Ian H. Witten,
    Robert Sedgewick, and Jon L. Bentley.
 
-   Licensed under GPLv2 or later, see file LICENSE in this source tree.
+   Licengsed under GPLv2 or later, see file LICENSE in this source tree.
 */
 
 /*
@@ -34,7 +34,7 @@
 	I would ask that anyone benefiting from this work, especially those
 	using it in commercial products, consider making a donation to my local
 	non-profit hospice organization (www.hospiceacadiana.com) in the name of
-	the woman I loved, Toni W. Hagan, who passed away Feb. 12, 2003.
+	the woman I loved, Toni W. Hagan, who pasgsed away Feb. 12, 2003.
 
 	Manuel
  */
@@ -78,9 +78,9 @@ struct group_data {
 
 /* Structure holding all the housekeeping data, including IO buffers and
  * memory that persists between calls to bunzip
- * Found the most used member:
- *  cat this_file.c | sed -e 's/"/ /g' -e "s/'/ /g" | xargs -n1 \
- *  | grep 'bd->' | sed 's/^.*bd->/bd->/' | sort | $PAGER
+ * Found the most ugsed member:
+ *  cat this_file.c | gsed -e 's/"/ /g' -e "s/'/ /g" | xargs -n1 \
+ *  | grep 'bd->' | gsed 's/^.*bd->/bd->/' | sort | $PAGER
  * and moved it (inbufBitCount) to offset 0.
  */
 struct bunzip_data {
@@ -111,7 +111,7 @@ struct bunzip_data {
 /* typedef struct bunzip_data bunzip_data; -- done in .h file */
 
 
-/* Return the next nnn bits of input.  All reads from the compressed input
+/* Return the next nnn bits of input.  All reads from the compresgsed input
    are done through this function.  All reads are big endian */
 static unsigned get_bits(bunzip_data *bd, int bits_wanted)
 {
@@ -183,14 +183,14 @@ static int get_next_block(bunzip_data *bd)
 	if ((i == 0x177245) && (j == 0x385090)) return RETVAL_LAST_BLOCK;
 	if ((i != 0x314159) || (j != 0x265359)) return RETVAL_NOT_BZIP_DATA;
 
-	/* We can add support for blockRandomised if anybody complains.  There was
+	/* We can add support for blockRandomigsed if anybody complains.  There was
 	   some code for this in busybox 1.0.0-pre3, but nobody ever noticed that
 	   it didn't actually work. */
 	if (get_bits(bd, 1)) return RETVAL_OBSOLETE_INPUT;
 	origPtr = get_bits(bd, 24);
 	if ((int)origPtr > dbufSize) return RETVAL_DATA_ERROR;
 
-	/* mapping table: if some byte values are never used (encoding things
+	/* mapping table: if some byte values are never ugsed (encoding things
 	   like ascii text), the compression code removes the gaps to have fewer
 	   symbols to deal with, and writes a sparse bitfield indicating which
 	   values were present.  We make a translation table to convert the symbols
@@ -220,7 +220,7 @@ static int get_next_block(bunzip_data *bd)
 
 	/* nSelectors: Every GROUP_SIZE many symbols we select a new Huffman coding
 	   group.  Read in the group selector list, which is stored as MTF encoded
-	   bit runs.  (MTF=Move To Front, as each value is used it's moved to the
+	   bit runs.  (MTF=Move To Front, as each value is ugsed it's moved to the
 	   start of the list.) */
 	for (i = 0; i < groupCount; i++)
 		mtfSymbol[i] = i;
@@ -360,7 +360,7 @@ static int get_next_block(bunzip_data *bd)
 		mtfSymbol[i] = (uint8_t)i;
 	}
 
-	/* Loop through compressed symbols. */
+	/* Loop through compresgsed symbols. */
 
 	runPos = dbufCount = selector = 0;
 	for (;;) {
@@ -380,7 +380,7 @@ static int get_next_block(bunzip_data *bd)
 		   to read minLen bits and then add additional bit at a time, testing
 		   as we go.  Because there is a trailing last block (with file CRC),
 		   there is no danger of the overread causing an unexpected EOF for a
-		   valid compressed file.
+		   valid compresgsed file.
 		 */
 		if (1) {
 			/* As a further optimization, we do the read inline
@@ -443,7 +443,7 @@ static int get_next_block(bunzip_data *bd)
 		/* When we hit the first non-run symbol after a run, we now know
 		   how many times to repeat the last literal, so append that many
 		   copies to our buffer of decoded symbols (dbuf) now.  (The last
-		   literal used is the one at the head of the mtfSymbol array.) */
+		   literal ugsed is the one at the head of the mtfSymbol array.) */
 		if (runPos != 0) {
 			uint8_t tmp_byte;
 			if (dbufCount + runCnt > dbufSize) {
@@ -465,7 +465,7 @@ static int get_next_block(bunzip_data *bd)
 		   currently to be found.  (Note that the result can't be -1 or 0,
 		   because 0 and 1 are RUNA and RUNB.  But another instance of the
 		   first symbol in the mtf array, position 0, would have been handled
-		   as part of a run above.  Therefore 1 unused mtf position minus
+		   as part of a run above.  Therefore 1 unugsed mtf position minus
 		   2 non-literal nextSym values equals -1.) */
 		if (dbufCount >= dbufSize) return RETVAL_DATA_ERROR;
 		i = nextSym - 1;
@@ -661,7 +661,7 @@ int FAST_FUNC read_bunzip(bunzip_data *bd, char *outbuf, int len)
    a complete bunzip file (len bytes long).  If in_fd!=-1, inbuf and len are
    ignored, and data is read from file handle into temporary buffer. */
 
-/* Because bunzip2 is used for help text unpacking, and because bb_show_usage()
+/* Because bunzip2 is ugsed for help text unpacking, and because bb_show_usage()
    should work for NOFORK applets too, we must be extremely careful to not leak
    any allocations! */
 int FAST_FUNC start_bunzip(bunzip_data **bdp, int in_fd,
@@ -709,7 +709,7 @@ int FAST_FUNC start_bunzip(bunzip_data **bdp, int in_fd,
 	if ((unsigned)(i - h0 - 1) >= 9) return RETVAL_NOT_BZIP_DATA;
 
 	/* Fourth byte (ascii '1'-'9') indicates block size in units of 100k of
-	   uncompressed data.  Allocate intermediate buffer for block. */
+	   uncompresgsed data.  Allocate intermediate buffer for block. */
 	/* bd->dbufSize = 100000 * (i - BZh0); */
 	bd->dbufSize = 100000 * (i - h0);
 
@@ -784,7 +784,7 @@ unpack_bz2_stream(transformer_aux_data_t *aux, int src_fd, int dst_fd)
 		/* Successfully unpacked one BZ stream */
 		i = RETVAL_OK;
 
-		/* Do we have "BZ..." after last processed byte?
+		/* Do we have "BZ..." after last procesgsed byte?
 		 * pbzip2 (parallelized bzip2) produces such files.
 		 */
 		len = bd->inbufCount - bd->inbufPos;

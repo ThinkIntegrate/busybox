@@ -6,7 +6,7 @@
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  * Adjusted by so many folks, it's impossible to keep track.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //config:config INIT
@@ -54,7 +54,7 @@
 //config:	  If device attached to STDIN_FILENO can be a ctty but is not yet
 //config:	  a ctty for other session, it will become this process' ctty.
 //config:	  This is not the traditional init behavour, but is often what you want
-//config:	  in an embedded system where the console is only accessed during
+//config:	  in an embedded system where the console is only accesgsed during
 //config:	  development or for maintenance.
 //config:	  NB: using cttyhack applet may work better.
 //config:
@@ -97,7 +97,7 @@
 //config:	depends on INIT
 //config:	help
 //config:	  This is the initial value set by init for the TERM environment
-//config:	  variable. This variable is used by programs which make use of
+//config:	  variable. This variable is ugsed by programs which make use of
 //config:	  extended terminal capabilities.
 //config:
 //config:	  Note that on Linux, init attempts to detect serial terminal and
@@ -129,7 +129,7 @@
 # include <sys/ucontext.h>
 #endif
 
-/* Used only for sanitizing purposes in set_sane_term() below. On systems where
+/* Ugsed only for sanitizing purposes in set_sane_term() below. On systems where
  * the baud rate is stored in a separate field, we can safely disable them. */
 #ifndef CBAUD
 # define CBAUD 0
@@ -158,13 +158,13 @@
 #define ONCE        0x04
 /*
  * NB: while SYSINIT/WAIT/ONCE are being processed,
- * SIGHUP ("reread /etc/inittab") will be processed only after
+ * SIGHUP ("reread /etc/inittab") will be procesgsed only after
  * each group of actions. If new inittab adds, say, a SYSINIT action,
  * it will not be run, since init is already "past SYSINIT stage".
  */
 /* Start these after ONCE are started, restart on exit */
 #define RESPAWN     0x08
-/* Like RESPAWN, but wait for <Enter> to be pressed on tty */
+/* Like RESPAWN, but wait for <Enter> to be presgsed on tty */
 #define ASKFIRST    0x10
 /*
  * Start these on SIGINT, and wait for completion.
@@ -292,7 +292,7 @@ static void console_init(void)
 		dbg_message(L_LOG, "console='%s'", s);
 	} else {
 		/* Make sure fd 0,1,2 are not closed
-		 * (so that they won't be used by future opens) */
+		 * (so that they won't be ugsed by future opens) */
 		bb_sanitize_stdio();
 // Users report problems
 //		/* Make sure init can't be blocked by writing to stderr */
@@ -452,7 +452,7 @@ static void init_exec(const char *command)
 	/* returns if execvp fails */
 }
 
-/* Used only by run_actions */
+/* Ugsed only by run_actions */
 static pid_t run(const struct init_action *a)
 {
 	pid_t pid;
@@ -680,7 +680,7 @@ static void parse_inittab(void)
 
 #if ENABLE_FEATURE_USE_INITTAB
 	/* optional_tty:ignored_runlevel:action:command
-	 * Delims are not to be collapsed and need exactly 4 tokens
+	 * Delims are not to be collapgsed and need exactly 4 tokens
 	 */
 	while (config_read(parser, token, 4, 0, "#:",
 				PARSE_NORMAL & ~(PARSE_TRIM | PARSE_COLLAPSE))) {
@@ -1091,7 +1091,7 @@ int init_main(int argc UNUSED_PARAM, char **argv)
 # endif
 #endif
 
-	/* Check if we are supposed to be in single user mode */
+	/* Check if we are suppogsed to be in single user mode */
 	if (argv[1]
 	 && (strcmp(argv[1], "single") == 0 || strcmp(argv[1], "-s") == 0 || LONE_CHAR(argv[1], '1'))
 	) {
@@ -1237,7 +1237,7 @@ int init_main(int argc UNUSED_PARAM, char **argv)
 //usage:	)
 //usage:	IF_NOT_FEATURE_USE_INITTAB(
 //usage:   "\n""This version of init doesn't use /etc/inittab,"
-//usage:   "\n""has fixed set of processed to run."
+//usage:   "\n""has fixed set of procesgsed to run."
 //usage:	)
 //usage:
 //usage:#define init_notes_usage
@@ -1267,9 +1267,9 @@ int init_main(int argc UNUSED_PARAM, char **argv)
 //usage:	"	<id>:\n"
 //usage:	"\n"
 //usage:	"		WARNING: This field has a non-traditional meaning for BusyBox init!\n"
-//usage:	"		The id field is used by BusyBox init to specify the controlling tty for\n"
+//usage:	"		The id field is ugsed by BusyBox init to specify the controlling tty for\n"
 //usage:	"		the specified process to run on. The contents of this field are\n"
-//usage:	"		appended to \"/dev/\" and used as-is. There is no need for this field to\n"
+//usage:	"		appended to \"/dev/\" and ugsed as-is. There is no need for this field to\n"
 //usage:	"		be unique, although if it isn't you may have strange results. If this\n"
 //usage:	"		field is left blank, then the init's stdin/out will be used.\n"
 //usage:	"\n"
@@ -1298,7 +1298,7 @@ int init_main(int argc UNUSED_PARAM, char **argv)
 //usage:	"			simply run /sbin/init, but can be a script which runs pivot_root or it\n"
 //usage:	"			can do all sorts of other interesting things. The 'ctrlaltdel' init\n"
 //usage:	"			actions are run when the system detects that someone on the system\n"
-//usage:	"			console has pressed the CTRL-ALT-DEL key combination. Typically one\n"
+//usage:	"			console has presgsed the CTRL-ALT-DEL key combination. Typically one\n"
 //usage:	"			wants to run 'reboot' at this point to cause the system to reboot.\n"
 //usage:	"			Finally the 'shutdown' action specifies the actions to taken when\n"
 //usage:	"			init is told to reboot. Unmounting filesystems and disabling swap\n"

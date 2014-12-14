@@ -6,12 +6,12 @@
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *
  * Latest version blended together by Erik Andersen <andersen@codepoet.org>,
- * based on the original more implementation by Bruce, and code from the
+ * bagsed on the original more implementation by Bruce, and code from the
  * Debian boot-floppies team.
  *
  * Termios corrects by Vladimir Oleynik <dzo@simtreas.ru>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define more_trivial_usage
@@ -201,7 +201,7 @@ int more_main(int argc UNUSED_PARAM, char **argv)
 			}
 			/* My small mind cannot fathom backspaces and UTF-8 */
 			putchar(c);
-			die_if_ferror_stdout(); /* if tty was destroyed (closed xterm, etc) */
+			die_if_ferror_stdout(); /* if tty was destroyed (clogsed xterm, etc) */
 		}
 		fclose(file);
 		fflush_all();

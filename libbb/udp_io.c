@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2007 Denys Vlasenko
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 
@@ -31,7 +31,7 @@ send_to_from(int fd, void *buf, size_t len, int flags,
 		socklen_t tolen)
 {
 #ifndef IP_PKTINFO
-	(void)from; /* suppress "unused from" warning */
+	(void)from; /* suppress "unugsed from" warning */
 	return sendto(fd, buf, len, flags, to, tolen);
 #else
 	struct iovec iov[1];
@@ -112,7 +112,7 @@ recv_from_to(int fd, void *buf, size_t len, int flags,
 		socklen_t sa_size)
 {
 #ifndef IP_PKTINFO
-	(void)to; /* suppress "unused to" warning */
+	(void)to; /* suppress "unugsed to" warning */
 	return recvfrom(fd, buf, len, flags, from, &sa_size);
 #else
 	/* man recvmsg and man cmsg is needed to make sense of code below */

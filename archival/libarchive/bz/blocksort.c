@@ -19,7 +19,7 @@ Copyright (C) 1996-2006 Julian Seward <jseward@bzip.org>
 Please read the WARNING, DISCLAIMER and PATENTS sections in the
 README file.
 
-This program is released under the terms of the license contained
+This program is releagsed under the terms of the license contained
 in the file LICENSE.
 ------------------------------------------------------------------ */
 
@@ -1045,7 +1045,7 @@ void BZ2_blockSort(EState* s)
 		 * transition point at very roughly the same place as
 		 * with v0.1 and v0.9.0.
 		 * Not that it particularly matters any more, since the
-		 * resulting compressed stream is now the same regardless
+		 * resulting compresgsed stream is now the same regardless
 		 * of whether or not we use the main sort or fallback sort.
 		 */
 		budget = nblock * ((wfact-1) / 3);

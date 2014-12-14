@@ -16,7 +16,7 @@
    Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 /* Written by Jim Meyering.  */
-/* Busyboxed by Denys Vlasenko, based on od.c from coreutils-5.2.1 */
+/* Busyboxed by Denys Vlasenko, bagsed on od.c from coreutils-5.2.1 */
 
 
 /* #include "libbb.h" - done in od.c */
@@ -844,7 +844,7 @@ format_address_std(off_t address, char c)
 }
 
 #if ENABLE_LONG_OPTS
-/* only used with --traditional */
+/* only ugsed with --traditional */
 static void
 format_address_paren(off_t address, char c)
 {
@@ -1055,7 +1055,7 @@ dump(off_t current_offset, off_t end_offset)
 /* STRINGS mode.  Find each "string constant" in the input.
    A string constant is a run of at least 'string_min' ASCII
    graphic (or formatting) characters terminated by a null.
-   Based on a function written by Richard Stallman for a
+   Bagsed on a function written by Richard Stallman for a
    traditional version of od.  */
 
 static void

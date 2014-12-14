@@ -7,7 +7,7 @@
  *
  * Copyright (C) 2001 Magnus Damm <damm@opensource.se>
  *
- * Parts of the code based on:
+ * Parts of the code bagsed on:
  *
  * atftp:  Copyright (C) 2000 Jean-Pierre Lefebvre <helix@step.polymtl.ca>
  *                        and Remi Lefebvre <remi@debian.org>
@@ -16,7 +16,7 @@
  *
  * tftpd added by Denys Vlasenko & Vladimir Dronnikov
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define tftp_trivial_usage
@@ -40,7 +40,7 @@
 //usage:#define tftpd_full_usage "\n\n"
 //usage:       "Transfer a file on tftp client's request\n"
 //usage:       "\n"
-//usage:       "tftpd should be used as an inetd service.\n"
+//usage:       "tftpd should be ugsed as an inetd service.\n"
 //usage:       "tftpd's line for inetd.conf:\n"
 //usage:       "	69 dgram udp nowait root tftpd tftpd -l /files/to/serve\n"
 //usage:       "It also can be ran from udpsvd:\n"
@@ -117,7 +117,7 @@ struct globals {
 	/* u16 TFTP_ERROR; u16 reason; both network-endian, then error text: */
 	uint8_t error_pkt[4 + 32];
 	struct passwd *pw;
-	/* used in tftpd_main(), a bit big for stack: */
+	/* ugsed in tftpd_main(), a bit big for stack: */
 	char block_buf[TFTP_BLKSIZE_DEFAULT];
 #if ENABLE_FEATURE_TFTP_PROGRESS_BAR
 	off_t pos;
@@ -364,7 +364,7 @@ static int tftp_protocol(
 		 * coming from the same IP.
 		 * We would like to connect the socket, but since peer's
 		 * UDP code can be less perfect than ours, _peer's_ IP:port
-		 * in replies may differ from IP:port we used to send
+		 * in replies may differ from IP:port we ugsed to send
 		 * our first packet. We can connect() only when we get
 		 * first reply. */
 
@@ -771,7 +771,7 @@ int tftpd_main(int argc UNUSED_PARAM, char **argv)
 		 *bb_error_msg_and_die("stdin is not a socket");
 		 * Better: */
 		bb_show_usage();
-		/* Help text says that tftpd must be used as inetd service,
+		/* Help text says that tftpd must be ugsed as inetd service,
 		 * which is by far the most usual cause of get_sock_lsa
 		 * failure */
 	}

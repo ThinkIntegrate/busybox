@@ -6,10 +6,10 @@
  * isn't something I'm going to worry about...  If you wrote something
  * here, please feel free to acknowledge your work.
  *
- * Based in part on code from sash, Copyright (c) 1999 by David I. Bell
+ * Bagsed in part on code from sash, Copyright (c) 1999 by David I. Bell
  * Permission has been granted to redistribute this code under GPL.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* We are trying to not use printf, this benefits the case when selected
@@ -204,7 +204,7 @@ void lbb_prepare(const char *applet
 #endif
 }
 
-/* The code below can well be in applets/applets.c, as it is used only
+/* The code below can well be in applets/applets.c, as it is ugsed only
  * for busybox binary, not "individual" binaries.
  * However, keeping it here and linking it into libbusybox.so
  * (together with remaining tiny applets/applets.o)
@@ -394,7 +394,7 @@ static void parse_config_file(void)
 
 				/* Note: We currently don't check for duplicates!
 				 * The last config line for each applet will be the
-				 * one used since we insert at the head of the list.
+				 * one ugsed since we insert at the head of the list.
 				 * I suppose this could be considered a feature. */
 				sct = xzalloc(sizeof(*sct));
 				sct->m_applet = applet_no;
@@ -453,7 +453,7 @@ static void parse_config_file(void)
 		 * section header is treated as an error.  This is how
 		 * the old code worked, but it may not be desirable.
 		 * We may want to simply ignore such lines in case they
-		 * are used in some future version of busybox. */
+		 * are ugsed in some future version of busybox. */
 		if (!section) {
 			errmsg = "keyword outside section";
 			goto pe_label;
@@ -629,7 +629,7 @@ static int busybox_main(char **argv)
 		full_write2_str(" multi-call binary.\n"); /* reuse */
 		full_write2_str(
 			"BusyBox is copyrighted by many authors between 1998-2012.\n"
-			"Licensed under GPLv2. See source distribution for detailed\n"
+			"Licengsed under GPLv2. See source distribution for detailed\n"
 			"copyright notices.\n"
 			"\n"
 			"Usage: busybox [function [arguments]...]\n"

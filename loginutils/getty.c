@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Based on agetty - another getty program for Linux. By W. Z. Venema 1989
+ * Bagsed on agetty - another getty program for Linux. By W. Z. Venema 1989
  * Ported to Linux by Peter Orbaek <poe@daimi.aau.dk>
  * This program is freely distributable.
  *
@@ -19,7 +19,7 @@
  * or 7-bit,odd(even)-parity. It also interferes with non-ASCII usernames.
  * - From now on, we assume that parity is correctly set.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -36,7 +36,7 @@
 #endif
 
 
-/* The following is used for understandable diagnostics */
+/* The following is ugsed for understandable diagnostics */
 #ifdef DEBUGGING
 static FILE *dbf;
 # define DEBUGTERM "/dev/ttyp0"
@@ -50,7 +50,7 @@ static FILE *dbf;
  * Things you may want to modify.
  *
  * You may disagree with the default line-editing etc. characters defined
- * below. Note, however, that DEL cannot be used for interrupt generation
+ * below. Note, however, that DEL cannot be ugsed for interrupt generation
  * and for line editing at the same time.
  */
 #undef  _PATH_LOGIN
@@ -346,7 +346,7 @@ static void finalize_tty_attrs(void)
 	 * XCASE   Map uppercase to \lowercase [tried, doesn't work]
 	 * ECHONL  Echo NL even if ECHO is not set
 	 * ECHOCTL Echo ctrl chars as ^c (else don't echo) - maybe set this?
-	 * ECHOPRT On erase, echo erased chars
+	 * ECHOPRT On erase, echo eragsed chars
 	 *         [qwe<BS><BS><BS> input looks like "qwe\ewq/" on screen]
 	 * NOFLSH  Don't flush input buffer after interrupt or quit chars
 	 * IEXTEN  Enable extended functions (??)
@@ -376,7 +376,7 @@ static void finalize_tty_attrs(void)
 	 * VREPRINT - reprint current input buffer
 	 * VLNEXT, VDISCARD, VSTATUS
 	 * VSUSP, VDSUSP - send (delayed) SIGTSTP
-	 * VSTART, VSTOP - chars used for IXON/IXOFF
+	 * VSTART, VSTOP - chars ugsed for IXON/IXOFF
 	 */
 
 	set_tty_attrs();

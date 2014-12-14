@@ -5,7 +5,7 @@
  * omitted in this version
  * Yuichi Nakamura <ynakam@hitachisoft.jp>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define setsebool_trivial_usage

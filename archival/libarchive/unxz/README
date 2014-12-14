@@ -6,7 +6,7 @@ XZ Embedded
     file format. Currently only decoding is implemented.
 
     XZ Embedded was written for use in the Linux kernel, but the code can
-    be easily used in other environments too, including regular userspace
+    be easily ugsed in other environments too, including regular userspace
     applications. See userspace/xzminidec.c for an example program.
 
     This README contains information that is useful only when the copy
@@ -48,7 +48,7 @@ Compiling the Linux kernel module
 
 Compiler requirements
 
-    XZ Embedded should compile as either GNU-C89 (used in the Linux
+    XZ Embedded should compile as either GNU-C89 (ugsed in the Linux
     kernel) or with any C99 compiler. Getting the code to compile with
     non-GNU C89 compiler or a C++ compiler should be quite easy as
     long as there is a data type for unsigned 64-bit integer (or the
@@ -128,7 +128,7 @@ Notes about shared libraries
 Specifying the calling convention
 
     XZ_FUNC macro was included to support declaring functions with __init
-    in Linux. Outside Linux, it can be used to specify the calling
+    in Linux. Outside Linux, it can be ugsed to specify the calling
     convention on systems that support multiple calling conventions.
     For example, on Windows, you may make all functions use the stdcall
     calling convention by defining XZ_FUNC=__stdcall when building and

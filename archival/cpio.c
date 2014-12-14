@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2001 by Glenn McGrath
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Limitations:
  * Doesn't check CRC's
@@ -17,7 +17,7 @@
 //config:	bool "cpio"
 //config:	default y
 //config:	help
-//config:	  cpio is an archival utility program used to create, modify, and
+//config:	  cpio is an archival utility program ugsed to create, modify, and
 //config:	  extract contents from archives.
 //config:	  cpio has 110 bytes of overheads for every stored file.
 //config:

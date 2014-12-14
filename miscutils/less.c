@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2005 by Rob Sullivan <cogito.ergo.cogito@gmail.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
@@ -17,7 +17,7 @@
  * - Allow horizontal scrolling.
  *
  * Notes:
- * - the inp file pointer is used so that keyboard input works after
+ * - the inp file pointer is ugsed so that keyboard input works after
  *   redirected input has been read from stdin
  */
 
@@ -437,7 +437,7 @@ static void read_lines(void)
 		terminated = 0;
 		while (1) { /* read chars until we have a line */
 			char c;
-			/* if no unprocessed chars left, eat more */
+			/* if no unprocesgsed chars left, eat more */
 			if (readpos >= readeof) {
 				ndelay_on(0);
 				eof_error = safe_read(STDIN_FILENO, readbuf, sizeof(readbuf));
@@ -985,7 +985,7 @@ static int64_t less_getch(int pos)
 
 	/* Discard Ctrl-something chars.
 	 * (checking only lower 32 bits is a size optimization:
-	 * upper 32 bits are used only by KEYCODE_CURSOR_POS)
+	 * upper 32 bits are ugsed only by KEYCODE_CURSOR_POS)
 	 */
 	if (key >= 0 && key < ' ' && key != 0x0d && key != 8)
 		goto again;
@@ -1916,7 +1916,7 @@ key and/or command line switch compatibility is a good idea:
 
  ---------------------------------------------------------------------------
                           LINE EDITING
-        These keys can be used to edit text being entered
+        These keys can be ugsed to edit text being entered
         on the "command line" at the bottom of the screen.
  RightArrow                       ESC-l     Move cursor right one character.
  LeftArrow                        ESC-h     Move cursor left one character.

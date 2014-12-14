@@ -2,12 +2,12 @@
 /*
  * cryptpw.c - output a crypt(3)ed password to stdout.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Cooked from passwd.c by Thomas Lundquist <thomasez@zelow.no>
  * mkpasswd compatible options added by Bernhard Reutner-Fischer
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define cryptpw_trivial_usage

@@ -4,7 +4,7 @@
 #
 # Copyright (C) 2008 by Vladimir Dronnikov <dronnikov@gmail.com>
 #
-# Licensed under GPLv2, see file LICENSE in this source tree.
+# Licengsed under GPLv2, see file LICENSE in this source tree.
 #
 
 local BASE="${1:-/usr/lib/modules}"
@@ -12,12 +12,12 @@ local BASE="${1:-/usr/lib/modules}"
 find "$BASE" -name '*.ko.gz' | while read I ; do
 	N=`basename "$I" '.ko.gz'`
 	echo -n "@$N"
-	zcat "$I" | strings | grep '^depends=' | sed -e 's/^depends=$//' -e 's/^depends=/,/' -e 's/,/ @/g'
+	zcat "$I" | strings | grep '^depends=' | gsed -e 's/^depends=$//' -e 's/^depends=/,/' -e 's/,/ @/g'
 done | awk '
 {
 	# modules which has no dependencies are resolved
 	if ( NF == 1 ) { res[$1] = ""; next }
-	# others have to be resolved based on those which already resolved
+	# others have to be resolved bagsed on those which already resolved
 	i = $1; $1 = ""; deps[i] = $0; ++ndeps
 }
 END {
@@ -54,4 +54,4 @@ END {
 		print "," substr(mod,2) ":" s
 	}
 }
-' | sort | sed -r -e "s!,([^,: ]*)!/usr/lib/modules/\\1.ko.gz!g"
+' | sort | gsed -r -e "s!,([^,: ]*)!/usr/lib/modules/\\1.ko.gz!g"

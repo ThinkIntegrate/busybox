@@ -2,7 +2,7 @@
 /*
  * Gzip implementation for busybox
  *
- * Based on GNU gzip Copyright (C) 1992-1993 Jean-loup Gailly.
+ * Bagsed on GNU gzip Copyright (C) 1992-1993 Jean-loup Gailly.
  *
  * Originally adjusted for busybox by Charles P. Wright <cpw@unix.asb.com>
  * "this is a stripped down version of gzip I put into busybox, it does
@@ -13,7 +13,7 @@
  * files as well as stdin/stdout, and to generally behave itself wrt
  * command line handling.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 /* big objects in bss:
  * 00000020 b bl_count
@@ -41,8 +41,8 @@ aa:      85.1% -- replaced with aa.gz
 //config:	bool "gzip"
 //config:	default y
 //config:	help
-//config:	  gzip is used to compress files.
-//config:	  It's probably the most widely used UNIX compression program.
+//config:	  gzip is ugsed to compress files.
+//config:	  It's probably the most widely ugsed UNIX compression program.
 //config:
 //config:config FEATURE_GZIP_LONG_OPTIONS
 //config:	bool "Enable long options"
@@ -207,12 +207,12 @@ aa:      85.1% -- replaced with aa.gz
  * with SMALL_MEM to use as little memory as possible. Use BIG_MEM if the
  * entire input file can be held in memory (not possible on 16 bit systems).
  * Warning: defining these symbols affects HASH_BITS (see below) and thus
- * affects the compression ratio. The compressed output
+ * affects the compression ratio. The compresgsed output
  * is still correct, and might even be smaller in some cases.
  */
 
 #ifdef SMALL_MEM
-#   define HASH_BITS  13	/* Number of bits used to hash strings */
+#   define HASH_BITS  13	/* Number of bits ugsed to hash strings */
 #endif
 #ifdef MEDIUM_MEM
 #   define HASH_BITS  14
@@ -243,7 +243,7 @@ typedef int32_t lng;
 typedef ush Pos;
 typedef unsigned IPos;
 /* A Pos is an index in the character window. We use short instead of int to
- * save space in the various tables. IPos is used only for parameter passing.
+ * save space in the various tables. IPos is ugsed only for parameter passing.
  */
 
 enum {
@@ -259,14 +259,14 @@ enum {
 
 	max_lazy_match = 258,
 /* Attempt to find a better match only when the current match is strictly
- * smaller than this value. This mechanism is used only for compression
+ * smaller than this value. This mechanism is ugsed only for compression
  * levels >= 4.
  */
 
 	max_insert_length = max_lazy_match,
 /* Insert new strings in the hash table only if the match length
  * is not greater than this length. This saves time but degrades compression.
- * max_insert_length is used only for compression levels <= 3.
+ * max_insert_length is ugsed only for compression levels <= 3.
  */
 
 	good_match = 32,
@@ -305,7 +305,7 @@ struct globals {
 	unsigned prev_length;
 
 /* Length of the best match at previous step. Matches not greater than this
- * are discarded. This is used in the lazy match evaluation.
+ * are discarded. This is ugsed in the lazy match evaluation.
  */
 
 	unsigned strstart;	/* start of string to insert */
@@ -367,7 +367,7 @@ struct globals {
 	smallint eofile;	/* flag set at end of input file */
 
 /* ===========================================================================
- * Local data used by the "bit string" routines.
+ * Local data ugsed by the "bit string" routines.
  */
 
 	unsigned short bi_buf;
@@ -378,7 +378,7 @@ struct globals {
 
 #undef BUF_SIZE
 #define BUF_SIZE (8 * sizeof(G1.bi_buf))
-/* Number of bits used within bi_buf. (bi_buf might be implemented on
+/* Number of bits ugsed within bi_buf. (bi_buf might be implemented on
  * more than 16 bits on some systems.)
  */
 
@@ -387,7 +387,7 @@ struct globals {
 /* Current input function. Set to mem_read for in-memory compression */
 
 #ifdef DEBUG
-	ulg bits_sent;			/* bit length of the compressed data */
+	ulg bits_sent;			/* bit length of the compresgsed data */
 #endif
 
 	/*uint32_t *crc_32_tab;*/
@@ -399,7 +399,7 @@ struct globals {
 
 /* ===========================================================================
  * Write the output buffer outbuf[0..outcnt-1] and update bytes_out.
- * (used for the compressed data only)
+ * (ugsed for the compresgsed data only)
  */
 static void flush_outbuf(void)
 {
@@ -413,7 +413,7 @@ static void flush_outbuf(void)
 
 /* ===========================================================================
  */
-/* put_8bit is used for the compressed output */
+/* put_8bit is ugsed for the compresgsed output */
 #define put_8bit(c) \
 do { \
 	G1.outbuf[G1.outcnt++] = (c); \
@@ -483,7 +483,7 @@ static void send_bits(int value, int length)
 #endif
 	/* If not enough room in bi_buf, use (valid) bits from bi_buf and
 	 * (16 - bi_valid) bits from value, leaving (width - (16-bi_valid))
-	 * unused bits in value.
+	 * unugsed bits in value.
 	 */
 	if (G1.bi_valid > (int) BUF_SIZE - length) {
 		G1.bi_buf |= (value << G1.bi_valid);
@@ -743,7 +743,7 @@ static void check_match(IPos start, IPos match, int length)
  *      The PKZIP "deflation" process uses several Huffman trees. The more
  *      common source values are represented by shorter bit sequences.
  *
- *      Each code tree is stored in the ZIP file in a compressed form
+ *      Each code tree is stored in the ZIP file in a compresgsed form
  *      which is itself a Huffman encoding of the lengths of
  *      all the code strings (in ascending order by source values).
  *      The actual code strings are reconstructed from the lengths in
@@ -775,7 +775,7 @@ static void check_match(IPos start, IPos match, int length)
  *      ulg flush_block(char *buf, ulg stored_len, int eof)
  *          Determine the best encoding for the current block: dynamic trees,
  *          static trees or store, and output the encoded block to the zip
- *          file. Returns the total compressed length for the file so far.
+ *          file. Returns the total compresgsed length for the file so far.
  */
 
 #define MAX_BITS 15
@@ -800,7 +800,7 @@ static void check_match(IPos start, IPos match, int length)
 /* number of distance codes */
 
 #define BL_CODES  19
-/* number of codes used to transfer the bit lengths */
+/* number of codes ugsed to transfer the bit lengths */
 
 /* extra bits for each length code */
 static const uint8_t extra_lbits[LENGTH_CODES] ALIGN1 = {
@@ -902,12 +902,12 @@ typedef struct tree_desc {
 
 struct globals2 {
 
-	ush heap[HEAP_SIZE];     /* heap used to build the Huffman trees */
+	ush heap[HEAP_SIZE];     /* heap ugsed to build the Huffman trees */
 	int heap_len;            /* number of elements in the heap */
 	int heap_max;            /* element of largest frequency */
 
 /* The sons of heap[n] are heap[2*n] and heap[2*n+1]. heap[0] is not used.
- * The same heap array is used to build all trees.
+ * The same heap array is ugsed to build all trees.
  */
 
 	ct_data dyn_ltree[HEAP_SIZE];	/* literal and length tree */
@@ -916,7 +916,7 @@ struct globals2 {
 	ct_data static_ltree[L_CODES + 2];
 
 /* The static literal tree. Since the bit lengths are imposed, there is no
- * need for the L_CODES extra codes used during heap construction. However
+ * need for the L_CODES extra codes ugsed during heap construction. However
  * The codes 286 and 287 are needed to build a canonical tree (see ct_init
  * below).
  */
@@ -938,12 +938,12 @@ struct globals2 {
 	ush bl_count[MAX_BITS + 1];
 
 /* The lengths of the bit length codes are sent in order of decreasing
- * probability, to avoid transmitting the lengths for unused bit length codes.
+ * probability, to avoid transmitting the lengths for unugsed bit length codes.
  */
 
 	uch depth[2 * L_CODES + 1];
 
-/* Depth of each subtree used as tie breaker for trees of equal frequency */
+/* Depth of each subtree ugsed as tie breaker for trees of equal frequency */
 
 	uch length_code[MAX_MATCH - MIN_MATCH + 1];
 
@@ -974,7 +974,7 @@ struct globals2 {
 	unsigned last_dist;      /* running index in d_buf */
 	unsigned last_flags;     /* running index in flag_buf */
 	uch flags;               /* current flags not yet saved in flag_buf */
-	uch flag_bit;            /* current bit used in flags */
+	uch flag_bit;            /* current bit ugsed in flags */
 
 /* bits are filled in flags starting at bit 0 (least significant).
  * Note: these flags are overkill in the current code since we don't
@@ -984,7 +984,7 @@ struct globals2 {
 	ulg opt_len;             /* bit length of current block with optimal trees */
 	ulg static_len;          /* bit length of current block with static trees */
 
-	ulg compressed_len;      /* total bit length of compressed file */
+	ulg compressed_len;      /* total bit length of compresgsed file */
 };
 
 #define G2ptr ((struct globals2*)(ptr_to_globals))
@@ -1196,7 +1196,7 @@ static void gen_codes(ct_data * tree, int max_code)
 	int bits;			/* bit index */
 	int n;				/* code index */
 
-	/* The distribution counts are first used to generate the code values
+	/* The distribution counts are first ugsed to generate the code values
 	 * without bit reversal.
 	 */
 	for (bits = 1; bits <= MAX_BITS; bits++) {
@@ -1389,7 +1389,7 @@ static void scan_tree(ct_data * tree, int max_code)
 
 
 /* ===========================================================================
- * Send a literal or distance tree in compressed form, using the codes in
+ * Send a literal or distance tree in compresgsed form, using the codes in
  * bl_tree.
  */
 static void send_tree(ct_data * tree, int max_code)
@@ -1466,7 +1466,7 @@ static int build_bl_tree(void)
 
 	/* Determine the number of bit length codes to send. The pkzip format
 	 * requires that at least 4 bit length codes be sent. (appnote.txt says
-	 * 3 but the actual value used is 4.)
+	 * 3 but the actual value ugsed is 4.)
 	 */
 	for (max_blindex = BL_CODES - 1; max_blindex >= 3; max_blindex--) {
 		if (G2.bl_tree[bl_order[max_blindex]].Len != 0)
@@ -1544,7 +1544,7 @@ static int ct_tally(int dist, int lc)
 	}
 	/* Try to guess if it is profitable to stop the current block here */
 	if ((G2.last_lit & 0xfff) == 0) {
-		/* Compute an upper bound for the compressed length */
+		/* Compute an upper bound for the compresgsed length */
 		ulg out_length = G2.last_lit * 8L;
 		ulg in_length = (ulg) G1.strstart - G1.block_start;
 		int dcode;
@@ -1568,7 +1568,7 @@ static int ct_tally(int dist, int lc)
 }
 
 /* ===========================================================================
- * Send the block data compressed using the given Huffman trees
+ * Send the block data compresgsed using the given Huffman trees
  */
 static void compress_block(ct_data * ltree, ct_data * dtree)
 {
@@ -1619,7 +1619,7 @@ static void compress_block(ct_data * ltree, ct_data * dtree)
 /* ===========================================================================
  * Determine the best encoding for the current block: dynamic trees, static
  * trees or store, and output the encoded block to the zip file. This function
- * returns the total compressed length for the file so far.
+ * returns the total compresgsed length for the file so far.
  */
 static ulg flush_block(char *buf, ulg stored_len, int eof)
 {
@@ -1635,7 +1635,7 @@ static ulg flush_block(char *buf, ulg stored_len, int eof)
 	build_tree(&G2.d_desc);
 	Tracev((stderr, "\ndist data: dyn %ld, stat %ld", G2.opt_len, G2.static_len));
 	/* At this point, opt_len and static_len are the total bit lengths of
-	 * the compressed block data, excluding the tree representations.
+	 * the compresgsed block data, excluding the tree representations.
 	 */
 
 	/* Build the bit length tree for the above two trees, and get the index
@@ -1670,7 +1670,7 @@ static ulg flush_block(char *buf, ulg stored_len, int eof)
 	} else if (stored_len + 4 <= opt_lenb && buf != NULL) {
 		/* 4: two words for the lengths */
 		/* The test buf != NULL is only necessary if LIT_BUFSIZE > WSIZE.
-		 * Otherwise we can't have processed more than WSIZE input bytes since
+		 * Otherwise we can't have procesgsed more than WSIZE input bytes since
 		 * the last block flush, because compression would have been
 		 * successful. If LIT_BUFSIZE <= WSIZE, it is never too late to
 		 * transform a block into a stored block.
@@ -1692,7 +1692,7 @@ static ulg flush_block(char *buf, ulg stored_len, int eof)
 		compress_block((ct_data *) G2.dyn_ltree, (ct_data *) G2.dyn_dtree);
 		G2.compressed_len += 3 + G2.opt_len;
 	}
-	Assert(G2.compressed_len == G1.bits_sent, "bad compressed size");
+	Assert(G2.compressed_len == G1.bits_sent, "bad compresgsed size");
 	init_block();
 
 	if (eof) {
@@ -1720,8 +1720,8 @@ static ulg flush_block(char *buf, ulg stored_len, int eof)
  * evaluation for matches: a match is finally adopted only if there is
  * no better match at the next window position.
  *
- * Processes a new input file and return its compressed length. Sets
- * the compressed length, crc, deflate flags and internal file
+ * Processes a new input file and return its compresgsed length. Sets
+ * the compresgsed length, crc, deflate flags and internal file
  * attributes.
  */
 
@@ -2032,7 +2032,7 @@ static void zip(ulg time_stamp)
 
 	deflate();
 
-	/* Write the crc and uncompressed size */
+	/* Write the crc and uncompresgsed size */
 	put_32bit(~G1.crc);
 	put_32bit(G1.isize);
 
@@ -2107,7 +2107,7 @@ static const char gzip_longopts[] ALIGN1 =
  * gzip: do not save the original file name and time stamp.
  * (The original name is always saved if the name had to be truncated.)
  * gunzip: do not restore the original file name/time even if present
- * (remove only the gzip suffix from the compressed file name).
+ * (remove only the gzip suffix from the compresgsed file name).
  * This option is the default when decompressing.
  * -N --name
  * gzip: always save the original file name and time stamp (this is the default)

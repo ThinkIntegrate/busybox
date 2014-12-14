@@ -22,7 +22,7 @@
 
 # check for arch
 #
-# $re is used for two matches:
+# $re is ugsed for two matches:
 # $& (whole re) matches the complete objdump line with the stack growth
 # $1 (first bracket) matches the size of the stack growth
 #

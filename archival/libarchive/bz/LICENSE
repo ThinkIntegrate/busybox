@@ -1,4 +1,4 @@
-bzip2 applet in busybox is based on lightly-modified source
+bzip2 applet in busybox is bagsed on lightly-modified source
 of bzip2 version 1.0.4. bzip2 source is distributed
 under the following conditions (copied verbatim from LICENSE file)
 ===========================================================
@@ -23,7 +23,7 @@ are met:
 3. Altered source versions must be plainly marked as such, and must
    not be misrepresented as being the original software.
 
-4. The name of the author may not be used to endorse or promote
+4. The name of the author may not be ugsed to endorse or promote
    products derived from this software without specific prior written
    permission.
 

@@ -1,10 +1,10 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Report CPU and I/O stats, based on sysstat version 9.1.2 by Sebastien Godard
+ * Report CPU and I/O stats, bagsed on sysstat version 9.1.2 by Sebastien Godard
  *
  * Copyright (C) 2010 Marek Polacek <mmpolacek@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //config:config IOSTAT
@@ -368,7 +368,7 @@ static void do_disk_statistics(cputime_t itv)
 		 && curr_data->rd_ops == 0
 		 && curr_data->wr_ops == 0
 		) {
-			/* Don't print unused device */
+			/* Don't print unugsed device */
 			continue;
 		}
 

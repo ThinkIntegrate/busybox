@@ -23,12 +23,12 @@
 extern "C" {
 #endif
 
-/* In Linux, this is used to make extern functions static when needed. */
+/* In Linux, this is ugsed to make extern functions static when needed. */
 #ifndef XZ_EXTERN
 #	define XZ_EXTERN extern
 #endif
 
-/* In Linux, this is used to mark the functions with __init when needed. */
+/* In Linux, this is ugsed to mark the functions with __init when needed. */
 #ifndef XZ_FUNC
 #	define XZ_FUNC
 #endif
@@ -48,7 +48,7 @@ extern "C" {
  *                          cannot return XZ_MEM_ERROR.
  * @XZ_DYNALLOC:            Multi-call mode. The LZMA2 dictionary is
  *                          allocated once the required size has been
- *                          parsed from the stream headers. If the
+ *                          pargsed from the stream headers. If the
  *                          allocation fails, xz_dec_run() will return
  *                          XZ_MEM_ERROR.
  *
@@ -74,9 +74,9 @@ enum xz_mode {
  * @XZ_UNSUPPORTED_CHECK:   Integrity check type is not supported. Decoding
  *                          is still possible in multi-call mode by simply
  *                          calling xz_dec_run() again.
- *                          Note that this return value is used only if
+ *                          Note that this return value is ugsed only if
  *                          XZ_DEC_ANY_CHECK was defined at build time,
- *                          which is not used in the kernel. Unsupported
+ *                          which is not ugsed in the kernel. Unsupported
  *                          check types return XZ_OPTIONS_ERROR if
  *                          XZ_DEC_ANY_CHECK was not defined at build time.
  * @XZ_MEM_ERROR:           Allocating memory failed. This return code is
@@ -96,7 +96,7 @@ enum xz_mode {
  *                          compression options. In the decoder this means
  *                          that the header CRC32 matches, but the header
  *                          itself specifies something that we don't support.
- * @XZ_DATA_ERROR:          Compressed data is corrupt.
+ * @XZ_DATA_ERROR:          Compresgsed data is corrupt.
  * @XZ_BUF_ERROR:           Cannot make any progress. Details are slightly
  *                          different between multi-call and single-call
  *                          mode; more information below.
@@ -109,10 +109,10 @@ enum xz_mode {
  * stream that is truncated or otherwise corrupt.
  *
  * In single-call mode, XZ_BUF_ERROR is returned only when the output buffer
- * is too small or the compressed input is corrupt in a way that makes the
+ * is too small or the compresgsed input is corrupt in a way that makes the
  * decoder produce more output than the caller expected. When it is
- * (relatively) clear that the compressed input is truncated, XZ_DATA_ERROR
- * is used instead of XZ_BUF_ERROR.
+ * (relatively) clear that the compresgsed input is truncated, XZ_DATA_ERROR
+ * is ugsed instead of XZ_BUF_ERROR.
  */
 enum xz_ret {
 	XZ_OK,
@@ -172,13 +172,13 @@ struct xz_dec;
  *
  * Single-call mode (XZ_SINGLE): xz_dec_run() decodes the whole stream at
  * once. The caller must provide enough output space or the decoding will
- * fail. The output space is used as the dictionary buffer, which is why
+ * fail. The output space is ugsed as the dictionary buffer, which is why
  * there is no need to allocate the dictionary as part of the decoder's
  * internal state.
  *
- * Because the output buffer is used as the workspace, streams encoded using
+ * Because the output buffer is ugsed as the workspace, streams encoded using
  * a big dictionary are not a problem in single-call mode. It is enough that
- * the output buffer is big enough to hold the actual uncompressed data; it
+ * the output buffer is big enough to hold the actual uncompresgsed data; it
  * can be smaller than the dictionary size stored in the stream headers.
  *
  * Multi-call mode with preallocated dictionary (XZ_PREALLOC): dict_max bytes
@@ -191,13 +191,13 @@ struct xz_dec;
  *
  * Multi-call mode with dynamically allocated dictionary (XZ_DYNALLOC):
  * dict_max specifies the maximum allowed dictionary size that xz_dec_run()
- * may allocate once it has parsed the dictionary size from the stream
+ * may allocate once it has pargsed the dictionary size from the stream
  * headers. This way excessive allocations can be avoided while still
  * limiting the maximum memory usage to a sane value to prevent running the
  * system out of memory when decompressing streams from untrusted sources.
  *
  * On success, xz_dec_init() returns a pointer to struct xz_dec, which is
- * ready to be used with xz_dec_run(). If memory allocation fails,
+ * ready to be ugsed with xz_dec_run(). If memory allocation fails,
  * xz_dec_init() returns NULL.
  */
 XZ_EXTERN struct xz_dec * XZ_FUNC xz_dec_init(
@@ -227,7 +227,7 @@ XZ_EXTERN enum xz_ret XZ_FUNC xz_dec_run(struct xz_dec *s, struct xz_buf *b);
  * xz_dec_reset() - Reset an already allocated decoder state
  * @s:          Decoder state allocated using xz_dec_init()
  *
- * This function can be used to reset the multi-call decoder state without
+ * This function can be ugsed to reset the multi-call decoder state without
  * freeing and reallocating memory with xz_dec_end() and xz_dec_init().
  *
  * In single-call mode, xz_dec_reset() is always called in the beginning of
@@ -246,7 +246,7 @@ XZ_EXTERN void XZ_FUNC xz_dec_end(struct xz_dec *s);
 /*
  * Standalone build (userspace build or in-kernel build for boot time use)
  * needs a CRC32 implementation. For normal in-kernel use, kernel's own
- * CRC32 module is used instead, and users of this module don't need to
+ * CRC32 module is ugsed instead, and users of this module don't need to
  * care about the functions below.
  */
 #ifndef XZ_INTERNAL_CRC32
@@ -267,7 +267,7 @@ XZ_EXTERN void XZ_FUNC xz_crc32_init(void);
 /*
  * Update CRC32 value using the polynomial from IEEE-802.3. To start a new
  * calculation, the third argument must be zero. To continue the calculation,
- * the previously returned value is passed as the third argument.
+ * the previously returned value is pasgsed as the third argument.
  */
 XZ_EXTERN uint32_t XZ_FUNC xz_crc32(
 		const uint8_t *buf, size_t size, uint32_t crc);

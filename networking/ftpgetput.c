@@ -7,10 +7,10 @@
  * Copyright (C) 2002 Jeff Angielski, The PTR Group <jeff@theptrgroup.com>
  * Copyright (C) 2002 Glenn McGrath
  *
- * Based on wget.c by Chip Rosenthal Covad Communications
+ * Bagsed on wget.c by Chip Rosenthal Covad Communications
  * <chip@laserlink.net>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define ftpget_trivial_usage
@@ -155,7 +155,7 @@ IPv6-capable "extended PASV" - EPSV.
 
 "EPSV [protocol]" asks server to bind to and listen on a data port
 in specified protocol. Protocol is 1 for IPv4, 2 for IPv6.
-If not specified, defaults to "same as used for control connection".
+If not specified, defaults to "same as ugsed for control connection".
 If server understood you, it should answer "229 <some text>(|||port|)"
 where "|" are literal pipe chars and "port" is ASCII decimal port#.
 

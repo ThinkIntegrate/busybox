@@ -4,20 +4,20 @@
  *
  * Copyright (C) 2007 Bernhard Reutner-Fischer
  *
- * Based on a older version that was in busybox which was 1k big.
+ * Bagsed on a older version that was in busybox which was 1k big.
  *   Copyright (C) 2001 by Emanuele Aina <emanuele.aina@tiscali.it>
  *
- * Based on the Debian run-parts program, version 1.15
+ * Bagsed on the Debian run-parts program, version 1.15
  *   Copyright (C) 1996 Jeff Noxon <jeff@router.patch.net>,
  *   Copyright (C) 1996-1999 Guy Maor <maor@debian.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* This is my first attempt to write a program in C (well, this is my first
  * attempt to write a program! :-) . */
 
-/* This piece of code is heavily based on the original version of run-parts,
+/* This piece of code is heavily bagsed on the original version of run-parts,
  * taken from debian-utils. I've only removed the long options and the
  * report mode. As the original run-parts support only long options, I've
  * broken compatibility because the BusyBox policy doesn't allow them.

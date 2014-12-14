@@ -1,7 +1,7 @@
 /* vi: set sw=4 ts=4: */
 /* uncompress for busybox -- (c) 2002 Robert Griebl
  *
- * based on the original compress42.c source
+ * bagsed on the original compress42.c source
  * (see disclaimer below)
  */
 
@@ -52,11 +52,11 @@
 /* machine variants which require cc -Dmachine:  pdp11, z8000, DOS */
 #define HBITS      17   /* 50% occupancy */
 #define HSIZE      (1<<HBITS)
-#define HMASK      (HSIZE-1)    /* unused */
-#define HPRIME     9941         /* unused */
+#define HMASK      (HSIZE-1)    /* unugsed */
+#define HPRIME     9941         /* unugsed */
 #define BITS       16
 #define BITS_STR   "16"
-#undef  MAXSEG_64K              /* unused */
+#undef  MAXSEG_64K              /* unugsed */
 #define MAXCODE(n) (1L << (n))
 
 #define htabof(i)               htab[i]
@@ -69,7 +69,7 @@
 /*
  * Decompress stdin to stdout.  This routine adapts to the codes in the
  * file building the "string" table on-the-fly; requiring no table to
- * be stored in the compressed file.
+ * be stored in the compresgsed file.
  */
 
 IF_DESKTOP(long long) int FAST_FUNC
@@ -124,7 +124,7 @@ unpack_Z_stream(transformer_aux_data_t *aux, int src_fd, int dst_fd)
 	maxmaxcode = MAXCODE(maxbits);
 
 	if (maxbits > BITS) {
-		bb_error_msg("compressed with %d bits, can only handle "
+		bb_error_msg("compresgsed with %d bits, can only handle "
 				BITS_STR" bits", maxbits);
 		goto err;
 	}

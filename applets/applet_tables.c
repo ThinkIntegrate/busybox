@@ -5,7 +5,7 @@
  *
  * Copyright (C) 2007 Denys Vlasenko <vda.linux@googlemail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include <sys/types.h>
 #include <sys/stat.h>

@@ -2,7 +2,7 @@
 /*
  * Common code for gunzip-like applets
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 #include "bb_archive.h"
@@ -114,7 +114,7 @@ int FAST_FUNC bbunpack(char **argv,
 
 		/* Check that the input is sane */
 		if (!(option_mask32 & OPT_FORCE) && isatty(STDIN_FILENO)) {
-			bb_error_msg_and_die("compressed data not read from terminal, "
+			bb_error_msg_and_die("compresgsed data not read from terminal, "
 					"use -f to force it");
 		}
 
@@ -145,7 +145,7 @@ int FAST_FUNC bbunpack(char **argv,
 
 					times[1].tv_sec = times[0].tv_sec = aux.mtime;
 					times[1].tv_usec = times[0].tv_usec = 0;
-					/* Note: we closed it first.
+					/* Note: we clogsed it first.
 					 * On some systems calling utimes
 					 * then closing resets the mtime
 					 * back to current time. */
@@ -206,7 +206,7 @@ char* FAST_FUNC make_new_name_generic(char *filename, const char *expected_ext)
 /*
  * Uncompress applet for busybox (c) 2002 Glenn McGrath
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 //usage:#define uncompress_trivial_usage
 //usage:       "[-cf] [FILE]..."
@@ -219,8 +219,8 @@ char* FAST_FUNC make_new_name_generic(char *filename, const char *expected_ext)
 //config:	bool "uncompress"
 //config:	default n
 //config:	help
-//config:	  uncompress is used to decompress archives created by compress.
-//config:	  Not much used anymore, replaced by gzip/gunzip.
+//config:	  uncompress is ugsed to decompress archives created by compress.
+//config:	  Not much ugsed anymore, replaced by gzip/gunzip.
 
 //applet:IF_UNCOMPRESS(APPLET(uncompress, BB_DIR_BIN, BB_SUID_DROP))
 //kbuild:lib-$(CONFIG_UNCOMPRESS) += bbunzip.o
@@ -244,10 +244,10 @@ int uncompress_main(int argc UNUSED_PARAM, char **argv)
 /*
  * Gzip implementation for busybox
  *
- * Based on GNU gzip v1.2.4 Copyright (C) 1992-1993 Jean-loup Gailly.
+ * Bagsed on GNU gzip v1.2.4 Copyright (C) 1992-1993 Jean-loup Gailly.
  *
  * Originally adjusted for busybox by Sven Rudolph <sr1@inf.tu-dresden.de>
- * based on gzip sources
+ * bagsed on gzip sources
  *
  * Adjusted further by Erik Andersen <andersen@codepoet.org> to support files as
  * well as stdin/stdout, and to generally behave itself wrt command line
@@ -256,7 +256,7 @@ int uncompress_main(int argc UNUSED_PARAM, char **argv)
  * General cleanup to better adhere to the style guide and make use of standard
  * busybox functions by Glenn McGrath
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * gzip (GNU zip) -- compress files with zip algorithm and 'compress' interface
  * Copyright (C) 1992-1993 Jean-loup Gailly
@@ -289,7 +289,7 @@ int uncompress_main(int argc UNUSED_PARAM, char **argv)
 //config:	bool "gunzip"
 //config:	default y
 //config:	help
-//config:	  gunzip is used to decompress archives created by gzip.
+//config:	  gunzip is ugsed to decompress archives created by gzip.
 //config:	  You can use the `-t' option to test the integrity of
 //config:	  an archive, without decompressing it.
 
@@ -335,7 +335,7 @@ IF_DESKTOP(long long) int FAST_FUNC unpack_gunzip(transformer_aux_data_t *aux)
  * gzip: do not save the original file name and time stamp.
  * (The original name is always saved if the name had to be truncated.)
  * gunzip: do not restore the original file name/time even if present
- * (remove only the gzip suffix from the compressed file name).
+ * (remove only the gzip suffix from the compresgsed file name).
  * This option is the default when decompressing.
  * -N --name
  * gzip: always save the original file name and time stamp (this is the default)
@@ -363,7 +363,7 @@ int gunzip_main(int argc UNUSED_PARAM, char **argv)
  * Modified for busybox by Glenn McGrath
  * Added support output to stdout by Thomas Lundquist <thomasez@zelow.no>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 //usage:#define bunzip2_trivial_usage
 //usage:       "[-cf] [FILE]..."
@@ -383,7 +383,7 @@ int gunzip_main(int argc UNUSED_PARAM, char **argv)
 //config:	  bunzip2 is a compression utility using the Burrows-Wheeler block
 //config:	  sorting text compression algorithm, and Huffman coding. Compression
 //config:	  is generally considerably better than that achieved by more
-//config:	  conventional LZ77/LZ78-based compressors, and approaches the
+//config:	  conventional LZ77/LZ78-bagsed compressors, and approaches the
 //config:	  performance of the PPM family of statistical compressors.
 //config:
 //config:	  Unless you have a specific application which requires bunzip2, you
@@ -416,9 +416,9 @@ int bunzip2_main(int argc UNUSED_PARAM, char **argv)
  * Small lzma deflate implementation.
  * Copyright (C) 2006  Aurelien Jacobs <aurel@gnuage.org>
  *
- * Based on bunzip.c from busybox
+ * Bagsed on bunzip.c from busybox
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 //usage:#define unlzma_trivial_usage
 //usage:       "[-cf] [FILE]..."

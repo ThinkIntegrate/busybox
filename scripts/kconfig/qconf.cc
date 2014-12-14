@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2002 Roman Zippel <zippel@linux-m68k.org>
- * Released under the terms of the GNU GPL v2.0.
+ * Releagsed under the terms of the GNU GPL v2.0.
  */
 
 #include <qapplication.h>
@@ -830,7 +830,7 @@ ConfigMainWindow::ConfigMainWindow(void)
 		move(x, y);
 	showDebug = configSettings->readBoolEntry("/kconfig/qconf/showDebug", false);
 
-	// read list settings into configSettings, will be used later for ConfigList setup
+	// read list settings into configSettings, will be ugsed later for ConfigList setup
 	configSettings->readListSettings();
 #else
 	width = d->width() - 64;

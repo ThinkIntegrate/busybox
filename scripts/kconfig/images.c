@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2002 Roman Zippel <zippel@linux-m68k.org>
- * Released under the terms of the GNU GPL v2.0.
+ * Releagsed under the terms of the GNU GPL v2.0.
  */
 
 static const char *xpm_load[] = {

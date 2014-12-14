@@ -4,14 +4,14 @@
  *
  * Copyright (C) 2003  Manuel Novoa III  <mjn3@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* http://www.opengroup.org/onlinepubs/007904975/utilities/chmod.html */
 
 #include "libbb.h"
 
-/* This function is used from NOFORK applets. It must not allocate anything */
+/* This function is ugsed from NOFORK applets. It must not allocate anything */
 
 #define FILEMODEBITS (S_ISUID | S_ISGID | S_ISVTX | S_IRWXU | S_IRWXG | S_IRWXO)
 

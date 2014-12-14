@@ -4,7 +4,7 @@
  *
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 defects - none? */
@@ -214,7 +214,7 @@ tst_for_each "-vhRP"
 tst_for_each "-vhRL"
 tst_for_each "-vhRH"
 # Fix `name' in coreutils output
-sed 's/`/'"'"'/g' -i test2.out
+gsed 's/`/'"'"'/g' -i test2.out
 # Compare us with coreutils output
 diff -u test1.out test2.out
 

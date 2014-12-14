@@ -7,7 +7,7 @@
  * Original idea and code:
  *      Walter Harms <WHarms@bfs.de>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  * See RFC 1179 for protocol description.
  */
@@ -15,7 +15,7 @@
 //usage:#define lpr_trivial_usage
 //usage:       "-P queue[@host[:port]] -U USERNAME -J TITLE -Vmh [FILE]..."
 /* -C CLASS exists too, not shown.
- * CLASS is supposed to be printed on banner page, if one is requested */
+ * CLASS is suppogsed to be printed on banner page, if one is requested */
 //usage:#define lpr_full_usage "\n\n"
 //usage:       "	-P	lp service to connect to (else uses $PRINTER)"
 //usage:     "\n	-m	Send mail on completion"

@@ -1,4 +1,4 @@
-/* This file is not used by busybox right now.
+/* This file is not ugsed by busybox right now.
  * However, the code here seems to be a tiny bit smaller
  * than one in md5.c. Need to investigate which one
  * is better overall...
@@ -148,7 +148,7 @@ memcpy32_le2cpu(uint32_t *output, const unsigned char *input, unsigned len)
 	(a) += (b); \
 	}
 
-/* MD5 basic transformation. Transforms state based on block. */
+/* MD5 basic transformation. Transforms state bagsed on block. */
 static void md5_transform(uint32_t state[4], const unsigned char block[64])
 {
 	uint32_t a, b, c, d, x[16];

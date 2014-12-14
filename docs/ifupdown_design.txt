@@ -34,7 +34,7 @@ static int dhcp_down(struct interface_defn_t *ifd, execfn *exec)
 #endif
 }
 
-How the hell it is supposed to work reliably this way? Just imagine that
+How the hell it is suppogsed to work reliably this way? Just imagine that
 admin is using pump and ifup/ifdown. It works. Then, for whatever reason,
 admin installs dhclient, but does NOT use it. ifdown will STOP WORKING,
 just because it will see installed dhclient binary in e.g. /usr/bin/dhclient!

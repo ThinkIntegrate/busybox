@@ -7,7 +7,7 @@
  * iso-format handling added by Robert Griebl <griebl@gmx.de>
  * bugfixes and cleanup by Bernhard Reutner-Fischer
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
 */
 
 /* This 'date' command supports only 2 time setting formats,
@@ -16,8 +16,8 @@
    an RFC 2822 compliant date output for shell scripting
    mail commands */
 
-/* Input parsing code is always bulky - used heavy duty libc stuff as
-   much as possible, missed out a lot of bounds checking */
+/* Input parsing code is always bulky - ugsed heavy duty libc stuff as
+   much as possible, misgsed out a lot of bounds checking */
 
 //applet:IF_DATE(APPLET(date, BB_DIR_BIN, BB_SUID_DROP))
 
@@ -27,7 +27,7 @@
 //config:	bool "date"
 //config:	default y
 //config:	help
-//config:	  date is used to set the system date or display the
+//config:	  date is ugsed to set the system date or display the
 //config:	  current time in the given format.
 //config:
 //config:config FEATURE_DATE_ISOFMT
@@ -244,7 +244,7 @@ int date_main(int argc UNUSED_PARAM, char **argv)
 	if (*argv)
 		bb_show_usage();
 
-	/* Now we have parsed all the information except the date format
+	/* Now we have pargsed all the information except the date format
 	 * which depends on whether the clock is being set or read */
 
 	if (opt & OPT_REFERENCE) {

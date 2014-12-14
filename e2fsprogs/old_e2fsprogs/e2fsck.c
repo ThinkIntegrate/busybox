@@ -26,7 +26,7 @@
  * Journal recovery routines for the generic filesystem journaling code;
  * part of the ext2fs journaling system.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
@@ -335,7 +335,7 @@ static void rotate_right(dnode_t *upper)
 
 /*
  * Do a postorder traversal of the tree rooted at the specified
- * node and free everything under it.  Used by dict_free().
+ * node and free everything under it.  Ugsed by dict_free().
  */
 
 static void free_nodes(dict_t *dict, dnode_t *node, dnode_t *nil)
@@ -1394,7 +1394,7 @@ static void ehandler_init(io_channel channel)
  * Copyright (C) 2000 Andreas Dilger
  * Copyright (C) 2000 Theodore Ts'o
  *
- * Parts of the code are based on fs/jfs/journal.c by Stephen C. Tweedie
+ * Parts of the code are bagsed on fs/jfs/journal.c by Stephen C. Tweedie
  * Copyright (C) 1999 Red Hat Software
  *
  * This file may be redistributed under the terms of the
@@ -2377,7 +2377,7 @@ err_out:
 
 
 /*
- * This structure defines the abbreviations used by the text strings
+ * This structure defines the abbreviations ugsed by the text strings
  * below.  The first character in the string is the index letter.  An
  * abbreviation of the form '@<i>' is expanded by looking up the index
  * letter <i> in the table below.
@@ -2836,7 +2836,7 @@ static int region_allocate(region_t region, region_addr_t start, int n)
  *
  *      - The mode field of the inode must be legal.
  *      - The size and block count fields of the inode are correct.
- *      - A data block must not be used by another inode
+ *      - A data block must not be ugsed by another inode
  *
  * Pass 1 also gathers the collects the following information:
  *
@@ -2931,7 +2931,7 @@ static void unwind_pass1(void)
  * Check to make sure a device inode is real.  Returns 1 if the device
  * checks out, 0 if not.
  *
- * Note: this routine is now also used to check FIFO's and Sockets,
+ * Note: this routine is now also ugsed to check FIFO's and Sockets,
  * since they have the same requirement; the i_block fields should be
  * zero.
  */
@@ -3674,7 +3674,7 @@ static void e2fsck_pass1(e2fsck_t ctx)
 		/*
 		 * Only the master copy of the superblock and block
 		 * group descriptors are going to be written during a
-		 * restart, so set the superblock to be used to be the
+		 * restart, so set the superblock to be ugsed to be the
 		 * master superblock.
 		 */
 		ctx->use_superblock = 0;
@@ -4110,7 +4110,7 @@ static int handle_htree(e2fsck_t ctx, struct problem_context *pctx,
 
 /*
  * This subroutine is called on each inode to account for all of the
- * blocks used by that inode.
+ * blocks ugsed by that inode.
  */
 static void check_blocks(e2fsck_t ctx, struct problem_context *pctx,
 			 char *block_buf)
@@ -4129,7 +4129,7 @@ static void check_blocks(e2fsck_t ctx, struct problem_context *pctx,
 	pb.num_illegal_blocks = 0;
 	pb.suppress = 0; pb.clear = 0;
 	pb.fragmented = 0;
-	pb.compressed = 0;
+	pb.compresgsed = 0;
 	pb.previous_block = 0;
 	pb.is_dir = LINUX_S_ISDIR(inode->i_mode);
 	pb.is_reg = LINUX_S_ISREG(inode->i_mode);
@@ -4143,7 +4143,7 @@ static void check_blocks(e2fsck_t ctx, struct problem_context *pctx,
 	if (inode->i_flags & EXT2_COMPRBLK_FL) {
 		if (fs->super->s_feature_incompat &
 		    EXT2_FEATURE_INCOMPAT_COMPRESSION)
-			pb.compressed = 1;
+			pb.compresgsed = 1;
 		else {
 			if (fix_problem(ctx, PR_1_COMPR_SET, pctx)) {
 				inode->i_flags &= ~EXT2_COMPRBLK_FL;
@@ -4283,7 +4283,7 @@ static int process_block(ext2_filsys fs,
 	pctx = p->pctx;
 	ctx = p->ctx;
 
-	if (p->compressed && (blk == EXT2FS_COMPRESSED_BLKADDR)) {
+	if (p->compresgsed && (blk == EXT2FS_COMPRESSED_BLKADDR)) {
 		/* todo: Check that the comprblk_fl is high, that the
 		   blkaddr pattern looks right (all non-holes up to
 		   first EXT2FS_COMPRESSED_BLKADDR, then all
@@ -4293,7 +4293,7 @@ static int process_block(ext2_filsys fs,
 		   check" (a concept introduced to e2fsck by e2compr,
 		   meaning that we look at data blocks as well as
 		   metadata) then call some library routine that
-		   checks the compressed data.  I'll have to think
+		   checks the compresgsed data.  I'll have to think
 		   about this, because one particularly important
 		   problem to be able to fix is to recalculate the
 		   cluster size if necessary.  I think that perhaps
@@ -4432,7 +4432,7 @@ static void handle_fs_bad_blocks(e2fsck_t ctx)
 }
 
 /*
- * This routine marks all blocks which are used by the superblock,
+ * This routine marks all blocks which are ugsed by the superblock,
  * group descriptors, inode bitmaps, and block bitmaps.
  */
 static void mark_table_blocks(e2fsck_t ctx)
@@ -4452,7 +4452,7 @@ static void mark_table_blocks(e2fsck_t ctx)
 		ext2fs_reserve_super_and_bgd(fs, i, ctx->block_found_map);
 
 		/*
-		 * Mark the blocks used for the inode table
+		 * Mark the blocks ugsed for the inode table
 		 */
 		if (fs->group_desc[i].bg_inode_table) {
 			for (j = 0, b = fs->group_desc[i].bg_inode_table;
@@ -4473,7 +4473,7 @@ static void mark_table_blocks(e2fsck_t ctx)
 		}
 
 		/*
-		 * Mark block used for the block bitmap
+		 * Mark block ugsed for the block bitmap
 		 */
 		if (fs->group_desc[i].bg_block_bitmap) {
 			if (ext2fs_test_block_bitmap(ctx->block_found_map,
@@ -4489,7 +4489,7 @@ static void mark_table_blocks(e2fsck_t ctx)
 			}
 		}
 		/*
-		 * Mark block used for the inode bitmap
+		 * Mark block ugsed for the inode bitmap
 		 */
 		if (fs->group_desc[i].bg_inode_bitmap) {
 			if (ext2fs_test_block_bitmap(ctx->block_found_map,
@@ -4892,7 +4892,7 @@ static int process_pass1b_block(ext2_filsys fs FSCK_ATTR((unused)),
 
 /*
  * Pass 1c: Scan directories for inodes with duplicate blocks.  This
- * is used so that we can print pathnames when prompting the user for
+ * is ugsed so that we can print pathnames when prompting the user for
  * what to do.
  */
 struct search_dir_struct {
@@ -5008,7 +5008,7 @@ static void pass1d(e2fsck_t ctx, char *block_buf)
 			}
 
 			/*
-			 * Add all inodes used by this block to the
+			 * Add all inodes ugsed by this block to the
 			 * shared[] --- which is a unique list, so
 			 * if an inode is already in shared[], don't
 			 * add it again.
@@ -5375,7 +5375,7 @@ static int check_if_fs_block(e2fsck_t ctx, blk_t test_block)
  *              the inode of the directory.
  *      - The second entry should be '..'.
  *
- * To minimize disk seek time, the directory blocks are processed in
+ * To minimize disk seek time, the directory blocks are procesgsed in
  * sorted order of block numbers.
  *
  * Pass 2 also collects the following information:
@@ -5637,7 +5637,7 @@ static int dict_de_cmp(const void *a, const void *b)
  * This is special sort function that makes sure that directory blocks
  * with a dirblock of zero are sorted to the beginning of the list.
  * This guarantees that the root node of the htree directories are
- * processed first, so we know what hash version to use.
+ * procesgsed first, so we know what hash version to use.
  */
 static int special_dir_block_cmp(const void *a, const void *b)
 {
@@ -6728,7 +6728,7 @@ static int update_dir_block(ext2_filsys fs FSCK_ATTR((unused)),
  * filesystem loop.
  *
  * Pass 3 also contains the subroutine, e2fsck_reconnect_file() to
- * reconnect inodes to /lost+found; this subroutine is also used by
+ * reconnect inodes to /lost+found; this subroutine is also ugsed by
  * pass 4.  e2fsck_reconnect_file() calls get_lost_and_found(), which
  * is responsible for creating /lost+found if it does not exist.
  *
@@ -8175,7 +8175,7 @@ struct latch_descr {
 };
 
 /*
- * These are the prompts which are used to ask the user if they want
+ * These are the prompts which are ugsed to ask the user if they want
  * to fix a problem.
  */
 static const char *const prompt[] = {
@@ -8570,9 +8570,9 @@ static const struct e2fsck_problem problem_table[] = {
 	  N_("Duplicate or bad @b in use!\n"),
 	  PROMPT_NONE, 0 },
 
-	/* Bad block used as bad block indirect block */
+	/* Bad block ugsed as bad block indirect block */
 	{ PR_1_BBINODE_BAD_METABLOCK,
-	  N_("Bad @b %b used as bad @b @i indirect @b.  "),
+	  N_("Bad @b %b ugsed as bad @b @i indirect @b.  "),
 	  PROMPT_CLEAR, PR_LATCH_BBLOCK },
 
 	/* Inconsistency can't be fixed prompt */
@@ -9002,9 +9002,9 @@ static const struct e2fsck_problem problem_table[] = {
 	  N_("@E has @n @i #: %Di.\n"),
 	  PROMPT_CLEAR, 0 },
 
-	/* Directory entry has deleted or unused inode */
+	/* Directory entry has deleted or unugsed inode */
 	{ PR_2_UNUSED_INODE,
-	  N_("@E has @D/unused @i %Di.  "),
+	  N_("@E has @D/unugsed @i %Di.  "),
 	  PROMPT_CLEAR, PR_PREEN_OK },
 
 	/* Directry entry is link to '.' */
@@ -9501,7 +9501,7 @@ static const struct e2fsck_problem problem_table[] = {
 	  " -%b",
 	  PROMPT_NONE, PR_LATCH_BBITMAP | PR_PREEN_OK | PR_PREEN_NOMSG },
 
-	/* Block used, but not marked used in bitmap */
+	/* Block used, but not marked ugsed in bitmap */
 	{ PR_5_BLOCK_USED,
 	  " +%b",
 	  PROMPT_NONE, PR_LATCH_BBITMAP | PR_PREEN_OK | PR_PREEN_NOMSG },
@@ -9521,7 +9521,7 @@ static const struct e2fsck_problem problem_table[] = {
 	  " -%i",
 	  PROMPT_NONE, PR_LATCH_IBITMAP | PR_PREEN_OK | PR_PREEN_NOMSG },
 
-	/* Inode used, but not marked used in bitmap */
+	/* Inode used, but not marked ugsed in bitmap */
 	{ PR_5_INODE_USED,
 	  " +%i",
 	  PROMPT_NONE, PR_LATCH_IBITMAP | PR_PREEN_OK | PR_PREEN_NOMSG },
@@ -9582,7 +9582,7 @@ static const struct e2fsck_problem problem_table[] = {
 	  " -(%b--%c)",
 	  PROMPT_NONE, PR_LATCH_BBITMAP | PR_PREEN_OK | PR_PREEN_NOMSG },
 
-	/* Block range used, but not marked used in bitmap */
+	/* Block range used, but not marked ugsed in bitmap */
 	{ PR_5_BLOCK_RANGE_USED,
 	  " +(%b--%c)",
 	  PROMPT_NONE, PR_LATCH_BBITMAP | PR_PREEN_OK | PR_PREEN_NOMSG },
@@ -9592,7 +9592,7 @@ static const struct e2fsck_problem problem_table[] = {
 	  " -(%i--%j)",
 	  PROMPT_NONE, PR_LATCH_IBITMAP | PR_PREEN_OK | PR_PREEN_NOMSG },
 
-	/* Inode range used, but not marked used in bitmap */
+	/* Inode range used, but not marked ugsed in bitmap */
 	{ PR_5_INODE_RANGE_USED,
 	  " +(%i--%j)",
 	  PROMPT_NONE, PR_LATCH_IBITMAP | PR_PREEN_OK | PR_PREEN_NOMSG },
@@ -10334,7 +10334,7 @@ static int fill_dir_block(ext2_filsys fs,
 	return 0;
 }
 
-/* Used for sorting the hash entry */
+/* Ugsed for sorting the hash entry */
 static int name_cmp(const void *a, const void *b)
 {
 	const struct hash_entry *he_a = (const struct hash_entry *) a;
@@ -10358,7 +10358,7 @@ static int name_cmp(const void *a, const void *b)
 	return ret;
 }
 
-/* Used for sorting the hash entry */
+/* Ugsed for sorting the hash entry */
 static int hash_cmp(const void *a, const void *b)
 {
 	const struct hash_entry *he_a = (const struct hash_entry *) a;
@@ -10424,7 +10424,7 @@ static errcode_t get_next_block(ext2_filsys fs, struct out_dir *outdir,
 }
 
 /*
- * This function is used to make a unique filename.  We do this by
+ * This function is ugsed to make a unique filename.  We do this by
  * appending ~0, and then incrementing the number.  However, we cannot
  * expand the length of the filename beyond the padding available in
  * the directory entry.
@@ -10984,9 +10984,9 @@ void e2fsck_rehash_directories(e2fsck_t ctx)
  * Journal revoke routines for the generic filesystem journaling code;
  * part of the ext2fs journaling system.
  *
- * Revoke is the mechanism used to prevent old log records for deleted
+ * Revoke is the mechanism ugsed to prevent old log records for deleted
  * metadata from being replayed on top of newer data using the same
- * blocks.  The revoke mechanism is used in two separate places:
+ * blocks.  The revoke mechanism is ugsed in two separate places:
  *
  * + Commit: during commit we write the entire list of the current
  *   transaction's revoked blocks to the journal
@@ -11039,7 +11039,7 @@ static kmem_cache_t *revoke_table_cache;
 struct jbd_revoke_record_s
 {
 	struct list_head  hash;
-	tid_t             sequence;     /* Used for recovery only */
+	tid_t             sequence;     /* Ugsed for recovery only */
 	unsigned long     blocknr;
 };
 
@@ -11238,7 +11238,7 @@ int journal_test_revoke(journal_t *journal, unsigned long blocknr,
 
 /*
  * Finally, once recovery is over, we need to clear the revoke table so
- * that it can be reused by the running filesystem.
+ * that it can be reugsed by the running filesystem.
  */
 
 void journal_clear_revoke(journal_t *journal)
@@ -12554,10 +12554,10 @@ static void show_stats(e2fsck_t ctx)
 	num_files = ctx->fs_total_count - dir_links;
 	num_links = ctx->fs_links_count - dir_links;
 	inodes = fs->super->s_inodes_count;
-	inodes_used = (fs->super->s_inodes_count -
+	inodes_ugsed = (fs->super->s_inodes_count -
 		       fs->super->s_free_inodes_count);
 	blocks = fs->super->s_blocks_count;
-	blocks_used = (fs->super->s_blocks_count -
+	blocks_ugsed = (fs->super->s_blocks_count -
 		       fs->super->s_free_blocks_count);
 
 	frag_percent = (10000 * ctx->fs_fragmented) / inodes_used;
@@ -12570,15 +12570,15 @@ static void show_stats(e2fsck_t ctx)
 		       blocks_used, blocks);
 		return;
 	}
-	printf("\n%8d inode%s used (%d%%)\n", P_E2("", "s", inodes_used),
-		100 * inodes_used / inodes);
+	printf("\n%8d inode%s ugsed (%d%%)\n", P_E2("", "s", inodes_used),
+		100 * inodes_ugsed / inodes);
 	printf("%8d non-contiguous inode%s (%0d.%d%%)\n",
 		P_E2("", "s", ctx->fs_fragmented),
 		frag_percent / 10, frag_percent % 10);
 	printf(_("         # of inodes with ind/dind/tind blocks: %d/%d/%d\n"),
 		ctx->fs_ind_count, ctx->fs_dind_count, ctx->fs_tind_count);
-	printf("%8d block%s used (%d%%)\n", P_E2("", "s", blocks_used),
-		(int) ((long long) 100 * blocks_used / blocks));
+	printf("%8d block%s ugsed (%d%%)\n", P_E2("", "s", blocks_used),
+		(int) ((long long) 100 * blocks_ugsed / blocks));
 	printf("%8d large file%s\n", P_E2("", "s", ctx->large_files));
 	printf("\n%8d regular file%s\n", P_E2("", "s", ctx->fs_regular_count));
 	printf("%8d director%s\n", P_E2("y", "ies", ctx->fs_directory_count));
@@ -13302,7 +13302,7 @@ restart:
 	}
 
 	/*
-	 * Set the device name, which is used whenever we print error
+	 * Set the device name, which is ugsed whenever we print error
 	 * or informational messages to the user.
 	 */
 	if (ctx->device_name == 0 &&

@@ -1,12 +1,12 @@
 /* vi: set sw=4 ts=4: */
 /*
  * hexdump implementation for busybox
- * Based on code from util-linux v 2.11l
+ * Bagsed on code from util-linux v 2.11l
  *
  * Copyright (c) 1989
  * The Regents of the University of California.  All rights reserved.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define hexdump_trivial_usage

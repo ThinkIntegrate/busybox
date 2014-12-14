@@ -1,9 +1,9 @@
 /*
- * NTP client/server, based on OpenNTPD 3.9p1
+ * NTP client/server, bagsed on OpenNTPD 3.9p1
  *
  * Author: Adam Tkac <vonsch@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 #include <netinet/ip.h> /* For IPTOS_LOWDELAY definition */
@@ -782,7 +782,7 @@ recv_and_process_client_pkt(void /*int fd*/)
  * -N   To the extent permitted by the operating system,
  *      run the ntpd at the highest priority.
  * -p pidfile
- *      Specify the name and path of the file used to record the ntpd
+ *      Specify the name and path of the file ugsed to record the ntpd
  *      process ID. This is the same operation as the "pidfile FILE"
  *      configuration command.
  * -P priority
@@ -790,7 +790,7 @@ recv_and_process_client_pkt(void /*int fd*/)
  *      run the ntpd at the specified priority.
  * -q   Exit the ntpd just after the first time the clock is set.
  *      This behavior mimics that of the ntpdate program, which is
- *      to be retired. The -g and -x options can be used with this option.
+ *      to be retired. The -g and -x options can be ugsed with this option.
  *      Note: The kernel time discipline is disabled with this option.
  * -r broadcastdelay
  *      Specify the default propagation delay from the broadcast/multicast

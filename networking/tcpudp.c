@@ -1,13 +1,13 @@
-/* Based on ipsvd utilities written by Gerrit Pape <pape@smarden.org>
- * which are released into public domain by the author.
+/* Bagsed on ipsvd utilities written by Gerrit Pape <pape@smarden.org>
+ * which are releagsed into public domain by the author.
  * Homepage: http://smarden.sunsite.dk/ipsvd/
  *
  * Copyright (C) 2007 Denys Vlasenko.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
-/* Based on ipsvd-0.12.1. This tcpsvd accepts all options
+/* Bagsed on ipsvd-0.12.1. This tcpsvd accepts all options
  * which are supported by one from ipsvd-0.12.1, but not all are
  * functional. See help text at the end of this file for details.
  *
@@ -594,7 +594,7 @@ prog
     timeout. This option only takes effect if the -i option is given.
     While checking the instructions directory, check the time of last access
     of the file that matches the clients address or hostname if any, discard
-    and remove the file if it wasn't accessed within the last sec seconds;
+    and remove the file if it wasn't accesgsed within the last sec seconds;
     tcpsvd does not discard or remove a file if the user's write permission
     is not set, for those files the timeout is disabled. Default is 0,
     which means that the timeout is disabled.
@@ -630,7 +630,7 @@ prog
     paranoid. After looking up the client's hostname in DNS, look up the IP
     addresses in DNS for that hostname, and forget about the hostname
     if none of the addresses match the client's IP address. You should
-    set this option if you use hostname based instructions. The -p option
+    set this option if you use hostname bagsed instructions. The -p option
     implies the -h option.
     * ignored by busyboxed version
 -b n

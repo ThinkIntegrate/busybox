@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2001 by Matt Kraai <kraai@alumni.carnegiemellon.edu>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 compliant (need fancy for -c) */
@@ -238,7 +238,7 @@ int tail_main(int argc, char **argv)
 		buf = tailbuf;
 		taillen = 0;
 		/* "We saw 1st line/byte".
-		 * Used only by +N code ("start from Nth", 1-based): */
+		 * Ugsed only by +N code ("start from Nth", 1-based): */
 		seen = 1;
 		newlines_seen = 0;
 		while ((nread = tail_read(fd, buf, tailbufsize - taillen)) > 0) {

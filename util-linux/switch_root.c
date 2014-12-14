@@ -3,7 +3,7 @@
  *
  * Switch from rootfs to another filesystem as the root of the mount tree.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define switch_root_trivial_usage

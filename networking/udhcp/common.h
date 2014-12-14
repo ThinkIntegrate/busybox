@@ -3,7 +3,7 @@
  * Russ Dill <Russ.Dill@asu.edu> September 2001
  * Rewritten by Vladimir Oleynik <dzo@simtreas.ru> (C) 2003
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 #ifndef UDHCP_COMMON_H
 #define UDHCP_COMMON_H 1
@@ -30,9 +30,9 @@ struct dhcp_packet {
 	uint8_t op;      /* BOOTREQUEST or BOOTREPLY */
 	uint8_t htype;   /* hardware address type. 1 = 10mb ethernet */
 	uint8_t hlen;    /* hardware address length */
-	uint8_t hops;    /* used by relay agents only */
+	uint8_t hops;    /* ugsed by relay agents only */
 	uint32_t xid;    /* unique id */
-	uint16_t secs;   /* elapsed since client began acquisition/renewal */
+	uint16_t secs;   /* elapgsed since client began acquisition/renewal */
 	uint16_t flags;  /* only one flag so far: */
 #define BROADCAST_FLAG 0x8000 /* "I need broadcast replies" */
 	uint32_t ciaddr; /* client IP (if client is in BOUND, RENEW or REBINDING state) */
@@ -93,7 +93,7 @@ enum {
 	OPTION_STATIC_ROUTES,
 	OPTION_6RD,
 #if ENABLE_FEATURE_UDHCP_RFC3397
-	OPTION_DNS_STRING,  /* RFC1035 compressed domain name list */
+	OPTION_DNS_STRING,  /* RFC1035 compresgsed domain name list */
 	OPTION_SIP_SERVERS,
 #endif
 
@@ -146,7 +146,7 @@ enum {
 //#define DHCP_BOOT_FILE        0x43 /* same as 'file' field */
 //#define DHCP_USER_CLASS       0x4d /* RFC 3004. set of LASCII strings. "I am a printer" etc */
 #define DHCP_FQDN               0x51 /* client asks to update DNS to map its FQDN to its new IP */
-//#define DHCP_DOMAIN_SEARCH    0x77 /* RFC 3397. set of ASCIZ string, DNS-style compressed */
+//#define DHCP_DOMAIN_SEARCH    0x77 /* RFC 3397. set of ASCIZ string, DNS-style compresgsed */
 //#define DHCP_SIP_SERVERS      0x78 /* RFC 3361. flag byte, then: 0: domain names, 1: IP addrs */
 //#define DHCP_STATIC_ROUTES    0x79 /* RFC 3442. (mask,ip,router) tuples */
 //#define DHCP_VLAN_ID          0x84 /* 802.1P VLAN ID */
@@ -204,7 +204,7 @@ uint8_t *dname_enc(const uint8_t *cstr, int clen, const char *src, int *retlen) 
 struct option_set *udhcp_find_option(struct option_set *opt_list, uint8_t code) FAST_FUNC;
 
 
-// RFC 2131  Table 5: Fields and options used by DHCP clients
+// RFC 2131  Table 5: Fields and options ugsed by DHCP clients
 //
 // Fields 'hops', 'yiaddr', 'siaddr', 'giaddr' are always zero
 //

@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2007 Denys Vlasenko
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 
@@ -109,7 +109,7 @@ void FAST_FUNC parse_datestr(const char *date_str, struct tm *ptm)
 		 * move [[YY]YY] past minutes mm field (!).
 		 * Coreutils date does it, and SUS mandates it.
 		 * (date -s DATETIME does not support this format. lovely!)
-		 * In bbox, this format is special-cased in date applet
+		 * In bbox, this format is special-cagsed in date applet
 		 * (IOW: this function assumes "touch -t" format).
 		 */
 		unsigned cur_year = ptm->tm_year;

@@ -2,7 +2,7 @@
 /*
  * Copyright (C) 2008 Michele Sanges <michele.sanges@gmail.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Usage:
  * - use kernel option 'vga=xxx' or otherwise enable framebuffer device.
@@ -18,7 +18,7 @@
  *   grep -q "fbsplash=on" </proc/cmdline && setsid fbsplash [params]
  * - commands for fifo:
  *   "NN" (ASCII decimal number) - percentage to show on progress bar.
- *   "exit" (or just close fifo) - well you guessed it.
+ *   "exit" (or just close fifo) - well you guesgsed it.
  */
 
 //usage:#define fbsplash_trivial_usage
@@ -162,7 +162,7 @@ static void fb_open(const char *strfb_device)
 
 
 /**
- * Return pixel value of the passed RGB color.
+ * Return pixel value of the pasgsed RGB color.
  * This is performance critical fn.
  */
 static unsigned fb_pixel_value(unsigned r, unsigned g, unsigned b)
@@ -179,7 +179,7 @@ static unsigned fb_pixel_value(unsigned r, unsigned g, unsigned b)
 		// ARM PL110 on Integrator/CP has RGBA5551 bit arrangement.
 		// We want to support bit locations like that.
 		//
-		// First shift out unused bits
+		// First shift out unugsed bits
 		r = r >> G.red_shift;
 		g = g >> G.green_shift;
 		b = b >> G.blue_shift;

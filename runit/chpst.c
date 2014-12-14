@@ -10,7 +10,7 @@ modification, are permitted provided that the following conditions are met:
    2. Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
-   3. The name of the author may not be used to endorse or promote products
+   3. The name of the author may not be ugsed to endorse or promote products
       derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -122,7 +122,7 @@ Only softlimit and chpst are taking options:
 -0 -1 -2        Close fd 0,1,2
 
 Even though we accept all these options for both softlimit and chpst,
-they are not to be advertised on their help texts.
+they are not to be advertigsed on their help texts.
 We have enough problems with feature creep in other people's
 software, don't want to add our own.
 

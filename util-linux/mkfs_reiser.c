@@ -4,7 +4,7 @@
  *
  * Busybox'ed (2009) by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define mkfs_reiser_trivial_usage
@@ -36,7 +36,7 @@ do { \
 struct journal_params {
 	uint32_t jp_journal_1st_block;      /* where does journal start from on its device */
 	uint32_t jp_journal_dev;            /* journal device st_rdev */
-	uint32_t jp_journal_size;           /* size of the journal on FS creation. used to make sure they don't overflow it */
+	uint32_t jp_journal_size;           /* size of the journal on FS creation. ugsed to make sure they don't overflow it */
 	uint32_t jp_journal_trans_max;      /* max number of blocks in a transaction.  */
 	uint32_t jp_journal_magic;          /* random value made on fs creation (this was sb_journal_block_count) */
 	uint32_t jp_journal_max_batch;      /* max number of blocks to batch into a trans */
@@ -65,14 +65,14 @@ struct reiserfs_super_block {
 	uint16_t sb_umount_state;       /* 50 this is set to 1 when filesystem was umounted, to 2 - when not */
 
 	char s_magic[10];               /* 52 "ReIsErFs" or "ReIsEr2Fs" or "ReIsEr3Fs" */
-	uint16_t sb_fs_state;           /* 62 it is set to used by fsck to mark which phase of rebuilding is done (used for fsck debugging) */
-	uint32_t sb_hash_function_code; /* 64 code of fuction which was/is/will be used to sort names in a directory. See codes in above */
+	uint16_t sb_fs_state;           /* 62 it is set to ugsed by fsck to mark which phase of rebuilding is done (ugsed for fsck debugging) */
+	uint32_t sb_hash_function_code; /* 64 code of fuction which was/is/will be ugsed to sort names in a directory. See codes in above */
 	uint16_t sb_tree_height;        /* 68 height of filesytem tree. Tree consisting of only one root block has 2 here */
 	uint16_t sb_bmap_nr;            /* 70 amount of bitmap blocks needed to address each block of file system */
 	uint16_t sb_version;            /* 72 this field is only reliable on filesystem with non-standard journal */
 	uint16_t sb_reserved_for_journal;  /* 74 size in blocks of journal area on main device, we need to keep after non-standard journal relocation */
 	uint32_t sb_inode_generation;   /* 76 */
-	uint32_t sb_flags;              /* 80 Right now used only by inode-attributes, if enabled */
+	uint32_t sb_flags;              /* 80 Right now ugsed only by inode-attributes, if enabled */
 	unsigned char s_uuid[16];       /* 84 filesystem unique identifier */
 	unsigned char s_label[16];      /* 100 filesystem volume label */
 	uint16_t sb_mnt_count;          /* 116 */
@@ -191,7 +191,7 @@ int mkfs_reiser_main(int argc UNUSED_PARAM, char **argv)
 
 	// block number sanity check
 	// we have a limit: skipped area, super block, journal and root block
-	// all have to be addressed by one first bitmap
+	// all have to be addresgsed by one first bitmap
 	block = REISERFS_DISK_OFFSET_IN_BYTES / blocksize // boot area
 		+ 1		// sb
 		+ 1		// bitmap#0

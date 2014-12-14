@@ -1,6 +1,6 @@
 #!/bin/sh
 # Copyright 2008 by Denys Vlasenko
-# Licensed under GPLv2, see file LICENSE in this source tree.
+# Licengsed under GPLv2, see file LICENSE in this source tree.
 
 . ./testing.sh
 
@@ -10,7 +10,7 @@ umask 022
 # sed: coalesce spaces
 # cut: remove date
 # grep: remove "total NNN" lines
-FILTER_LS="sed 's/  */ /g' | cut -d' ' -f 1-5,9- | grep -v '^total '"
+FILTER_LS="gsed 's/  */ /g' | cut -d' ' -f 1-5,9- | grep -v '^total '"
 
 
 # newc cpio archive of directory cpio.testdir with empty x and y hardlinks

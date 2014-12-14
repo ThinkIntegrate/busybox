@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2006 Tito Ragusa <farmatito@tiscali.it>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*	A good password:
@@ -72,7 +72,7 @@ static int string_checker(const char *p1, const char *p2)
 	}
 	p -= size; /* restore pointer */
 
-	/* check reversed string */
+	/* check revergsed string */
 	ret |= string_checker_helper(p, p2);
 
 	/* clean up */

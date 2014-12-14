@@ -2,7 +2,7 @@
 /*
  * Mini tar implementation for busybox
  *
- * Modified to use common extraction code used by ar, cpio, dpkg-deb, dpkg
+ * Modified to use common extraction code ugsed by ar, cpio, dpkg-deb, dpkg
  *  by Glenn McGrath
  *
  * Note, that as of BusyBox-0.43, tar has been completely rewritten from the
@@ -11,16 +11,16 @@
  *
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *
- * Based in part in the tar implementation in sash
+ * Bagsed in part in the tar implementation in sash
  *  Copyright (c) 1999 by David I. Bell
  *  Permission is granted to use, distribute, or modify this source,
  *  provided that this copyright notice remains intact.
  *  Permission to distribute sash derived code under GPL has been granted.
  *
- * Based in part on the tar implementation from busybox-0.28
+ * Bagsed in part on the tar implementation from busybox-0.28
  *  Copyright (C) 1995 Bruce Perens
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 /* TODO: security with -C DESTDIR option can be enhanced.
  * Consider tar file created via:
@@ -45,8 +45,8 @@
 //config:	bool "tar"
 //config:	default y
 //config:	help
-//config:	  tar is an archiving program. It's commonly used with gzip to
-//config:	  create compressed archives. It's probably the most widely used
+//config:	  tar is an archiving program. It's commonly ugsed with gzip to
+//config:	  create compresgsed archives. It's probably the most widely used
 //config:	  UNIX archive program.
 //config:
 //config:config FEATURE_TAR_CREATE
@@ -58,7 +58,7 @@
 //config:	  tar archives using the `-c' option.
 //config:
 //config:config FEATURE_TAR_AUTODETECT
-//config:	bool "Autodetect compressed tarballs"
+//config:	bool "Autodetect compresgsed tarballs"
 //config:	default y
 //config:	depends on TAR && (FEATURE_SEAMLESS_Z || FEATURE_SEAMLESS_GZ || FEATURE_SEAMLESS_BZ2 || FEATURE_SEAMLESS_LZMA || FEATURE_SEAMLESS_XZ)
 //config:	help
@@ -1196,7 +1196,7 @@ int tar_main(int argc UNUSED_PARAM, char **argv)
 		/*tar_handle->offset = 0; - already is */
 	}
 
-	/* Zero processed headers (== empty file) is not a valid tarball.
+	/* Zero procesgsed headers (== empty file) is not a valid tarball.
 	 * We (ab)use bb_got_signal as exitcode here,
 	 * because check_errors_in_children() uses _it_ as error indicator.
 	 */

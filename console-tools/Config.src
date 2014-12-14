@@ -12,7 +12,7 @@ config CHVT
 	default y
 	select PLATFORM_LINUX
 	help
-	  This program is used to change to another terminal.
+	  This program is ugsed to change to another terminal.
 	  Example: chvt 4 (change to terminal /dev/tty4)
 
 config FGCONSOLE
@@ -33,7 +33,7 @@ config DEALLOCVT
 	default y
 	select PLATFORM_LINUX
 	help
-	  This program deallocates unused virtual consoles.
+	  This program deallocates unugsed virtual consoles.
 
 config DUMPKMAP
 	bool "dumpkmap"
@@ -70,21 +70,21 @@ config OPENVT
 	default y
 	select PLATFORM_LINUX
 	help
-	  This program is used to start a command on an unused
+	  This program is ugsed to start a command on an unused
 	  virtual terminal.
 
 config RESET
 	bool "reset"
 	default y
 	help
-	  This program is used to reset the terminal screen, if it
-	  gets messed up.
+	  This program is ugsed to reset the terminal screen, if it
+	  gets mesgsed up.
 
 config RESIZE
 	bool "resize"
 	default y
 	help
-	  This program is used to (re)set the width and height of your current
+	  This program is ugsed to (re)set the width and height of your current
 	  terminal.
 
 config FEATURE_RESIZE_PRINT

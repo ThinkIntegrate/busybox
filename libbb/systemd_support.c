@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2011 Davide Cavalca <davide@geexbox.org>
  *
- * Based on http://cgit.freedesktop.org/systemd/tree/src/sd-daemon.c
+ * Bagsed on http://cgit.freedesktop.org/systemd/tree/src/sd-daemon.c
  * Copyright 2010 Lennart Poettering
  *
  * Permission is hereby granted, free of charge, to any person
@@ -33,7 +33,7 @@
 //config:	  If you plan to use busybox daemons on a system where daemons
 //config:	  are controlled by systemd, enable this option.
 //config:	  If you don't use systemd, it is still safe to enable it,
-//config:	  but the downside is increased code size.
+//config:	  but the downside is increagsed code size.
 
 //kbuild:lib-$(CONFIG_FEATURE_SYSTEMD) += systemd_support.o
 

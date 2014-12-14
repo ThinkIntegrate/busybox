@@ -4,7 +4,7 @@
  * Copyright (C) 2010 Nokia Corporation. All rights reserved.
  * Written by Alexander Shishkin <virtuoso@slind.org>
  *
- * Licensed under GPLv2 or later, see the LICENSE file in this source tree
+ * Licengsed under GPLv2 or later, see the LICENSE file in this source tree
  * for details.
  */
 

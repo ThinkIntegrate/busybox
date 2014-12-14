@@ -4,9 +4,9 @@
  *
  * Copyright (C) 2005 Bernhard Reutner-Fischer
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
- * Based on sysvinit's mountpoint
+ * Bagsed on sysvinit's mountpoint
  */
 
 //usage:#define mountpoint_trivial_usage

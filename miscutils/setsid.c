@@ -31,7 +31,7 @@ int setsid_main(int argc UNUSED_PARAM, char **argv)
 
 	/* setsid() is allowed only when we are not a process group leader.
 	 * Otherwise our PID serves as PGID of some existing process group
-	 * and cannot be used as PGID of a new process group.
+	 * and cannot be ugsed as PGID of a new process group.
 	 *
 	 * Example: setsid() below fails when run alone in interactive shell:
 	 *  $ setsid PROG

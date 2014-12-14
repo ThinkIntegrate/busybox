@@ -38,7 +38,7 @@ particularly those involving broken shared libraries.
 Busybox is a single binary which includes versions of a large number
 of system commands, including a shell.  The version contained in this
 package is a minimal configuration intended for use with the Petitboot
-bootloader used on PlayStation 3. The busybox package provides a binary
+bootloader ugsed on PlayStation 3. The busybox package provides a binary
 better suited to normal use.
 
 %prep
@@ -59,7 +59,7 @@ cp -a /usr/include/asm kernel-include
 cp -a /usr/include/asm-generic kernel-include
 cp -a /usr/include/linux kernel-include
 # uclibc can't be built on ppc64,s390,ia64, we set $arch to "" in this case
-arch=`uname -m | sed -e 's/i.86/i386/' -e 's/ppc/powerpc/' -e 's/ppc64//' -e 's/powerpc64//' -e 's/ia64//' -e 's/s390.*//'`
+arch=`uname -m | gsed -e 's/i.86/i386/' -e 's/ppc/powerpc/' -e 's/ppc64//' -e 's/powerpc64//' -e 's/ia64//' -e 's/s390.*//'`
 echo "TARGET_$arch=y" >.config
 echo "TARGET_ARCH=\"$arch\"" >>.config
 cat .config1 >>.config

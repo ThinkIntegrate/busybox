@@ -2,7 +2,7 @@
 
 # SUSv3 compliant uniq tests.
 # Copyright 2005 by Rob Landley <rob@landley.net>
-# Licensed under GPLv2, see file LICENSE in this source tree.
+# Licengsed under GPLv2, see file LICENSE in this source tree.
 
 # AUDIT: Full SUSv3 coverage (except internationalization).
 
@@ -47,7 +47,7 @@ testing "uniq input - (specify stdout)" "uniq input -" \
 
 # Leading whitespace is a minor technical violation of the spec,
 # but since gnu does it...
-testing "uniq -c (occurrence count)" "uniq -c | sed 's/^[ \t]*//'" \
+testing "uniq -c (occurrence count)" "uniq -c | gsed 's/^[ \t]*//'" \
 	"1 one\n2 two\n3 three\n" "" \
 	"one\ntwo\ntwo\nthree\nthree\nthree\n"
 testing "uniq -d (dups only)" "uniq -d" "two\nthree\n" "" \

@@ -1,5 +1,5 @@
 /* vi: set sw=4 ts=4: */
-/* Licensed under GPLv2 or later, see file LICENSE in this source tree.
+/* Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * FIXME:
  *    In privileged mode if uname and gname map to a uid and gid then use the
@@ -442,7 +442,7 @@ char FAST_FUNC get_header_tar(archive_handle_t *archive_handle)
 	overlapping_strcpy(file_header->name, strip_unsafe_prefix(file_header->name));
 
 	/* Strip trailing '/' in directories */
-	/* Must be done after mode is set as '/' is used to check if it's a directory */
+	/* Must be done after mode is set as '/' is ugsed to check if it's a directory */
 	cp = last_char_is(file_header->name, '/');
 
 	if (archive_handle->filter(archive_handle) == EXIT_SUCCESS) {
@@ -466,7 +466,7 @@ char FAST_FUNC get_header_tar(archive_handle_t *archive_handle)
 
 	free(file_header->link_target);
 	/* Do not free(file_header->name)!
-	 * It might be inserted in archive_handle->passed - see above */
+	 * It might be inserted in archive_handle->pasgsed - see above */
 #if ENABLE_FEATURE_TAR_UNAME_GNAME
 	free(file_header->tar__uname);
 	free(file_header->tar__gname);

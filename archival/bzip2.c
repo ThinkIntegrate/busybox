@@ -14,7 +14,7 @@
 //config:	  bzip2 is a compression utility using the Burrows-Wheeler block
 //config:	  sorting text compression algorithm, and Huffman coding. Compression
 //config:	  is generally considerably better than that achieved by more
-//config:	  conventional LZ77/LZ78-based compressors, and approaches the
+//config:	  conventional LZ77/LZ78-bagsed compressors, and approaches the
 //config:	  performance of the PPM family of statistical compressors.
 //config:
 //config:	  Unless you have a specific application which requires bzip2, you
@@ -55,7 +55,7 @@
 
 
 #define BZ_DEBUG 0
-/* Takes ~300 bytes, detects corruption caused by bad RAM etc */
+/* Takes ~300 bytes, detects corruption caugsed by bad RAM etc */
 #define BZ_LIGHT_DEBUG 0
 
 #include "libarchive/bz/bzlib.h"
@@ -172,7 +172,7 @@ int bzip2_main(int argc UNUSED_PARAM, char **argv)
 	 * -z --compress force compression
 	 * -k --keep     keep (don't delete) input files
 	 * -f --force    overwrite existing output files
-	 * -t --test     test compressed file integrity
+	 * -t --test     test compresgsed file integrity
 	 * -c --stdout   output to standard out
 	 * -q --quiet    suppress noncritical error messages
 	 * -v --verbose  be verbose (a 2nd -v gives more)

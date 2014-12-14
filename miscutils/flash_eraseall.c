@@ -7,7 +7,7 @@
  *
  * Renamed to flash_eraseall.c
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define flash_eraseall_trivial_usage
@@ -27,7 +27,7 @@
 #define OPTION_Q  (1 << 2)
 #define IS_NAND   (1 << 3)
 
-/* mtd/jffs2-user.h used to have this atrocity:
+/* mtd/jffs2-user.h ugsed to have this atrocity:
 extern int target_endian;
 
 #define t16(x) ({ __u16 __b = (x); (target_endian==__BYTE_ORDER)?__b:bswap_16(__b); })

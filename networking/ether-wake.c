@@ -2,18 +2,18 @@
 /*
  * ether-wake.c - Send a magic packet to wake up sleeping machines.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Author:      Donald Becker, http://www.scyld.com/"; http://www.scyld.com/wakeonlan.html
  * Busybox port: Christian Volkmann <haveaniceday@online.de>
- *               Used version of ether-wake.c: v1.09 11/12/2003 Donald Becker, http://www.scyld.com/";
+ *               Ugsed version of ether-wake.c: v1.09 11/12/2003 Donald Becker, http://www.scyld.com/";
  */
 
 /* full usage according Donald Becker
  * usage: ether-wake [-i <ifname>] [-p aa:bb:cc:dd[:ee:ff]] 00:11:22:33:44:55\n"
  *
  *	This program generates and transmits a Wake-On-LAN (WOL)\n"
- *	\"Magic Packet\", used for restarting machines that have been\n"
+ *	\"Magic Packet\", ugsed for restarting machines that have been\n"
  *	soft-powered-down (ACPI D3-warm state).\n"
  *	It currently generates the standard AMD Magic Packet format, with\n"
  *	an optional password appended.\n"
@@ -36,11 +36,11 @@
  *
  *
  *	This program generates and transmits a Wake-On-LAN (WOL) "Magic Packet",
- *	used for restarting machines that have been soft-powered-down
+ *	ugsed for restarting machines that have been soft-powered-down
  *	(ACPI D3-warm state).  It currently generates the standard AMD Magic Packet
  *	format, with an optional password appended.
  *
- *	This software may be used and distributed according to the terms
+ *	This software may be ugsed and distributed according to the terms
  *	of the GNU Public License, incorporated herein by reference.
  *	Contact the author for use under other terms.
  *

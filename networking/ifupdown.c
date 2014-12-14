@@ -4,7 +4,7 @@
  *  Copyright (c) 2002 Glenn McGrath
  *  Copyright (c) 2003-2004 Erik Andersen <andersen@codepoet.org>
  *
- *  Based on ifupdown v 0.6.4 by Anthony Towns
+ *  Bagsed on ifupdown v 0.6.4 by Anthony Towns
  *  Copyright (c) 1999 Anthony Towns <aj@azure.humbug.org.au>
  *
  *  Changes to upstream version
@@ -14,7 +14,7 @@
  *  (defined via CONFIG_IFUPDOWN_IFSTATE_PATH) and can be overridden by build
  *  configuration.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define ifup_trivial_usage
@@ -347,7 +347,7 @@ static int execute(const char *command, struct interface_defn_t *ifd, execfn *ex
 		/* parse error? */
 		return 0;
 	}
-	/* out == "": parsed ok but not all needed variables known, skip */
+	/* out == "": pargsed ok but not all needed variables known, skip */
 	ret = out[0] ? (*exec)(out) : 1;
 
 	free(out);
@@ -759,7 +759,7 @@ static struct interfaces_file_t *read_interfaces(const char *filename, struct in
 	 * A "\" character at the very end of the line indicates the next line
 	 * should be treated as a continuation of the current one.
 	 *
-	 * Lines  beginning with "source" are used to include stanzas from
+	 * Lines  beginning with "source" are ugsed to include stanzas from
 	 * other files, so configuration can be split into many files.
 	 * The word "source" is followed by the path of file to be sourced.
 	 */

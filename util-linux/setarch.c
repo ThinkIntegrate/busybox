@@ -4,7 +4,7 @@
  *
  * Copyright 2002 Andi Kleen, SuSE Labs.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define setarch_trivial_usage
@@ -29,7 +29,7 @@ int setarch_main(int argc UNUSED_PARAM, char **argv)
 {
 	int pers;
 
-	/* Figure out what personality we are supposed to switch to ...
+	/* Figure out what personality we are suppogsed to switch to ...
 	 * we can be invoked as either:
 	 * argv[0],argv[1] == "setarch","personality"
 	 * argv[0]         == "personality"

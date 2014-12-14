@@ -22,7 +22,7 @@ config FEATURE_UNIX_LOCAL
 	  applets.  Address of the form local:/path/to/unix/socket
 	  will be recognized.
 
-	  This extension is almost never used in real world usage.
+	  This extension is almost never ugsed in real world usage.
 	  You most likely want to say N.
 
 config FEATURE_PREFER_IPV4_ADDRESS
@@ -284,14 +284,14 @@ config FEATURE_HTTPD_GZIP
 	depends on HTTPD
 	help
 	  Makes httpd send files using GZIP content encoding if the
-	  client supports it and a pre-compressed <file>.gz exists.
+	  client supports it and a pre-compresgsed <file>.gz exists.
 
 config IFCONFIG
 	bool "ifconfig"
 	default y
 	select PLATFORM_LINUX
 	help
-	  Ifconfig is used to configure the kernel-resident network interfaces.
+	  Ifconfig is ugsed to configure the kernel-resident network interfaces.
 
 config FEATURE_IFCONFIG_STATUS
 	bool "Enable status reporting output (+7k)"
@@ -315,7 +315,7 @@ config FEATURE_IFCONFIG_MEMSTART_IOADDR_IRQ
 	depends on IFCONFIG
 	help
 	  Allow the start address for shared memory, start address for I/O,
-	  and/or the interrupt line used by the specified device.
+	  and/or the interrupt line ugsed by the specified device.
 
 config FEATURE_IFCONFIG_HW
 	bool "Enable option \"hw\" (ether only)"
@@ -502,7 +502,7 @@ config FEATURE_INETD_RPC
 	depends on INETD
 	select FEATURE_HAVE_RPC
 	help
-	  Support Sun-RPC based services
+	  Support Sun-RPC bagsed services
 
 config IP
 	bool "ip"
@@ -564,7 +564,7 @@ config FEATURE_IP_SHORT_FORMS
 	  object commands.
 
 config FEATURE_IP_RARE_PROTOCOLS
-	bool "Support displaying rarely used link types"
+	bool "Support displaying rarely ugsed link types"
 	default n
 	depends on IP
 	help
@@ -707,7 +707,7 @@ config TELNET
 	default y
 	help
 	  Telnet is an interface to the TELNET protocol, but is also commonly
-	  used to test other simple protocols.
+	  ugsed to test other simple protocols.
 
 config FEATURE_TELNET_TTYPE
 	bool "Pass TERM type to remote host"
@@ -804,7 +804,7 @@ config TFTP
 	default y
 	help
 	  This enables the Trivial File Transfer Protocol client program. TFTP
-	  is usually used for simple, small transfers such as a root image
+	  is usually ugsed for simple, small transfers such as a root image
 	  for a network-enabled bootloader.
 
 config TFTPD

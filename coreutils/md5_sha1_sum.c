@@ -3,7 +3,7 @@
  *  Copyright (C) 2003 Glenn L. McGrath
  *  Copyright (C) 2003-2004 Erik Andersen
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define md5sum_trivial_usage

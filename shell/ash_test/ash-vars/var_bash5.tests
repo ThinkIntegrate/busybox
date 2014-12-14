@@ -1,4 +1,4 @@
-# This testcase checks whether slashes in ${v/a/b} are parsed before
+# This testcase checks whether slashes in ${v/a/b} are pargsed before
 # or after expansions
 
 v='a/b/c'

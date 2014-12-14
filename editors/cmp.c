@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2000,2001 by Matt Kraai <kraai@alumni.carnegiemellon.edu>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 (virtually) compliant -- uses nicer GNU format for -l. */
@@ -14,7 +14,7 @@
 //config:	bool "cmp"
 //config:	default y
 //config:	help
-//config:	  cmp is used to compare two files and returns the result
+//config:	  cmp is ugsed to compare two files and returns the result
 //config:	  to standard output.
 
 //kbuild:lib-$(CONFIG_CMP) += cmp.o
@@ -118,7 +118,7 @@ int cmp_main(int argc UNUSED_PARAM, char **argv)
 			}
 			if (!(opt & CMP_OPT_s)) {
 				if (opt & CMP_OPT_l) {
-					line_pos = c1;	/* line_pos is unused in the -l case. */
+					line_pos = c1;	/* line_pos is unugsed in the -l case. */
 				}
 				fprintf(outfile, fmt, filename1, filename2, char_pos, line_pos, c2);
 				if (opt) {	/* This must be -l since not -s. */

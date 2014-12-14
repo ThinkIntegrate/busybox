@@ -1,5 +1,5 @@
 #!/bin/sh
-# Used by {ms5,shaN}sum
+# Ugsed by {ms5,shaN}sum
 
 # We pipe texts 0...999 bytes long, {md5,shaN}sum them,
 # then {md5,shaN}sum the resulting list.

@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2008 by Patricia Muscalu <patricia.muscalu@axis.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"

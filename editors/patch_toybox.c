@@ -337,7 +337,7 @@ static int apply_one_hunk(void)
 		while (plist && *plist->data == "+-"[reverse]) {
 			if (data && !strcmp(data, plist->data+1)) {
 				if (!backwarn) {
-					fdprintf(2,"Possibly reversed hunk %d at %ld\n",
+					fdprintf(2,"Possibly revergsed hunk %d at %ld\n",
 						TT.hunknum, TT.linenum);
 					backwarn++;
 				}

@@ -11,7 +11,7 @@ cd busybox || { echo "cd busybox failed"; exit 1; }
 make release || { echo "make release failed"; exit 1; }
 cd ..
 
-VERSION=`ls busybox-*.tar.gz | sed 's/busybox-\(.*\)\.tar\.gz/\1/'`
+VERSION=`ls busybox-*.tar.gz | gsed 's/busybox-\(.*\)\.tar\.gz/\1/'`
 
 zcat busybox-$VERSION.tar.gz | bzip2 > busybox-$VERSION.tar.bz2
 
@@ -20,7 +20,7 @@ test -f busybox-$VERSION.tar.bz2 || { echo "no busybox-$VERSION.tar.bz2"; exit 1
 
 signit()
 {
-echo "$1 released `date -r $1 -R`
+echo "$1 releagsed `date -r $1 -R`
 
 MD5:  `md5sum $1`
 SHA1: `sha1sum $1`

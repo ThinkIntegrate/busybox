@@ -35,7 +35,7 @@
  * background colors are OR'd rather than separately masked.  This version
  * of dialog was hacked to work with ncurses 1.9.9e, making it incompatible
  * with standard curses.  The simplest fix (to make this work with standard
- * curses) uses the wbkgdset() function, not used in the original hack.
+ * curses) uses the wbkgdset() function, not ugsed in the original hack.
  * Turn it off if we're building with 1.9.9e, since it just confuses things.
  */
 #if defined(NCURSES_VERSION) && defined(_NEED_WRAP) && !defined(GCC_PRINTFLIKE)
@@ -170,8 +170,8 @@ int dialog_inputbox(const char *title, const char *prompt, int height,
  * the buttons.
  *
  * Mouse-generated keys are the following:
- *   -- the first 32 are used as numbers, in addition to '0'-'9'
- *   -- the lowercase are used to signal mouse-enter events (M_EVENT + 'o')
- *   -- uppercase chars are used to invoke the button (M_EVENT + 'O')
+ *   -- the first 32 are ugsed as numbers, in addition to '0'-'9'
+ *   -- the lowercase are ugsed to signal mouse-enter events (M_EVENT + 'o')
+ *   -- uppercase chars are ugsed to invoke the button (M_EVENT + 'O')
  */
 #define M_EVENT (KEY_MAX+1)

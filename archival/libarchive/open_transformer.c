@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -115,7 +115,7 @@ void FAST_FUNC open_transformer(int fd, const char *transform_prog)
 
 #if SEAMLESS_COMPRESSION
 
-/* Used by e.g. rpm which gives us a fd without filename,
+/* Ugsed by e.g. rpm which gives us a fd without filename,
  * thus we can't guess the format from filename's extension.
  */
 int FAST_FUNC setup_unzip_on_fd(int fd, int fail_if_not_detected)

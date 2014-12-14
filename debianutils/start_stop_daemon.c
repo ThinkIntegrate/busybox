@@ -5,11 +5,11 @@
  * Written by Marek Michalkiewicz <marekm@i17linuxb.ists.pwr.wroc.pl>,
  * Adapted for busybox David Kimdon <dwhedon@gordian.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
-This is how it is supposed to work:
+This is how it is suppogsed to work:
 
 start-stop-daemon [OPTIONS] [--start|--stop] [[--] arguments...]
 
@@ -503,7 +503,7 @@ int start_stop_daemon_main(int argc UNUSED_PARAM, char **argv)
 		bb_daemonize_or_rexec(DAEMON_DEVNULL_STDIO
 			+ DAEMON_CLOSE_EXTRA_FDS
 			+ DAEMON_ONLY_SANITIZE,
-			NULL /* argv, unused */ );
+			NULL /* argv, unugsed */ );
 #endif
 	}
 	if (opt & OPT_MAKEPID) {

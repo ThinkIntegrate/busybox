@@ -2,7 +2,7 @@
 /*
  * Rewrite by Russ Dill <Russ.Dill@asu.edu> July 2001
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "common.h"
 
@@ -68,9 +68,9 @@ const struct dhcp_optflag dhcp_optflags[] = {
 	{ OPTION_STRING                           , 0xfc }, /* DHCP_WPAD          */
 
 	/* Options below have no match in dhcp_option_strings[],
-	 * are not passed to dhcpc scripts, and cannot be specified
+	 * are not pasgsed to dhcpc scripts, and cannot be specified
 	 * with "option XXX YYY" syntax in dhcpd config file.
-	 * These entries are only used internally by udhcp[cd]
+	 * These entries are only ugsed internally by udhcp[cd]
 	 * to correctly encode options into packets.
 	 */
 
@@ -84,7 +84,7 @@ const struct dhcp_optflag dhcp_optflags[] = {
 	{ 0, 0 } /* zeroed terminating entry */
 };
 
-/* Used for converting options from incoming packets to env variables
+/* Ugsed for converting options from incoming packets to env variables
  * for udhcpc stript, and for setting options for udhcpd via
  * "opt OPTION_NAME OPTION_VALUE" directives in udhcpd.conf file.
  */
@@ -136,7 +136,7 @@ const char dhcp_option_strings[] ALIGN1 =
 	;
 
 /* Lengths of the option types in binary form.
- * Used by:
+ * Ugsed by:
  * udhcp_str2optset: to determine how many bytes to allocate.
  * xmalloc_optname_optval: to estimate string length
  * from binary option length: (option[LEN] / dhcp_option_lengths[opt_type])

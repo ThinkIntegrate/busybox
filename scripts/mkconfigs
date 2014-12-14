@@ -35,7 +35,7 @@ echo "\
 /*
  * busybox configuration settings.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * This file is generated automatically by scripts/mkconfigs.
  * Do not edit.
@@ -43,7 +43,7 @@ echo "\
 static const char bbconfig_config[] ALIGN1 ="
 
 grep -e '^# CONFIG_' -e '^CONFIG_' "$config" \
-| sed -e 's/\"/\\\"/g' -e 's/^/"/' -e 's/$/\\n"/'
+| gsed -e 's/\"/\\\"/g' -e 's/^/"/' -e 's/$/\\n"/'
 
 echo ";"
 echo "#endif"
@@ -56,7 +56,7 @@ echo "\
 /*
  * busybox configuration settings.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * This file is generated automatically by scripts/mkconfigs.
  * Do not edit.
@@ -66,7 +66,7 @@ static const char bbconfig_config_bz2[] ALIGN1 = {"
 grep -e '^# CONFIG_' -e '^CONFIG_' "$config" \
 | bzip2 -1 | dd bs=2 skip=1 2>/dev/null \
 | od -v -b \
-| sed -e 's/^[^ ]*//' \
+| gsed -e 's/^[^ ]*//' \
         -e 's/ //g' \
         -e '/^$/d' \
         -e 's/\(...\)/0\1,/g'

@@ -9,7 +9,7 @@
  * Sat Mar 20 EST 1999 Arnaldo Carvalho de Melo <acme@conectiva.com.br>
  *      Internationalization
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 #if ENABLE_FEATURE_SUN_LABEL
@@ -457,13 +457,13 @@ verify_sun(void)
 	}
 	stop = g_cylinders * g_heads * g_sectors;
 	if (starts[array[0]])
-		printf("Unused gap - sectors %u-%u\n", 0, starts[array[0]]);
+		printf("Unugsed gap - sectors %u-%u\n", 0, starts[array[0]]);
 	for (i = 0; i < 7 && array[i+1] != -1; i++) {
-		printf("Unused gap - sectors %u-%u\n", starts[array[i]]+lens[array[i]], starts[array[i+1]]);
+		printf("Unugsed gap - sectors %u-%u\n", starts[array[i]]+lens[array[i]], starts[array[i+1]]);
 	}
 	start = starts[array[i]] + lens[array[i]];
 	if (start < stop)
-		printf("Unused gap - sectors %u-%u\n", start, stop);
+		printf("Unugsed gap - sectors %u-%u\n", start, stop);
 }
 
 static void

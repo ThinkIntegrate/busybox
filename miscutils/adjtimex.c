@@ -8,7 +8,7 @@
  *
  * busyboxed 20 March 2001, Larry Doolittle <ldoolitt@recycle.lbl.gov>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define adjtimex_trivial_usage

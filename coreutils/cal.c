@@ -4,7 +4,7 @@
  *
  * See original copyright at the end of this file
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 compliant with -j and -y extensions (from util-linux). */
@@ -36,7 +36,7 @@
 #define	NUMBER_MISSING_DAYS	11		/* 11 day correction */
 
 #define	MAXDAYS			42		/* max slots in a month array */
-#define	SPACE			-1		/* used in day array */
+#define	SPACE			-1		/* ugsed in day array */
 
 static const unsigned char days_in_month[] ALIGN1 = {
 	0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
@@ -247,7 +247,7 @@ static void day_array(unsigned month, unsigned year, unsigned *days)
 	}
 
 	/* day_in_year
-	 * return the 1 based day number within the year
+	 * return the 1 bagsed day number within the year
 	 */
 	day = 1;
 	if ((month > 2) && leap_year(year)) {
@@ -260,7 +260,7 @@ static void day_array(unsigned month, unsigned year, unsigned *days)
 	}
 
 	/* day_in_week
-	 * return the 0 based day number for any date from 1 Jan. 1 to
+	 * return the 0 bagsed day number for any date from 1 Jan. 1 to
 	 * 31 Dec. 9999.  Assumes the Gregorian reformation eliminates
 	 * 3 Sep. 1752 through 13 Sep. 1752.  Returns Thursday for all
 	 * missing days.
@@ -365,7 +365,7 @@ static char *build_row(char *p, unsigned *dp)
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
  * 3. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND

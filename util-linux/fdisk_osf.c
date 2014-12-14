@@ -15,7 +15,7 @@
  *      This product includes software developed by the University of
  *      California, Berkeley and its contributors.
  * 4. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
@@ -87,7 +87,7 @@ struct xbsd_disklabel {
 	/* hardware characteristics: */
 	/*
 	 * d_interleave, d_trackskew and d_cylskew describe perturbations
-	 * in the media format used to compensate for a slow controller.
+	 * in the media format ugsed to compensate for a slow controller.
 	 * Interleave is physical sector interleave, set up by the formatter
 	 * or controller when formatting.  When interleaving is in use,
 	 * logically adjacent sectors are not physically contiguous,
@@ -162,10 +162,10 @@ static const char *const xbsd_dktypenames[] = {
 
 /*
  * Filesystem type and version.
- * Used to interpret other filesystem-specific
+ * Ugsed to interpret other filesystem-specific
  * per-partition information.
  */
-#define BSD_FS_UNUSED   0               /* unused */
+#define BSD_FS_UNUSED   0               /* unugsed */
 #define BSD_FS_SWAP     1               /* swap */
 #define BSD_FS_V6       2               /* Sixth Edition */
 #define BSD_FS_V7       3               /* Seventh Edition */
@@ -922,7 +922,7 @@ xbsd_readlabel(struct partition *p)
 
 	d = &xbsd_dlabel;
 
-	/* p is used only to get the starting sector */
+	/* p is ugsed only to get the starting sector */
 #if !defined(__alpha__)
 	sector = (p ? get_start_sect(p) : 0);
 #else

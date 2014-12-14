@@ -12,7 +12,7 @@
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
  * 3. Neither the name of Julianne F. Haugh nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY JULIE HAUGH AND CONTRIBUTORS ``AS IS'' AND
@@ -35,7 +35,7 @@ void FAST_FUNC change_identity(const struct passwd *pw)
 {
 	if (initgroups(pw->pw_name, pw->pw_gid) == -1)
 		bb_perror_msg_and_die("can't set groups");
-	endgrent(); /* helps to close a fd used internally by libc */
+	endgrent(); /* helps to close a fd ugsed internally by libc */
 	xsetgid(pw->pw_gid);
 	xsetuid(pw->pw_uid);
 }

@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Author: Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>
  * Busybox port: Nick Fedchik <nick@fedchik.org.ua>

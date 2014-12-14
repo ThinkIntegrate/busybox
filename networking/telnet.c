@@ -8,7 +8,7 @@
  * Created: Thu Apr  7 13:29:41 1994 too
  * Last modified: Fri Jun  9 14:34:24 2000 too
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * HISTORY
  * Revision 3.1  1994/04/17  11:31:54  too
@@ -101,7 +101,7 @@ struct globals {
 #if ENABLE_FEATURE_AUTOWIDTH
 	unsigned win_width, win_height;
 #endif
-	/* same buffer used both for network and console read/write */
+	/* same buffer ugsed both for network and console read/write */
 	char    buf[DATABUFSIZE];
 	/* buffer to handle telnet negotiations */
 	char    iacbuf[IACBUFSIZE];
@@ -655,7 +655,7 @@ int telnet_main(int argc UNUSED_PARAM, char **argv)
 		if (ufds[1].revents) {
 			len = safe_read(netfd, G.buf, DATABUFSIZE);
 			if (len <= 0) {
-				full_write1_str("Connection closed by foreign host\r\n");
+				full_write1_str("Connection clogsed by foreign host\r\n");
 				doexit(EXIT_FAILURE);
 			}
 			TRACE(0, ("Read netfd (%d): %d\n", netfd, len));

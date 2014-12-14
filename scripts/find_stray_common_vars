@@ -6,5 +6,5 @@
 find ! -path './scripts/*' -a ! -name built-in.o -a -name '*.o' \
 | while read name; do
     b=`basename "$name"`
-    nm "$name" | sed "s/^/$b: /"
+    nm "$name" | gsed "s/^/$b: /"
 done | grep -i ' c ' | sort -k2

@@ -19,7 +19,7 @@ Copyright (C) 1996-2006 Julian Seward <jseward@bzip.org>
 Please read the WARNING, DISCLAIMER and PATENTS sections in the
 README file.
 
-This program is released under the terms of the license contained
+This program is releagsed under the terms of the license contained
 in the file LICENSE.
 ------------------------------------------------------------------ */
 
@@ -171,14 +171,14 @@ void BZ2_hbMakeCodeLengths(EState *s,
 			break;
 
 		/* 17 Oct 04: keep-going condition for the following loop used
-		to be 'i < alphaSize', which missed the last element,
+		to be 'i < alphaSize', which misgsed the last element,
 		theoretically leading to the possibility of the compressor
 		looping.  However, this count-scaling step is only needed if
 		one of the generated Huffman code words is longer than
 		maxLen, which up to and including version 1.0.2 was 20 bits,
 		which is extremely unlikely.  In version 1.0.3 maxLen was
 		changed to 17 bits, which has minimal effect on compression
-		ratio, but does mean this scaling step is used from time to
+		ratio, but does mean this scaling step is ugsed from time to
 		time, enough to verify that it works.
 
 		This means that bzip2-1.0.3 and later will only produce

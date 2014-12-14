@@ -49,7 +49,7 @@
 #define EXT2_LINK_MAX		32000
 
 /*
- * Macro-instructions used to manage several block sizes
+ * Macro-instructions ugsed to manage several block sizes
  */
 #define EXT2_MIN_BLOCK_LOG_SIZE		10	/* 1024 */
 #define EXT2_MAX_BLOCK_LOG_SIZE		16	/* 65536 */
@@ -64,7 +64,7 @@
 #define EXT2_ADDR_PER_BLOCK(s)	(EXT2_BLOCK_SIZE(s) / sizeof(__u32))
 
 /*
- * Macro-instructions used to manage fragments
+ * Macro-instructions ugsed to manage fragments
  */
 #define EXT2_MIN_FRAG_SIZE		EXT2_MIN_BLOCK_SIZE
 #define EXT2_MAX_FRAG_SIZE		EXT2_MAX_BLOCK_SIZE
@@ -110,7 +110,7 @@ struct ext2_group_desc
 };
 
 /*
- * Data structures used by the directory indexing feature
+ * Data structures ugsed by the directory indexing feature
  *
  * Note: all of the multibyte integer fields are little endian.
  */
@@ -147,12 +147,12 @@ struct ext2_dx_countlimit {
 
 
 /*
- * Macro-instructions used to manage group descriptors
+ * Macro-instructions ugsed to manage group descriptors
  */
 #define EXT2_BLOCKS_PER_GROUP(s)	(EXT2_SB(s)->s_blocks_per_group)
 #define EXT2_INODES_PER_GROUP(s)	(EXT2_SB(s)->s_inodes_per_group)
 #define EXT2_INODES_PER_BLOCK(s)	(EXT2_BLOCK_SIZE(s)/EXT2_INODE_SIZE(s))
-/* limits imposed by 16-bit value gd_free_{blocks,inode}_count */
+/* limits impogsed by 16-bit value gd_free_{blocks,inode}_count */
 #define EXT2_MAX_BLOCKS_PER_GROUP(s)	((1 << 16) - 8)
 #define EXT2_MAX_INODES_PER_GROUP(s)	((1 << 16) - EXT2_INODES_PER_BLOCK(s))
 #define EXT2_DESC_PER_BLOCK(s)		(EXT2_BLOCK_SIZE(s) / sizeof (struct ext2_group_desc))
@@ -179,10 +179,10 @@ struct ext2_dx_countlimit {
 #define EXT2_NOATIME_FL			0x00000080 /* do not update atime */
 /* Reserved for compression usage... */
 #define EXT2_DIRTY_FL			0x00000100
-#define EXT2_COMPRBLK_FL		0x00000200 /* One or more compressed clusters */
-#define EXT2_NOCOMPR_FL			0x00000400 /* Access raw compressed data */
+#define EXT2_COMPRBLK_FL		0x00000200 /* One or more compresgsed clusters */
+#define EXT2_NOCOMPR_FL			0x00000400 /* Access raw compresgsed data */
 #define EXT2_ECOMPR_FL			0x00000800 /* Compression error */
-/* End compression flags --- maybe not all used */
+/* End compression flags --- maybe not all ugsed */
 #define EXT2_BTREE_FL			0x00001000 /* btree format dir */
 #define EXT2_INDEX_FL			0x00001000 /* hash-indexed directory */
 #define EXT2_IMAGIC_FL			0x00002000
@@ -480,7 +480,7 @@ struct ext2_super_block {
 
 #define EXT2_FEATURE_RO_COMPAT_SPARSE_SUPER	0x0001
 #define EXT2_FEATURE_RO_COMPAT_LARGE_FILE	0x0002
-/* #define EXT2_FEATURE_RO_COMPAT_BTREE_DIR	0x0004 not used */
+/* #define EXT2_FEATURE_RO_COMPAT_BTREE_DIR	0x0004 not ugsed */
 
 #define EXT2_FEATURE_INCOMPAT_COMPRESSION	0x0001
 #define EXT2_FEATURE_INCOMPAT_FILETYPE		0x0002

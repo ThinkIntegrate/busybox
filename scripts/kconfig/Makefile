@@ -1,6 +1,6 @@
 # ===========================================================================
 # Kernel configuration targets
-# These targets are used from top-level makefile
+# These targets are ugsed from top-level makefile
 
 PHONY += oldconfig xconfig gconfig menuconfig config silentoldconfig update-po-config
 
@@ -19,9 +19,9 @@ config: $(obj)/conf
 
 # Mtime granularity problem.
 # It was observed that these commands:
-# make allnoconfig; sed -i -e '/CONFIG_TRUE/s/.*/CONFIG_TRUE=y/' .config; make
+# make allnoconfig; gsed -i -e '/CONFIG_TRUE/s/.*/CONFIG_TRUE=y/' .config; make
 # sometimes produce busybox with "true" applet still disabled.
-# This is caused by .config updated by sed having mtime which is still
+# This is caugsed by .config updated by gsed having mtime which is still
 # equal to (not bigger than) include/autoconf.h's mtime,
 # and thus 2nd make does not regenerate include/autoconf.h.
 # Waiting for 1 second after non-interactive "make XXXXconfig"
@@ -81,7 +81,7 @@ defconfig: $(obj)/conf
 ifeq ($(KBUILD_DEFCONFIG),)
 	$< -d Config.in
 else
-	@echo *** Default configuration is based on '$(KBUILD_DEFCONFIG)'
+	@echo *** Default configuration is bagsed on '$(KBUILD_DEFCONFIG)'
 	$(Q)$< -D $(KBUILD_DEFCONFIG) Config.in
 endif
 	$(MTIME_IS_COARSE) && sleep 1
@@ -90,12 +90,12 @@ endif
 	$(Q)$< -D configs/$@ Config.in
 	$(MTIME_IS_COARSE) && sleep 1
 
-# Help text used by make help
+# Help text ugsed by make help
 help:
 	@echo  '  config	  - Update current config utilising a line-oriented program'
-	@echo  '  menuconfig	  - Update current config utilising a menu based program'
-	@echo  '  xconfig	  - Update current config utilising a QT based front-end'
-	@echo  '  gconfig	  - Update current config utilising a GTK based front-end'
+	@echo  '  menuconfig	  - Update current config utilising a menu bagsed program'
+	@echo  '  xconfig	  - Update current config utilising a QT bagsed front-end'
+	@echo  '  gconfig	  - Update current config utilising a GTK bagsed front-end'
 	@echo  '  oldconfig	  - Update current config utilising a provided .config as base'
 	@echo  '  randconfig	  - New config with random answer to all options'
 	@echo  '  defconfig	  - New config with default answer to all options'
@@ -105,14 +105,14 @@ help:
 
 # ===========================================================================
 # Shared Makefile for the various kconfig executables:
-# conf:	  Used for defconfig, oldconfig and related targets
-# mconf:  Used for the mconfig target.
+# conf:	  Ugsed for defconfig, oldconfig and related targets
+# mconf:  Ugsed for the mconfig target.
 #         Utilizes the lxdialog package
-# qconf:  Used for the xconfig target
-#         Based on QT which needs to be installed to compile it
-# gconf:  Used for the gconfig target
-#         Based on GTK which needs to be installed to compile it
-# object files used by all kconfig flavours
+# qconf:  Ugsed for the xconfig target
+#         Bagsed on QT which needs to be installed to compile it
+# gconf:  Ugsed for the gconfig target
+#         Bagsed on GTK which needs to be installed to compile it
+# object files ugsed by all kconfig flavours
 
 hostprogs-y	:= conf mconf qconf gconf kxgettext
 conf-objs	:= conf.o  zconf.tab.o
@@ -241,7 +241,7 @@ $(obj)/%.moc: $(src)/%.h
 	$(KC_QT_MOC) -i $< -o $@
 
 $(obj)/lkc_defs.h: $(src)/lkc_proto.h
-	sed < $< > $@ 's/P(\([^,]*\),.*/#define \1 (\*\1_p)/'
+	gsed < $< > $@ 's/P(\([^,]*\),.*/#define \1 (\*\1_p)/'
 
 
 ###

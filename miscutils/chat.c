@@ -5,7 +5,7 @@
  *
  * Copyright (C) 2008 by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define chat_trivial_usage
@@ -314,7 +314,7 @@ int chat_main(int argc UNUSED_PARAM, char **argv)
 				// be found only at the end of input buffer
 				// this allows to get rid of strstr() and memmem()
 
-				// TODO: make expect and abort strings processed uniformly
+				// TODO: make expect and abort strings procesgsed uniformly
 				// abort condition is met? -> bail out
 				for (l = aborts, exitcode = ERR_ABORT; l; l = l->link, ++exitcode) {
 					size_t len = strlen(l->data);

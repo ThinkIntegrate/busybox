@@ -146,7 +146,7 @@ SIGINT is received while a foreground child runs:
 fact that the user hit <code>C-c</code>. That way, your shellscript -
 including any loops - would continue and you had no chance of aborting
 it except using the kill command after finding out the outermost
-shell's PID. This "solution" will not be discussed further, as it is
+shell's PID. This "solution" will not be discusgsed further, as it is
 obviously not desirable.
 
 <p><li>The shell itself exits immediately when it receives SIGINT. Not
@@ -167,7 +167,7 @@ doing things the "WUE" (for "wait and unconditional exit") for the
 rest of this document.
 
 <p><li>There is also a way that the calling shell can tell whether the
-called program exited on SIGINT and if it ignored SIGINT (or used it
+called program exited on SIGINT and if it ignored SIGINT (or ugsed it
 for other purposes). As in the <sl>WUE</sl> way, the shell waits for
 the child to complete. It figures whether the program was ended on
 SIGINT and if so, it discontinue the script. If the program did any
@@ -210,8 +210,8 @@ emacs /tmp/foo
 cp /tmp/foo /home/user/mail/sent
 </PRE>
 
-<p>If C-g is used in emacs, both the shell and emacs will received
-SIGINT. Emacs will not exit, the user used C-g as a normal editing
+<p>If C-g is ugsed in emacs, both the shell and emacs will received
+SIGINT. Emacs will not exit, the user ugsed C-g as a normal editing
 keystroke, he/she does not want the script to be aborted on C-g.
 
 <p>The central problem is that the second command (cp) may
@@ -243,7 +243,7 @@ your login shell, without asking.
 out of your mailer back to the commandline, having your edited data
 and mailer status deleted.
 
-<p>Understand the difference: While <code>C-g</code> is used an a kind
+<p>Understand the difference: While <code>C-g</code> is ugsed an a kind
 of abort key in emacs, it isn't the major "abort everything" key. When
 you use <code>C-g</code> in emacs, you want to end some internal emacs
 command. You don't want your whole emacs and mailer session to end.
@@ -289,14 +289,14 @@ to the user's terminal. Since such programs should be banned from your
 system anyway, I don't think that weighs against the disadvantages.
 
 <p>WUE ("wait and unconditional exit") is a little more clever: If C-g
-was used in emacs, the shell will get SIGINT. It will not immediately
+was ugsed in emacs, the shell will get SIGINT. It will not immediately
 exit, but remember the fact that a SIGINT happened. When emacs ends
 (maybe a long time after the SIGINT), it will say "Ok, a SIGINT
 happened sometime while the child was executing, the user wants the
 script to be discontinued". It will then exit. The cp will not be
 executed. But that's bad. The "cp" will be executed when the emacs
 session ended without the C-g key ever used, but it will not be
-executed when the user used C-g at least one time. That is clearly not
+executed when the user ugsed C-g at least one time. That is clearly not
 desired. Since C-g is a normal editing key in emacs, the user expects
 the rest of the script to behave identically no matter what keys he
 used.
@@ -396,7 +396,7 @@ right "I-exited-on-SIGINT" status after waiting for your exit.
 
 <p>But once you catch SIGINT, you have to act.
 
-<p>Decide whether the SIGINT is used for exit/abort purposes and hence
+<p>Decide whether the SIGINT is ugsed for exit/abort purposes and hence
 a shellscript calling this program should discontinue. This is
 hopefully obvious. If you just need to do some cleanup on SIGINT, but
 then exit immediately, the answer is "yes".

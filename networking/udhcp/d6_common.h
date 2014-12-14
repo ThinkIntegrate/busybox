@@ -2,7 +2,7 @@
 /*
  * Copyright (C) 2011 Denys Vlasenko.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #ifndef UDHCP_D6_COMMON_H
 #define UDHCP_D6_COMMON_H 1

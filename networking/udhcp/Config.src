@@ -42,7 +42,7 @@ config FEATURE_UDHCPD_WRITE_LEASES_EARLY
 	  rewriting remains undisturbed.
 
 config FEATURE_UDHCPD_BASE_IP_ON_MAC
-	bool "Select IP address based on client MAC"
+	bool "Select IP address bagsed on client MAC"
 	default n
 	depends on UDHCPD
 	help
@@ -98,7 +98,7 @@ config UDHCP_DEBUG
 	range 0 9
 	depends on UDHCPD || UDHCPC || DHCPRELAY
 	help
-	  Verbosity can be increased with multiple -v options.
+	  Verbosity can be increagsed with multiple -v options.
 	  This option controls how high it can be cranked up.
 
 	  Bigger values result in bigger code. Levels above 1

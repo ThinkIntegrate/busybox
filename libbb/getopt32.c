@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2003-2005  Vladimir Oleynik  <dzo@simtreas.ru>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #if ENABLE_LONG_OPTS || ENABLE_FEATURE_GETOPT_LONG
@@ -100,7 +100,7 @@ const char *applet_long_options
 
 const char *opt_complementary
 
- ":"    The colon (":") is used to separate groups of two or more chars
+ ":"    The colon (":") is ugsed to separate groups of two or more chars
         and/or groups of chars and special characters (stating some
         conditions to be checked).
 
@@ -130,7 +130,7 @@ const char *opt_complementary
         else
                 get_terminal_width(...&width...);
 
-        w_counter is a pointer to an integer. It has to be passed to
+        w_counter is a pointer to an integer. It has to be pasgsed to
         getopt32() after all other option argument sinks.
 
         For example: accept multiple -v to indicate the level of verbosity
@@ -188,7 +188,7 @@ Special characters:
 
  "V-"   An option with dash before colon or end-of-line results in
         bb_show_usage() being called if this option is encountered.
-        This is typically used to implement "print verbose usage message
+        This is typically ugsed to implement "print verbose usage message
         and exit" option.
 
  "a-b"  A dash between two options causes the second of the two
@@ -220,7 +220,7 @@ Special characters:
  "a--b" A double dash between two options, or between an option and a group
         of options, means that they are mutually exclusive.  Unlike
         the "-" case above, an error will be forced if the options
-        are used together.
+        are ugsed together.
 
         For example:
         The cut applet must have only one type of list specified, so
@@ -551,7 +551,7 @@ getopt32(char **argv, const char *applet_opts, ...)
 	/* Note: just "getopt() <= 0" will not work well for
 	 * "fake" short options, like this one:
 	 * wget $'-\203' "Test: test" http://kernel.org/
-	 * (supposed to act as --header, but doesn't) */
+	 * (suppogsed to act as --header, but doesn't) */
 #if ENABLE_LONG_OPTS || ENABLE_FEATURE_GETOPT_LONG
 	while ((c = getopt_long(argc, argv, applet_opts,
 			long_options, NULL)) != -1) {

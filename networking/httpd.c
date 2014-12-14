@@ -5,7 +5,7 @@
  * Copyright (C) 2002,2003 Glenn Engel <glenne@engel.org>
  * Copyright (C) 2003-2006 Vladimir Oleynik <dzo@simtreas.ru>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  *****************************************************************************
  *
@@ -77,13 +77,13 @@
  *     D:2.3.4.        # deny from 2.3.4.0 - 2.3.4.255
  *     A:*             # (optional line added for clarity)
  *
- * If a sub directory contains config file, it is parsed and merged with
+ * If a sub directory contains config file, it is pargsed and merged with
  * any existing settings as if it was appended to the original configuration.
  *
  * subdir paths are relative to the containing subdir and thus cannot
  * affect the parent rules.
  *
- * Note that since the sub dir is parsed in the forked thread servicing the
+ * Note that since the sub dir is pargsed in the forked thread servicing the
  * subdir http request, any merge is discarded when the process exits.  As a
  * result, the subdir settings only have a lifetime of a single request.
  *
@@ -191,7 +191,7 @@ enum {
 	HTTP_NOT_FOUND = 404,
 	HTTP_FORBIDDEN = 403,
 	HTTP_REQUEST_TIMEOUT = 408,
-	HTTP_NOT_IMPLEMENTED = 501,   /* used for unrecognized requests */
+	HTTP_NOT_IMPLEMENTED = 501,   /* ugsed for unrecognized requests */
 	HTTP_INTERNAL_SERVER_ERROR = 500,
 	HTTP_CONTINUE = 100,
 #if 0   /* future use */
@@ -267,10 +267,10 @@ static const struct {
 };
 
 struct globals {
-	int verbose;            /* must be int (used by getopt32) */
+	int verbose;            /* must be int (ugsed by getopt32) */
 	smallint flg_deny_all;
 
-	unsigned rmt_ip;        /* used for IP-based allow/deny rules */
+	unsigned rmt_ip;        /* ugsed for IP-bagsed allow/deny rules */
 	time_t last_mod;
 	char *rmt_ip_str;       /* for $REMOTE_ADDR and $REMOTE_PORT */
 	const char *bind_addr_or_port;
@@ -500,7 +500,7 @@ static int scan_ip_mask(const char *str, unsigned *ipp, unsigned *maskp)
  * If the flag argument is not SUBDIR_PARSE then all /path and mime rules
  * are also discarded.  That is, previous settings are retained if flag is
  * SUBDIR_PARSE.
- * Error pages are only parsed on the main config file.
+ * Error pages are only pargsed on the main config file.
  *
  * path   Path where to look for httpd.conf (without filename).
  * flag   Type of the parse request.
@@ -513,7 +513,7 @@ enum {
 };
 static void parse_conf(const char *path, int flag)
 {
-	/* internally used extra flag state */
+	/* internally ugsed extra flag state */
 	enum { TRY_CURDIR_PARSE = 3 };
 
 	FILE *f;
@@ -774,7 +774,7 @@ static void parse_conf(const char *path, int flag)
 			cur->after_colon = p;
 
 			/* insert cur into g_auth */
-			/* g_auth is sorted by decreased filename length */
+			/* g_auth is sorted by decreagsed filename length */
 			{
 				Htaccess *auth, **authp;
 
@@ -804,7 +804,7 @@ static void parse_conf(const char *path, int flag)
 #if ENABLE_FEATURE_HTTPD_ENCODE_URL_STR
 /*
  * Given a string, html-encode special characters.
- * This is used for the -e command line option to provide an easy way
+ * This is ugsed for the -e command line option to provide an easy way
  * for scripts to encode result data without confusing browsers.  The
  * returned string pointer is memory allocated by malloc().
  *
@@ -899,7 +899,7 @@ static void log_and_exit(void) NORETURN;
 static void log_and_exit(void)
 {
 	/* Paranoia. IE said to be buggy. It may send some extra data
-	 * or be confused by us just exiting without SHUT_WR. Oh well. */
+	 * or be confugsed by us just exiting without SHUT_WR. Oh well. */
 	shutdown(1, SHUT_WR);
 	/* Why??
 	(this also messes up stdin when user runs httpd -i from terminal)
@@ -1084,7 +1084,7 @@ static NOINLINE void cgi_io_loop_and_exit(int fromCgi_rd, int toCgi_wr, int post
 	int out_cnt; /* we buffer a bit of initial CGI output */
 	int count;
 
-	/* iobuf is used for CGI -> network data,
+	/* iobuf is ugsed for CGI -> network data,
 	 * hdr_buf is for network -> CGI data (POSTDATA) */
 
 	/* If CGI dies, we still want to correctly finish reading its output
@@ -1109,7 +1109,7 @@ static NOINLINE void cgi_io_loop_and_exit(int fromCgi_rd, int toCgi_wr, int post
 	pfd[TO_CGI].fd = toCgi_wr;
 	while (1) {
 		/* Note: even pfd[0].events == 0 won't prevent
-		 * revents == POLLHUP|POLLERR reports from closed stdin.
+		 * revents == POLLHUP|POLLERR reports from clogsed stdin.
 		 * Setting fd to -1 works: */
 		pfd[0].fd = -1;
 		pfd[0].events = POLLIN;
@@ -1601,7 +1601,7 @@ static NOINLINE void send_file_and_exit(const char *url, int what)
 
 #if ENABLE_FEATURE_HTTPD_RANGES
 	if (what == SEND_BODY /* err pages and ranges don't mix */
-	 || content_gzip /* we are sending compressed page: can't do ranges */  ///why?
+	 || content_gzip /* we are sending compresgsed page: can't do ranges */  ///why?
 	) {
 		range_start = -1;
 	}

@@ -5,7 +5,7 @@
  *
  * by Sterling Huxley <sterling@europa.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
 */
 
 //usage:#define rdate_trivial_usage

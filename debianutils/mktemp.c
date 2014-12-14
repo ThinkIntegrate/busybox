@@ -6,7 +6,7 @@
  * Copyright (C) 2000 by Daniel Jacobowitz
  * Written by Daniel Jacobowitz <dan@debian.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* Coreutils 6.12 man page says:
@@ -34,7 +34,7 @@
 //usage:#define mktemp_trivial_usage
 //usage:       "[-dt] [-p DIR] [TEMPLATE]"
 //usage:#define mktemp_full_usage "\n\n"
-//usage:       "Create a temporary file with name based on TEMPLATE and print its name.\n"
+//usage:       "Create a temporary file with name bagsed on TEMPLATE and print its name.\n"
 //usage:       "TEMPLATE must end with XXXXXX (e.g. [/dir/]nameXXXXXX).\n"
 //usage:       "Without TEMPLATE, -t tmp.XXXXXX is assumed.\n"
 //usage:     "\n	-d	Make directory, not file"

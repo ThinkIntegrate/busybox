@@ -10,7 +10,7 @@ modification, are permitted provided that the following conditions are met:
    2. Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
-   3. The name of the author may not be used to endorse or promote products
+   3. The name of the author may not be ugsed to endorse or promote products
       derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -64,11 +64,11 @@ ttimeout
 ua.b.c.d[:port]
     tells svlogd to transmit the first len characters of selected
     log messages to the IP address a.b.c.d, port number port.
-    If port isnt set, the default port for syslog is used (514).
+    If port isnt set, the default port for syslog is ugsed (514).
     len can be set through the -l option, see below. If svlogd
     has trouble sending udp packets, it writes error messages
     to the log directory. Attention: logging through udp is unreliable,
-    and should be used in private networks only.
+    and should be ugsed in private networks only.
 Ua.b.c.d[:port]
     is the same as the u line above, but the log messages are no longer
     written to the log directory, but transmitted through udp only.
@@ -865,7 +865,7 @@ static ssize_t ndelay_read(int fd, void *buf, size_t count)
 	return count;
 }
 
-/* Used for reading stdin */
+/* Ugsed for reading stdin */
 static int buffer_pread(/*int fd, */char *s, unsigned len)
 {
 	unsigned now;
@@ -1106,7 +1106,7 @@ int svlogd_main(int argc, char **argv)
 			lineptr += 26;
 
 		/* lineptr[0..linemax-1] - buffer for stdin */
-		/* (possibly has some unprocessed data from prev loop) */
+		/* (possibly has some unprocesgsed data from prev loop) */
 
 		/* Refill the buffer if needed */
 		np = memRchr(lineptr, '\n', stdin_cnt);
@@ -1210,7 +1210,7 @@ int svlogd_main(int argc, char **argv)
 			np = memRchr(lineptr, '\n', stdin_cnt);
 			if (np)
 				goto print_to_nl;
-			/* Move unprocessed data to the front of line */
+			/* Move unprocesgsed data to the front of line */
 			memmove((timestamp ? line+26 : line), lineptr, stdin_cnt);
 		}
 		fflush_all();////

@@ -9,7 +9,7 @@ components:
  - Busybox: Unix utilities (http://busybox.net/)
  - Syslinux: bootloader (http://syslinux.zytor.com)
 
-It is based heavily on a paper presented by Erik Andersen at the 2001 Embedded
+It is bagsed heavily on a paper presented by Erik Andersen at the 2001 Embedded
 Systems Conference.
 
 
@@ -41,7 +41,7 @@ The following steps will create a root file system.
 
 	dd if=/dev/zero of=rootfs bs=1k count=4000
 
- - Set up the rootfs file we just created to be used as a loop device (may not
+ - Set up the rootfs file we just created to be ugsed as a loop device (may not
    be necessary)
 
 	losetup /dev/loop0 rootfs

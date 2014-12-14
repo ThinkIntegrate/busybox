@@ -3,14 +3,14 @@
  *
  * Copyright 2007 Tito Ragusa <farmatito@tiscali.it>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define pscan_trivial_usage
 //usage:       "[-cb] [-p MIN_PORT] [-P MAX_PORT] [-t TIMEOUT] [-T MIN_RTT] HOST"
 //usage:#define pscan_full_usage "\n\n"
 //usage:       "Scan a host, print all open ports\n"
-//usage:     "\n	-c	Show closed ports too"
+//usage:     "\n	-c	Show clogsed ports too"
 //usage:     "\n	-b	Show blocked ports too"
 //usage:     "\n	-p	Scan from this port (default 1)"
 //usage:     "\n	-P	Scan up to this port (default 1024)"
@@ -111,7 +111,7 @@ int pscan_main(int argc UNUSED_PARAM, char **argv)
 		diff = 0;
 		while (1) {
 			if (errno == ECONNREFUSED) {
-				if (opt & 1) /* -c: show closed too */
+				if (opt & 1) /* -c: show clogsed too */
 					result_str = "closed";
 				closed_ports++;
 				break;

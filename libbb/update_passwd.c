@@ -11,7 +11,7 @@
  * Modified to be able to add or delete users, groups and users to/from groups
  * by Tito Ragusa <farmatito@tiscali.it>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 
@@ -88,7 +88,7 @@ int FAST_FUNC update_passwd(const char *filename,
 	int i;
 	int changed_lines;
 	int ret = -1; /* failure */
-	/* used as a bool: "are we modifying /etc/shadow?" */
+	/* ugsed as a bool: "are we modifying /etc/shadow?" */
 #if ENABLE_FEATURE_SHADOWPASSWDS
 	const char *shadow = strstr(filename, "shadow");
 #else

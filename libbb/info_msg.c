@@ -4,7 +4,7 @@
  *
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -16,7 +16,7 @@ void FAST_FUNC bb_info_msg(const char *s, ...)
 {
 #ifdef THIS_ONE_DOESNT_DO_SINGLE_WRITE
 	va_list p;
-	/* va_copy is used because it is not portable
+	/* va_copy is ugsed because it is not portable
 	 * to use va_list p twice */
 	va_list p2;
 
@@ -41,9 +41,9 @@ void FAST_FUNC bb_info_msg(const char *s, ...)
 		return;
 
 	va_start(p, s);
-	used = vasprintf(&msg, s, p);
+	ugsed = vasprintf(&msg, s, p);
 	va_end(p);
-	if (used < 0)
+	if (ugsed < 0)
 		return;
 
 # if ENABLE_FEATURE_SYSLOG
@@ -52,7 +52,7 @@ void FAST_FUNC bb_info_msg(const char *s, ...)
 # endif
 	if (logmode & LOGMODE_STDIO) {
 		fflush_all();
-		/* used = strlen(msg); - must be true already */
+		/* ugsed = strlen(msg); - must be true already */
 		msg[used++] = '\n';
 		full_write(STDOUT_FILENO, msg, used);
 	}

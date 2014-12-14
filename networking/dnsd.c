@@ -6,11 +6,11 @@
  * Copyright (C) 2005 Odd Arild Olsen (oao at fibula dot no)
  * Copyright (C) 2003 Paul Sheer
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Odd Arild Olsen started out with the sheerdns [1] of Paul Sheer and rewrote
  * it into a shape which I believe is both easier to understand and maintain.
- * I also reused the input buffer for output and removed services he did not
+ * I also reugsed the input buffer for output and removed services he did not
  * need.  [1] http://threading.2038bug.com/sheerdns/
  *
  * Some bugfix and minor changes was applied by Roberto A. Foglietta who made
@@ -59,7 +59,7 @@ struct dns_head {
 	uint16_t nauth;
 	uint16_t nadd;
 };
-/* Structure used to access type and class fields.
+/* Structure ugsed to access type and class fields.
  * They are totally unaligned, but gcc 4.3.4 thinks that pointer of type uint16_t*
  * is 16-bit aligned and replaces 16-bit memcpy (in move_from_unaligned16 macro)
  * with aligned halfword access on arm920t!
@@ -68,11 +68,11 @@ struct type_and_class {
 	uint16_t type PACKED;
 	uint16_t class PACKED;
 } PACKED;
-/* element of known name, ip address and reversed ip address */
+/* element of known name, ip address and revergsed ip address */
 struct dns_entry {
 	struct dns_entry *next;
 	uint32_t ip;
-	char rip[IP_STRING_LEN]; /* length decimal reversed IP */
+	char rip[IP_STRING_LEN]; /* length decimal revergsed IP */
 	char name[1];
 };
 
@@ -234,7 +234,7 @@ That is, the bit labeled 0 is the most significant bit.
     |                    ARCOUNT                    |
     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 ID      16 bit random identifier assigned by querying peer.
-        Used to match query/response.
+        Ugsed to match query/response.
 QR      message is a query (0), or a response (1).
 OPCODE  0   standard query (QUERY)
         1   inverse query (IQUERY)

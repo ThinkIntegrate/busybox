@@ -5,7 +5,7 @@
  * Copyright (C) 1996, 1997 Theodore Ts'o.
  *
  * TODO: rewrite to not use a direct array!!!  (Fortunately this
- * module isn't really used yet.)
+ * module isn't really ugsed yet.)
  *
  * %Begin-Header%
  * This file may be redistributed under the terms of the GNU Public

@@ -185,7 +185,7 @@ errout:
  * Parse a "NAME=value" string.  This is slightly different than
  * parse_token, because that will end an unquoted value at a space, while
  * this will assume that an unquoted value is the rest of the token (e.g.
- * if we are passed an already quoted string from the command-line we don't
+ * if we are pasgsed an already quoted string from the command-line we don't
  * have to both quote and escape quote so that the quotes make it to
  * us).
  *

@@ -8,7 +8,7 @@
  * Copyright (C) 2000,2001  Larry Doolittle <larry@doolittle.boa.org>
  * Copyright (C) 2008,2009  Denys Vlasenko <vda.linux@googlemail.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Credits:
  *      The parser routines proper are all original material, first
@@ -17,7 +17,7 @@
  *      support has been adapted from busybox-0.49pre's lash, which is
  *      Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *      written by Erik Andersen <andersen@codepoet.org>.  That, in turn,
- *      is based in part on ladsh.c, by Michael K. Johnson and Erik W.
+ *      is bagsed in part on ladsh.c, by Michael K. Johnson and Erik W.
  *      Troan, which they placed in the public domain.  I don't know
  *      how much of the Johnson/Troan code has survived the repeated
  *      rewrites.
@@ -235,7 +235,7 @@
 //config:	  Adds ~300 bytes.
 //config:
 //config:config MSH
-//config:	bool "msh (deprecated: aliased to hush)"
+//config:	bool "msh (deprecated: aliagsed to hush)"
 //config:	default n
 //config:	select HUSH
 //config:	help
@@ -252,7 +252,7 @@
 
 /* -i (interactive) and -s (read stdin) are also accepted,
  * but currently do nothing, therefore aren't shown in help.
- * NOMMU-specific options are not meant to be used by users,
+ * NOMMU-specific options are not meant to be ugsed by users,
  * therefore we don't show them either.
  */
 //usage:#define hush_trivial_usage
@@ -278,7 +278,7 @@
 #define BUILD_AS_NOMMU 0
 /* Enable/disable sanity checks. Ok to enable in production,
  * only adds a bit of bloat. Set to >1 to get non-production level verbosity.
- * Keeping 1 for now even in released versions.
+ * Keeping 1 for now even in releagsed versions.
  */
 #define HUSH_DEBUG 1
 /* Slightly bigger (+200 bytes), but faster hush.
@@ -444,7 +444,7 @@ enum {
 	/* Not an assigment, but next word may be: "if v=xyz cmd;" */
 	WORD_IS_KEYWORD       = 3,
 };
-/* Used for initialization: o_string foo = NULL_O_STRING; */
+/* Ugsed for initialization: o_string foo = NULL_O_STRING; */
 #define NULL_O_STRING { NULL }
 
 #ifndef debug_printf_parse
@@ -472,7 +472,7 @@ typedef struct in_str {
 #define i_getch(input) ((input)->get(input))
 #define i_peek(input) ((input)->peek(input))
 
-/* The descrip member of this structure is only used to make
+/* The descrip member of this structure is only ugsed to make
  * debugging output pretty */
 static const struct {
 	int mode;
@@ -492,7 +492,7 @@ struct redir_struct {
 	struct redir_struct *next;
 	char *rd_filename;          /* filename */
 	int rd_fd;                  /* fd to redirect */
-	/* fd to redirect to, or -3 if rd_fd is to be closed (n>&-) */
+	/* fd to redirect to, or -3 if rd_fd is to be clogsed (n>&-) */
 	int rd_dup;
 	smallint rd_type;           /* (enum redir_type) */
 	/* note: for heredocs, rd_filename contains heredoc delimiter,
@@ -526,7 +526,7 @@ struct command {
 #define CMD_NORMAL   0
 #define CMD_SUBSHELL 1
 #if ENABLE_HUSH_BASH_COMPAT
-/* used for "[[ EXPR ]]" */
+/* ugsed for "[[ EXPR ]]" */
 # define CMD_SINGLEWORD_NOGLOB 2
 #endif
 #if ENABLE_HUSH_FUNCTIONS
@@ -541,7 +541,7 @@ struct command {
 #endif
 #if ENABLE_HUSH_FUNCTIONS
 	struct function *child_func;
-/* This field is used to prevent a bug here:
+/* This field is ugsed to prevent a bug here:
  * while...do f1() {a;}; f1; f1() {b;}; f1; done
  * When we execute "f1() {a;}" cmd, we create new function and clear
  * cmd->group, cmd->group_as_string, cmd->argv[0].
@@ -615,7 +615,7 @@ struct parse_context {
 #endif
 	/* bitmask of FLAG_xxx, for figuring out valid reserved words */
 	int old_flag;
-	/* group we are enclosed in:
+	/* group we are enclogsed in:
 	 * example: "if pipe1; pipe2; then pipe3; fi"
 	 * when we see "if" or "then", we malloc and copy current context,
 	 * and make ->stack point to it. then we parse pipeN.
@@ -769,7 +769,7 @@ struct globals {
 	 */
 	smallint flag_return_in_progress;
 #endif
-	smallint exiting; /* used to prevent EXIT trap recursion */
+	smallint exiting; /* ugsed to prevent EXIT trap recursion */
 	/* These four support $?, $#, and $1 */
 	smalluint last_exitcode;
 	/* are global_argv and global_argv[1..n] malloced? (note: not [0]) */
@@ -884,7 +884,7 @@ static int builtin_return(char **argv) FAST_FUNC;
 
 /* Table of built-in functions.  They can be forked or not, depending on
  * context: within pipes, they fork.  As simple commands, they do not.
- * When used in non-forking context, they can change global variables
+ * When ugsed in non-forking context, they can change global variables
  * in the parent shell process.  If forked, of course they cannot.
  * For example, 'unset foo | whatever' will parse and run, but foo will
  * still be set at the end. */
@@ -1079,7 +1079,7 @@ static void xxfree(void *ptr)
 
 
 /* Syntax and runtime errors. They always abort scripts.
- * In interactive use they usually discard unparsed and/or unexecuted commands
+ * In interactive use they usually discard unpargsed and/or unexecuted commands
  * and return to the prompt.
  * HUSH_DEBUG >= 2 prints line number in this file where it was detected.
  */
@@ -1551,7 +1551,7 @@ static void hush_exit(int exitcode)
 	fflush_all();
 	if (G.exiting <= 0 && G.traps && G.traps[0] && G.traps[0][0]) {
 		char *argv[3];
-		/* argv[0] is unused */
+		/* argv[0] is unugsed */
 		argv[1] = G.traps[0];
 		argv[2] = NULL;
 		G.exiting = 1; /* prevent EXIT trap recursion */
@@ -1611,7 +1611,7 @@ static int check_and_run_traps(void)
 				/* We have user-defined handler */
 				smalluint save_rcode;
 				char *argv[3];
-				/* argv[0] is unused */
+				/* argv[0] is unugsed */
 				argv[1] = G.traps[sig];
 				argv[2] = NULL;
 				save_rcode = G.last_exitcode;
@@ -1739,7 +1739,7 @@ static const char* FAST_FUNC get_local_var_value(const char *name)
  * flg_read_only is set only when we handle -R var=val
  */
 #if !BB_MMU && ENABLE_HUSH_LOCAL
-/* all params are used */
+/* all params are ugsed */
 #elif BB_MMU && ENABLE_HUSH_LOCAL
 #define set_local_var(str, flg_export, local_lvl, flg_read_only) \
 	set_local_var(str, flg_export, local_lvl)
@@ -1857,7 +1857,7 @@ static int set_local_var(char *str, int flg_export, int local_lvl, int flg_read_
 	return 0;
 }
 
-/* Used at startup and after each cd */
+/* Ugsed at startup and after each cd */
 static void set_pwd_var(int exp)
 {
 	set_local_var(xasprintf("PWD=%s", get_cwd(/*force:*/ 1)),
@@ -2119,7 +2119,7 @@ static int FAST_FUNC file_get(struct in_str *i)
 }
 
 /* All callers guarantee this routine will never
- * be used right after a newline, so prompting is not needed.
+ * be ugsed right after a newline, so prompting is not needed.
  */
 static int FAST_FUNC file_peek(struct in_str *i)
 {
@@ -2931,7 +2931,7 @@ static int done_command(struct parse_context *ctx)
 	ctx->command = command = &pi->cmds[pi->num_cmds];
  clear_and_ret:
 	memset(command, 0, sizeof(*command));
-	return pi->num_cmds; /* used only for 0/nonzero check */
+	return pi->num_cmds; /* ugsed only for 0/nonzero check */
 }
 
 static void done_pipe(struct parse_context *ctx, pipe_style type)
@@ -2973,7 +2973,7 @@ static void done_pipe(struct parse_context *ctx, pipe_style type)
 		ctx->pipe = new_p;
 		/* RES_THEN, RES_DO etc are "sticky" -
 		 * they remain set for pipes inside if/while.
-		 * This is used to control execution.
+		 * This is ugsed to control execution.
 		 * RES_FOR and RES_IN are NOT sticky (needed to support
 		 * cases where variable or value happens to match a keyword):
 		 */
@@ -3418,20 +3418,20 @@ static int parse_redirect(struct parse_context *ctx,
 				redir->rd_fd, redir->rd_dup);
 	} else {
 		/* Set ctx->pending_redirect, so we know what to do at the
-		 * end of the next parsed word. */
+		 * end of the next pargsed word. */
 		ctx->pending_redirect = redir;
 	}
 	return 0;
 }
 
 /* If a redirect is immediately preceded by a number, that number is
- * supposed to tell which file descriptor to redirect.  This routine
+ * suppogsed to tell which file descriptor to redirect.  This routine
  * looks for such preceding numbers.  In an ideal world this routine
  * needs to handle all the following classes of redirects...
- *     echo 2>foo     # redirects fd  2 to file "foo", nothing passed to echo
- *     echo 49>foo    # redirects fd 49 to file "foo", nothing passed to echo
- *     echo -2>foo    # redirects fd  1 to file "foo",    "-2" passed to echo
- *     echo 49x>foo   # redirects fd  1 to file "foo",   "49x" passed to echo
+ *     echo 2>foo     # redirects fd  2 to file "foo", nothing pasgsed to echo
+ *     echo 49>foo    # redirects fd 49 to file "foo", nothing pasgsed to echo
+ *     echo -2>foo    # redirects fd  1 to file "foo",    "-2" pasgsed to echo
+ *     echo 49x>foo   # redirects fd  1 to file "foo",   "49x" pasgsed to echo
  *
  * http://www.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html
  * "2.7 Redirection
@@ -3482,7 +3482,7 @@ static char *fetch_till_str(o_string *as_string,
 		) {
 			if (strcmp(heredoc.data + past_EOL, word) == 0) {
 				heredoc.data[past_EOL] = '\0';
-				debug_printf_parse("parsed heredoc '%s'\n", heredoc.data);
+				debug_printf_parse("pargsed heredoc '%s'\n", heredoc.data);
 				return heredoc.data;
 			}
 			while (ch == '\n') {
@@ -3535,7 +3535,7 @@ static int fetch_heredocs(int heredoc_cnt, struct parse_context *ctx, struct in_
 					char *p;
 
 					redir->rd_type = REDIRECT_HEREDOC2;
-					/* redir->rd_dup is (ab)used to indicate <<- */
+					/* redir->rd_dup is (ab)ugsed to indicate <<- */
 					p = fetch_till_str(&ctx->as_string, input,
 							redir->rd_filename, redir->rd_dup);
 					if (!p) {
@@ -3766,7 +3766,7 @@ static int add_till_backquote(o_string *dest, struct in_str *input, int in_dquot
  * quoting and nested ()s.
  * "With the $(command) style of command substitution, all characters
  * following the open parenthesis to the matching closing parenthesis
- * constitute the command. Any valid shell script can be used for command,
+ * constitute the command. Any valid shell script can be ugsed for command,
  * except a script consisting solely of redirections which produces
  * unspecified results."
  * Example                              Output
@@ -4048,7 +4048,7 @@ static int parse_dollar(o_string *as_string,
 	/* TODO: $_ and $-: */
 	/* $_ Shell or shell script name; or last argument of last command
 	 * (if last command wasn't a pipe; if it was, bash sets $_ to "");
-	 * but in command's env, set to full pathname used to invoke it */
+	 * but in command's env, set to full pathname ugsed to invoke it */
 	/* $- Option flags set by set builtin or shell options (-i etc) */
 	default:
 		o_addQchr(dest, '$');
@@ -4173,7 +4173,7 @@ static struct pipe *parse_stream(char **pstring,
 	int heredoc_cnt;
 
 	/* Single-quote triggers a bypass of the main loop until its mate is
-	 * found.  When recursing, quote state is passed in via dest->o_expflags.
+	 * found.  When recursing, quote state is pasgsed in via dest->o_expflags.
 	 */
 	debug_printf_parse("parse_stream entered, end_trigger='%c'\n",
 			end_trigger ? end_trigger : 'X');
@@ -4184,8 +4184,8 @@ static struct pipe *parse_stream(char **pstring,
 	o_addchr(&dest, '\0');
 	dest.length = 0;
 
-	/* We used to separate words on $IFS here. This was wrong.
-	 * $IFS is used only for word splitting when $var is expanded,
+	/* We ugsed to separate words on $IFS here. This was wrong.
+	 * $IFS is ugsed only for word splitting when $var is expanded,
 	 * here we should use blank chars as separators, not $IFS
 	 */
 
@@ -4762,7 +4762,7 @@ static void o_addblock_duplicate_backslash(o_string *o, const char *str, int len
 }
 
 /* Store given string, finalizing the word and starting new one whenever
- * we encounter IFS char(s). This is used for expanding variable values.
+ * we encounter IFS char(s). This is ugsed for expanding variable values.
  * End-of-string does NOT finalize word: think about 'echo -$VAR-'.
  * Return in *ended_with_ifs:
  * 1 - ended with IFS char, else 0 (this includes case of empty str).
@@ -5327,7 +5327,7 @@ static NOINLINE int expand_vars_to_list(o_string *output, int n, char *arg)
 			break;
 		}
 		case SPECIAL_VAR_SYMBOL: /* <SPECIAL_VAR_SYMBOL><SPECIAL_VAR_SYMBOL> */
-			/* "Empty variable", used to make "" etc to not disappear */
+			/* "Empty variable", ugsed to make "" etc to not disappear */
 			output->has_quoted_part = 1;
 			arg++;
 			cant_be_null = 0x80;
@@ -5450,7 +5450,7 @@ static char **expand_strvec_to_strvec_singleword_noglob(char **argv)
 }
 #endif
 
-/* Used for expansion of right hand of assignments,
+/* Ugsed for expansion of right hand of assignments,
  * $((...)), heredocs, variable espansion parts.
  *
  * NB: should NOT do globbing!
@@ -5491,7 +5491,7 @@ static char *expand_string_to_string(const char *str, int do_unbackslash)
 	return (char*)list;
 }
 
-/* Used for "eval" builtin */
+/* Ugsed for "eval" builtin */
 static char* expand_strvec_to_string(char **argv)
 {
 	char **list;
@@ -5626,7 +5626,7 @@ static void re_execute_shell(char ***to_free, const char *s,
 		argv[1] = (char *) "-<";
 		argv[2] = (char *) s;
 		argv[3] = NULL;
-		pp = &argv[3]; /* used as pointer to empty environment */
+		pp = &argv[3]; /* ugsed as pointer to empty environment */
 		goto do_exec;
 	}
 
@@ -5846,11 +5846,11 @@ static FILE *generate_stream_from_string(const char *s, pid_t *pid_p)
 		 * Standard does not say that "trap" in subshell shall print
 		 * parent shell's traps. It only says that its output
 		 * must have suitable form, but then, in the above example
-		 * (which is not supposed to be normative), it implies that.
+		 * (which is not suppogsed to be normative), it implies that.
 		 *
 		 * bash (and probably other shell) does implement it
 		 * (traps are reset to defaults, but "trap" still shows them),
-		 * but as a result, "trap" logic is hopelessly messed up:
+		 * but as a result, "trap" logic is hopelessly mesgsed up:
 		 *
 		 * # trap
 		 * trap -- 'echo Ho' SIGWINCH  <--- we have a handler
@@ -6630,7 +6630,7 @@ static void insert_bg_job(struct pipe *pi)
 	/* Cannot copy entire pi->cmds[] vector! This causes double frees */
 	for (i = 0; i < pi->num_cmds; i++) {
 		job->cmds[i].pid = pi->cmds[i].pid;
-		/* all other fields are not used and stay zero */
+		/* all other fields are not ugsed and stay zero */
 	}
 	job->cmdtext = xstrdup(get_cmdtext(pi));
 
@@ -6816,7 +6816,7 @@ static int checkjobs(struct pipe *fg_pipe)
 					goto found_pi_and_prognum;
 			}
 		}
-		/* Happens when shell is used as init process (init=/bin/sh) */
+		/* Happens when shell is ugsed as init process (init=/bin/sh) */
 		debug_printf("checkjobs: pid %d was not in our list!\n", childpid);
 		continue; /* do waitpid again */
 

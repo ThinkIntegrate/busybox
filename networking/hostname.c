@@ -7,7 +7,7 @@
  * Adjusted by Erik Andersen <andersen@codepoet.org> to remove
  * use of long options and GNU getopt.  Improved the usage info.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define hostname_trivial_usage

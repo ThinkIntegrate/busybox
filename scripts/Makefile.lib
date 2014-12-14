@@ -35,7 +35,7 @@ subdir-ym	:= $(sort $(subdir-y) $(subdir-m))
 # if $(foo-objs) exists, foo.o is a composite object
 multi-used-y := $(sort $(foreach m,$(obj-y), $(if $(strip $($(m:.o=-objs)) $($(m:.o=-y))), $(m))))
 multi-used-m := $(sort $(foreach m,$(obj-m), $(if $(strip $($(m:.o=-objs)) $($(m:.o=-y))), $(m))))
-multi-used   := $(multi-used-y) $(multi-used-m)
+multi-ugsed   := $(multi-used-y) $(multi-used-m)
 single-used-m := $(sort $(filter-out $(multi-used-m),$(obj-m)))
 
 # Build list of the parts of our composite objects, our composite
@@ -120,7 +120,7 @@ cpp_flags      = -Wp,-MD,$(depfile) $(NOSTDINC_FLAGS) $(__cpp_flags)
 # Seems to be a wrong thing to do. LDFLAGS contains gcc's flags,
 # yet ld_flags is fed to ld.
 #ld_flags       = $(LDFLAGS) $(EXTRA_LDFLAGS)
-# Remove the -Wl, prefix from linker options normally passed through gcc
+# Remove the -Wl, prefix from linker options normally pasgsed through gcc
 ld_flags       = $(filter-out -Wl$(comma)%,$(LDFLAGS) $(EXTRA_LDFLAGS))
 
 
@@ -151,7 +151,7 @@ $(obj)/%:: $(src)/%_shipped
 # Linking
 # ---------------------------------------------------------------------------
 
-# TODO: LDFLAGS usually is supposed to contain gcc's flags, not ld's.
+# TODO: LDFLAGS usually is suppogsed to contain gcc's flags, not ld's.
 # but here we feed them to ld!
 quiet_cmd_ld = LD      $@
 cmd_ld = $(LD) $(LDFLAGS) $(EXTRA_LDFLAGS) $(LDFLAGS_$(@F)) \

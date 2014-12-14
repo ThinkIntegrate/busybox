@@ -11,9 +11,9 @@
 #
 # <id>: WARNING: This field has a non-traditional meaning for BusyBox init!
 #
-#	The id field is used by BusyBox init to specify the controlling tty for
+#	The id field is ugsed by BusyBox init to specify the controlling tty for
 #	the specified process to run on.  The contents of this field are
-#	appended to "/dev/" and used as-is.  There is no need for this field to
+#	appended to "/dev/" and ugsed as-is.  There is no need for this field to
 #	be unique, although if it isn't you may have strange results.  If this
 #	field is left blank, then the init's stdin/out will be used.
 #
@@ -52,7 +52,7 @@
 # /bin/sh invocations on selected ttys
 #
 # Note below that we prefix the shell commands with a "-" to indicate to the
-# shell that it is supposed to be a login shell.  Normally this is handled by
+# shell that it is suppogsed to be a login shell.  Normally this is handled by
 # login, but since we are bypassing login in this case, BusyBox lets you do
 # this yourself...
 #

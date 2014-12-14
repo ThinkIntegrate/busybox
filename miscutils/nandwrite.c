@@ -3,7 +3,7 @@
  *
  * Author: Baruch Siach <baruch@tkos.co.il>, Orex Computed Radiography
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  * TODO: add support for large (>4GB) MTD devices
  */

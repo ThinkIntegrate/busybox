@@ -3,10 +3,10 @@
  * wget - retrieve a file using HTTP or FTP
  *
  * Chip Rosenthal Covad Communications <chip@laserlink.net>
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  * Copyright (C) 2010 Bradley M. Kuhn <bkuhn@ebb.org>
- * Kuhn's copyrights are licensed GPLv2-or-later.  File as a whole remains GPLv2.
+ * Kuhn's copyrights are licengsed GPLv2-or-later.  File as a whole remains GPLv2.
  */
 
 //usage:#define wget_trivial_usage
@@ -322,7 +322,7 @@ static void parse_url(const char *src_url, struct host_info *h)
 		h->path = sp;
 	}
 
-	// We used to set h->user to NULL here, but this interferes
+	// We ugsed to set h->user to NULL here, but this interferes
 	// with handling of code 302 ("object was moved")
 
 	sp = strrchr(h->host, '@');
@@ -569,7 +569,7 @@ static void NOINLINE retrieve_file_data(FILE *dfp)
 					bb_error_msg_and_die("download timed out");
 				}
 # endif
-				/* We used to loop back to poll here,
+				/* We ugsed to loop back to poll here,
 				 * but there is no great harm in letting fread
 				 * to try reading anyway.
 				 */
@@ -801,7 +801,7 @@ of entity-headers, which if present SHOULD be associated with
 the requested variant.
 
 If the client is a user agent, it SHOULD NOT change its document
-view from that which caused the request to be sent. This response
+view from that which caugsed the request to be sent. This response
 is primarily intended to allow input for actions to take place
 without causing a change to the user agent's active document view,
 although any new or updated metainformation SHOULD be applied

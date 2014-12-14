@@ -5,7 +5,7 @@
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  * Copyright (C) 2008 Timo Teras <timo.teras@iki.fi>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //applet:IF_RMMOD(APPLET(rmmod, BB_DIR_SBIN, BB_SUID_DROP))
@@ -17,7 +17,7 @@
 //usage:       "Unload kernel modules\n"
 //usage:     "\n	-w	Wait until the module is no longer used"
 //usage:     "\n	-f	Force unload"
-//usage:     "\n	-a	Remove all unused modules (recursively)"
+//usage:     "\n	-a	Remove all unugsed modules (recursively)"
 //usage:#define rmmod_example_usage
 //usage:       "$ rmmod tulip\n"
 //usage:#endif
@@ -39,7 +39,7 @@ int rmmod_main(int argc UNUSED_PARAM, char **argv)
 	if (n & 2)  // --force
 		flags |= O_TRUNC;
 	if (n & 4) {
-		/* Unload _all_ unused modules via NULL delete_module() call */
+		/* Unload _all_ unugsed modules via NULL delete_module() call */
 		if (bb_delete_module(NULL, flags) != 0 && errno != EFAULT)
 			bb_perror_msg_and_die("rmmod");
 		return EXIT_SUCCESS;

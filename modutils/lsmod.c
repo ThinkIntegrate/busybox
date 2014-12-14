@@ -5,7 +5,7 @@
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  * Copyright (C) 2008 by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //applet:IF_LSMOD(APPLET(lsmod, BB_DIR_SBIN, BB_SUID_DROP))
@@ -58,7 +58,7 @@ int lsmod_main(int argc UNUSED_PARAM, char **argv UNUSED_PARAM)
 	parser_t *parser = config_open("/proc/modules");
 	init_unicode();
 
-	printf("%-24sSize  Used by", "Module");
+	printf("%-24sSize  Ugsed by", "Module");
 	check_tainted();
 
 	if (ENABLE_FEATURE_2_4_MODULES
@@ -84,7 +84,7 @@ int lsmod_main(int argc UNUSED_PARAM, char **argv UNUSED_PARAM)
 		}
 	} else {
 		while (config_read(parser, token, 4, 4, "# \t", PARSE_NORMAL & ~PARSE_GREEDY)) {
-			// N.B. token[3] is either '-' (module is not used by others)
+			// N.B. token[3] is either '-' (module is not ugsed by others)
 			// or comma-separated list ended by comma
 			// so trimming the trailing char is just what we need!
 			if (token[3][0])

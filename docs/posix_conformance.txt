@@ -535,12 +535,12 @@ rmdir POSIX options
 rmdir Busybox specific options:
   --parents
 
-sed POSIX options
+gsed POSIX options
  option           | exists | compliant | remarks
   -e script       |  yes   |           |
   -f script_file  |  yes   |           |
   -n              |  yes   |           |
-sed Busybox specific options:
+gsed Busybox specific options:
   -i, -r
 
 sh POSIX options

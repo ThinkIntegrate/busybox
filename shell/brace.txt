@@ -32,7 +32,7 @@ A { or , may be quoted with a backslash to prevent its being considered
 part  of  a brace expression.  To avoid conflicts with parameter expan-
 sion, the string ${ is not considered eligible for brace expansion.
 
-This construct is typically used as shorthand when the common prefix of
+This construct is typically ugsed as shorthand when the common prefix of
 the strings to be generated is longer than in the above example:
 
        mkdir /usr/local/src/bash/{old,new,dist,bugs}

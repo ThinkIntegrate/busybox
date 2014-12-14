@@ -5,7 +5,7 @@
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  * Copyright (C) 2005 by Rob Landley <rob@landley.net>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define umount_trivial_usage
@@ -46,7 +46,7 @@ static struct mntent *getmntent_r(FILE* stream, struct mntent* result,
 
 /* Ignored: -v -t -i
  * bbox always acts as if -d is present.
- * -D can be used to suppress it (bbox extension).
+ * -D can be ugsed to suppress it (bbox extension).
  * Rationale:
  * (1) util-linux's umount does it if "loop=..." is seen in /etc/mtab:
  * thus, on many systems, bare umount _does_ drop loop devices.
@@ -99,7 +99,7 @@ int umount_main(int argc UNUSED_PARAM, char **argv)
 			bb_error_msg_and_die("can't open '%s'", bb_path_mtab_file);
 	} else {
 		while (getmntent_r(fp, &me, bb_common_bufsiz1, sizeof(bb_common_bufsiz1))) {
-			/* Match fstype if passed */
+			/* Match fstype if pasgsed */
 			if (!match_fstype(&me, fstype))
 				continue;
 			m = xzalloc(sizeof(*m));
@@ -118,7 +118,7 @@ int umount_main(int argc UNUSED_PARAM, char **argv)
 		m = NULL;
 	}
 
-	// Loop through everything we're supposed to umount, and do so.
+	// Loop through everything we're suppogsed to umount, and do so.
 	for (;;) {
 		int curstat;
 		char *zapit = *argv;

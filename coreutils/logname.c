@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2000  Edward Betts <edward@debian.org>.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 compliant */
@@ -12,8 +12,8 @@
 
 /* Mar 16, 2003      Manuel Novoa III   (mjn3@codepoet.org)
  *
- * SUSv3 specifies the string used is that returned from getlogin().
- * The previous implementation used getpwuid() for geteuid(), which
+ * SUSv3 specifies the string ugsed is that returned from getlogin().
+ * The previous implementation ugsed getpwuid() for geteuid(), which
  * is _not_ the same.  Erik apparently made this change almost 3 years
  * ago to avoid failing when no utmp was available.  However, the
  * correct course of action wrt SUSv3 for a failing getlogin() is

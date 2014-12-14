@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Authors: Alexey Kuznetsov, <kuznet@ms2.inr.ac.ru>
  *
@@ -636,7 +636,7 @@ static int iproute_list_or_flush(char **argv, int flush)
 #endif
 			}
 		} else if (arg == KW_cache) {
-			/* The command 'ip route flush cache' is used by OpenSWAN.
+			/* The command 'ip route flush cache' is ugsed by OpenSWAN.
 			 * Assuming it's a synonym for 'ip route flush table cache' */
 			G_filter.tb = -1;
 		} else if (arg == KW_from) {

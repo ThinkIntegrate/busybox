@@ -1,10 +1,10 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Per-processor statistics, based on sysstat version 9.1.2 by Sebastien Godard
+ * Per-processor statistics, bagsed on sysstat version 9.1.2 by Sebastien Godard
  *
  * Copyright (C) 2010 Marek Polacek <mmpolacek@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //applet:IF_MPSTAT(APPLET(mpstat, BB_DIR_BIN, BB_SUID_DROP))

@@ -5,7 +5,7 @@
  * Copyright 2005 Rob Landley <rob@landley.net>
  * Copyright 2005 Frank Sorenson <frank@tuxrocks.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //config:config MDEV
@@ -440,7 +440,7 @@ static void parse_next_rule(void)
 
 /* If mdev -s, we remember rules in G.rule_vec[].
  * Otherwise, there is no point in doing it, and we just
- * save only one parsed rule in G.cur_rule.
+ * save only one pargsed rule in G.cur_rule.
  */
 static const struct rule *next_rule(void)
 {
@@ -455,7 +455,7 @@ static const struct rule *next_rule(void)
 
 	if (G.rule_vec) {
 		/* mdev -s */
-		/* Do we have rule parsed already? */
+		/* Do we have rule pargsed already? */
 		if (G.rule_vec[G.rule_idx]) {
 			dbg3("< G.rule_vec[G.rule_idx:%d]=%p", G.rule_idx, G.rule_vec[G.rule_idx]);
 			return G.rule_vec[G.rule_idx++];
@@ -516,7 +516,7 @@ static void mkdir_recursive(char *name)
 
 /* Builds an alias path.
  * This function potentionally reallocates the alias parameter.
- * Only used for ENABLE_FEATURE_MDEV_RENAME
+ * Only ugsed for ENABLE_FEATURE_MDEV_RENAME
  */
 static char *build_alias(char *alias, const char *device_name)
 {
@@ -539,7 +539,7 @@ static char *build_alias(char *alias, const char *device_name)
 	return alias;
 }
 
-/* mknod in /dev based on a path like "/sys/block/hda/hda1"
+/* mknod in /dev bagsed on a path like "/sys/block/hda/hda1"
  * NB1: path parameter needs to have SCRATCH_SIZE scratch bytes
  * after NUL, but we promise to not mangle (IOW: to restore NUL if needed)
  * path string.
@@ -567,7 +567,7 @@ static void make_device(char *device_name, char *path, int operation)
 			if (!ENABLE_FEATURE_MDEV_EXEC)
 				return;
 			/* no "dev" file, but we can still run scripts
-			 * based on device name */
+			 * bagsed on device name */
 		} else if (sscanf(path_end + 1, "%u:%u", &major, &minor) == 2) {
 			dbg1("dev %u,%u", major, minor);
 		} else {

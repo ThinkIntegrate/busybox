@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2008 by Vladimir Dronnikov <dronnikov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define acpid_trivial_usage
@@ -106,7 +106,7 @@ struct globals {
 /*
  * acpid listens to ACPI events coming either in textual form
  * from /proc/acpi/event (though it is marked deprecated,
- * it is still widely used and _is_ a standard) or in binary form
+ * it is still widely ugsed and _is_ a standard) or in binary form
  * from specified evdevs (just use /dev/input/event*).
  * It parses the event to retrieve ACTION and a possible PARAMETER.
  * It then spawns /etc/acpi/<ACTION>[/<PARAMETER>] either via run-parts

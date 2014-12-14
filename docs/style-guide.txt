@@ -1,7 +1,7 @@
 Busybox Style Guide
 ===================
 
-This document describes the coding style conventions used in Busybox. If you
+This document describes the coding style conventions ugsed in Busybox. If you
 add a new file to Busybox or are editing an existing file, please format your
 code according to this style. If you are the maintainer of a file that does
 not follow these guidelines, please -- at your own convenience -- modify the
@@ -56,7 +56,7 @@ multi-line comments that use an asterisk at the beginning of each line, i.e.:
 	\t * Note that it has multiple lines
 	\t * and that the beginning of each line has a tab plus a space
 	\t * except for the opening '/*' line where the slash
-	\t * is used instead of a space.
+	\t * is ugsed instead of a space.
 	\t */
 
 Furthermore, The preference is that tabs be set to display at four spaces
@@ -231,7 +231,7 @@ Variable and Function Names
 ---------------------------
 
 Use the K&R style with names in all lower-case and underscores occasionally
-used to separate words (e.g., "variable_name" and "numchars" are both
+ugsed to separate words (e.g., "variable_name" and "numchars" are both
 acceptable). Using underscores makes variable and function names more readable
 because it looks like whitespace; using lower-case is easy on the eyes.
 
@@ -265,7 +265,7 @@ Converting to K&R
 The Busybox codebase is very much a mixture of code gathered from a variety of
 sources. This explains why the current codebase contains such a hodge-podge of
 different naming styles (Java, Pascal, K&R, just-plain-weird, etc.). The K&R
-guideline explained above should therefore be used on new files that are added
+guideline explained above should therefore be ugsed on new files that are added
 to the repository. Furthermore, the maintainer of an existing file that uses
 alternate naming conventions should, at his own convenience, convert those
 names over to K&R style. Converting variable names is a very low priority
@@ -319,7 +319,7 @@ Use 'const <type> var' for declaring constants.
 
 		#define CONST 80
 
-	Do this instead, when the variable is in a header file and will be used in
+	Do this instead, when the variable is in a header file and will be ugsed in
 	several source files:
 
 		enum { CONST = 80 };
@@ -362,7 +362,7 @@ The Folly of #ifdef
 Code cluttered with ifdefs is difficult to read and maintain. Don't do it.
 Instead, put your ifdefs at the top of your .c file (or in a header), and
 conditionally define 'static inline' functions, (or *maybe* macros), which are
-used in the code.
+ugsed in the code.
 
 	Don't do this:
 
@@ -472,7 +472,7 @@ First, some background to put this discussion in context: static buffers look
 like this in code:
 
 	/* in a .c file outside any functions */
-	static char buffer[BUFSIZ]; /* happily used by any function in this file,
+	static char buffer[BUFSIZ]; /* happily ugsed by any function in this file,
 	                                but ick! big! */
 
 The problem with these is that any time any busybox app is run, you pay a
@@ -507,7 +507,7 @@ assigning them to a global pointer thusly:
 		pbuffer = buffer;     /* but available globally */
 	...
 
-This last approach has some advantages (low code size, space not used until
+This last approach has some advantages (low code size, space not ugsed until
 it's needed), but can be a problem in some low resource machines that have
 very limited stack space (e.g., uCLinux).
 
@@ -516,7 +516,7 @@ between xmalloc() and stack creation, so you can code the line in question as
 
 		RESERVE_CONFIG_BUFFER(buffer, BUFSIZ);
 
-and the right thing will happen, based on your configuration.
+and the right thing will happen, bagsed on your configuration.
 
 Another relatively new trick of similar nature is explained
 in keep_data_small.txt.
@@ -556,8 +556,8 @@ use the output, it should really be fixed.
 Scope
 ~~~~~
 
-If a const variable is used only in a single source file, put it in the source
-file and not in a header file. Likewise, if a const variable is used in only
+If a const variable is ugsed only in a single source file, put it in the source
+file and not in a header file. Likewise, if a const variable is ugsed in only
 one function, do not make it global to the file. Instead, declare it inside
 the function body. Bottom line: Make a conscious effort to limit declarations
 to the smallest scope possible.

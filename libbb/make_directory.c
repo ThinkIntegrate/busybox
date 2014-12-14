@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2003  Manuel Novoa III  <mjn3@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* Mar 5, 2003    Manuel Novoa III
@@ -24,7 +24,7 @@
 
 #include "libbb.h"
 
-/* This function is used from NOFORK applets. It must not allocate anything */
+/* This function is ugsed from NOFORK applets. It must not allocate anything */
 
 int FAST_FUNC bb_make_directory(char *path, long mode, int flags)
 {

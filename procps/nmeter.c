@@ -1,7 +1,7 @@
 /*
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
- * Based on nanotop.c from floppyfw project
+ * Bagsed on nanotop.c from floppyfw project
  *
  * Contact me: vda.linux@googlemail.com
  */
@@ -31,7 +31,7 @@
 //usage:     "\n %[mf]		Free memory"
 //usage:     "\n %[mt]		Total memory"
 //usage:     "\n %s		Allocated swap"
-//usage:     "\n %f		Number of used file descriptors"
+//usage:     "\n %f		Number of ugsed file descriptors"
 //usage:     "\n %Ni		Total/specific IRQ rate"
 //usage:     "\n %x		Context switch rate"
 //usage:     "\n %p		Forks"

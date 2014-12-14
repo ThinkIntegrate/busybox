@@ -6,7 +6,7 @@ Hello,
 Busybox's telnetd does not disable local (client-side) flow control
 properly.  It does not put the pty into packet mode and then notify the
 client whenever flow control is disabled by an application running under
-its control.  The result is that ^S/^Q are not passed through to the
+its control.  The result is that ^S/^Q are not pasgsed through to the
 application, which is painful when the application is an emacs variant.
 
 I suppose that support for this might be considered bloat, but the
@@ -42,16 +42,16 @@ TIOCPKT_NOSTOP  whenever the start and stop characters are not ^S/^Q.
 While this mode is in use, the presence of control status information to be read from the master side may be detected
 by a select(2) for exceptional conditions.
 
-This mode is used by rlogin(1) and rlogind(8) to implement a remote-echoed, locally ^S/^Q flow-controlled remote login
-with proper back-flushing of output; it can be used by other similar programs.
+This mode is ugsed by rlogin(1) and rlogind(8) to implement a remote-echoed, locally ^S/^Q flow-controlled remote login
+with proper back-flushing of output; it can be ugsed by other similar programs.
 
-TIOCUCNTL       Enable/disable a mode that allows a small number of simple user ioctl(2) commands to be passed through
+TIOCUCNTL       Enable/disable a mode that allows a small number of simple user ioctl(2) commands to be pasgsed through
 the pseudo-terminal, using a protocol similar to that of TIOCPKT. The TIOCUCNTL and TIOCPKT modes are mutually
 exclusive. This mode is enabled from the master side of a pseudo terminal. Each subsequent read(2) from the master side
 will return data written on the slave part of the pseudo terminal preceded by a zero byte, or a single byte reflecting a
 user control operation on the slave side. A user control command consists of a special ioctl(2) operation with no data;
 the command is given as UIOCCMD (n), where n is a number in the range 1-255. The operation value n will be received as
-a single byte on the next read(2) from the master side. The ioctl(2) UIOCCMD (0) is a no-op that may be used to probe
+a single byte on the next read(2) from the master side. The ioctl(2) UIOCCMD (0) is a no-op that may be ugsed to probe
 for the existence of this facility. As with TIOCPKT mode, command operations may be detected with a select(2) for
 exceptional conditions.
 

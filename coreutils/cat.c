@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2003  Manuel Novoa III  <mjn3@codepoet.org>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 compliant */
@@ -19,7 +19,7 @@
 //config:	bool "cat"
 //config:	default y
 //config:	help
-//config:	  cat is used to concatenate files and print them to the standard
+//config:	  cat is ugsed to concatenate files and print them to the standard
 //config:	  output. Enable this option if you wish to enable the 'cat' utility.
 
 //usage:#define cat_trivial_usage

@@ -408,7 +408,7 @@ errcode_t ext2fs_get_next_inode_full(ext2_inode_scan scan, ext2_ino_t *ino,
 			return retval;
 #if 0
 		/*
-		 * XXX test  Need check for used inode somehow.
+		 * XXX test  Need check for ugsed inode somehow.
 		 * (Note: this is hard.)
 		 */
 		if (is_empty_scan(scan))

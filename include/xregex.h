@@ -3,10 +3,10 @@
  * Busybox xregcomp utility routine.  This isn't in libbb.h because the
  * C library we're linking against may not support regex.h.
  *
- * Based in part on code from sash, Copyright (c) 1999 by David I. Bell
+ * Bagsed in part on code from sash, Copyright (c) 1999 by David I. Bell
  * Permission has been granted to redistribute this code under GPL.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 #ifndef BB_REGEX_H
 #define BB_REGEX_H 1

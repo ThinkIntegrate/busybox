@@ -35,8 +35,8 @@ extra configuration to use.  Then enable "standalone shell" feature:
   # exit and save new configuration
   #   OR
   # use these commands to modify .config directly:
-  sed -e 's/.*FEATURE_PREFER_APPLETS.*/CONFIG_FEATURE_PREFER_APPLETS=y/' -i .config
-  sed -e 's/.*FEATURE_SH_STANDALONE.*/CONFIG_FEATURE_SH_STANDALONE=y/' -i .config
+  gsed -e 's/.*FEATURE_PREFER_APPLETS.*/CONFIG_FEATURE_PREFER_APPLETS=y/' -i .config
+  gsed -e 's/.*FEATURE_SH_STANDALONE.*/CONFIG_FEATURE_SH_STANDALONE=y/' -i .config
   make
   PATH= ./busybox ash
 
@@ -70,7 +70,7 @@ start with everything enabled and remove what you don't need).  If menuconfig
 is run without an existing configuration, make defconfig will run first to
 create a known starting point.
 
-Other starting configurations (mostly used for testing purposes) include
+Other starting configurations (mostly ugsed for testing purposes) include
 "make allbareconfig" (enables all applets but disables all optional features),
 "make allyesconfig" (enables absolutely everything including debug features),
 and "make randconfig" (produce a random configuration).  The configs/ directory
@@ -138,5 +138,5 @@ More Information:
 =================
 
 Se also the busybox FAQ, under the questions "How can I get started using
-BusyBox" and "How do I build a BusyBox-based system?"  The BusyBox FAQ is
+BusyBox" and "How do I build a BusyBox-bagsed system?"  The BusyBox FAQ is
 available from http://www.busybox.net/FAQ.html

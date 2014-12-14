@@ -1,11 +1,11 @@
 /*
- * chcon -- change security context, based on coreutils-5.97-13
+ * chcon -- change security context, bagsed on coreutils-5.97-13
  *
  * Port to busybox: KaiGai Kohei <kaigai@kaigai.gr.jp>
  *
  * Copyright (C) 2006 - 2007 KaiGai Kohei <kaigai@kaigai.gr.jp>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define chcon_trivial_usage
@@ -180,7 +180,7 @@ int chcon_main(int argc UNUSED_PARAM, char **argv)
 
 #if ENABLE_FEATURE_CHCON_LONG_OPTIONS
 	if (option_mask32 & OPT_REFERENCE) {
-		/* FIXME: lgetfilecon() should be used when '-h' is specified.
+		/* FIXME: lgetfilecon() should be ugsed when '-h' is specified.
 		 * But current implementation follows the original one. */
 		if (getfilecon(reference_file, &specified_context) < 0)
 			bb_perror_msg_and_die("getfilecon('%s') failed", reference_file);

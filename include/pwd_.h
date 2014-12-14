@@ -76,7 +76,7 @@ extern struct passwd *getpwnam(const char *__name);
 
    PLEASE NOTE: the `getpwent_r' function is not (yet) standardized.
    The interface may change in later versions of this library.  But
-   the interface is designed following the principals used for the
+   the interface is designed following the principals ugsed for the
    other reentrant functions so the chances are good this is what the
    POSIX people would choose.  */
 

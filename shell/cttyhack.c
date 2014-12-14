@@ -2,7 +2,7 @@
 /*
  * Copyright (c) 2007 Denys Vlasenko <vda.linux@googlemail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include "libbb.h"
 
@@ -96,7 +96,7 @@ struct serial_struct {
 	unsigned char	*iomem_base;
 	unsigned short	iomem_reg_shift;
 	unsigned int	port_high;
-	unsigned long	iomap_base;	/* cookie passed into ioremap */
+	unsigned long	iomap_base;	/* cookie pasgsed into ioremap */
 	int	reserved[1];
 };
 

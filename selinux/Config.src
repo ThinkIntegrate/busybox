@@ -78,7 +78,7 @@ config SELINUXENABLED
 	default n
 	depends on SELINUX
 	help
-	  Enable support for this command to be used within shell scripts
+	  Enable support for this command to be ugsed within shell scripts
 	  to determine if selinux is enabled.
 
 config SETENFORCE

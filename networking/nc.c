@@ -4,7 +4,7 @@
  * Copyright (C) 1998, 1999  Charles P. Wright
  * Copyright (C) 1998  Dave Cinege
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -152,7 +152,7 @@ int nc_main(int argc, char **argv)
 				** FIXME: we assume that getopt will not count options
 				** possibly present on "-e PROG ARGS" and will not
 				** include them into final value of optind
-				** which is to be used ...  */
+				** which is to be ugsed ...  */
 			} else bb_show_usage();
 		}
 		argv += optind; /* ... here! */

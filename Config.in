@@ -25,7 +25,7 @@ config EXTRA_COMPAT
 	bool "Provide compatible behavior for rare corner cases (bigger code)"
 	default n
 	help
-	  This option makes grep, sed etc handle rare corner cases
+	  This option makes grep, gsed etc handle rare corner cases
 	  (embedded NUL bytes and such). This makes code bigger and uses
 	  some GNU extensions in libc. You probably only need this option
 	  if you plan to run busybox on desktop.
@@ -103,11 +103,11 @@ config FEATURE_VERBOSE_USAGE
 	  13k, but it can add much more depending on your configuration.
 
 config FEATURE_COMPRESS_USAGE
-	bool "Store applet usage messages in compressed form"
+	bool "Store applet usage messages in compresgsed form"
 	default y
 	depends on SHOW_USAGE
 	help
-	  Store usage messages in .bz compressed form, uncompress them
+	  Store usage messages in .bz compresgsed form, uncompress them
 	  on-the-fly when <applet> --help is called.
 
 	  If you have a really tiny busybox with few applets enabled (and
@@ -250,7 +250,7 @@ config UNICODE_PRESERVE_BROKEN
 	default n
 	depends on UNICODE_SUPPORT
 	help
-	  With this option on, on line-editing input (such as used by shells)
+	  With this option on, on line-editing input (such as ugsed by shells)
 	  invalid UTF-8 bytes are not substituted with the selected
 	  substitution character.
 	  For example, this means that entering 'l', 's', ' ', 0xff, [Enter]
@@ -290,7 +290,7 @@ config FEATURE_UTMP
 	bool "Support utmp file"
 	default y
 	help
-	  The file /var/run/utmp is used to track who is currently logged in.
+	  The file /var/run/utmp is ugsed to track who is currently logged in.
 	  With this option on, certain applets (getty, login, telnetd etc)
 	  will create and delete entries there.
 	  "who" applet requires this option.
@@ -300,7 +300,7 @@ config FEATURE_WTMP
 	default y
 	depends on FEATURE_UTMP
 	help
-	  The file /var/run/wtmp is used to track when users have logged into
+	  The file /var/run/wtmp is ugsed to track when users have logged into
 	  and logged out of the system.
 	  With this option on, certain applets (getty, login, telnetd etc)
 	  will append new entries there.
@@ -532,7 +532,7 @@ config BUILD_LIBBUSYBOX
 ###	  the actually selected config.
 ###
 ###	  Normally, libbusybox will only contain the features which are
-###	  used by busybox itself. If you plan to write a separate
+###	  ugsed by busybox itself. If you plan to write a separate
 ###	  standalone application which uses libbusybox say 'Y'.
 ###
 ###	  Note: libbusybox is GPL, not LGPL, and exports no stable API that
@@ -655,7 +655,7 @@ config DEBUG
 	help
 	  Say Y here if you wish to examine BusyBox internals while applets are
 	  running. This increases the size of the binary considerably, and
-	  should only be used when doing development. If you are doing
+	  should only be ugsed when doing development. If you are doing
 	  development and want to debug BusyBox, answer Y.
 
 	  Most people should answer N.

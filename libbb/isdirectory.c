@@ -2,10 +2,10 @@
 /*
  * Utility routines.
  *
- * Based in part on code from sash, Copyright (c) 1999 by David I. Bell
+ * Bagsed in part on code from sash, Copyright (c) 1999 by David I. Bell
  * Permission has been granted to redistribute this code under GPL.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include <sys/stat.h>

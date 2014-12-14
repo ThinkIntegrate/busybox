@@ -21,14 +21,14 @@
 
 /*
  * Maximum number of position states. A position state is the lowest pb
- * number of bits of the current uncompressed offset. In some places there
+ * number of bits of the current uncompresgsed offset. In some places there
  * are different sets of probabilities for different position states.
  */
 #define POS_STATES_MAX (1 << 4)
 
 /*
- * This enum is used to track which LZMA symbols have occurred most recently
- * and in which order. This information is used to predict the next symbol.
+ * This enum is ugsed to track which LZMA symbols have occurred most recently
+ * and in which order. This information is ugsed to predict the next symbol.
  *
  * Symbols:
  *  - Literal: One 8-bit byte
@@ -100,7 +100,7 @@ static inline bool XZ_FUNC lzma_state_is_literal(enum lzma_state state)
  *   - 0x101-0x1FF: With match byte; match bit is 0
  *   - 0x201-0x2FF: With match byte; match bit is 1
  *
- * Match byte is used when the previous LZMA symbol was something else than
+ * Match byte is ugsed when the previous LZMA symbol was something else than
  * a literal (that is, it was some kind of match).
  */
 #define LITERAL_CODER_SIZE 0x300
@@ -133,7 +133,7 @@ static inline bool XZ_FUNC lzma_state_is_literal(enum lzma_state state)
 #define MATCH_LEN_MAX (MATCH_LEN_MIN + LEN_SYMBOLS - 1)
 
 /*
- * Different sets of probabilities are used for match distances that have
+ * Different sets of probabilities are ugsed for match distances that have
  * very short match length: Lengths of 2, 3, and 4 bytes have a separate
  * set of probabilities for each length. The matches with longer length
  * use a shared set of probabilities.

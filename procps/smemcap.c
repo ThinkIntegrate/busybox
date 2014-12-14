@@ -3,7 +3,7 @@
 
  Copyright 2008-2009 Matt Mackall <mpm@selenic.com>
 
- This software may be used and distributed according to the terms of
+ This software may be ugsed and distributed according to the terms of
  the GNU General Public License version 2 or later, incorporated
  herein by reference.
 */

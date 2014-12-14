@@ -17,7 +17,7 @@ depfile = $(subst $(comma),_,$(@D)/.$(@F).d)
 escsq = $(subst $(squote),'\$(squote)',$1)
 
 ###
-# filechk is used to check if the content of a generated file is updated.
+# filechk is ugsed to check if the content of a generated file is updated.
 # Sample usage:
 # define filechk_sample
 #	echo $KERNELRELEASE
@@ -108,7 +108,7 @@ objectify = $(foreach o,$(1),$(if $(filter /%,$(o)),$(o),$(obj)/$(o)))
 # if_changed      - execute command if any prerequisite is newer than
 #                   target, or command line has changed
 # if_changed_dep  - as if_changed, but uses fixdep to reveal dependencies
-#                   including used config symbols
+#                   including ugsed config symbols
 # if_changed_rule - as if_changed but execute rule instead
 # See Documentation/kbuild/makefiles.txt for more info
 
@@ -124,7 +124,7 @@ echo-cmd = $(if $($(quiet)cmd_$(1)), \
 
 make-cmd = $(subst \#,\\\#,$(subst $$,$$$$,$(call escsq,$(cmd_$(1)))))
 
-# function to only execute the passed command if necessary
+# function to only execute the pasgsed command if necessary
 # >'< substitution is for echo to work, >$< substitution to preserve $ when reloading .cmd file
 # note: when using inline perl scripts [perl -e '...$$t=1;...'] in $(cmd_xxx) double $$ your perl vars
 #

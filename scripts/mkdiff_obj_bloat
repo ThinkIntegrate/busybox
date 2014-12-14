@@ -12,7 +12,7 @@ test -d "$2" || exit 1
 		cd "$2" || exit 1
 		find -name '*.o' -o -name '*.os' # -o -name '*.so'
 	)
-} | sed 's:^\./::' | sort | uniq | \
+} | gsed 's:^\./::' | sort | uniq | \
 tee LST | \
 (
 IFS=''

@@ -6,7 +6,7 @@
  * Copyright (C) 2006  Bernhard Reutner-Fischer <busybox@busybox.net>
  * Copyright (C) 2008  Darius Augulis <augulis.darius@gmail.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define watchdog_trivial_usage

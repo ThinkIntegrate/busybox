@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2008 Timo Teras <timo.teras@iki.fi>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //applet:IF_INSMOD(APPLET(insmod, BB_DIR_SBIN, BB_SUID_DROP))

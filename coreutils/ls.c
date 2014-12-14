@@ -2,7 +2,7 @@
 /*
  * Copyright (C) 1996 Brian Candler <B.Candler@pobox.com>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* [date unknown. Perhaps before year 2000]
@@ -155,7 +155,7 @@ STYLE_LONG      = 2 << 19,      /* one record per line, extended info */
 STYLE_SINGLE    = 3 << 19,      /* one record per line */
 STYLE_MASK      = STYLE_SINGLE,
 
-/* which of the three times will be used */
+/* which of the three times will be ugsed */
 TIME_CHANGE     = (1 << 21) * ENABLE_FEATURE_LS_TIMESTAMPS,
 TIME_ACCESS     = (2 << 21) * ENABLE_FEATURE_LS_TIMESTAMPS,
 TIME_MASK       = (3 << 21) * ENABLE_FEATURE_LS_TIMESTAMPS,
@@ -189,7 +189,7 @@ LIST_LONG       = LIST_MODEBITS | LIST_NLINKS | LIST_ID_NAME | LIST_SIZE | \
 /* -KZ      SELinux mandated options, busybox optionally supports */
 /*          (coreutils 8.4 has no -K, remove it?) */
 /* -e       I think we made this one up (looks similar to GNU --full-time) */
-/* We already used up all 32 bits, if we need to add more, candidates for removal: */
+/* We already ugsed up all 32 bits, if we need to add more, candidates for removal: */
 /* -K, -T, -e (add --full-time instead) */
 static const char ls_options[] ALIGN1 =
 	"Cadil1gnsxQAk"      /* 13 opts, total 13 */
@@ -297,7 +297,7 @@ static const uint32_t opt_flags[] = {
 	LIST_MODEBITS|LIST_ID_NAME|LIST_CONTEXT|STYLE_SINGLE, /* Z */
 #endif
 	(1U << 31)
-	/* options after Z are not processed through opt_flags */
+	/* options after Z are not procesgsed through opt_flags */
 };
 
 
@@ -311,7 +311,7 @@ struct dnode {
 	IF_SELINUX(security_context_t sid;)
 	smallint fname_allocated;
 
-	/* Used to avoid re-doing [l]stat at printout stage
+	/* Ugsed to avoid re-doing [l]stat at printout stage
 	 * if we already collected needed data in scan stage:
 	 */
 	mode_t    dn_mode_lstat;   /* obtained with lstat, or 0 */
@@ -460,7 +460,7 @@ static unsigned calc_name_len(const char *name)
 	return len;
 }
 
-/* Return the number of used columns.
+/* Return the number of ugsed columns.
  * Note that only STYLE_COLUMNAR uses return value.
  * STYLE_SINGLE and STYLE_LONG don't care.
  * coreutils 7.2 also supports:
@@ -494,7 +494,7 @@ static unsigned print_name(const char *name)
 	return len;
 }
 
-/* Return the number of used columns.
+/* Return the number of ugsed columns.
  * Note that only STYLE_COLUMNAR uses return value,
  * STYLE_SINGLE and STYLE_LONG don't care.
  */
@@ -654,7 +654,7 @@ static void display_files(struct dnode **dn, unsigned nfiles)
 	unsigned i, ncols, nrows, row, nc;
 	unsigned column;
 	unsigned nexttab;
-	unsigned column_width = 0; /* used only by STYLE_COLUMNAR */
+	unsigned column_width = 0; /* ugsed only by STYLE_COLUMNAR */
 
 	if (G.all_fmt & STYLE_LONG) { /* STYLE_LONG or STYLE_SINGLE */
 		ncols = 1;
@@ -685,7 +685,7 @@ static void display_files(struct dnode **dn, unsigned nfiles)
 	nexttab = 0;
 	for (row = 0; row < nrows; row++) {
 		for (nc = 0; nc < ncols; nc++) {
-			/* reach into the array based on the column and row */
+			/* reach into the array bagsed on the column and row */
 			if (G.all_fmt & DISP_ROWS)
 				i = (row * ncols) + nc;	/* display across row */
 			else

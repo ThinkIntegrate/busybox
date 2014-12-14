@@ -11,7 +11,7 @@ config MKTEMP
 	bool "mktemp"
 	default y
 	help
-	  mktemp is used to create unique temporary files
+	  mktemp is ugsed to create unique temporary files
 
 config PIPE_PROGRESS
 	bool "pipe_progress"
@@ -31,7 +31,7 @@ config RUN_PARTS
 	  In this implementation of run-parts some features (such as report
 	  mode) are not implemented.
 
-	  Unless you know that run-parts is used in some of your scripts
+	  Unless you know that run-parts is ugsed in some of your scripts
 	  you can safely say N here.
 
 config FEATURE_RUN_PARTS_LONG_OPTIONS
@@ -54,7 +54,7 @@ config START_STOP_DAEMON
 	bool "start-stop-daemon"
 	default y
 	help
-	  start-stop-daemon is used to control the creation and
+	  start-stop-daemon is ugsed to control the creation and
 	  termination of system-level processes, usually the ones
 	  started during the startup of the system.
 
@@ -79,7 +79,7 @@ config WHICH
 	bool "which"
 	default y
 	help
-	  which is used to find programs in your PATH and
+	  which is ugsed to find programs in your PATH and
 	  print out their pathnames.
 
 endmenu

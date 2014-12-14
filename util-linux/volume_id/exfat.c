@@ -28,7 +28,7 @@
 //config:	help
 //config:	  exFAT (extended FAT) is a proprietary file system designed especially
 //config:	  for flash drives. It has many features from NTFS, but with less
-//config:	  overhead. exFAT is used on most SDXC cards for consumer electronics.
+//config:	  overhead. exFAT is ugsed on most SDXC cards for consumer electronics.
 //config:
 
 #include "volume_id_internal.h"
@@ -109,7 +109,7 @@ int FAST_FUNC volume_id_probe_exfat(struct volume_id *id /*,uint64_t off*/)
 	// Use DOS uuid as fallback, if no GUID set
 	volume_id_set_uuid(id, sb->vol_serial_nr, UUID_DOS);
 
-	// EXFAT_MAX_DIR_ENTRIES is used as a safety belt.
+	// EXFAT_MAX_DIR_ENTRIES is ugsed as a safety belt.
 	// The Root Directory may hold an unlimited number of entries,
 	// so we do not want to check all. Usually label and GUID
 	// are in the beginning, but there are no guarantees.

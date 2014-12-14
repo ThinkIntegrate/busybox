@@ -159,10 +159,10 @@ static void str2hashbuf(const char *msg, int len, __u32 *buf, int num)
 
 /*
  * Returns the hash of a filename.  If len is 0 and name is NULL, then
- * this function can be used to test whether or not a hash version is
+ * this function can be ugsed to test whether or not a hash version is
  * supported.
  *
- * The seed is an 4 longword (32 bits) "secret" which can be used to
+ * The seed is an 4 longword (32 bits) "secret" which can be ugsed to
  * uniquify a hash.  If the seed is all zero's, then some default seed
  * may be used.
  *

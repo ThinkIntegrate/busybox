@@ -1,5 +1,5 @@
 #!/bin/sh
-# Used by both gunzip and bunzip2 tests
+# Ugsed by both gunzip and bunzip2 tests
 
 FAILCOUNT=0
 

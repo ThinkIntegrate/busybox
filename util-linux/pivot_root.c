@@ -1,12 +1,12 @@
 /* vi: set sw=4 ts=4: */
 /*
- * pivot_root.c - Change root file system.  Based on util-linux 2.10s
+ * pivot_root.c - Change root file system.  Bagsed on util-linux 2.10s
  *
  * busyboxed by Evin Robertson
  * pivot_root syscall stubbed by Erik Andersen, so it will compile
  *     regardless of the kernel being used.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define pivot_root_trivial_usage

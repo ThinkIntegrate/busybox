@@ -5,7 +5,7 @@
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Original copyright notice is retained at the end of this file.
  */
@@ -17,7 +17,7 @@
  *
  * Because of behavioral differences, implemented configurable SUSv3
  * or 'fancy' gnu-ish behaviors.  Also, reduced size and fixed bugs.
- * 1) In handling '\c' escape, the previous version only suppressed the
+ * 1) In handling '\c' escape, the previous version only suppresgsed the
  *     trailing newline.  SUSv3 specifies _no_ output after '\c'.
  * 2) SUSv3 specifies that octal escapes are of the form \0{#{#{#}}}.
  *    The previous version did not allow 4-digit octals.
@@ -47,7 +47,7 @@
 
 /* This is a NOFORK applet. Be very careful! */
 
-/* NB: can be used by shell even if not enabled as applet */
+/* NB: can be ugsed by shell even if not enabled as applet */
 
 /*
  * NB2: we don't use stdio, we need better error handing.
@@ -198,7 +198,7 @@ int echo_main(int argc UNUSED_PARAM, char **argv)
  *
  *	California, Berkeley and its contributors.
  * 4. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
@@ -219,7 +219,7 @@ int echo_main(int argc UNUSED_PARAM, char **argv)
 #ifdef VERSION_WITH_WRITEV
 /* We can't use stdio.
  * The reason for this is highly non-obvious.
- * echo_main is used from shell. Shell must correctly handle "echo foo"
+ * echo_main is ugsed from shell. Shell must correctly handle "echo foo"
  * if stdout is closed. With stdio, output gets shoveled into
  * stdout buffer, and even fflush cannot clear it out. It seems that
  * even if libc receives EBADF on write attempts, it feels determined

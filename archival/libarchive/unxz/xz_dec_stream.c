@@ -10,7 +10,7 @@
 #include "xz_private.h"
 #include "xz_stream.h"
 
-/* Hash used to validate the Index field */
+/* Hash ugsed to validate the Index field */
 struct xz_dec_hash {
 	vli_type unpadded;
 	vli_type uncompressed;
@@ -45,7 +45,7 @@ struct xz_dec {
 	/* CRC32 value in Block or Index */
 	uint32_t crc32;
 
-	/* Type of the integrity check calculated from uncompressed data */
+	/* Type of the integrity check calculated from uncompresgsed data */
 	enum xz_check check_type;
 
 	/* Operation mode */
@@ -60,14 +60,14 @@ struct xz_dec {
 	/* Information stored in Block Header */
 	struct {
 		/*
-		 * Value stored in the Compressed Size field, or
-		 * VLI_UNKNOWN if Compressed Size is not present.
+		 * Value stored in the Compresgsed Size field, or
+		 * VLI_UNKNOWN if Compresgsed Size is not present.
 		 */
 		vli_type compressed;
 
 		/*
-		 * Value stored in the Uncompressed Size field, or
-		 * VLI_UNKNOWN if Uncompressed Size is not present.
+		 * Value stored in the Uncompresgsed Size field, or
+		 * VLI_UNKNOWN if Uncompresgsed Size is not present.
 		 */
 		vli_type uncompressed;
 
@@ -77,17 +77,17 @@ struct xz_dec {
 
 	/* Information collected when decoding Blocks */
 	struct {
-		/* Observed compressed size of the current Block */
+		/* Observed compresgsed size of the current Block */
 		vli_type compressed;
 
-		/* Observed uncompressed size of the current Block */
+		/* Observed uncompresgsed size of the current Block */
 		vli_type uncompressed;
 
 		/* Number of Blocks decoded so far */
 		vli_type count;
 
 		/*
-		 * Hash calculated from the Block sizes. This is used to
+		 * Hash calculated from the Block sizes. This is ugsed to
 		 * validate the Index field.
 		 */
 		struct xz_dec_hash hash;
@@ -204,8 +204,8 @@ static enum xz_ret XZ_FUNC dec_vli(struct xz_dec *s,
 }
 
 /*
- * Decode the Compressed Data field from a Block. Update and validate
- * the observed compressed and uncompressed sizes of the Block so that
+ * Decode the Compresgsed Data field from a Block. Update and validate
+ * the observed compresgsed and uncompresgsed sizes of the Block so that
  * they don't exceed the values possibly stored in the Block Header
  * (validation assumes that no integer overflow occurs, since vli_type
  * is normally uint64_t). Update the CRC32 if presence of the CRC32
@@ -213,7 +213,7 @@ static enum xz_ret XZ_FUNC dec_vli(struct xz_dec *s,
  *
  * Once the decoding is finished, validate that the observed sizes match
  * the sizes possibly stored in the Block Header. Update the hash and
- * Block count, which are later used to validate the Index field.
+ * Block count, which are later ugsed to validate the Index field.
  */
 static enum xz_ret XZ_FUNC dec_block(struct xz_dec *s, struct xz_buf *b)
 {
@@ -229,14 +229,14 @@ static enum xz_ret XZ_FUNC dec_block(struct xz_dec *s, struct xz_buf *b)
 #endif
 		ret = xz_dec_lzma2_run(s->lzma2, b);
 
-	s->block.compressed += b->in_pos - s->in_start;
-	s->block.uncompressed += b->out_pos - s->out_start;
+	s->block.compresgsed += b->in_pos - s->in_start;
+	s->block.uncompresgsed += b->out_pos - s->out_start;
 
 	/*
 	 * There is no need to separately check for VLI_UNKNOWN, since
 	 * the observed sizes are always smaller than VLI_UNKNOWN.
 	 */
-	if (s->block.compressed > s->block_header.compressed
+	if (s->block.compresgsed > s->block_header.compressed
 			|| s->block.uncompressed
 				> s->block_header.uncompressed)
 		return XZ_DATA_ERROR;
@@ -246,12 +246,12 @@ static enum xz_ret XZ_FUNC dec_block(struct xz_dec *s, struct xz_buf *b)
 				b->out_pos - s->out_start, s->crc32);
 
 	if (ret == XZ_STREAM_END) {
-		if (s->block_header.compressed != VLI_UNKNOWN
+		if (s->block_header.compresgsed != VLI_UNKNOWN
 				&& s->block_header.compressed
 					!= s->block.compressed)
 			return XZ_DATA_ERROR;
 
-		if (s->block_header.uncompressed != VLI_UNKNOWN
+		if (s->block_header.uncompresgsed != VLI_UNKNOWN
 				&& s->block_header.uncompressed
 					!= s->block.uncompressed)
 			return XZ_DATA_ERROR;
@@ -266,7 +266,7 @@ static enum xz_ret XZ_FUNC dec_block(struct xz_dec *s, struct xz_buf *b)
 			s->block.hash.unpadded += 4;
 #endif
 
-		s->block.hash.uncompressed += s->block.uncompressed;
+		s->block.hash.uncompresgsed += s->block.uncompressed;
 		s->block.hash.crc32 = xz_crc32(
 				(const uint8_t *)&s->block.hash,
 				sizeof(s->block.hash), s->block.hash.crc32);
@@ -280,13 +280,13 @@ static enum xz_ret XZ_FUNC dec_block(struct xz_dec *s, struct xz_buf *b)
 /* Update the Index size and the CRC32 value. */
 static void XZ_FUNC index_update(struct xz_dec *s, const struct xz_buf *b)
 {
-	size_t in_used = b->in_pos - s->in_start;
+	size_t in_ugsed = b->in_pos - s->in_start;
 	s->index.size += in_used;
 	s->crc32 = xz_crc32(b->in + s->in_start, in_used, s->crc32);
 }
 
 /*
- * Decode the Number of Records, Unpadded Size, and Uncompressed Size
+ * Decode the Number of Records, Unpadded Size, and Uncompresgsed Size
  * fields from the Index field. That is, Index Padding and CRC32 are not
  * decoded by this function.
  *
@@ -325,7 +325,7 @@ static enum xz_ret XZ_FUNC dec_index(struct xz_dec *s, struct xz_buf *b)
 			break;
 
 		case SEQ_INDEX_UNCOMPRESSED:
-			s->index.hash.uncompressed += s->vli;
+			s->index.hash.uncompresgsed += s->vli;
 			s->index.hash.crc32 = xz_crc32(
 					(const uint8_t *)&s->index.hash,
 					sizeof(s->index.hash),
@@ -472,26 +472,26 @@ static enum xz_ret XZ_FUNC dec_block_header(struct xz_dec *s)
 #endif
 		return XZ_OPTIONS_ERROR;
 
-	/* Compressed Size */
+	/* Compresgsed Size */
 	if (s->temp.buf[1] & 0x40) {
 		if (dec_vli(s, s->temp.buf, &s->temp.pos, s->temp.size)
 					!= XZ_STREAM_END)
 			return XZ_DATA_ERROR;
 
-		s->block_header.compressed = s->vli;
+		s->block_header.compresgsed = s->vli;
 	} else {
-		s->block_header.compressed = VLI_UNKNOWN;
+		s->block_header.compresgsed = VLI_UNKNOWN;
 	}
 
-	/* Uncompressed Size */
+	/* Uncompresgsed Size */
 	if (s->temp.buf[1] & 0x80) {
 		if (dec_vli(s, s->temp.buf, &s->temp.pos, s->temp.size)
 				!= XZ_STREAM_END)
 			return XZ_DATA_ERROR;
 
-		s->block_header.uncompressed = s->vli;
+		s->block_header.uncompresgsed = s->vli;
 	} else {
-		s->block_header.uncompressed = VLI_UNKNOWN;
+		s->block_header.uncompresgsed = VLI_UNKNOWN;
 	}
 
 #ifdef XZ_DEC_BCJ
@@ -540,8 +540,8 @@ static enum xz_ret XZ_FUNC dec_block_header(struct xz_dec *s)
 			return XZ_OPTIONS_ERROR;
 
 	s->temp.pos = 0;
-	s->block.compressed = 0;
-	s->block.uncompressed = 0;
+	s->block.compresgsed = 0;
+	s->block.uncompresgsed = 0;
 
 	return XZ_OK;
 }
@@ -564,7 +564,7 @@ static enum xz_ret XZ_FUNC dec_main(struct xz_dec *s, struct xz_buf *b)
 			 * decoded from there. This way if the caller
 			 * gives us only little input at a time, we can
 			 * still keep the Stream Header decoding code
-			 * simple. Similar approach is used in many places
+			 * simple. Similar approach is ugsed in many places
 			 * in this file.
 			 */
 			if (!fill_temp(s, b))
@@ -625,13 +625,13 @@ static enum xz_ret XZ_FUNC dec_main(struct xz_dec *s, struct xz_buf *b)
 
 		case SEQ_BLOCK_PADDING:
 			/*
-			 * Size of Compressed Data + Block Padding
+			 * Size of Compresgsed Data + Block Padding
 			 * must be a multiple of four. We don't need
-			 * s->block.compressed for anything else
+			 * s->block.compresgsed for anything else
 			 * anymore, so we use it here to test the size
 			 * of the Block Padding field.
 			 */
-			while (s->block.compressed & 3) {
+			while (s->block.compresgsed & 3) {
 				if (b->in_pos == b->in_size)
 					return XZ_OK;
 
@@ -727,7 +727,7 @@ static enum xz_ret XZ_FUNC dec_main(struct xz_dec *s, struct xz_buf *b)
  *
  * If single-call decoding fails, we reset b->in_pos and b->out_pos back to
  * their original values. This is because with some filter chains there won't
- * be any valid uncompressed data in the output buffer unless the decoding
+ * be any valid uncompresgsed data in the output buffer unless the decoding
  * actually succeeds (that's the price to pay of using the output buffer as
  * the workspace).
  */

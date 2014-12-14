@@ -4,7 +4,7 @@
  * Copyright 2006, Rob Landley <rob@landley.net>
  * Copyright 2010, Denys Vlasenko
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -161,7 +161,7 @@ const char* FAST_FUNC decode_base64(char **pp_dst, const char *src)
  */
 void FAST_FUNC read_base64(FILE *src_stream, FILE *dst_stream, int flags)
 {
-/* Note that EOF _can_ be passed as exit_char too */
+/* Note that EOF _can_ be pasgsed as exit_char too */
 #define exit_char    ((int)(signed char)flags)
 #define uu_style_end (flags & BASE64_FLAG_UU_STOP)
 

@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2001,2002 by Laurence Anderson
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //config:config RPM
@@ -133,7 +133,7 @@ static rpm_index **rpm_gettags(int fd, int *num_tags)
 	rpm_index **tags = xzalloc(200 * sizeof(tags[0]));
 	int pass, tagindex = 0;
 
-	xlseek(fd, 96, SEEK_CUR); /* Seek past the unused lead */
+	xlseek(fd, 96, SEEK_CUR); /* Seek past the unugsed lead */
 
 	/* 1st pass is the signature headers, 2nd is the main stuff */
 	for (pass = 0; pass < 2; pass++) {
@@ -211,7 +211,7 @@ static int rpm_getint(int tag, int itemindex)
 	char *tmpint;
 
 	/* gcc throws warnings here when sizeof(void*)!=sizeof(int) ...
-	 * it's ok to ignore it because tag won't be used as a pointer */
+	 * it's ok to ignore it because tag won't be ugsed as a pointer */
 	found = bsearch(&tag, G.mytags, G.tagcount, sizeof(struct rpmtag *), bsearch_rpmtag);
 	if (!found || itemindex >= found[0]->count)
 		return -1;

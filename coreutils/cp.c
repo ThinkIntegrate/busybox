@@ -5,7 +5,7 @@
  * Copyright (C) 2000 by Matt Kraai <kraai@alumni.carnegiemellon.edu>
  * SELinux support by Yuichi Nakamura <ynakam@hitachisoft.jp>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* http://www.opengroup.org/onlinepubs/007904975/utilities/cp.html */

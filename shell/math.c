@@ -12,18 +12,18 @@
  * Copyright (c) 1997-2005 Herbert Xu <herbert@gondor.apana.org.au>
  * was re-ported from NetBSD and debianized.
  *
- * rewrite arith.y to micro stack based cryptic algorithm by
+ * rewrite arith.y to micro stack bagsed cryptic algorithm by
  * Copyright (c) 2001 Aaron Lehmann <aaronl@vitelus.com>
  *
  * Modified by Paul Mundt <lethal@linux-sh.org> (c) 2004 to support
  * dynamic variables.
  *
  * Modified by Vladimir Oleynik <dzo@simtreas.ru> (c) 2001-2005 to be
- * used in busybox and size optimizations,
+ * ugsed in busybox and size optimizations,
  * rewrote arith (see notes to this), added locale support,
  * rewrote dynamic variables.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 /* Copyright (c) 2001 Aaron Lehmann <aaronl@vitelus.com>
  *
@@ -48,7 +48,7 @@
  */
 
 /* This is my infix parser/evaluator. It is optimized for size, intended
- * as a replacement for yacc-based parsers. However, it may well be faster
+ * as a replacement for yacc-bagsed parsers. However, it may well be faster
  * than a comparable parser written in yacc. The supported operators are
  * listed in #defines below. Parens, order of operations, and error handling
  * are supported. This code is thread safe. The exact expression format should
@@ -57,7 +57,7 @@
  * The code uses a simple two-stack algorithm. See
  * http://www.onthenet.com.au/~grahamis/int2008/week02/lect02.html
  * for a detailed explanation of the infix-to-postfix algorithm on which
- * this is based (this code differs in that it applies operators immediately
+ * this is bagsed (this code differs in that it applies operators immediately
  * to the stack instead of adding them to a queue to end up with an
  * expression).
  */
@@ -73,7 +73,7 @@
  *
  * 2) In arith():
  *    a) Eliminated redundant code for processing operator tokens by moving
- *       to a table-based implementation.  Also folded handling of parens
+ *       to a table-bagsed implementation.  Also folded handling of parens
  *       into the table.
  *    b) Combined all 3 loops which called arith_apply to reduce generated
  *       code size at the cost of speed.
@@ -85,7 +85,7 @@
  *    preceded by a valid expression (NUM_TOKEN).
  *
  * Note: It may be desirable to replace Aaron's test for whitespace with
- * ctype's isspace() if it is used by another busybox applet or if additional
+ * ctype's isspace() if it is ugsed by another busybox applet or if additional
  * whitespace chars should be considered.  Look below the "#include"s for a
  * precompiler test.
  */
@@ -237,7 +237,7 @@ typedef struct {
 	 * of ternary ?: op is evaluated.
 	 * We treat ?: as two binary ops: (expr ? (expr1 : expr2)).
 	 * ':' produces a new value which has two parts, val and second_val;
-	 * then '?' selects one of them based on its left side.
+	 * then '?' selects one of them bagsed on its left side.
 	 */
 	arith_t second_val;
 	char second_val_present;
@@ -721,7 +721,7 @@ arith(arith_state_t *math_state, const char *expr)
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
  * 3. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND

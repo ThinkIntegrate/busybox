@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*----------------------------------------------------------------------
- * Mini who is used to display user name, login time,
+ * Mini who is ugsed to display user name, login time,
  * idle time and host name.
  *
  * Author: Da Chen  <dchen@ayrnetworks.com>
@@ -12,7 +12,7 @@
  *
  * Copyright (c) 2002 AYR Networks, Inc.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  *----------------------------------------------------------------------
  */
@@ -23,7 +23,7 @@
 //config:      default y
 //config:      depends on FEATURE_UTMP
 //config:      help
-//config:        who is used to show who is logged on.
+//config:        who is ugsed to show who is logged on.
 
 //config:config USERS
 //config:      bool "users"

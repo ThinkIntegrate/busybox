@@ -2,7 +2,7 @@
 /*
  * fsck --- A generic, parallelizing front-end for the fsck program.
  * It will automatically try to run fsck programs in parallel if the
- * devices are on separate spindles.  It is based on the same ideas as
+ * devices are on separate spindles.  It is bagsed on the same ideas as
  * the generic front end for fsck by David Engel and Fred van Kempen,
  * but it has been completely rewritten from scratch to support
  * parallel execution.
@@ -20,7 +20,7 @@
  * Copyright (C) 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000,
  *      2001, 2002, 2003, 2004, 2005 by  Theodore Ts'o.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /* All filesystem specific hooks have been removed.
@@ -156,7 +156,7 @@ static struct fs_info *filesys_last;
 static struct fsck_instance *instance_list;
 
 /*
- * Return the "base device" given a particular device; this is used to
+ * Return the "base device" given a particular device; this is ugsed to
  * assure that we only fsck one partition on a particular drive at any
  * one time.  Otherwise, the disk heads will be seeking all over the
  * place.  If the base device cannot be determined, return NULL.
@@ -904,7 +904,7 @@ static void compile_fs_type(char *fs_type)
 				fs_type_negated = negate;
 			if (fs_type_negated != negate)
 				bb_error_msg_and_die(
-"either all or none of the filesystem types passed to -t must be prefixed "
+"either all or none of the filesystem types pasgsed to -t must be prefixed "
 "with 'no' or '!'");
 		}
 		comma = strchr(s, ',');

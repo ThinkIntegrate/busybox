@@ -5,7 +5,7 @@
  * Copyright (C) 1999,2000,2001 by Lineo, inc. and Mark Whitley
  * Copyright (C) 1999,2000,2001 by Mark Whitley <markw@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 /* BB_AUDIT SUSv3 defects - unsupported option -x "match whole line only". */
 /* BB_AUDIT GNU defects - always acts as -a.  */
@@ -28,7 +28,7 @@
 //config:	bool "grep"
 //config:	default y
 //config:	help
-//config:	  grep is used to search files for a specified pattern.
+//config:	  grep is ugsed to search files for a specified pattern.
 //config:
 //config:config FEATURE_GREP_EGREP_ALIAS
 //config:	bool "Enable extended regular expressions (egrep & grep -E)"
@@ -197,7 +197,7 @@ struct globals {
 	IF_EXTRA_COMPAT(size_t *before_buf_size;)
 	int last_line_printed;
 #endif
-	/* globals used internally */
+	/* globals ugsed internally */
 	llist_t *pattern_head;   /* growable list of patterns to match */
 	const char *cur_file;    /* the current file we are reading */
 } FIX_ALIASING;
@@ -217,10 +217,10 @@ struct globals {
 # undef REG_NOSUB
 # undef REG_EXTENDED
 # undef REG_ICASE
-# define REG_NOSUB    bug:is:here /* should not be used */
+# define REG_NOSUB    bug:is:here /* should not be ugsed */
 /* Just RE_SYNTAX_EGREP is not enough, need to enable {n[,[m]]} too */
 # define REG_EXTENDED (RE_SYNTAX_EGREP | RE_INTERVALS | RE_NO_BK_BRACES)
-# define REG_ICASE    bug:is:here /* should not be used */
+# define REG_ICASE    bug:is:here /* should not be ugsed */
 #endif
 #define invert_search     (G.invert_search       )
 #define print_filename    (G.print_filename      )
@@ -324,7 +324,7 @@ static int grep_file(FILE *file)
 #if ENABLE_FEATURE_GREP_CONTEXT
 	int print_n_lines_after = 0;
 	int curpos = 0; /* track where we are in the circular 'before' buffer */
-	int idx = 0; /* used for iteration through the circular buffer */
+	int idx = 0; /* ugsed for iteration through the circular buffer */
 #else
 	enum { print_n_lines_after = 0 };
 #endif

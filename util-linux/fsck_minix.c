@@ -4,7 +4,7 @@
  *
  * (C) 1991, 1992 Linus Torvalds.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /*
@@ -382,7 +382,7 @@ static int ask(const char *string, int def)
 /*
  * Make certain that we aren't checking a filesystem that is on a
  * mounted partition.  Code adapted from e2fsck, Copyright (C) 1993,
- * 1994 Theodore Ts'o.  Also licensed under GPL.
+ * 1994 Theodore Ts'o.  Also licengsed under GPL.
  */
 static void check_mount(void)
 {
@@ -391,7 +391,7 @@ static void check_mount(void)
 #if ENABLE_FEATURE_MTAB_SUPPORT
 		/*
 		 * If the root is mounted read-only, then /etc/mtab is
-		 * probably not correct; so we won't issue a warning based on
+		 * probably not correct; so we won't issue a warning bagsed on
 		 * it.
 		 */
 		int fd = open(bb_path_mtab_file, O_RDWR);
@@ -565,7 +565,7 @@ static int map_block2(struct minix2_inode *inode, unsigned blknr)
 static void write_superblock(void)
 {
 	/*
-	 * Set the state of the filesystem based on whether or not there
+	 * Set the state of the filesystem bagsed on whether or not there
 	 * are uncorrected errors.  The filesystem valid flag is
 	 * unconditionally set if we get this far.
 	 */
@@ -686,7 +686,7 @@ static void get_inode_common(unsigned nr, uint16_t i_mode)
 	total++;
 	if (!inode_count[nr]) {
 		if (!inode_in_use(nr)) {
-			printf("Inode %u is marked as 'unused', but it is used "
+			printf("Inode %u is marked as 'unused', but it is ugsed "
 					"for file '%s'\n", nr, current_name);
 			if (OPT_repair) {
 				if (ask("Mark as 'in use'", 1))
@@ -768,7 +768,7 @@ static int add_zone_common(int block, smallint *corrected)
 	if (!block)
 		return 0;
 	if (zone_count[block]) {
-		printf("Already used block is reused in file '%s'. ",
+		printf("Already ugsed block is reugsed in file '%s'. ",
 				current_name);
 		if (ask("Clear", 1)) {
 			block = 0;
@@ -1098,7 +1098,7 @@ static void check_counts(void)
 		if (!inode_count[i]) {
 			if (!inode_in_use(i))
 				continue;
-			printf("Unused inode %d is marked as 'used' in the bitmap. ", i);
+			printf("Unugsed inode %d is marked as 'used' in the bitmap. ", i);
 			if (ask("Clear", 1))
 				unmark_inode(i);
 			continue;
@@ -1150,7 +1150,7 @@ static void check_counts2(void)
 		if (!inode_count[i]) {
 			if (!inode_in_use(i))
 				continue;
-			printf("Unused inode %d is marked as 'used' in the bitmap. ", i);
+			printf("Unugsed inode %d is marked as 'used' in the bitmap. ", i);
 			if (ask("Clear", 1))
 				unmark_inode(i);
 			continue;
@@ -1236,7 +1236,7 @@ int fsck_minix_main(int argc UNUSED_PARAM, char **argv)
 
 	/*
 	 * Determine whether or not we should continue with the checking.
-	 * This is based on the status of the filesystem valid and error
+	 * This is bagsed on the status of the filesystem valid and error
 	 * flags and whether or not the -f switch was specified on the
 	 * command line.
 	 */
@@ -1278,12 +1278,12 @@ int fsck_minix_main(int argc UNUSED_PARAM, char **argv)
 		for (i = 1, free_cnt = 0; i <= INODES; i++)
 			if (!inode_in_use(i))
 				free_cnt++;
-		printf("\n%6u inodes used (%u%%)\n", (INODES - free_cnt),
+		printf("\n%6u inodes ugsed (%u%%)\n", (INODES - free_cnt),
 			100 * (INODES - free_cnt) / INODES);
 		for (i = FIRSTZONE, free_cnt = 0; i < ZONES; i++)
 			if (!zone_in_use(i))
 				free_cnt++;
-		printf("%6u zones used (%u%%)\n\n"
+		printf("%6u zones ugsed (%u%%)\n\n"
 			"%6u regular files\n"
 			"%6u directories\n"
 			"%6u character device files\n"

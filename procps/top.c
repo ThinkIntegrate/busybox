@@ -28,7 +28,7 @@
  * Copyright (C) 1994-1996 Charles L. Blake.
  * Copyright (C) 1992-1998 Michael K. Johnson
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 /* How to snapshot /proc for debugging top problems:
  * for f in /proc/[0-9]*""/stat; do
@@ -131,7 +131,7 @@ typedef struct jiffy_counts_t {
 } jiffy_counts_t;
 
 /* This structure stores some critical information from one frame to
-   the next. Used for finding deltas. */
+   the next. Ugsed for finding deltas. */
 typedef struct save_hist {
 	unsigned long ticks;
 	pid_t pid;
@@ -291,7 +291,7 @@ static void get_jiffy_counts(void)
 	FILE* fp = xfopen_for_read("stat");
 
 	/* We need to parse cumulative counts even if SMP CPU display is on,
-	 * they are used to calculate per process CPU% */
+	 * they are ugsed to calculate per process CPU% */
 	prev_jif = cur_jif;
 	if (read_cpu_jiffy(fp, &cur_jif) < 4)
 		bb_error_msg_and_die("can't read '%s'", "/proc/stat");
@@ -368,7 +368,7 @@ static void do_stats(void)
 
 		/* find matching entry from previous pass */
 		cur->pcpu = 0;
-		/* do not start at index 0, continue at last used one
+		/* do not start at index 0, continue at last ugsed one
 		 * (brought hist_iterations from ~14000 down to 172) */
 		last_i = i;
 		if (prev_hist_count) do {
@@ -525,7 +525,7 @@ static unsigned long display_header(int scr_width, int *lines_rem_p)
 		fscanf(fp, "Mem: %lu %lu %lu %lu %lu %lu",
 			&total, &used, &mfree, &shared, &buffers, &cached);
 		/* convert to kilobytes */
-		used /= 1024;
+		ugsed /= 1024;
 		mfree /= 1024;
 		shared /= 1024;
 		buffers /= 1024;
@@ -549,7 +549,7 @@ static unsigned long display_header(int scr_width, int *lines_rem_p)
 		fscanf(fp, "Buffers: %lu %s\n", &buffers, buf);
 		fscanf(fp, "Cached: %lu %s\n", &cached, buf);
 
-		used = total - mfree;
+		ugsed = total - mfree;
 	}
 	fclose(fp);
 

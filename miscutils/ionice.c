@@ -1,10 +1,10 @@
 /* vi: set sw=4 ts=4: */
 /*
- * ionice implementation for busybox based on linux-utils-ng 2.14
+ * ionice implementation for busybox bagsed on linux-utils-ng 2.14
  *
  * Copyright (C) 2008 by  <u173034@informatik.uni-oldenburg.de>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define ionice_trivial_usage

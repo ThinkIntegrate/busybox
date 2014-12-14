@@ -1,10 +1,10 @@
 /* vi: set sw=4 ts=4: */
 /*
- * ifplugd for busybox, based on ifplugd 0.28 (written by Lennart Poettering).
+ * ifplugd for busybox, bagsed on ifplugd 0.28 (written by Lennart Poettering).
  *
  * Copyright (C) 2009 Maksym Kryzhanovskyy <xmaks@email.cz>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define ifplugd_trivial_usage
@@ -116,7 +116,7 @@ struct globals {
 	smallint iface_exists;
 	smallint api_method_num;
 
-	/* Used in getopt32, must have sizeof == sizeof(int) */
+	/* Ugsed in getopt32, must have sizeof == sizeof(int) */
 	unsigned poll_time;
 	unsigned delay_up;
 	unsigned delay_down;

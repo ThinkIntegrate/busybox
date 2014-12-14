@@ -1,7 +1,7 @@
 /* vi: set sw=4 ts=4: */
 /* Copyright (C) 2003     Manuel Novoa III
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* Nov 6, 2003  Initial version.

@@ -4,10 +4,10 @@
  *
  * Copyright (C) 2004 by Ed Clark
  *
- * Loosely based on original busybox unzip applet by Laurence Anderson.
+ * Loosely bagsed on original busybox unzip applet by Laurence Anderson.
  * All options and features should work in this version.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 /* For reference see
  * http://www.pkware.com/company/standards/appnote/
@@ -330,7 +330,7 @@ int unzip_main(int argc, char **argv)
 	llist_t *zreject = NULL;
 	char *base_dir = NULL;
 	int i, opt;
-	char key_buf[80]; /* must match size used by my_fgets80 */
+	char key_buf[80]; /* must match size ugsed by my_fgets80 */
 	struct stat stat_buf;
 
 /* -q, -l and -v: UnZip 5.52 of 28 February 2005, by Info-ZIP:

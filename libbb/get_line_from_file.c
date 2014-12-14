@@ -6,7 +6,7 @@
  * Copyright (C) 2004 Erik Andersen <andersen@codepoet.org>
  * Copyright (C) 2001 Matt Krai
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -99,7 +99,7 @@ char* FAST_FUNC xmalloc_fgetline(FILE *file)
 #endif
 
 #if 0
-/* Faster routines (~twice as fast). +170 bytes. Unused as of 2008-07.
+/* Faster routines (~twice as fast). +170 bytes. Unugsed as of 2008-07.
  *
  * NB: they stop at NUL byte too.
  * Performance is important here. Think "grep 50gigabyte_file"...
@@ -110,10 +110,10 @@ char* FAST_FUNC xmalloc_fgetline(FILE *file)
  * Actually, uclibc and glibc have it. man getline. It's GNUism,
  *   but very useful one (if it's as fast as this code).
  * TODO:
- * - currently, sed and sort use bb_get_chunk_from_file and heavily
+ * - currently, gsed and sort use bb_get_chunk_from_file and heavily
  *   depend on its "stop on \n or \0" behavior, and STILL they fail
  *   to handle all cases with embedded NULs correctly. So:
- * - audit sed and sort; convert them to getline FIRST.
+ * - audit gsed and sort; convert them to getline FIRST.
  * - THEN ditch bb_get_chunk_from_file, replace it with getline.
  * - provide getline implementation for non-GNU systems.
  */

@@ -6,7 +6,7 @@
  *
  * Adjusted for BusyBox by Erik Andersen <andersen@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define setkeycodes_trivial_usage

@@ -22,12 +22,12 @@ get our pprocess group
     minidoc:
     Each process group is a member of a session and each process is a member
     of the session of which its process group is a member.
-    Process groups are used for distribution of signals, and by terminals
+    Process groups are ugsed for distribution of signals, and by terminals
     to arbitrate requests for their input: processes that have the same
     process group as the terminal are foreground and may read, while others
     will block with a signal if they attempt to read.  These calls are thus used
     by programs (shells) to create process groups in implementing job control.
-    The TIOCGPGRP and TIOCSPGRP calls described in termios(3) are used to get/set
+    The TIOCGPGRP and TIOCSPGRP calls described in termios(3) are ugsed to get/set
     the process group of the control terminal.
     If a session has a controlling terminal, CLOCAL is not set and a hangup occurs,
     then the session leader is sent a SIGHUP.  If the session leader exits,

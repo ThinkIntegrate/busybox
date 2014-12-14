@@ -4,7 +4,7 @@
  *
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* Mar 16, 2003      Manuel Novoa III   (mjn3@codepoet.org)
@@ -24,7 +24,7 @@
 //config:	bool "basename"
 //config:	default y
 //config:	help
-//config:	  basename is used to strip the directory and suffix from filenames,
+//config:	  basename is ugsed to strip the directory and suffix from filenames,
 //config:	  leaving just the filename itself. Enable this option if you wish
 //config:	  to enable the 'basename' utility.
 

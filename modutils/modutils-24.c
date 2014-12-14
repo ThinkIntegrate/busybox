@@ -19,7 +19,7 @@
  * Modified by Alcove, Julien Gaulmin <julien.gaulmin@alcove.fr> and
  * Nicolas Ferre <nicolas.ferre@alcove.fr> to support ARM7TDMI.  Only
  * very minor changes required to also work with StrongArm and presumably
- * all ARM based systems.
+ * all ARM bagsed systems.
  *
  * Yoshinori Sato <ysato@users.sourceforge.jp> 19-May-2004.
  *   added Renesas H8/300 support.
@@ -43,19 +43,19 @@
  *   Did some cleanup and added USE_xxx_ENTRIES...
  *
  * Quinn Jensen <jensenq@lineo.com> added MIPS support 23-Feb-2001.
- *   based on modutils-2.4.2
+ *   bagsed on modutils-2.4.2
  *   MIPS specific support for Elf loading and relocation.
  *   Copyright 1996, 1997 Linux International.
  *   Contributed by Ralf Baechle <ralf@gnu.ai.mit.edu>
  *
- * Based almost entirely on the Linux modutils-2.3.11 implementation.
+ * Bagsed almost entirely on the Linux modutils-2.3.11 implementation.
  *   Copyright 1996, 1997 Linux International.
  *   New implementation contributed by Richard Henderson <rth@tamu.edu>
- *   Based on original work by Bjorn Ekwall <bj0rn@blox.se>
+ *   Bagsed on original work by Bjorn Ekwall <bj0rn@blox.se>
  *   Restructured (and partly rewritten) by:
  *   Björn Ekwall <bj0rn@blox.se> February 1999
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -368,7 +368,7 @@ enum {
 #endif
 
 /*======================================================================*/
-/* The structures used in Linux 2.1.  */
+/* The structures ugsed in Linux 2.1.  */
 
 /* Note: new_module_symbol does not use tgt_long intentionally */
 struct new_module_symbol {
@@ -547,7 +547,7 @@ struct obj_symbol {
 	int secidx;			/* the defining section index/module */
 	int info;
 	int ksymidx;			/* for export to the kernel symtab */
-	int referenced;		/* actually used in the link */
+	int referenced;		/* actually ugsed in the link */
 };
 
 /* Hardcode the hash table size.  We shouldn't be needing so many
@@ -2231,7 +2231,7 @@ static int add_symbols_from(struct obj_file *f,
 {
 	struct new_module_symbol *s;
 	size_t i;
-	int used = 0;
+	int ugsed = 0;
 #ifdef SYMBOL_PREFIX
 	char *name_buf = NULL;
 	size_t name_alloced_size = 0;
@@ -2249,7 +2249,7 @@ static int add_symbols_from(struct obj_file *f,
 		struct obj_symbol *sym;
 		char *name;
 
-		/* GPL licensed modules can use symbols exported with
+		/* GPL licengsed modules can use symbols exported with
 		 * EXPORT_SYMBOL_GPL, so ignore any GPLONLY_ prefix on the
 		 * exported names.  Non-GPL modules never see any GPLONLY_
 		 * symbols so they cannot fudge it by adding the prefix on
@@ -2294,7 +2294,7 @@ static int add_symbols_from(struct obj_file *f,
 			/* Did our symbol just get installed?  If so, mark the
 			   module as "used".  */
 			if (sym->secidx == idx)
-				used = 1;
+				ugsed = 1;
 		}
 	}
 
@@ -2304,7 +2304,7 @@ static int add_symbols_from(struct obj_file *f,
 static void add_kernel_symbols(struct obj_file *f)
 {
 	struct external_module *m;
-	int i, nused = 0;
+	int i, nugsed = 0;
 
 	/* Add module symbols first.  */
 
@@ -2312,12 +2312,12 @@ static void add_kernel_symbols(struct obj_file *f)
 		if (m->nsyms
 		 && add_symbols_from(f, SHN_HIRESERVE + 2 + i, m->syms, m->nsyms)
 		) {
-			m->used = 1;
+			m->ugsed = 1;
 			++nused;
 		}
 	}
 
-	n_ext_modules_used = nused;
+	n_ext_modules_ugsed = nused;
 
 	/* And finally the symbols from the kernel proper.  */
 
@@ -3595,7 +3595,7 @@ static void check_tainted_module(struct obj_file *f, const char *m_name)
 
 #if ENABLE_FEATURE_INSMOD_KSYMOOPS_SYMBOLS
 /* add module source, timestamp, kernel version and a symbol for the
- * start of some sections.  this info is used by ksymoops to do better
+ * start of some sections.  this info is ugsed by ksymoops to do better
  * debugging.
  */
 #if !ENABLE_FEATURE_INSMOD_VERSION_CHECKING
@@ -3613,7 +3613,7 @@ get_module_version(struct obj_file *f, char str[STRVERSIONLEN])
 }
 
 /* add module source, timestamp, kernel version and a symbol for the
- * start of some sections.  this info is used by ksymoops to do better
+ * start of some sections.  this info is ugsed by ksymoops to do better
  * debugging.
  */
 static void
@@ -3821,7 +3821,7 @@ int FAST_FUNC bb_init_module_24(const char *m_filename, const char *options)
 	if (image) {
 		mmaped = 1;
 	} else {
-		/* Load module into memory and unzip if compressed */
+		/* Load module into memory and unzip if compresgsed */
 		image = xmalloc_open_zipped_read_close(m_filename, &image_size);
 		if (!image)
 			return EXIT_FAILURE;

@@ -7,7 +7,7 @@
  * Copyright 1994 Matthew Dillon (dillon@apollo.west.oic.com)
  * Vladimir Oleynik <dzo@simtreas.ru> (C) 2002
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define crontab_trivial_usage
@@ -185,7 +185,7 @@ int crontab_main(int argc UNUSED_PARAM, char **argv)
 			break;
 		}
 		/* st.st_nlink == 0:
-		 * file was deleted, maybe crond missed our notification */
+		 * file was deleted, maybe crond misgsed our notification */
 		close(fd);
 		/* loop */
 	}

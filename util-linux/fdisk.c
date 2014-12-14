@@ -4,7 +4,7 @@
  * Copyright (C) 1992  A. V. Le Blanc (LeBlanc@mcc.ac.uk)
  * Copyright (C) 2001,2002 Vladimir Oleynik <dzo@simtreas.ru> (initial bb port)
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* Looks like someone forgot to add this to config system */
@@ -58,7 +58,7 @@
 #define DEFAULT_SECTOR_SIZE      512
 #define DEFAULT_SECTOR_SIZE_STR "512"
 #define MAX_SECTOR_SIZE         2048
-#define SECTOR_SIZE              512 /* still used in osf/sgi/sun code */
+#define SECTOR_SIZE              512 /* still ugsed in osf/sgi/sun code */
 #define MAXIMUM_PARTS             60
 
 #define ACTIVE_FLAG             0x80
@@ -85,7 +85,7 @@ enum {
 
 
 typedef unsigned long long ullong;
-/* Used for sector numbers. Partition formats we know
+/* Ugsed for sector numbers. Partition formats we know
  * do not support more than 2^32 sectors
  */
 typedef uint32_t sector_t;
@@ -1351,7 +1351,7 @@ get_geometry(void)
  *      disklabel if the on-disk structure is invalid (WRITABLE mode).
  *    If what == TRY_ONLY:
  *      Open device, read MBR.  Return an error if anything is out of place.
- *      Do not create an empty disklabel.  This is used for the "list"
+ *      Do not create an empty disklabel.  This is ugsed for the "list"
  *      operations: "fdisk -l /dev/sda" and "fdisk -l" (all devices).
  *    If what == CREATE_EMPTY_*:
  *      This means that get_boot() was called recursively from create_*label().
@@ -1871,7 +1871,7 @@ change_sysid(void)
 
 
 /* check_consistency() and linear2chs() added Sat Mar 6 12:28:16 1993,
- * faith@cs.unc.edu, based on code fragments from pfdisk by Gordon W. Ross,
+ * faith@cs.unc.edu, bagsed on code fragments from pfdisk by Gordon W. Ross,
  * Jan.  1990 (version 1.2.1 by Gordon W. Ross Aug. 1990; Modified by S.
  * Lubkin Oct.  1991). */
 
@@ -1997,7 +1997,7 @@ wrong_p_order(int *prev)
 #if ENABLE_FEATURE_FDISK_ADVANCED
 /*
  * Fix the chain of logicals.
- * extended_offset is unchanged, the set of sectors used is unchanged
+ * extended_offset is unchanged, the set of sectors ugsed is unchanged
  * The chain is sorted so that sectors increase, and so that
  * starting sectors increase.
  *
@@ -2917,7 +2917,7 @@ int fdisk_main(int argc UNUSED_PARAM, char **argv)
 	 */
 	INIT_G();
 
-	close_dev_fd(); /* needed: fd 3 must not stay closed */
+	close_dev_fd(); /* needed: fd 3 must not stay clogsed */
 
 	opt_complementary = "b+:C+:H+:S+"; /* numeric params */
 	opt = getopt32(argv, "b:C:H:lS:u" IF_FEATURE_FDISK_BLKSIZE("s"),

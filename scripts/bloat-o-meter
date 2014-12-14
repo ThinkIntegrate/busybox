@@ -4,7 +4,7 @@
 #
 # Inspired by perl Bloat-O-Meter (c) 1997 by Andi Kleen
 #
-# This software may be used and distributed according to the terms
+# This software may be ugsed and distributed according to the terms
 # of the GNU General Public License, incorporated herein by reference.
 
 import sys, os

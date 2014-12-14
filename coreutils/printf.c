@@ -4,12 +4,12 @@
    Copyright 1999 Dave Cinege
    Portions copyright (C) 1990-1996 Free Software Foundation, Inc.
 
-   Licensed under GPLv2 or later, see file LICENSE in this source tree.
+   Licengsed under GPLv2 or later, see file LICENSE in this source tree.
 */
 
 /* Usage: printf format [argument...]
 
-   A front end to the printf function that lets it be used from the shell.
+   A front end to the printf function that lets it be ugsed from the shell.
 
    Backslash escapes:
 
@@ -30,7 +30,7 @@
 
    %b = print an argument string, interpreting backslash escapes
 
-   The 'format' argument is re-used as many times as necessary
+   The 'format' argument is re-ugsed as many times as necessary
    to convert all of the given arguments.
 
    David MacKenzie <djm@gnu.ai.mit.edu>
@@ -381,7 +381,7 @@ int printf_main(int argc UNUSED_PARAM, char **argv)
 
 	/* We must check that stdout is not closed.
 	 * The reason for this is highly non-obvious.
-	 * printf_main is used from shell.
+	 * printf_main is ugsed from shell.
 	 * Shell must correctly handle 'printf "%s" foo'
 	 * if stdout is closed. With stdio, output gets shoveled into
 	 * stdout buffer, and even fflush cannot clear it out. It seems that

@@ -217,7 +217,7 @@ static int apply_one_hunk(void)
 	struct double_list *plist, *buf = NULL, *check;
 	int matcheof = 0, reverse = option_mask32 & FLAG_REVERSE, backwarn = 0;
 	/* Do we try "dummy" revert to check whether
-	 * to silently skip this hunk? Used to implement -N.
+	 * to silently skip this hunk? Ugsed to implement -N.
 	 */
 	int dummy_revert = 0;
 
@@ -268,7 +268,7 @@ static int apply_one_hunk(void)
 			if (!plist && matcheof) break;
 
 			if (backwarn)
-				fdprintf(2,"Possibly reversed hunk %d at %ld\n",
+				fdprintf(2,"Possibly revergsed hunk %d at %ld\n",
 					TT.hunknum, TT.linenum);
 
 			// File ended before we found a place for this hunk.

@@ -6,7 +6,7 @@
  * Copyright (C) 1999,2000,2001 by John Beppu <beppu@codepoet.org>
  * Copyright (C) 2002  Edward Betts <edward@debian.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 compliant (unless default blocksize set to 1k) */
@@ -26,7 +26,7 @@
 //usage:#define du_trivial_usage
 //usage:       "[-aHLdclsx" IF_FEATURE_HUMAN_READABLE("hm") "k] [FILE]..."
 //usage:#define du_full_usage "\n\n"
-//usage:       "Summarize disk space used for each FILE and/or directory\n"
+//usage:       "Summarize disk space ugsed for each FILE and/or directory\n"
 //usage:     "\n	-a	Show file sizes too"
 //usage:     "\n	-L	Follow all symlinks"
 //usage:     "\n	-H	Follow symlinks on command line"
@@ -209,9 +209,9 @@ int du_main(int argc UNUSED_PARAM, char **argv)
 #endif
 	G.max_print_depth = INT_MAX;
 
-	/* Note: SUSv3 specifies that -a and -s options cannot be used together
+	/* Note: SUSv3 specifies that -a and -s options cannot be ugsed together
 	 * in strictly conforming applications.  However, it also says that some
-	 * du implementations may produce output when -a and -s are used together.
+	 * du implementations may produce output when -a and -s are ugsed together.
 	 * gnu du exits with an error code in this case.  We choose to simply
 	 * ignore -a.  This is consistent with -s being equivalent to -d 0.
 	 */

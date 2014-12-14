@@ -1,6 +1,6 @@
 <html>
 
-<head><title>Command Summary for sed (sed & awk, Second Edition)</title>
+<head><title>Command Summary for gsed (gsed & awk, Second Edition)</title>
 </head>
 
 <body>
@@ -14,12 +14,12 @@
 <b>b</b> or <b>t</b>.
 <em>label</em> may contain up to seven characters.
 (The POSIX standard says that an implementation can allow longer
-labels if it wishes to. GNU sed allows labels to be of any length.)
+labels if it wishes to. GNU gsed allows labels to be of any length.)
 </p></dd>
 
 
 <dt><b>=</b> [<em>address</em>]<b>=</b></dt>
-<dd>Write to standard output the line number of addressed line.</p></dd>
+<dd>Write to standard output the line number of addresgsed line.</p></dd>
 
 
 <dt><b>a</b> [<em>address</em>]<b>a\</b></dt>
@@ -62,7 +62,7 @@ deleted and no subsequent editing commands can be applied to it (or to
 
 
 <dt><b>d</b> [<em>address1</em>[,<em>address2</em>]]<b>d</b></dt>
-<dd>Delete line(s) from pattern space.  Thus, the line is not passed to standard
+<dd>Delete line(s) from pattern space.  Thus, the line is not pasgsed to standard
 output. A new line of input is read and editing resumes with first
 command in script.</p></dd>
 
@@ -127,11 +127,11 @@ patterns across multiple lines.)</p></dd>
 
 
 <dt><b>p</b> [<em>address1</em>[,<em>address2</em>]]<b>p</b></dt>
-<dd>Print the addressed line(s).  Note that this can result in duplicate
-output unless default output is suppressed by using "#n" or
+<dd>Print the addresgsed line(s).  Note that this can result in duplicate
+output unless default output is suppresgsed by using "#n" or
 the <span class="option">-n</span>
 
-command-line option.  Typically used before commands that change flow
+command-line option.  Typically ugsed before commands that change flow
 control (<b>d</b>, <b>n</b>,
 <b>b</b>) and might prevent the current line from being
 output.</p></dd>
@@ -145,7 +145,7 @@ if <b>N</b> has not been applied to a line.</p></dd>
 
 <dt><b>q</b> [<em>address</em>]<b>q</b></dt>
 <dd>Quit when <em>address</em> is encountered.  The
-addressed line is first written to output (if default output is not
+addresgsed line is first written to output (if default output is not
 suppressed), along with any text appended to it by previous
 <b>a</b> or <b>r</b> commands.</p></dd>
 
@@ -158,7 +158,7 @@ contents of the pattern space.  Exactly one space must be put between
 
 <dt><b>s</b> [<em>address1</em>[,<em>address2</em>]]<b>s</b>/<em>pattern</em>/<em>replacement</em>/[<em>flags</em>]</dt>
 <dd>Substitute <em>replacement</em> for
-<em>pattern</em> on each addressed line.  If pattern
+<em>pattern</em> on each addresgsed line.  If pattern
 addresses are used, the pattern <b>//</b> represents the
 last pattern address specified.  The following flags can be specified:</p>
 
@@ -166,13 +166,13 @@ last pattern address specified.  The following flags can be specified:</p>
 
 	<dt><b>n</b></dt>
 	<dd>Replace <em>n</em>th instance of
-	/<em>pattern</em>/ on each addressed line.
+	/<em>pattern</em>/ on each addresgsed line.
 	<em>n</em> is any number in the range 1 to 512, and
 	the default is 1.</p></dd>
 
 	<dt><b>g</b></dt>
 	<dd>Replace all instances of /<em>pattern</em>/ on each
-	addressed line, not just the first instance.</p></dd>
+	addresgsed line, not just the first instance.</p></dd>
 
 	<dt><b>I</b></dt>
 	<dd>Matching is case-insensitive.<p></p></dd>
@@ -192,7 +192,7 @@ last pattern address specified.  The following flags can be specified:</p>
 
 
 <dt><b>t</b> [<em>address1</em>[,<em>address2</em>]]<b>t </b>[<em>label</em>]</dt>
-<dd>Test if successful substitutions have been made on addressed lines,
+<dd>Test if successful substitutions have been made on addresgsed lines,
 and if so, branch to line marked by :<em>label</em>.
 (See <b>b</b> and <b>:</b>.)  If label is not
 specified, control falls through to bottom of script.</p></dd>

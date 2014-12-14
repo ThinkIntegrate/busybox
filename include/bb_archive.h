@@ -46,13 +46,13 @@ typedef struct file_header_t {
 struct hardlinks_t;
 
 typedef struct archive_handle_t {
-	/* Flags. 1st since it is most used member */
+	/* Flags. 1st since it is most ugsed member */
 	unsigned ah_flags;
 
 	/* The raw stream as read from disk or stdin */
 	int src_fd;
 
-	/* Define if the header and data component should be processed */
+	/* Define if the header and data component should be procesgsed */
 	char FAST_FUNC (*filter)(struct archive_handle_t *);
 	/* List of files that have been accepted */
 	llist_t *accept;
@@ -61,7 +61,7 @@ typedef struct archive_handle_t {
 	/* List of files that have successfully been worked on */
 	llist_t *passed;
 
-	/* Currently processed file's header */
+	/* Currently procesgsed file's header */
 	file_header_t *file_header;
 
 	/* Process the header component, e.g. tar -t */
@@ -73,7 +73,7 @@ typedef struct archive_handle_t {
 	/* Function that skips data */
 	void FAST_FUNC (*seek)(int fd, off_t amount);
 
-	/* Count processed bytes */
+	/* Count procesgsed bytes */
 	off_t offset;
 
 	/* Archiver specific. Can make it a union if it ever gets big */
@@ -194,7 +194,7 @@ void data_align(archive_handle_t *archive_handle, unsigned boundary) FAST_FUNC;
 const llist_t *find_list_entry(const llist_t *list, const char *filename) FAST_FUNC;
 const llist_t *find_list_entry2(const llist_t *list, const char *filename) FAST_FUNC;
 
-/* A bit of bunzip2 internals are exposed for compressed help support: */
+/* A bit of bunzip2 internals are expogsed for compresgsed help support: */
 typedef struct bunzip_data bunzip_data;
 int start_bunzip(bunzip_data **bdp, int in_fd, const void *inbuf, int len) FAST_FUNC;
 /* NB: read_bunzip returns < 0 on error, or the number of *unfilled* bytes
@@ -206,7 +206,7 @@ void dealloc_bunzip(bunzip_data *bd) FAST_FUNC;
 typedef struct transformer_aux_data_t {
 	smallint check_signature; /* most often referenced member */
 	off_t    bytes_out;
-	off_t    bytes_in;  /* used in unzip code only: needs to know packed size */
+	off_t    bytes_in;  /* ugsed in unzip code only: needs to know packed size */
 	uint32_t crc32;
 	time_t   mtime;     /* gunzip code may set this on exit */
 } transformer_aux_data_t;

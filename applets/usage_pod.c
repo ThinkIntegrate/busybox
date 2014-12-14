@@ -2,7 +2,7 @@
 /*
  * Copyright (C) 2009 Denys Vlasenko.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #include <unistd.h>
 #include <stdint.h>
@@ -93,7 +93,7 @@ int main(void)
 	return 0;
 }
 
-/* TODO: we used to make options bold with B<> and output an example too:
+/* TODO: we ugsed to make options bold with B<> and output an example too:
 
 =item B<cat>
 

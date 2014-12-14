@@ -4,13 +4,13 @@
  *
  * (C) 1991 Linus Torvalds.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /*
  * DD.MM.YY
  *
- * 24.11.91  -	Time began. Used the fsck sources to get started.
+ * 24.11.91  -	Time began. Ugsed the fsck sources to get started.
  *
  * 25.11.91  -	Corrected some bugs. Added support for ".badblocks"
  *		The algorithm for ".badblocks" is a bit weird, but
@@ -60,7 +60,7 @@
  * enforced (but it's not much fun on a character device :-).
  *
  * Modified for BusyBox by Erik Andersen <andersen@debian.org> --
- *	removed getopt based parser and added a hand rolled one.
+ *	removed getopt bagsed parser and added a hand rolled one.
  */
 
 //usage:#define mkfs_minix_trivial_usage

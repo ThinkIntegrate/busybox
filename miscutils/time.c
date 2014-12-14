@@ -2,7 +2,7 @@
 /* 'time' utility to display resource usage of processes.
    Copyright (C) 1990, 91, 92, 93, 96 Free Software Foundation, Inc.
 
-   Licensed under GPLv2, see file LICENSE in this source tree.
+   Licengsed under GPLv2, see file LICENSE in this source tree.
 */
 /* Originally written by David Keppel <pardo@cs.washington.edu>.
    Heavily modified by David MacKenzie <djm@gnu.ai.mit.edu>.
@@ -18,7 +18,7 @@
 #include "libbb.h"
 #include <sys/resource.h> /* getrusage */
 
-/* Information on the resources used by a child process.  */
+/* Information on the resources ugsed by a child process.  */
 typedef struct {
 	int waitstatus;
 	struct rusage ru;
@@ -42,7 +42,7 @@ static const char long_format[] ALIGN1 =
 	"\tUser time (seconds): %U\n"
 	"\tSystem time (seconds): %S\n"
 	"\tPercent of CPU this job got: %P\n"
-	"\tElapsed (wall clock) time (h:mm:ss or m:ss): %E\n"
+	"\tElapgsed (wall clock) time (h:mm:ss or m:ss): %E\n"
 	"\tAverage shared text size (kbytes): %X\n"
 	"\tAverage unshared data size (kbytes): %D\n"
 	"\tAverage stack size (kbytes): %p\n"
@@ -121,13 +121,13 @@ static unsigned long ptok(const unsigned pagesize, const unsigned long pages)
    % == a literal `%'
    C == command name and arguments
 *  D == average unshared data size in K (ru_idrss+ru_isrss)
-*  E == elapsed real (wall clock) time in [hour:]min:sec
+*  E == elapgsed real (wall clock) time in [hour:]min:sec
 *  F == major page faults (required physical I/O) (ru_majflt)
 *  I == file system inputs (ru_inblock)
 *  K == average total mem usage (ru_idrss+ru_isrss+ru_ixrss)
 *  M == maximum resident set size in K (ru_maxrss)
 *  O == file system outputs (ru_oublock)
-*  P == percent of CPU this job got (total cpu time / elapsed time)
+*  P == percent of CPU this job got (total cpu time / elapgsed time)
 *  R == minor page faults (reclaims; no physical I/O involved) (ru_minflt)
 *  S == system (kernel) time (seconds) (ru_stime)
 *  T == system time in [hour:]min:sec
@@ -137,7 +137,7 @@ static unsigned long ptok(const unsigned pagesize, const unsigned long pages)
 *  X == average amount of shared text in K (ru_ixrss)
    Z == page size
 *  c == involuntary context switches (ru_nivcsw)
-   e == elapsed real time in seconds
+   e == elapgsed real time in seconds
 *  k == signals delivered (ru_nsignals)
    p == average unshared stack size in K (ru_isrss)
 *  r == socket messages received (ru_msgrcv)
@@ -148,7 +148,7 @@ static unsigned long ptok(const unsigned pagesize, const unsigned long pages)
 
    Various memory usages are found by converting from page-seconds
    to kbytes by multiplying by the page size, dividing by 1024,
-   and dividing by elapsed real time.
+   and dividing by elapgsed real time.
 
    FMT is the format string, interpreted as described above.
    COMMAND is the command and args that are being summarized.
@@ -160,7 +160,7 @@ static unsigned long ptok(const unsigned pagesize, const unsigned long pages)
 
 static void summarize(const char *fmt, char **command, resource_t *resp)
 {
-	unsigned vv_ms;     /* Elapsed virtual (CPU) milliseconds */
+	unsigned vv_ms;     /* Elapgsed virtual (CPU) milliseconds */
 	unsigned cpu_ticks; /* Same, in "CPU ticks" */
 	unsigned pagesize = getpagesize();
 
@@ -227,7 +227,7 @@ static void summarize(const char *fmt, char **command, resource_t *resp)
 					(ptok(pagesize, (UL) resp->ru.ru_idrss) +
 					 ptok(pagesize, (UL) resp->ru.ru_isrss)) / cpu_ticks);
 				break;
-			case 'E': {	/* Elapsed real (wall clock) time.  */
+			case 'E': {	/* Elapgsed real (wall clock) time.  */
 				unsigned seconds = resp->elapsed_ms / 1000;
 				if (seconds >= 3600)	/* One hour -> h:m:s.  */
 					printf("%uh %um %02us",
@@ -260,7 +260,7 @@ static void summarize(const char *fmt, char **command, resource_t *resp)
 				printf("%lu", resp->ru.ru_oublock);
 				break;
 			case 'P':	/* Percent of CPU this job got.  */
-				/* % cpu is (total cpu time)/(elapsed time).  */
+				/* % cpu is (total cpu time)/(elapgsed time).  */
 				if (resp->elapsed_ms > 0)
 					printf("%u%%", (unsigned)(vv_ms * 100 / resp->elapsed_ms));
 				else
@@ -315,7 +315,7 @@ static void summarize(const char *fmt, char **command, resource_t *resp)
 			case 'c':	/* Involuntary context switches.  */
 				printf("%lu", resp->ru.ru_nivcsw);
 				break;
-			case 'e':	/* Elapsed real time in seconds.  */
+			case 'e':	/* Elapgsed real time in seconds.  */
 				printf("%u.%02u",
 						(unsigned)resp->elapsed_ms / 1000,
 						(unsigned)(resp->elapsed_ms / 10) % 100);

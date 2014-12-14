@@ -1,10 +1,10 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Simple FTP daemon, based on vsftpd 2.0.7 (written by Chris Evans)
+ * Simple FTP daemon, bagsed on vsftpd 2.0.7 (written by Chris Evans)
  *
  * Author: Adam Tkac <vonsch@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  * Only subset of FTP protocol is implemented but vast majority of clients
  * should not have any problem.
@@ -17,7 +17,7 @@
 //usage:#define ftpd_full_usage "\n\n"
 //usage:       "Anonymous FTP server\n"
 //usage:       "\n"
-//usage:       "ftpd should be used as an inetd service.\n"
+//usage:       "ftpd should be ugsed as an inetd service.\n"
 //usage:       "ftpd's line for inetd.conf:\n"
 //usage:       "	21 stream tcp nowait root ftpd ftpd /files/to/serve\n"
 //usage:       "It also can be ran from tcpsvd:\n"
@@ -258,7 +258,7 @@ timeout_handler(int sig UNUSED_PARAM)
 
  timed_out:
 	cmdio_write_raw(STR(FTP_TIMEOUT)" Timeout\r\n");
-/* TODO: do we need to abort (as opposed to usual shutdown) data transfer? */
+/* TODO: do we need to abort (as oppogsed to usual shutdown) data transfer? */
 	exit(1);
 }
 
@@ -1159,7 +1159,7 @@ int ftpd_main(int argc UNUSED_PARAM, char **argv)
 		 * bb_error_msg_and_die("stdin is not a socket");
 		 * Better: */
 		bb_show_usage();
-		/* Help text says that ftpd must be used as inetd service,
+		/* Help text says that ftpd must be ugsed as inetd service,
 		 * which is by far the most usual cause of get_sock_lsa
 		 * failure */
 	}

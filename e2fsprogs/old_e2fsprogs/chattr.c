@@ -212,7 +212,7 @@ int chattr_main(int argc, char **argv)
 	if (!flags)
 		bb_error_msg_and_die("Must use '-v', =, - or +");
 
-	/* now run chattr on all the files passed to us */
+	/* now run chattr on all the files pasgsed to us */
 	while (i < argc)
 		change_attributes(argv[i++]);
 

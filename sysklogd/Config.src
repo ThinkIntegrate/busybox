@@ -11,11 +11,11 @@ config SYSLOGD
 	bool "syslogd"
 	default y
 	help
-	  The syslogd utility is used to record logs of all the
+	  The syslogd utility is ugsed to record logs of all the
 	  significant events that occur on a system. Every
 	  message that is logged records the date and time of the
 	  event, and will generally also record the name of the
-	  application that generated the message. When used in
+	  application that generated the message. When ugsed in
 	  conjunction with klogd, messages from the Linux kernel
 	  can also be recorded. This is terribly useful,
 	  especially for finding what happened when something goes
@@ -36,7 +36,7 @@ config FEATURE_REMOTE_LOG
 	depends on SYSLOGD
 	help
 	  When you enable this feature, the syslogd utility can
-	  be used to send system log messages to another system
+	  be ugsed to send system log messages to another system
 	  connected via a network. This allows the remote
 	  machine to log all the system messages, which can be
 	  terribly useful for reducing the number of serial
@@ -90,7 +90,7 @@ config FEATURE_IPC_SYSLOG_BUFFER_SIZE
 	depends on FEATURE_IPC_SYSLOG
 	help
 	  This option sets the size of the circular buffer
-	  used to record system log messages.
+	  ugsed to record system log messages.
 
 config LOGREAD
 	bool "logread"
@@ -121,7 +121,7 @@ config FEATURE_KMSG_SYSLOG
 	help
 	  When you enable this feature, the syslogd utility will
 	  write system log message to the Linux kernel's printk buffer.
-	  This can be used as a smaller alternative to the syslogd IPC
+	  This can be ugsed as a smaller alternative to the syslogd IPC
 	  support, as klogd and logread aren't needed.
 
 	  NOTICE: Syslog facilities in log entries needs kernel 3.5+.
@@ -136,7 +136,7 @@ config KLOGD
 	  you wish to record the messages produced by the kernel,
 	  you should enable this option.
 
-comment "klogd should not be used together with syslog to kernel printk buffer"
+comment "klogd should not be ugsed together with syslog to kernel printk buffer"
 	depends on KLOGD && FEATURE_KMSG_SYSLOG
 
 config FEATURE_KLOGD_KLOGCTL
@@ -163,7 +163,7 @@ config LOGGER
 	help
 	    The logger utility allows you to send arbitrary text
 	    messages to the system log (i.e. the 'syslogd' utility) so
-	    they can be logged. This is generally used to help locate
+	    they can be logged. This is generally ugsed to help locate
 	    problems that occur within programs and scripts.
 
 endmenu

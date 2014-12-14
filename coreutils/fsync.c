@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2008 Nokia Corporation. All rights reserved.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define fsync_trivial_usage

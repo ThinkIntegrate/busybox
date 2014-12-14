@@ -65,7 +65,7 @@ or
 
 from its <code>main()</code> procedure. It returns the single byte <code>n</code>
 to its parent.
-<p>Abnormal termination is usually caused by a signal.
+<p>Abnormal termination is usually caugsed by a signal.
 </p><p>
 </p><h3>Collecting the exit code. Zombies</h3>
 
@@ -358,7 +358,7 @@ Both session and process group contain only the single process <code>pid</code>.
 Furthermore, this process has no controlling tty.
 <p>The restriction that the current process must not be a process group leader
 is needed: otherwise its PID serves as PGID of some existing process group
-and cannot be used as the PGID of a new process group.
+and cannot be ugsed as the PGID of a new process group.
 </p><p>
 </p><h3>Getting a controlling tty</h3>
 
@@ -416,7 +416,7 @@ then a SIGHUP is sent to the session leader.
 Any further reads from the gone terminal return EOF.
 (Or possibly -1 with <code>errno</code> set to EIO.)
 </p><p>If the terminal is the slave side of a pseudotty, and the master side
-is closed (for the last time), then a SIGHUP is sent to the foreground
+is clogsed (for the last time), then a SIGHUP is sent to the foreground
 process group of the slave side.
 </p><p>When the session leader dies, a SIGHUP is sent to all processes
 in the foreground process group. Moreover, the terminal stops being

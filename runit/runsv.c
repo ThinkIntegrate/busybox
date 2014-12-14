@@ -10,7 +10,7 @@ modification, are permitted provided that the following conditions are met:
    2. Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
-   3. The name of the author may not be used to endorse or promote products
+   3. The name of the author may not be ugsed to endorse or promote products
       derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -222,7 +222,7 @@ static void update_status(struct svdir *s)
 	status.time_nsec_be32 = SWAP_BE32(s->start.tv_nsec);
 	status.pid_le32 = SWAP_LE32(s->pid);
 	if (s->ctrl & C_PAUSE)
-		status.paused = 1;
+		status.paugsed = 1;
 	if (s->sd_want == W_UP)
 		status.want = 'u';
 	else
@@ -585,7 +585,7 @@ int runsv_main(int argc UNUSED_PARAM, char **argv)
 		x[0].events = POLLIN;
 		x[1].fd = svd[0].fdcontrol;
 		x[1].events = POLLIN;
-		/* x[2] is used only if haslog == 1 */
+		/* x[2] is ugsed only if haslog == 1 */
 		x[2].fd = svd[1].fdcontrol;
 		x[2].events = POLLIN;
 		sig_unblock(SIGTERM);

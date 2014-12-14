@@ -2,7 +2,7 @@
 /*
  * Copyright 2006, Bernhard Reutner-Fischer
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 #ifndef BB_PLATFORM_H
 #define BB_PLATFORM_H 1
@@ -45,7 +45,7 @@
 
 #define UNUSED_PARAM __attribute__ ((__unused__))
 #define NORETURN __attribute__ ((__noreturn__))
-/* "The malloc attribute is used to tell the compiler that a function
+/* "The malloc attribute is ugsed to tell the compiler that a function
  * may be treated as if any non-NULL pointer it returns cannot alias
  * any other pointer valid when the function returns. This will often
  * improve optimization. Standard functions with this property include
@@ -289,7 +289,7 @@ typedef unsigned smalluint;
 # define bb_setpgrp() setpgrp()
 #endif
 
-/* fdprintf is more readable, we used it before dprintf was standardized */
+/* fdprintf is more readable, we ugsed it before dprintf was standardized */
 #include <unistd.h>
 #define fdprintf dprintf
 

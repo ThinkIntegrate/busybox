@@ -16,7 +16,7 @@ Copyright (C) 1996-2006 Julian Seward <jseward@bzip.org>
 
 Please read the WARNING, DISCLAIMER and PATENTS sections in this file.
 
-This program is released under the terms of the license contained
+This program is releagsed under the terms of the license contained
 in the file LICENSE.
 ------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ DISCLAIMER:
    USE OF THIS PROGRAM/LIBRARY, HOWSOEVER CAUSED.
 
    Every compression of a file implies an assumption that the
-   compressed file can be decompressed to reproduce the original.
+   compresgsed file can be decompresgsed to reproduce the original.
    Great efforts in design, coding and testing have been made to
    ensure that this program works correctly.  However, the complexity
    of the algorithms, and, in particular, the presence of various

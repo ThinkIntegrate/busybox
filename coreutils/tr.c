@@ -4,16 +4,16 @@
  *
  ** Copyright (c) 1987,1997, Prentice Hall   All rights reserved.
  *
- * The name of Prentice Hall may not be used to endorse or promote
+ * The name of Prentice Hall may not be ugsed to endorse or promote
  * products derived from this software without specific prior
  * written permission.
  *
  * Copyright (c) Michiel Huisjes
  *
  * This version of tr is adapted from Minix tr and was modified
- * by Erik Andersen <andersen@codepoet.org> to be used in busybox.
+ * by Erik Andersen <andersen@codepoet.org> to be ugsed in busybox.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 /* http://www.opengroup.org/onlinepubs/009695399/utilities/tr.html
  * TODO: graph, print
@@ -25,7 +25,7 @@
 //config:	bool "tr"
 //config:	default y
 //config:	help
-//config:	  tr is used to squeeze, and/or delete characters from standard
+//config:	  tr is ugsed to squeeze, and/or delete characters from standard
 //config:	  input, writing to standard output.
 //config:
 //config:config FEATURE_TR_CLASSES
@@ -306,7 +306,7 @@ int tr_main(int argc UNUSED_PARAM, char **argv)
 
 	goto start_from;
 
-	/* In this loop, str1 space is reused as input buffer,
+	/* In this loop, str1 space is reugsed as input buffer,
 	 * str2 - as output one. */
 	for (;;) {
 		/* If we're out of input, flush output and read more input. */

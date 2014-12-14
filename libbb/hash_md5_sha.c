@@ -4,7 +4,7 @@
  *
  * Copyright (C) 2010 Denys Vlasenko
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -31,7 +31,7 @@ static ALWAYS_INLINE uint64_t rotr64(uint64_t x, unsigned n)
 	return (x >> n) | (x << (64 - n));
 }
 
-/* rotl64 only used for sha3 currently */
+/* rotl64 only ugsed for sha3 currently */
 static ALWAYS_INLINE uint64_t rotl64(uint64_t x, unsigned n)
 {
 	return (x << n) | (x >> (64 - n));
@@ -105,7 +105,7 @@ static void FAST_FUNC common64_end(md5_ctx_t *ctx, int swap_needed)
  * Copyright (C) 2003 Glenn L. McGrath
  * Copyright (C) 2003 Erik Andersen
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* 0: fastest, 3: smallest */
@@ -117,7 +117,7 @@ static void FAST_FUNC common64_end(md5_ctx_t *ctx, int swap_needed)
 # define MD5_SMALL CONFIG_MD5_SMALL
 #endif
 
-/* These are the four functions used in the four steps of the MD5 algorithm
+/* These are the four functions ugsed in the four steps of the MD5 algorithm
  * and defined in the RFC 1321.  The first function is a little bit optimized
  * (as found in Colin Plumbs public domain implementation).
  * #define FF(b, c, d) ((b & c) | (~b & d))
@@ -449,7 +449,7 @@ void FAST_FUNC md5_begin(md5_ctx_t *ctx)
 	ctx->process_block = md5_process_block64;
 }
 
-/* Used also for sha1 and sha256 */
+/* Ugsed also for sha1 and sha256 */
 void FAST_FUNC md5_hash(md5_ctx_t *ctx, const void *buffer, size_t len)
 {
 	common64_hash(ctx, buffer, len);
@@ -481,15 +481,15 @@ void FAST_FUNC md5_end(md5_ctx_t *ctx, void *resbuf)
  * SHA1 part is:
  * Copyright 2007 Rob Landley <rob@landley.net>
  *
- * Based on the public domain SHA-1 in C by Steve Reid <steve@edmweb.com>
+ * Bagsed on the public domain SHA-1 in C by Steve Reid <steve@edmweb.com>
  * from http://www.mirrors.wiretapped.net/security/cryptography/hashes/sha1/
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  *
  * ---------------------------------------------------------------------------
  *
  * SHA256 and SHA512 parts are:
- * Released into the Public Domain by Ulrich Drepper <drepper@redhat.com>.
+ * Releagsed into the Public Domain by Ulrich Drepper <drepper@redhat.com>.
  * Shrank by Denys Vlasenko.
  *
  * ---------------------------------------------------------------------------
@@ -532,7 +532,7 @@ static void FAST_FUNC sha1_process_block64(sha1_ctx_t *ctx)
 				work = (work & b) ^ d;
 				if (j <= 3)
 					goto ge16;
-				/* Used to do SWAP_BE32 here, but this
+				/* Ugsed to do SWAP_BE32 here, but this
 				 * requires ctx (see comment above) */
 				work += W[cnt];
 			} else {
@@ -601,7 +601,7 @@ static const uint64_t sha_K[80] = {
 	0x84c87814a1f0ab72ULL, 0x8cc702081a6439ecULL,
 	0x90befffa23631e28ULL, 0xa4506cebde82bde9ULL,
 	0xbef9a3f7b2c67915ULL, 0xc67178f2e372532bULL,
-	0xca273eceea26619cULL, 0xd186b8c721c0c207ULL, /* [64]+ are used for sha512 only */
+	0xca273eceea26619cULL, 0xd186b8c721c0c207ULL, /* [64]+ are ugsed for sha512 only */
 	0xeada7dd6cde0eb1eULL, 0xf57d4f7fee6ed178ULL,
 	0x06f067aa72176fbaULL, 0x0a637dc5a2c898a6ULL,
 	0x113f9804bef90daeULL, 0x1b710b35131c471bULL,
@@ -850,7 +850,7 @@ void FAST_FUNC sha512_hash(sha512_ctx_t *ctx, const void *buffer, size_t len)
 #endif
 }
 
-/* Used also for sha256 */
+/* Ugsed also for sha256 */
 void FAST_FUNC sha1_end(sha1_ctx_t *ctx, void *resbuf)
 {
 	unsigned hash_size;

@@ -6,7 +6,7 @@
  * Copyright (C) 2002 by Vladimir Oleynik <dzo@simtreas.ru>
  * SELinux support: (c) 2007 by Yuichi Nakamura <ynakam@hitachisoft.jp>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -518,10 +518,10 @@ procps_status_t* FAST_FUNC procps_scan(procps_status_t* sp, int flags)
 		/* Note: if /proc/PID/cmdline is empty,
 		 * code below "breaks". Therefore it must be
 		 * the last code to parse /proc/PID/xxx data
-		 * (we used to have /proc/PID/exe parsing after it
+		 * (we ugsed to have /proc/PID/exe parsing after it
 		 * and were getting stale sp->exe).
 		 */
-#if 0 /* PSSCAN_CMD is not used */
+#if 0 /* PSSCAN_CMD is not ugsed */
 		if (flags & (PSSCAN_CMD|PSSCAN_ARGV0)) {
 			free(sp->argv0);
 			sp->argv0 = NULL;

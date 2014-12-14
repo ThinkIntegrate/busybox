@@ -3,7 +3,7 @@
  *
  * Copyright (C) 2012 S-G Bergh <sgb@systemasis.org>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //kbuild:lib-$(CONFIG_FEATURE_VOLUMEID_F2FS) += f2fs.o

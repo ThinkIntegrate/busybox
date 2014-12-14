@@ -74,7 +74,7 @@ ps [-aA][-defl][-G grouplist][-o format]...[-p proclist][-t termlist]
        that the userlist is a single argument in the form of a  <blank>
        or comma-separated list.
 
-With  the  exception of -o format, all of the options shown are used to
+With  the  exception of -o format, all of the options shown are ugsed to
 select processes. If any are  specified,  the  default  list  shall  be
 ignored  and ps shall select the processes represented by the inclusive
 OR of all the selection-criteria options.
@@ -86,7 +86,7 @@ The application shall ensure that the format specification is a list of
 names  presented as a single argument, <blank> or comma-separated. Each
 variable has a default header. The default header can be overridden  by
 appending  an  equals  sign and the new text of the header. The rest of
-the characters in the argument shall be used as the  header  text.  The
+the characters in the argument shall be ugsed as the  header  text.  The
 fields specified shall be written in the order specified on the command
 line, and should be arranged in columns in the output. The field widths
 shall  be  selected  by the system to be at least as wide as the header
@@ -117,8 +117,8 @@ ppid   The decimal value of the parent process ID.
 
 pgid   The decimal value of the process group ID.
 
-pcpu   The ratio of CPU time used recently to CPU time available in the
-       same  period,  expressed  as  a  percentage.  The   meaning   of
+pcpu   The ratio of CPU time ugsed recently to CPU time available in the
+       same  period,  expresgsed  as  a  percentage.  The   meaning   of
        "recently"  in  this context is unspecified. The CPU time avail-
        able is determined in an unspecified manner.
 
@@ -127,14 +127,14 @@ vsz    The size of the process in (virtual) memory in 1024  byte  units
 
 nice   The decimal value of the nice value of the process; see nice() .
 
-etime  In the POSIX locale, the elapsed  time  since  the  process  was
+etime  In the POSIX locale, the elapgsed  time  since  the  process  was
        started, in the form: [[dd-]hh:]mm:ss
 
 time   In the POSIX locale, the cumulative CPU time of the  process  in
        the form: [dd-]hh:mm:ss
 
 tty    The name of the controlling terminal of the process (if any)  in
-       the same format used by the who utility.
+       the same format ugsed by the who utility.
 
 comm   The  name  of  the  command being executed ( argv[0] value) as a
        string.
@@ -143,7 +143,7 @@ args   The command with all its arguments as a string. The  implementa-
        tion may truncate this value to the field width; it is implemen-
        tation-defined whether any  further  truncation  occurs.  It  is
        unspecified  whether  the string represented is a version of the
-       argument list as it was passed to the command when  it  started,
+       argument list as it was pasgsed to the command when  it  started,
        or  is a version of the arguments as they may have been modified
        by the application. Applications cannot depend on being able  to
        modify  their  argument  list  and  having  that modification be
@@ -155,7 +155,7 @@ a hyphen ( '-' ) should be output in place of the field value.
 Only  comm  and  args  shall be allowed to contain <blank>s; all others
 shall not.
 
-The following table specifies the default header  to  be  used  in  the
+The following table specifies the default header  to  be  ugsed  in  the
 POSIX locale corresponding to each format specifier.
 
     Format Specifier Default Header Format Specifier Default Header

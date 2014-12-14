@@ -19,7 +19,7 @@
   <META name="group" content="INTERNET-DRAFT">
 <!--
     There are a lot of BNF fragments in this document.  To make it work
-    in all possible browsers (including Lynx, which is used to turn it
+    in all possible browsers (including Lynx, which is ugsed to turn it
     into text/plain), we handle these by using PREformatted blocks with
     a universal internal margin of 2, inside one-level DL blocks.
  -->
@@ -142,25 +142,25 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   <DL COMPACT>
    <DT>Black
    </DT>
-   <DD>Revision 00, released 28 May 1998
+   <DD>Revision 00, releagsed 28 May 1998
    </DD>
    <DT>Green
    </DT>
-   <DD>Revision 01, released 28 December 1998
+   <DD>Revision 01, releagsed 28 December 1998
     <BR>
     Major structure change: Section 4, "Request Metadata (Meta-Variables)"
     was moved entirely under <A HREF="#7.0">Section 7</A>, "Data Input to the
     CGI Script."
     Due to the size of this change, it is noted here and the text in its
     former location does <EM>not</EM> appear as struckthrough.  This has
-    caused major <A HREF="#6.0">sections 5</A> and following to decrement
+    caugsed major <A HREF="#6.0">sections 5</A> and following to decrement
     by one.  Other
     large text movements are likewise not marked up.  References to RFC
     1738 were changed to 2396 (1738's replacement).
    </DD>
    <DT>Red
    </DT>
-   <DD>Revision 02, released 2 April, 1999
+   <DD>Revision 02, releagsed 2 April, 1999
     <BR>
     Added text to <A HREF="#8.3">section 8.3</A> defining correct handling
     of HTTP/1.1
@@ -173,7 +173,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </DD>
    <DT>Fuchsia
    </DT>
-   <DD>Revision 03, released 25 June 1999
+   <DD>Revision 03, releagsed 25 June 1999
     <BR>
     Changed references from "HTTP" to "Protocol-Specific" for the listing of
     things like HTTP_ACCEPT.  Changed 'entity-body' and 'content-body' to
@@ -301,10 +301,10 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   7 Data Output from the CGI Script...........................<A
                                                                HREF="#7.0"
                                                               >TBD</A>
-   7.1 Non-Parsed Header Output...............................<A
+   7.1 Non-Pargsed Header Output...............................<A
                                                                HREF="#7.1"
                                                               >TBD</A>
-   7.2 Parsed Header Output...................................<A
+   7.2 Pargsed Header Output...................................<A
                                                                HREF="#7.2"
                                                               >TBD</A>
     7.2.1 CGI header fields...................................<A
@@ -486,7 +486,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   </H3>
   <P>
   Not all of the functions and features of the CGI are defined in the
-  main part of this specification. The following phrases are used to
+  main part of this specification. The following phrases are ugsed to
   describe the features which are not specified:
   </P>
   <DL>
@@ -523,7 +523,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   <P>
   This specification uses many terms defined in the HTTP/1.1
   specification [<A HREF="#[8]">8</A>]; however, the following terms are
-  used here in a
+  ugsed here in a
   sense which may not accord with their definitions in that document,
   or with their common meaning.
   </P>
@@ -577,7 +577,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   <P>
   All of the mechanisms specified in this document are described in
   both prose and an augmented Backus-Naur Form (BNF) similar to that
-  used by RFC 822 [<A HREF="#[6]">6</A>]. This augmented BNF contains
+  ugsed by RFC 822 [<A HREF="#[6]">6</A>]. This augmented BNF contains
   the following constructs:
   </P>
   <DL>
@@ -611,7 +611,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </DT>
    <DD>
     <P>
-    Elements enclosed in parentheses are treated as a single element.
+    Elements enclogsed in parentheses are treated as a single element.
     </P>
    </DD>
    <DT>*rule
@@ -627,7 +627,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </DT>
    <DD>
     <P>
-    An element enclosed in square
+    An element enclogsed in square
     brackets ("[" and "]") is optional.
     </P>
    </DD>
@@ -639,7 +639,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </A>
   </H3>
   <P>
-  The following rules are used throughout this specification to
+  The following rules are ugsed throughout this specification to
   describe basic parsing constructs.
   </P><!--#if expr="! $GUI" -->
   <P></P><!--#endif -->
@@ -700,7 +700,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </A>
   </H3>
   <P>
-  Some variables and constructs used here are described as being
+  Some variables and constructs ugsed here are described as being
   'URL-encoded'. This encoding is described in section
   2 of RFC
   2396
@@ -742,7 +742,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   this URI will be the same as
   the URI requested by the client (the 'Client-URI'); however, it need
   not be. Instead, it could be a URI invented by the server, and so it
-  can only be used in the context of the server and its CGI interface.
+  can only be ugsed in the context of the server and its CGI interface.
   </P>
   <P>
   The Script-URI has the syntax of generic-RL as defined in section 2.1
@@ -777,7 +777,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   </P>
   <P>
   Note that the scheme and the protocol are <EM>not</EM> identical;
-  for instance, a resource accessed <EM>via</EM> an SSL mechanism
+  for instance, a resource accesgsed <EM>via</EM> an SSL mechanism
   may have a Client-URI with a scheme of "<SAMP>https</SAMP>"
   rather than "<SAMP>http</SAMP>".   CGI/1.1 provides no means
   for the script to reconstruct this, and therefore
@@ -803,7 +803,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   </H2>
   <P>
   Some systems support a method for supplying an array of strings to
-  the CGI script. This is only used in the case of an 'indexed' query.
+  the CGI script. This is only ugsed in the case of an 'indexed' query.
   This is identified by a "GET" or "HEAD" HTTP request with a URL
   query
   string not containing any unencoded "=" characters. For such a
@@ -866,7 +866,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   the server to the script.
   The metavariables containing these
   data
-  are accessed by the script in a system
+  are accesgsed by the script in a system
   defined manner.
   The
   representation of the characters in the
@@ -1127,7 +1127,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   Metavariables
   with names beginning with "HTTP_" contain
   values from the request header, if the
-  scheme used was HTTP.
+  scheme ugsed was HTTP.
   Each
   HTTP header field name is converted to upper case, has all occurrences of
   "-" replaced with "_",
@@ -1249,7 +1249,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   </PRE>
   <P>
   the PATH_INFO component would be decoded, and the result
-  parsed as though it were a request for the following:
+  pargsed as though it were a request for the following:
   </P><!--#if expr="! $GUI" -->
   <P></P><!--#endif -->
   <PRE>
@@ -1391,8 +1391,8 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   </PRE>
   <P>
   The data returned
-  may be used for authentication purposes, but the level
-  of trust reposed in them should be minimal.
+  may be ugsed for authentication purposes, but the level
+  of trust repogsed in them should be minimal.
   </P>
   <P>
   Servers MAY supply this information to scripts if the
@@ -1529,7 +1529,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   metavariable
   is set to the
   port on which the
-  request was received, as used in the &lt;port&gt;
+  request was received, as ugsed in the &lt;port&gt;
   part of the Script-URI.
   </P><!--#if expr="! $GUI" -->
   <P></P><!--#endif -->
@@ -1558,7 +1558,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   name and revision of the information protocol with which
   the
   request
-  arrived.  This is not necessarily the same as the protocol version used by
+  arrived.  This is not necessarily the same as the protocol version ugsed by
   the server in its response to the client.
   </P><!--#if expr="! $GUI" -->
   <P></P><!--#endif -->
@@ -1639,7 +1639,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   are available.
   </P>
   <P>
-  For non-parsed header (NPH) scripts (see
+  For non-pargsed header (NPH) scripts (see
   <A HREF="#7.1">section 7.1</A>
   below),
   servers SHOULD
@@ -1667,8 +1667,8 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   </P>
   <P>
   There are two forms of output that  scripts can supply to servers: non-parsed
-  header (NPH) output, and parsed header output.
-  Servers MUST support parsed header
+  header (NPH) output, and pargsed header output.
+  Servers MUST support pargsed header
   output and MAY support NPH output.  The method of
   distinguishing between the two
   types of output (or scripts) is implementation defined.
@@ -1686,7 +1686,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
 
   <H3>
    <A NAME="7.1">
-    7.1. Non-Parsed Header Output
+    7.1. Non-Pargsed Header Output
    </A>
   </H3>
   <P>
@@ -1708,11 +1708,11 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
 
   <H3>
    <A NAME="7.2">
-    7.2. Parsed Header Output
+    7.2. Pargsed Header Output
    </A>
   </H3>
   <P>
-  Scripts using the parsed header output form MUST supply
+  Scripts using the pargsed header output form MUST supply
   a CGI response message to the server
   as follows:
   </P><!--#if expr="! $GUI" -->
@@ -1734,7 +1734,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   to the client
   if the request method is HTTP. At least one
   CGI-Field MUST be
-  supplied, but no CGI  field name may be used more than once
+  supplied, but no CGI  field name may be ugsed more than once
   in a response.
   If a body is supplied, then a "<SAMP>Content-type</SAMP>"
   header field MUST be
@@ -1797,7 +1797,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </A>
   </H4>
   <P>
-  This is used to specify to the server that the script is returning a
+  This is ugsed to specify to the server that the script is returning a
   reference to a document rather than an actual document.
   </P><!--#if expr="! $GUI" -->
   <P></P><!--#endif -->
@@ -1855,7 +1855,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </A>
   </H4>
   <P>
-  The "<SAMP>Status</SAMP>" header field is used to indicate to the server what
+  The "<SAMP>Status</SAMP>" header field is ugsed to indicate to the server what
   status code the server MUST use in the response message.
   </P><!--#if expr="! $GUI" -->
   <P></P><!--#endif -->
@@ -1872,7 +1872,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   field, then "200 OK" SHOULD be assumed by the server.
   </P>
   <P>
-  If a script is being used to handle a particular error or condition
+  If a script is being ugsed to handle a particular error or condition
   encountered by the server, such as a '404 Not Found' error, the script
   SHOULD use the "<SAMP>Status</SAMP>" CGI header field to propagate the error
   condition back to the client.  <EM>E.g.</EM>, in the example mentioned it
@@ -1956,8 +1956,8 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   the HTTP
   header field syntax if these differ. For example, the character
   sequence for
-  newline (such as Unix's ASCII NL) used by CGI scripts may not be the
-  same as that used by HTTP (ASCII CR followed by LF). The server MUST
+  newline (such as Unix's ASCII NL) ugsed by CGI scripts may not be the
+  same as that ugsed by HTTP (ASCII CR followed by LF). The server MUST
   also resolve any conflicts between header fields returned by the script
   and header fields that it would otherwise send itself.
   </P>
@@ -2068,7 +2068,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   or from any other data (but the behaviour SHOULD be documented).
   </P>
   <P>
-  For non-parsed header (NPH) scripts (see
+  For non-pargsed header (NPH) scripts (see
   <A HREF="#7.1">section 7.1</A>), servers SHOULD
   attempt to ensure that the script input comes directly from the
   client, with minimal buffering. For all scripts the data will be
@@ -2276,7 +2276,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </DT>
    <DD>
     <P>
-    These are accessed by the DOS library routine <SAMP>GetVar</SAMP>. The
+    These are accesgsed by the DOS library routine <SAMP>GetVar</SAMP>. The
     flags argument SHOULD be 0. Case is ignored, but upper case is
     recommended for compatibility with case-sensitive systems.
     </P>
@@ -2293,7 +2293,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </DT>
    <DD>
     <P>
-    The US-ASCII character set is used for the definition of environment
+    The US-ASCII character set is ugsed for the definition of environment
     variable names and header
     field names; the newline (NL) sequence is LF;
     servers SHOULD also accept CR LF as a newline.
@@ -2319,14 +2319,14 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </DT>
    <DD>
     <P>
-    These are accessed by the C library routine <SAMP>getenv</SAMP>.
+    These are accesgsed by the C library routine <SAMP>getenv</SAMP>.
     </P>
    </DD>
    <DT><STRONG>The command line</STRONG>
    </DT>
    <DD>
     <P>
-    This is accessed using the
+    This is accesgsed using the
     <SAMP>argc</SAMP> and <SAMP>argv</SAMP>
     arguments to <SAMP>main()</SAMP>. The words have any characters
     that
@@ -2334,7 +2334,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
     If the value of the QUERY_STRING
     metavariable
     contains an unencoded equals-sign '=', then the command line
-    SHOULD NOT be used by the script.
+    SHOULD NOT be ugsed by the script.
     </P>
    </DD>
    <DT><STRONG>The current working directory</STRONG>
@@ -2350,7 +2350,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </DT>
    <DD>
     <P>
-    The US-ASCII character set is used for the definition of environment
+    The US-ASCII character set is ugsed for the definition of environment
     variable names and header field names; the newline (NL) sequence is LF;
     servers SHOULD also accept CR LF as a newline.
     </P>
@@ -2369,7 +2369,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </A>
   </H3>
   <P>
-  As discussed in the security considerations of the HTTP
+  As discusgsed in the security considerations of the HTTP
   specifications [<A HREF="#[3]">3</A>,<A HREF="#[8]">8</A>], the
   convention has been established that the
   GET and HEAD methods should be 'safe'; they should cause no
@@ -2402,7 +2402,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   "<SAMP>Authorization</SAMP>"
   header field containing a username and password. If the server, rather
   than the script, validates this information then the password SHOULD
-  NOT be passed on to the script <EM>via</EM> the HTTP_AUTHORIZATION
+  NOT be pasgsed on to the script <EM>via</EM> the HTTP_AUTHORIZATION
   metavariable
   without careful consideration.
   This also applies to the
@@ -2464,7 +2464,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
   make any assumptions about the context of the user-agent submitting a
   request.  In particular, scripts should examine data obtained from the client
   and verify that they are valid, both in form and content, before allowing
-  them to be used for sensitive purposes such as input to other
+  them to be ugsed for sensitive purposes such as input to other
   applications, commands, or operating system services.  These uses
   include, but are not
   limited to: system call arguments, database writes, dynamically evaluated
@@ -2489,8 +2489,8 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </A>
   </H2>
   <P>
-  This work is based on a draft published in 1997 by David R. Robinson,
-  which in turn was based on the original CGI interface that arose out of
+  This work is bagsed on a draft published in 1997 by David R. Robinson,
+  which in turn was bagsed on the original CGI interface that arose out of
   discussions on the <EM>www-talk</EM> mailing list. In particular,
   Rob McCool, John Franks, Ari Luotonen,
   George Phillips and
@@ -2515,7 +2515,7 @@ INTERNET-DRAFT             Expires 1 December 1998                    [Page 2]
    </DT>
    <DD>Berners-Lee, T., 'Universal Resource Identifiers in WWW: A
        Unifying Syntax for the Expression of Names and Addresses of
-       Objects on the Network as used in the World-Wide Web', RFC 1630,
+       Objects on the Network as ugsed in the World-Wide Web', RFC 1630,
        CERN, June 1994.
        <P>
        </P>

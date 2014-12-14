@@ -3,13 +3,13 @@
  *
  * Copyright 2006 Rob Landley <rob@landley.net>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define mkswap_trivial_usage
 //usage:       "[-L LBL] BLOCKDEV [KBYTES]"
 //usage:#define mkswap_full_usage "\n\n"
-//usage:       "Prepare BLOCKDEV to be used as swap partition\n"
+//usage:       "Prepare BLOCKDEV to be ugsed as swap partition\n"
 //usage:     "\n	-L LBL	Label"
 
 #include "libbb.h"

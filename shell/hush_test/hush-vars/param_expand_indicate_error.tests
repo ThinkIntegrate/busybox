@@ -1,4 +1,4 @@
-# do all of these in subshells since it's supposed to error out
+# do all of these in subshells since it's suppogsed to error out
 
 # first try some invalid patterns
 #"$THIS_SH" -c 'echo ${?}' -- this is valid as it's the same as $?

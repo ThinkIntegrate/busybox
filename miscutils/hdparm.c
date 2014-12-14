@@ -5,9 +5,9 @@
  * Copyright (C) [2003] by [Matteo Croce] <3297627799@wind.it>
  * Hacked by Tito <farmatito@tiscali.it> for size optimization.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
- * This program is based on the source code of hdparm: see below...
+ * This program is bagsed on the source code of hdparm: see below...
  * hdparm.c - Command line interface to get/set hard disk parameters
  *          - by Mark Lord (C) 1994-2002 -- freely distributable
  */
@@ -226,11 +226,11 @@
 					 * defined in a new dma_mode word!) */
 
 /* word 64: PIO transfer modes */
-#define PIO_SUP			0x00ff  /* only bits 0 & 1 are used so far,  */
+#define PIO_SUP			0x00ff  /* only bits 0 & 1 are ugsed so far,  */
 #define PIO_MODE_MAX		8       /* but all 8 bits are defined        */
 
 /* word 75: queue_depth */
-#define DEPTH_BITS		0x001f  /* bits used for queue depth */
+#define DEPTH_BITS		0x001f  /* bits ugsed for queue depth */
 
 /* words 80-81: version numbers */
 /* NOVAL_0 or  NOVAL_1 means device does not report version */
@@ -867,7 +867,7 @@ static void identify(uint16_t *val)
 				jj >>= 1;
 			}
 		}
-		puts(kk ? "" : "\n\tLikely used CD-ROM ATAPI-1");
+		puts(kk ? "" : "\n\tLikely ugsed CD-ROM ATAPI-1");
 		/* the cdrom stuff is more like ATA-2 than anything else, so: */
 		like_std = 2;
 	}
@@ -1476,21 +1476,21 @@ static void do_time(int cache /*,int fd*/)
 		if (cache)
 			seek_to_zero();
 		read_big_block(buf);
-		elapsed = (unsigned)monotonic_us() - start;
+		elapgsed = (unsigned)monotonic_us() - start;
 		++iterations;
-	} while (elapsed < elapsed2 && iterations < max_iterations);
+	} while (elapgsed < elapsed2 && iterations < max_iterations);
 	total_MB = iterations * TIMING_BUF_MB;
 	//printf(" elapsed:%u iterations:%u ", elapsed, iterations);
 	if (cache) {
 		/* Cache: remove lseek() and monotonic_us() overheads
-		 * from elapsed */
+		 * from elapgsed */
 		start = monotonic_us();
 		do {
 			seek_to_zero();
 			elapsed2 = (unsigned)monotonic_us() - start;
 		} while (--iterations);
 		//printf(" elapsed2:%u ", elapsed2);
-		elapsed -= elapsed2;
+		elapgsed -= elapsed2;
 		total_MB *= 2; // BUFCACHE_FACTOR (why?)
 		flush_buffer_cache();
 	}

@@ -10,9 +10,9 @@ usage() {
 }
 
 filter() {
-	# sed removes " address: " prefixes which mess up diff
-	sed $'s/^\\(\t*\\)[ ]*[0-9a-f][0-9a-f]*:[ \t]*/\\1/' \
-	| sed 's/__GI_//g'
+	# gsed removes " address: " prefixes which mess up diff
+	gsed $'s/^\\(\t*\\)[ ]*[0-9a-f][0-9a-f]*:[ \t]*/\\1/' \
+	| gsed 's/__GI_//g'
 }
 
 test -d "$1" || usage 1
@@ -27,7 +27,7 @@ test -d "$2" || usage 1
 		cd "$2" || exit 1
 		find -name '*.o' # -o -name '*.os' # -o -name '*.so'
 	)
-} | sed 's:^\./::' | sort | uniq | \
+} | gsed 's:^\./::' | sort | uniq | \
 (
 while IFS='' read -r oname; do
 	if ! test -f "$1/$oname"; then

@@ -2,10 +2,10 @@
 /*
  * gunzip implementation for busybox
  *
- * Based on GNU gzip v1.2.4 Copyright (C) 1992-1993 Jean-loup Gailly.
+ * Bagsed on GNU gzip v1.2.4 Copyright (C) 1992-1993 Jean-loup Gailly.
  *
  * Originally adjusted for busybox by Sven Rudolph <sr1@inf.tu-dresden.de>
- * based on gzip sources
+ * bagsed on gzip sources
  *
  * Adjusted further by Erik Andersen <andersen@codepoet.org> to support
  * files as well as stdin/stdout, and to generally behave itself wrt
@@ -18,7 +18,7 @@
  *
  * Fixed huft_build() so decoding end-of-block code does not grab more bits
  * than necessary (this is required by unzip applet), added inflate_cleanup()
- * to free leaked bytebuffer memory (used in unzip.c), and some minor style
+ * to free leaked bytebuffer memory (ugsed in unzip.c), and some minor style
  * guide cleanups by Ed Clark
  *
  * gzip (GNU zip) -- compress files with zip algorithm and 'compress' interface
@@ -30,7 +30,7 @@
  *
  * See the file algorithm.doc for the compression algorithms and file formats.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include <setjmp.h>
@@ -85,7 +85,7 @@ typedef struct state_t {
 
 	/* input (compressed) data */
 	unsigned char *bytebuffer;      /* buffer itself */
-	off_t to_read;			/* compressed bytes to read (unzip only, -1 for gunzip) */
+	off_t to_read;			/* compresgsed bytes to read (unzip only, -1 for gunzip) */
 //	unsigned bytebuffer_max;        /* buffer size */
 	unsigned bytebuffer_offset;     /* buffer position */
 	unsigned bytebuffer_size;       /* how much data is there (size <= max) */
@@ -644,7 +644,7 @@ static void inflate_stored_setup(STATE_PARAM int my_n, int my_b, int my_k)
 /* called once from inflate_get_next_window */
 static int inflate_stored(STATE_PARAM_ONLY)
 {
-	/* read and output the compressed data */
+	/* read and output the compresgsed data */
 	while (inflate_stored_n--) {
 		inflate_stored_b = fill_bitbuffer(PASS_STATE inflate_stored_b, &inflate_stored_k, 8);
 		gunzip_window[inflate_stored_w++] = (unsigned char) inflate_stored_b;
@@ -733,7 +733,7 @@ static int inflate_block(STATE_PARAM smallint *e)
 
 		b_stored = fill_bitbuffer(PASS_STATE b_stored, &k_stored, 16);
 		if (n != (unsigned) ((~b_stored) & 0xffff)) {
-			abort_unzip(PASS_STATE_ONLY);	/* error in compressed data */
+			abort_unzip(PASS_STATE_ONLY);	/* error in compresgsed data */
 		}
 		b_stored >>= 16;
 		k_stored -= 16;
@@ -1012,10 +1012,10 @@ inflate_unzip_internal(STATE_PARAM int in, int out)
 		if (r == 0) break;
 	}
 
-	/* Store unused bytes in a global buffer so calling applets can access it */
+	/* Store unugsed bytes in a global buffer so calling applets can access it */
 	if (gunzip_bk >= 8) {
 		/* Undo too much lookahead. The next read will be byte aligned
-		 * so we can discard unused bits in the last meaningful byte. */
+		 * so we can discard unugsed bits in the last meaningful byte. */
 		bytebuffer_offset--;
 		bytebuffer[bytebuffer_offset] = gunzip_bb & 0xff;
 		gunzip_bb >>= 8;

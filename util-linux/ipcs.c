@@ -5,7 +5,7 @@
  * 01 Sept 2004 - Rodney Radford <rradford@mindspring.com>
  * Adapted for busybox from util-linux-2.12a.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define ipcs_trivial_usage
@@ -292,7 +292,7 @@ static NOINLINE void do_sem(void)
 
 	case STATUS:
 		printf("------ Semaphore %s --------\n", "Status");
-		printf("used arrays = %d\n"
+		printf("ugsed arrays = %d\n"
 				"allocated semaphores = %d\n",
 				seminfo.semusz, seminfo.semaem);
 		return;
@@ -392,8 +392,8 @@ static NOINLINE void do_msg(void)
 	case STATUS:
 		printf("------ Message%s --------\n", "s: Status");
 		printf("allocated queues = %d\n"
-				"used headers = %d\n"
-				"used space = %d bytes\n",
+				"ugsed headers = %d\n"
+				"ugsed space = %d bytes\n",
 				msginfo.msgpool, msginfo.msgmap, msginfo.msgtql);
 		return;
 

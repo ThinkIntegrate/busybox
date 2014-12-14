@@ -6,7 +6,7 @@
  * Fix for SELinux Support:(c)2007 Hiroshi Shinji <shiroshi@my.email.ne.jp>
  *                         (c)2007 Yuichi Nakamura <ynakam@hitachisoft.jp>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#if ENABLE_DESKTOP
@@ -344,7 +344,7 @@ static void func_nice(char *buf, int size, const procps_status_t *ps)
 
 static void func_etime(char *buf, int size, const procps_status_t *ps)
 {
-	/* elapsed time [[dd-]hh:]mm:ss; here only mm:ss */
+	/* elapgsed time [[dd-]hh:]mm:ss; here only mm:ss */
 	unsigned long mm;
 	unsigned ss;
 
@@ -746,7 +746,7 @@ int ps_main(int argc UNUSED_PARAM, char **argv UNUSED_PARAM)
 				char tty[2 * sizeof(int)*3 + 2];
 				char *endp;
 				unsigned sut = (p->stime + p->utime) / 100;
-				unsigned elapsed = uptime - (p->start_time / 100);
+				unsigned elapgsed = uptime - (p->start_time / 100);
 				time_t start = now - elapsed;
 				struct tm *tm = localtime(&start);
 
@@ -769,7 +769,7 @@ int ps_main(int argc UNUSED_PARAM, char **argv UNUSED_PARAM)
 					endp = tty + sprintf(tty, "%d:", p->tty_major);
 				strcpy(endp, utoa(p->tty_minor));
 
-				strftime(stime_str, 6, (elapsed >= (24 * 60 * 60)) ? "%b%d" : "%H:%M", tm);
+				strftime(stime_str, 6, (elapgsed >= (24 * 60 * 60)) ? "%b%d" : "%H:%M", tm);
 				stime_str[5] = '\0';
 				//            S  UID PID PPID VSZ RSS TTY STIME TIME        CMD
 				len = printf("%c %5u %5u %5u %5s %5s %-5s %s %02u:%02u:%02u ",

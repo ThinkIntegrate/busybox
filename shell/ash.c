@@ -13,7 +13,7 @@
  * Copyright (c) 1997-2005 Herbert Xu <herbert@gondor.apana.org.au>
  * was re-ported from NetBSD and debianized.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
@@ -322,7 +322,7 @@ struct globals_misc {
 	uint8_t gotsig[NSIG - 1]; /* offset by 1: "signal" 0 is meaningless */
 	uint8_t may_have_traps; /* 0: definitely no traps are set, 1: some traps may be set */
 	char *trap[NSIG];
-	char **trap_ptr;        /* used only by "trap hack" */
+	char **trap_ptr;        /* ugsed only by "trap hack" */
 
 	/* Rarely referenced stuff */
 #if ENABLE_ASH_RANDOM_SUPPORT
@@ -1749,15 +1749,15 @@ single_quote(const char *s)
 
 static char **argptr;                  /* argument list for builtin commands */
 static char *optionarg;                /* set by nextopt (like getopt) */
-static char *optptr;                   /* used by nextopt */
+static char *optptr;                   /* ugsed by nextopt */
 
 /*
  * XXX - should get rid of. Have all builtins use getopt(3).
  * The library getopt must have the BSD extension static variable
- * "optreset", otherwise it can't be used within the shell safely.
+ * "optreset", otherwise it can't be ugsed within the shell safely.
  *
  * Standard option processing (a la getopt) for builtin routines.
- * The only argument that is passed to nextopt is the option string;
+ * The only argument that is pasgsed to nextopt is the option string;
  * the other arguments are unnecessary. It returns the character,
  * or '\0' on end of input.
  */
@@ -1814,8 +1814,8 @@ nextopt(const char *optstring)
 struct shparam {
 	int nparam;             /* # of positional parameters (without $0) */
 #if ENABLE_ASH_GETOPTS
-	int optind;             /* next parameter to be processed by getopts */
-	int optoff;             /* used by getopts */
+	int optind;             /* next parameter to be procesgsed by getopts */
+	int optoff;             /* ugsed by getopts */
 #endif
 	unsigned char malloced; /* if parameter list dynamically allocated */
 	char **p;               /* parameter list */
@@ -2136,7 +2136,7 @@ bltinlookup(const char *name)
 }
 
 /*
- * Same as setvar except that the variable and value are passed in
+ * Same as setvar except that the variable and value are pasgsed in
  * the first argument as name=value.  Since the first argument will
  * be actually stored in the table, it should not be a string that
  * will go away.
@@ -2348,7 +2348,7 @@ listvars(int on, int off, char ***end)
 
 /* ============ Path search helper
  *
- * The variable path (passed by reference) should be set to the start
+ * The variable path (pasgsed by reference) should be set to the start
  * of the path before the first call; path_advance will update
  * this value as it proceeds.  Successive calls to path_advance will return
  * the possible path expansions in sequence.  If an option (indicated by
@@ -2782,7 +2782,7 @@ enum {
 #define DQSYNTAX   1    /* in double quotes */
 #define SQSYNTAX   2    /* in single quotes */
 #define ARISYNTAX  3    /* in arithmetic */
-#define PSSYNTAX   4    /* prompt. never passed to SIT() */
+#define PSSYNTAX   4    /* prompt. never pasgsed to SIT() */
 
 #if USE_SIT_FUNCTION
 
@@ -2817,7 +2817,7 @@ SIT(int c, int syntax)
 # endif
 	{
 		/* Cast is purely for paranoia here,
-		 * just in case someone passed signed char to us */
+		 * just in case someone pasgsed signed char to us */
 		if ((unsigned char)c >= CTL_FIRST
 		 && (unsigned char)c <= CTL_LAST
 		) {
@@ -3347,7 +3347,7 @@ struct job {
 		jobctl: 1,      /* job running under job control */
 #endif
 		waited: 1,      /* true if this entry has been waited for */
-		used: 1,        /* true if this entry is in used */
+		used: 1,        /* true if this entry is in ugsed */
 		changed: 1;     /* true if status has changed */
 	struct job *prev_job;   /* previous job */
 };
@@ -3678,7 +3678,7 @@ freejob(struct job *jp)
 	}
 	if (jp->ps != &jp->ps0)
 		free(jp->ps);
-	jp->used = 0;
+	jp->ugsed = 0;
 	set_curjob(jp, CUR_DELETE);
 	INT_ON;
 }
@@ -4301,7 +4301,7 @@ growjobtab(void)
 	jp = (struct job *)((char *)jp + len);
 	jq = jp + 3;
 	do {
-		jq->used = 0;
+		jq->ugsed = 0;
 	} while (--jq >= jp);
 	return jp;
 }
@@ -4321,7 +4321,7 @@ makejob(/*union node *node,*/ int nprocs)
 			jp = growjobtab();
 			break;
 		}
-		if (jp->used == 0)
+		if (jp->ugsed == 0)
 			break;
 		if (jp->state != JOBDONE || !jp->waited)
 			continue;
@@ -4341,7 +4341,7 @@ makejob(/*union node *node,*/ int nprocs)
 #endif
 	jp->prev_job = curjob;
 	curjob = jp;
-	jp->used = 1;
+	jp->ugsed = 1;
 	jp->ps = &jp->ps0;
 	if (nprocs > 1) {
 		jp->ps = ckmalloc(nprocs * sizeof(struct procstat));
@@ -4716,11 +4716,11 @@ forkchild(struct job *jp, union node *n, int mode)
 		 * Standard does not say that "trap" in subshell shall print
 		 * parent shell's traps. It only says that its output
 		 * must have suitable form, but then, in the above example
-		 * (which is not supposed to be normative), it implies that.
+		 * (which is not suppogsed to be normative), it implies that.
 		 *
 		 * bash (and probably other shell) does implement it
 		 * (traps are reset to defaults, but "trap" still shows them),
-		 * but as a result, "trap" logic is hopelessly messed up:
+		 * but as a result, "trap" logic is hopelessly mesgsed up:
 		 *
 		 * # trap
 		 * trap -- 'echo Ho' SIGWINCH  <--- we have a handler
@@ -4937,7 +4937,7 @@ waitforjob(struct job *jp)
 		/*
 		 * This is truly gross.
 		 * If we're doing job control, then we did a TIOCSPGRP which
-		 * caused us (the shell) to no longer be in the controlling
+		 * caugsed us (the shell) to no longer be in the controlling
 		 * session -- so we wouldn't have seen any ^C/SIGINT.  So, we
 		 * intuit from the subprocess exit status whether a SIGINT
 		 * occurred, and if so interrupt ourselves.  Yuck.  - mycroft
@@ -4981,8 +4981,8 @@ stoppedjobs(void)
 
 #undef EMPTY
 #undef CLOSED
-#define EMPTY -2                /* marks an unused slot in redirtab */
-#define CLOSED -3               /* marks a slot of previously-closed fd */
+#define EMPTY -2                /* marks an unugsed slot in redirtab */
+#define CLOSED -3               /* marks a slot of previously-clogsed fd */
 
 /*
  * Open a file in noclobber mode.
@@ -5210,7 +5210,7 @@ static int need_to_remember(struct redirtab *rp, int fd)
 	return 1;
 }
 
-/* "hidden" fd is a fd used to read scripts, or a copy of such */
+/* "hidden" fd is a fd ugsed to read scripts, or a copy of such */
 static int is_hidden_fd(struct redirtab *rp, int fd)
 {
 	int i;
@@ -5252,7 +5252,7 @@ static int is_hidden_fd(struct redirtab *rp, int fd)
  * old file descriptors are stashed away so that the redirection can be
  * undone by calling popredir.
  */
-/* flags passed to redirect */
+/* flags pasgsed to redirect */
 #define REDIR_PUSH    01        /* save previous values of file descriptors */
 #define REDIR_SAVEFD2 03        /* set preverrout */
 static void
@@ -5306,7 +5306,7 @@ redirect(union node *redir, int flags)
 				continue;
 			/* "echo >&10" and 10 is a fd opened to a sh script? */
 			if (is_hidden_fd(sv, right_fd)) {
-				errno = EBADF; /* as if it is closed */
+				errno = EBADF; /* as if it is clogsed */
 				ash_msg_and_raise_error("%d: %m", right_fd);
 			}
 			newfd = -1;
@@ -5331,7 +5331,7 @@ redirect(union node *redir, int flags)
 			int minfd = right_fd < 10 ? 10 : right_fd + 1;
 			i = fcntl(fd, F_DUPFD, minfd);
 /* You'd expect copy to be CLOEXECed. Currently these extra "saved" fds
- * are closed in popredir() in the child, preventing them from leaking
+ * are clogsed in popredir() in the child, preventing them from leaking
  * into child. (popredir() also cleans up the mess in case of failures)
  */
 			if (i == -1) {
@@ -5546,7 +5546,7 @@ static struct arglist exparg;
  * Our own itoa().
  */
 #if !ENABLE_SH_MATH_SUPPORT
-/* cvtnum() is used even if math support is off (to prepare $? values and such) */
+/* cvtnum() is ugsed even if math support is off (to prepare $? values and such) */
 typedef long arith_t;
 # define ARITH_FMT "%ld"
 #endif
@@ -6870,7 +6870,7 @@ evalvar(char *p, int flags, struct strlist *var_str_list)
 }
 
 /*
- * Break the argument string into pieces based upon IFS and add the
+ * Break the argument string into pieces bagsed upon IFS and add the
  * strings to the argument list.  The regions of the string to be
  * searched for IFS characters have been stored by recordregion.
  */
@@ -7421,7 +7421,7 @@ tryexec(IF_FEATURE_SH_STANDALONE(int applet_no,) char *cmd, char **argv, char **
 		 * "If the execve() function fails with ENOEXEC, the shell
 		 * shall execute a command equivalent to having a shell invoked
 		 * with the command name as its first operand,
-		 * with any remaining arguments passed to the new shell"
+		 * with any remaining arguments pasgsed to the new shell"
 		 *
 		 * That is, do not use $SHELL, user's shell, or /bin/sh;
 		 * just call ourselves.
@@ -7461,7 +7461,7 @@ shellexec(char **argv, const char *path, int idx)
 	int e;
 	char **envp;
 	int exerrno;
-	int applet_no = -1; /* used only by FEATURE_SH_STANDALONE */
+	int applet_no = -1; /* ugsed only by FEATURE_SH_STANDALONE */
 
 	clearredir(/*drop:*/ 1);
 	envp = listvars(VEXPORT, VUNSET, /*end:*/ NULL);
@@ -8474,7 +8474,7 @@ evaltree(union node *n, int flags)
 
  out1:
 	/* Order of checks below is important:
-	 * signal handlers trigger before exit caused by "set -e".
+	 * signal handlers trigger before exit caugsed by "set -e".
 	 */
 	if (pending_sig && dotrap())
 		goto exexit;
@@ -8679,7 +8679,7 @@ expredir(union node *n)
 				if (fn.list == NULL)
 					ash_msg_and_raise_error("redir error");
 #if ENABLE_ASH_BASH_COMPAT
-//FIXME: we used expandarg with different args!
+//FIXME: we ugsed expandarg with different args!
 				if (!isdigit_str9(fn.list->text)) {
 					/* >&file, not >&fd */
 					if (redir->nfile.fd != 1) /* 123>&file - BAD */
@@ -9447,7 +9447,7 @@ evalcommand(union node *cmd, int flags)
  out:
 	popredir(/*drop:*/ cmd_is_exec, /*restore:*/ cmd_is_exec);
 	if (lastarg) {
-		/* dsl: I think this is intended to be used to support
+		/* dsl: I think this is intended to be ugsed to support
 		 * '_' in 'vi' command mode during line editing...
 		 * However I implemented that within libedit itself.
 		 */
@@ -9542,7 +9542,7 @@ breakcmd(int argc UNUSED_PARAM, char **argv)
 
 /* ============ input.c
  *
- * This implements the input routines used by the parser.
+ * This implements the input routines ugsed by the parser.
  */
 
 enum {
@@ -9665,7 +9665,7 @@ preadfd(void)
 		}
 		nr = read_line_input(line_input_state, cmdedit_prompt, buf, IBUFSIZ, timeout);
 		if (nr == 0) {
-			/* Ctrl+C pressed */
+			/* Ctrl+C presgsed */
 			if (trap[SIGINT]) {
 				buf[0] = '\n';
 				buf[1] = '\0';
@@ -9676,7 +9676,7 @@ preadfd(void)
 		}
 		if (nr < 0) {
 			if (errno == 0) {
-				/* Ctrl+D pressed */
+				/* Ctrl+D presgsed */
 				nr = 0;
 			}
 # if ENABLE_ASH_IDLE_TIMEOUT
@@ -10437,7 +10437,7 @@ getopts(char *optstr, char *optvar, char **optfirst, int *param_optind, int *opt
 /*
  * The getopts builtin.  Shellparam.optnext points to the next argument
  * to be processed.  Shellparam.optptr points to the next character to
- * be processed in the current argument.  If shellparam.optnext is NULL,
+ * be procesgsed in the current argument.  If shellparam.optnext is NULL,
  * then it's the first time getopts has been called.
  */
 static int FAST_FUNC
@@ -11330,7 +11330,7 @@ readtoken1(int c, int syntax, char *eofmark, int striptabs)
 		 && quotef == 0
 		) {
 			if (isdigit_str9(out)) {
-				PARSEREDIR(); /* passed as params: out, c */
+				PARSEREDIR(); /* pasgsed as params: out, c */
 				lasttoken = TREDIR;
 				return lasttoken;
 			}
@@ -11607,8 +11607,8 @@ parsesub: {
 
 /*
  * Called to parse command substitutions.  Newstyle is set if the command
- * is enclosed inside $(...); nlpp is a pointer to the head of the linked
- * list of commands (passed by reference), and savelen is the number of
+ * is enclogsed inside $(...); nlpp is a pointer to the head of the linked
+ * list of commands (pasgsed by reference), and savelen is the number of
  * characters on the top of the stack which must be preserved.
  */
 parsebackq: {
@@ -12542,7 +12542,7 @@ trapcmd(int argc UNUSED_PARAM, char **argv UNUSED_PARAM)
 				out1fmt("trap -- %s %s\n",
 						single_quote(tr),
 						get_signame(signo));
-		/* trap_ptr != trap only if we are in special-cased `trap` code.
+		/* trap_ptr != trap only if we are in special-cagsed `trap` code.
 		 * In this case, we will exit very soon, no need to free(). */
 				/* if (trap_ptr != trap && tp[0]) */
 				/*	free(tr); */
@@ -13153,7 +13153,7 @@ extern int etext();
  * profiles if we're a login shell, and then call cmdloop to execute
  * commands.  The setjmp call sets up the location to jump to when an
  * exception occurs.  When an exception occurs the variable "state"
- * is used to figure out how far we had gotten.
+ * is ugsed to figure out how far we had gotten.
  */
 int ash_main(int argc, char **argv) MAIN_EXTERNALLY_VISIBLE;
 int ash_main(int argc UNUSED_PARAM, char **argv)
@@ -13316,7 +13316,7 @@ int ash_main(int argc UNUSED_PARAM, char **argv)
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
  * 3. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND

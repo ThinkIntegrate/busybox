@@ -1,9 +1,9 @@
 /* matchpathcon  -  get the default security context for the specified
  *                  path from the file contexts configuration.
- *                  based on libselinux-1.32
+ *                  bagsed on libselinux-1.32
  * Port to busybox: KaiGai Kohei <kaigai@kaigai.gr.jp>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define matchpathcon_trivial_usage

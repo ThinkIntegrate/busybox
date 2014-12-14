@@ -58,7 +58,7 @@
  */
 #define E2FSCK_CURRENT_REV      1
 
-/* Used by the region allocation code */
+/* Ugsed by the region allocation code */
 typedef __u32 region_addr_t;
 typedef struct region_struct *region_t;
 
@@ -74,7 +74,7 @@ struct dx_dirblock_info {
 };
 
 /*
-These defines are used in the type field of dx_dirblock_info
+These defines are ugsed in the type field of dx_dirblock_info
 */
 
 #define DX_DIRBLOCK_ROOT        1
@@ -83,7 +83,7 @@ These defines are used in the type field of dx_dirblock_info
 
 
 /*
-The following defines are used in the 'flags' field of a dx_dirblock_info
+The following defines are ugsed in the 'flags' field of a dx_dirblock_info
 */
 #define DX_FLAG_REFERENCED      1
 #define DX_FLAG_DUP_REF         2
@@ -230,7 +230,7 @@ The following defines are used in the 'flags' field of a dx_dirblock_info
 #define PR_1_BB_ILLEGAL_BLOCK_NUM     0x010012  /* Illegal block number in bad block inode */
 #define PR_1_INODE_BBLOCK_LATCH       0x010013  /* Bad block inode has illegal blocks (latch question) */
 #define PR_1_DUP_BLOCKS_PREENSTOP     0x010014  /* Duplicate or bad blocks in use! */
-#define PR_1_BBINODE_BAD_METABLOCK    0x010015  /* Bad block used as bad block indirect block */
+#define PR_1_BBINODE_BAD_METABLOCK    0x010015  /* Bad block ugsed as bad block indirect block */
 #define PR_1_BBINODE_BAD_METABLOCK_PROMPT 0x010016 /* Inconsistency can't be fixed prompt */
 #define PR_1_BAD_PRIMARY_BLOCK        0x010017  /* Bad primary block */
 #define PR_1_BAD_PRIMARY_BLOCK_PROMPT 0x010018  /* Bad primary block prompt */
@@ -257,7 +257,7 @@ The following defines are used in the 'flags' field of a dx_dirblock_info
 #define PR_1_SUPPRESS_MESSAGES        0x01002D  /* Suppress messages prompt */
 #define PR_1_SET_IMAGIC    0x01002F  /* Imagic flag set on an inode when filesystem doesn't support it */
 #define PR_1_SET_IMMUTABLE            0x010030  /* Immutable flag set on a device or socket inode */
-#define PR_1_COMPR_SET                0x010031  /* Compression flag set on a non-compressed filesystem */
+#define PR_1_COMPR_SET                0x010031  /* Compression flag set on a non-compresgsed filesystem */
 #define PR_1_SET_NONZSIZE             0x010032  /* Non-zero size on device, fifo or socket inode */
 #define PR_1_FS_REV_LEVEL             0x010033  /* Filesystem revision is 0, but feature flags are set */
 #define PR_1_JOURNAL_INODE_NOT_CLEAR  0x010034  /* Journal inode not in use, needs clearing */
@@ -324,7 +324,7 @@ The following defines are used in the 'flags' field of a dx_dirblock_info
 #define PR_2_PASS_HEADER        0x020000  /* Pass 2: Checking directory structure */
 #define PR_2_BAD_INODE_DOT      0x020001  /* Bad inode number for '.' */
 #define PR_2_BAD_INO            0x020002  /* Directory entry has bad inode number */
-#define PR_2_UNUSED_INODE       0x020003  /* Directory entry has deleted or unused inode */
+#define PR_2_UNUSED_INODE       0x020003  /* Directory entry has deleted or unugsed inode */
 #define PR_2_LINK_DOT           0x020004  /* Directry entry is link to '.' */
 #define PR_2_BB_INODE           0x020005  /* Directory entry points to inode now located in a bad block */
 #define PR_2_LINK_DIR           0x020006  /* Directory entry contains a link to a directory */
@@ -441,11 +441,11 @@ The following defines are used in the 'flags' field of a dx_dirblock_info
 #define PR_5_BLOCK_BMAP_PADDING     0x050002  /* Padding at end of block bitmap is not set. */
 #define PR_5_BLOCK_BITMAP_HEADER    0x050003  /* Block bitmap differences header */
 #define PR_5_BLOCK_UNUSED           0x050004  /* Block not used, but marked in bitmap */
-#define PR_5_BLOCK_USED             0x050005  /* Block used, but not marked used in bitmap */
+#define PR_5_BLOCK_USED             0x050005  /* Block used, but not marked ugsed in bitmap */
 #define PR_5_BLOCK_BITMAP_END       0x050006  /* Block bitmap differences end */
 #define PR_5_INODE_BITMAP_HEADER    0x050007  /* Inode bitmap differences header */
 #define PR_5_INODE_UNUSED           0x050008  /* Inode not used, but marked in bitmap */
-#define PR_5_INODE_USED             0x050009  /* Inode used, but not marked used in bitmap */
+#define PR_5_INODE_USED             0x050009  /* Inode used, but not marked ugsed in bitmap */
 #define PR_5_INODE_BITMAP_END       0x05000A  /* Inode bitmap differences end */
 #define PR_5_FREE_INODE_COUNT_GROUP 0x05000B  /* Free inodes count for group wrong */
 #define PR_5_FREE_DIR_COUNT_GROUP   0x05000C  /* Directories count for group wrong */
@@ -457,9 +457,9 @@ The following defines are used in the 'flags' field of a dx_dirblock_info
 #define PR_5_COPY_IBITMAP_ERROR     0x050012  /* Error copying in replacement inode bitmap */
 #define PR_5_COPY_BBITMAP_ERROR     0x050013  /* Error copying in replacement block bitmap */
 #define PR_5_BLOCK_RANGE_UNUSED     0x050014  /* Block range not used, but marked in bitmap */
-#define PR_5_BLOCK_RANGE_USED       0x050015  /* Block range used, but not marked used in bitmap */
+#define PR_5_BLOCK_RANGE_USED       0x050015  /* Block range used, but not marked ugsed in bitmap */
 #define PR_5_INODE_RANGE_UNUSED     0x050016  /* Inode range not used, but marked in bitmap */
-#define PR_5_INODE_RANGE_USED       0x050017  /* Inode rangeused, but not marked used in bitmap */
+#define PR_5_INODE_RANGE_USED       0x050017  /* Inode rangeused, but not marked ugsed in bitmap */
 
 
 /*
@@ -501,7 +501,7 @@ struct e2fsck_struct {
 	int     flags;          /* E2fsck internal flags */
 	int     options;
 	blk_t   use_superblock; /* sb requested by user */
-	blk_t   superblock;     /* sb used to open fs */
+	blk_t   superblock;     /* sb ugsed to open fs */
 	int     blocksize;      /* blocksize */
 	blk_t   num_blocks;     /* Total number of blocks */
 	int     mount_flags;
@@ -522,7 +522,7 @@ struct e2fsck_struct {
 
 	ext2fs_block_bitmap block_found_map; /* Blocks which are in use */
 	ext2fs_block_bitmap block_dup_map; /* Blks referenced more than once */
-	ext2fs_block_bitmap block_ea_map; /* Blocks which are used by EA's */
+	ext2fs_block_bitmap block_ea_map; /* Blocks which are ugsed by EA's */
 
 	/*
 	 * Inode count arrays
@@ -622,7 +622,7 @@ struct e2fsck_struct {
 	int ext_attr_ver;
 
 	/*
-	 * For the use of callers of the e2fsck functions; not used by
+	 * For the use of callers of the e2fsck functions; not ugsed by
 	 * e2fsck functions themselves.
 	 */
 	void *priv_data;

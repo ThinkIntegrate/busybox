@@ -8,7 +8,7 @@
  * Correct default name server display and explicit name server option
  * added by Ben Zeckel <bzeckel@hmc.edu> June 2001
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define nslookup_trivial_usage
@@ -177,7 +177,7 @@ int nslookup_main(int argc, char **argv)
 	if (!argv[1] || argv[1][0] == '-' || argc > 3)
 		bb_show_usage();
 
-	/* initialize DNS structure _res used in printing the default
+	/* initialize DNS structure _res ugsed in printing the default
 	 * name server and in the explicit name server option feature. */
 	res_init();
 	/* rfc2133 says this enables IPv6 lookups */

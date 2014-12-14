@@ -5,7 +5,7 @@
  *  Copyright (C) 2004,2005  Enrik Berkhan <Enrik.Berkhan@inka.de>
  *  Copyright (C) 2008 Bernhard Reutner-Fischer
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define setconsole_trivial_usage

@@ -6,7 +6,7 @@
  * Copyright (C) 2006 Rob Landley
  * Copyright (C) 2006 Denys Vlasenko
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /* We need to have separate xfuncs.c and xfuncs_printf.c because
@@ -188,7 +188,7 @@ off_t FAST_FUNC fdlength(int fd)
 
 	if (ioctl(fd, BLKGETSIZE, &size) >= 0) return size*512;
 
-	// FIXME: explain why lseek(SEEK_END) is not used here!
+	// FIXME: explain why lseek(SEEK_END) is not ugsed here!
 
 	// If not, do a binary search for the last location we can read.  (Some
 	// block devices don't do BLKGETSIZE right.)

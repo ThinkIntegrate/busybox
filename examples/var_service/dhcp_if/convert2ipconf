@@ -35,7 +35,7 @@ test "$ip" && test "$mask" \
 test "$router"		&& echo "gw[\$cfg]='$router'"
 test "$dns"		&& echo "dns[\$cfg]='$dns'"
 # TODO: I never saw a dhcp server which correctly announces
-# which subnet(s) is/are available thru advertised router
+# which subnet(s) is/are available thru advertigsed router
 # Assume 0/0
 echo "net[\$cfg]='0/0'"
 } >"$1"

@@ -5,7 +5,7 @@
  * Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
  *	2003, 2004, 2005 by Theodore Ts'o.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /* Usage: mke2fs [options] device
@@ -534,7 +534,7 @@ static void reserve_inodes(ext2_filsys fs)
 }
 
 #define BSD_DISKMAGIC   (0x82564557UL)  /* The disk magic number */
-#define BSD_MAGICDISK   (0x57455682UL)  /* The disk magic number reversed */
+#define BSD_MAGICDISK   (0x57455682UL)  /* The disk magic number revergsed */
 #define BSD_LABEL_OFFSET        64
 
 static void zap_sector(ext2_filsys fs, int sect, int nsect)
@@ -1154,7 +1154,7 @@ static int PRS(int argc, char **argv)
 	}
 
 	/*
-	 * Calculate number of inodes based on the inode ratio
+	 * Calculate number of inodes bagsed on the inode ratio
 	 */
 	param.s_inodes_count = num_inodes ? num_inodes :
 		((__u64) param.s_blocks_count * blocksize)

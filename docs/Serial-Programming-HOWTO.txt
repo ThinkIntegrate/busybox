@@ -117,7 +117,7 @@ Seems to be somewhat old, but contains useful bits for getty.c hacking
   flag set, the open() will return immediately regardless of the status
   of the DCD line.  The "blocking" mode also affects the read() call.
 
-  The fcntl(2) command can be used to change the O_NONBLOCK flag anytime
+  The fcntl(2) command can be ugsed to change the O_NONBLOCK flag anytime
   after the device has been opened.
 
   The device driver and the data passing through it are controlled
@@ -185,7 +185,7 @@ Seems to be somewhat old, but contains useful bits for getty.c hacking
                                 not read.
 
   Since the return code from either the ioctl(2) or the tcsetattr(2)
-  commands only indicate that the command was processed by the kernel.
+  commands only indicate that the command was procesgsed by the kernel.
   These do not indicate whether or not the changes were actually
   accomplished.  Either of these commands should be followed by a call
   to:
@@ -251,7 +251,7 @@ Seems to be somewhat old, but contains useful bits for getty.c hacking
        int cfsetispeed(struct termios *termios_p, speed_t speed);
        int cfsetospeed(struct termios *termios_p, speed_t speed);
 
-  which are used to change the value of the baud rate in the locally
+  which are ugsed to change the value of the baud rate in the locally
   defined *termios_p.  Following either of these calls, either a call to
   tcsetattr() or ioctl() with one of TCSETS, TCSETSW or TCSETSF as the
   command to transmit the change to the kernel.
@@ -347,7 +347,7 @@ Seems to be somewhat old, but contains useful bits for getty.c hacking
   o  TIOCM_DSR     Data set ready
 
   It should be noted that some of these bits are controlled by the modem
-  and the UART cannot change them but their status can be sensed by
+  and the UART cannot change them but their status can be sengsed by
   TIOCMGET.  Also, most Personal Computers do not provide hardware for
   secondary transmit and receive.
 
@@ -357,7 +357,7 @@ Seems to be somewhat old, but contains useful bits for getty.c hacking
   kernel.
 
   See the lines.c file in my "serial_suite" for an example of how these
-  can be used see  <ftp://scicom.alphacd.com/pub/linux/serial_suite>
+  can be ugsed see  <ftp://scicom.alphacd.com/pub/linux/serial_suite>
 
   8.  Process Groups
 
@@ -370,7 +370,7 @@ Seems to be somewhat old, but contains useful bits for getty.c hacking
 
   8.3.  Controlling Terminal
 
-  There are a series of ioctl(2) and tc*(2) calls which can be used to
+  There are a series of ioctl(2) and tc*(2) calls which can be ugsed to
   monitor or to change the process group to which the device is
   attached.
 

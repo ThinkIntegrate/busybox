@@ -1,7 +1,7 @@
 /* vi: set sw=4 ts=4: */
 /*
  * initialize.c --- initialize a filesystem handle given superblock
- *	parameters.  Used by mke2fs when initializing a filesystem.
+ *	parameters.  Ugsed by mke2fs when initializing a filesystem.
  *
  * Copyright (C) 1994, 1995, 1996 Theodore Ts'o.
  *

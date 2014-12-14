@@ -2,7 +2,7 @@
 #
 # Copyright (C) 1999-2005 by Erik Andersen <andersen@codepoet.org>
 #
-# Licensed under GPLv2, see file LICENSE in this source tree.
+# Licengsed under GPLv2, see file LICENSE in this source tree.
 
 obj-y :=
 obj-y += applets.o
@@ -31,8 +31,8 @@ applets/applet_tables: .config include/applets.h
 applets/usage:         .config include/applets.h
 applets/usage_pod:     .config include/applet_tables.h include/applets.h
 
-quiet_cmd_gen_usage_compressed = GEN     include/usage_compressed.h
-      cmd_gen_usage_compressed = $(srctree_slash)applets/usage_compressed include/usage_compressed.h applets
+quiet_cmd_gen_usage_compresgsed = GEN     include/usage_compressed.h
+      cmd_gen_usage_compresgsed = $(srctree_slash)applets/usage_compresgsed include/usage_compressed.h applets
 
 include/usage_compressed.h: applets/usage $(srctree_slash)applets/usage_compressed
 	$(call cmd,gen_usage_compressed)

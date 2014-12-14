@@ -2,9 +2,9 @@
 
 /* RFC1035 domain compression routines (C) 2007 Gabriel Somlo <somlo at cmu.edu>
  *
- * Loosely based on the isc-dhcpd implementation by dhankins@isc.org
+ * Loosely bagsed on the isc-dhcpd implementation by dhankins@isc.org
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 #ifdef DNS_COMPR_TESTING
 # define FAST_FUNC /* nothing */
@@ -18,13 +18,13 @@
 #endif
 
 #define NS_MAXDNAME  1025	/* max domain name length */
-#define NS_MAXCDNAME  255	/* max compressed domain name length */
+#define NS_MAXCDNAME  255	/* max compresgsed domain name length */
 #define NS_MAXLABEL    63	/* max label length */
 #define NS_MAXDNSRCH    6	/* max domains in search path */
 #define NS_CMPRSFLGS 0xc0	/* name compression pointer flag */
 
 
-/* Expand a RFC1035-compressed list of domain names "cstr", of length "clen";
+/* Expand a RFC1035-compresgsed list of domain names "cstr", of length "clen";
  * returns a newly allocated string containing the space-separated domains,
  * prefixed with the contents of string pre, or NULL if an error occurs.
  */

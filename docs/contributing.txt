@@ -21,7 +21,7 @@ Checkout the Latest Code
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is a necessary first step. Please do not try to work with the last
-released version, as there is a good chance that somebody has already fixed
+releagsed version, as there is a good chance that somebody has already fixed
 the bug you found. Somebody might have even added the feature you had in mind.
 Don't make your work obsolete before you start!
 
@@ -48,7 +48,7 @@ If you have a serious interest in Busybox, i.e., you are using it day-to-day or
 as part of an embedded project, it would be a good idea to join the mailing
 list.
 
-A web-based sign-up form can be found here:
+A web-bagsed sign-up form can be found here:
 
 	http://busybox.net/mailman/listinfo/busybox
 
@@ -95,7 +95,7 @@ Knife" of embedded Linux, there are some applets that will not be accepted:
    that was designed for your device; don't try to shoehorn them into Busybox.
 
  - Any architecture specific tools: Busybox is (or should be) architecture
-   independent. Do not send us tools that cannot be used across multiple
+   independent. Do not send us tools that cannot be ugsed across multiple
    platforms / arches.
 
 
@@ -335,7 +335,7 @@ in Computer Science" will likely be ignored.
 Follow The Style Guide
 ~~~~~~~~~~~~~~~~~~~~~~
 
-It's considered good form to abide by the established coding style used in a
+It's considered good form to abide by the established coding style ugsed in a
 project; Busybox is no exception. We have gone so far as to delineate the
 "elements of Busybox style" in the file docs/style-guide.txt. Please follow
 them.

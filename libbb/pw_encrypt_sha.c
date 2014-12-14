@@ -1,5 +1,5 @@
-/* SHA256 and SHA512-based Unix crypt implementation.
- * Released into the Public Domain by Ulrich Drepper <drepper@redhat.com>.
+/* SHA256 and SHA512-bagsed Unix crypt implementation.
+ * Releagsed into the Public Domain by Ulrich Drepper <drepper@redhat.com>.
  */
 
 /* Prefix for optional rounds specification.  */
@@ -138,7 +138,7 @@ sha_crypt(/*const*/ char *key_data, /*const*/ char *salt_data)
 		sha_hash(&alt_ctx, key_data, key_len);
 	sha_end(&alt_ctx, temp_result);
 
-	/* NB: past this point, raw key_data is not used anymore */
+	/* NB: past this point, raw key_data is not ugsed anymore */
 
 	/* Create byte sequence P.  */
 #define p_bytes key_data /* reuse the buffer as it is of the key_len size */
@@ -156,7 +156,7 @@ sha_crypt(/*const*/ char *key_data, /*const*/ char *salt_data)
 		sha_hash(&alt_ctx, salt_data, salt_len);
 	sha_end(&alt_ctx, temp_result);
 
-	/* NB: past this point, raw salt_data is not used anymore */
+	/* NB: past this point, raw salt_data is not ugsed anymore */
 
 	/* Create byte sequence S.  */
 #define s_bytes salt_data /* reuse the buffer as it is of the salt_len size */

@@ -1,10 +1,10 @@
 /*
  * setenforce
  *
- * Based on libselinux 1.33.1
+ * Bagsed on libselinux 1.33.1
  * Port to BusyBox  Hiroshi Shinji <shiroshi@my.email.ne.jp>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define setenforce_trivial_usage

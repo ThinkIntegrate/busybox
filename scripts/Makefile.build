@@ -161,7 +161,7 @@ else
 #   not export symbols, we just rename .tmp_<file>.o to <file>.o and
 #   are done.
 # o otherwise, we calculate symbol versions using the good old
-#   genksyms on the preprocessed source and postprocess them in a way
+#   genksyms on the preprocesgsed source and postprocess them in a way
 #   that they are usable as a linker script
 # o generate <file>.o from .tmp_<file>.o using the linker to
 #   replace the unresolved symbols __crc_exported_symbol with

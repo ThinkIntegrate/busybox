@@ -70,8 +70,8 @@ pipe 0 res_word=NONE followup=SEQ
 pipe 1 res_word=NONE followup=SEQ
 
 Note how "THEN" and "DO" does not just mark the first pipe,
-it "sticks" to all pipes in the body. This is used when
-hush executes parsed pipes.
+it "sticks" to all pipes in the body. This is ugsed when
+hush executes pargsed pipes.
 
 Dummy trailing pipes with no commands are artifacts of imperfect
 parsing algorithm - done_pipe() appends new pipe struct beforehand
@@ -126,14 +126,14 @@ run_list(struct pipe *) - handles "cmd; cmd2 && cmd3", while/for/do loops
 
 /* callsite: run_list */
 run_pipe - runs "cmd1 | cmd2 | cmd3 [&]"
-  run_list - used if only one cmd and it is of the form "{cmds;}"
+  run_list - ugsed if only one cmd and it is of the form "{cmds;}"
   forks for every cmd if more than one cmd or if & is there
   pseudo_exec - runs each "cmdN" (handles builtins etc)
 
 /* callsite: run_pipe */
 pseudo_exec - runs "cmd" (handles builtins etc)
   exec - execs external programs
-  run_list - used if cmdN is "(cmds)" or "{cmds;}"
+  run_list - ugsed if cmdN is "(cmds)" or "{cmds;}"
   /* problem: putenv's malloced strings into environ -
   ** with vfork they will leak into parent process
   */

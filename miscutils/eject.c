@@ -5,11 +5,11 @@
  * Copyright (C) 2004  Peter Willis <psyphreak@phreaker.net>
  * Copyright (C) 2005  Tito Ragusa <farmatito@tiscali.it>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
- * This is a simple hack of eject based on something Erik posted in #uclibc.
+ * This is a simple hack of eject bagsed on something Erik posted in #uclibc.
  * Most of the dirty work blatantly ripped off from cat.c =)
  */
 
@@ -104,7 +104,7 @@ int eject_main(int argc UNUSED_PARAM, char **argv)
 	flags = getopt32(argv, "tT" IF_FEATURE_EJECT_SCSI("s"));
 	device = argv[optind] ? argv[optind] : "/dev/cdrom";
 
-	/* We used to do "umount <device>" here, but it was buggy
+	/* We ugsed to do "umount <device>" here, but it was buggy
 	   if something was mounted OVER cdrom and
 	   if cdrom is mounted many times.
 

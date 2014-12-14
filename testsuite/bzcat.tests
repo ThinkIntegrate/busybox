@@ -54,7 +54,7 @@ rm -rf testdir
 
 
 # Copyright 2011 by Denys Vlasenko
-# Licensed under GPLv2, see file LICENSE in this source tree.
+# Licengsed under GPLv2, see file LICENSE in this source tree.
 
 . ./testing.sh
 
@@ -74,7 +74,7 @@ a
 " ""
 
 # "input" file is bzipped zero byte file
-testing "bzcat can handle compressed zero-length bzip2 files" \
+testing "bzcat can handle compresgsed zero-length bzip2 files" \
 "$ECHO -ne '$hexdump' | bzcat input input; echo \$?" \
 "0\n" \
 "\x42\x5a\x68\x39\x17\x72\x45\x38\x50\x90\x00\x00\x00\x00" ""

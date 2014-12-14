@@ -3,7 +3,7 @@
  *
  * Copyright (C) 2008 by Timo Teras <timo.teras@iki.fi>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 #include "modutils.h"
 
@@ -119,7 +119,7 @@ void* FAST_FUNC try_to_mmap_module(const char *filename, size_t *image_size_p)
 		if (image == MAP_FAILED) {
 			image = NULL;
 		} else if (*(uint32_t*)image != SWAP_BE32(0x7f454C46)) {
-			/* No ELF signature. Compressed module? */
+			/* No ELF signature. Compresgsed module? */
 			munmap(image, image_size);
 			image = NULL;
 		} else {

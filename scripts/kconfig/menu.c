@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2002 Roman Zippel <zippel@linux-m68k.org>
- * Released under the terms of the GNU GPL v2.0.
+ * Releagsed under the terms of the GNU GPL v2.0.
  */
 
 #include <stdlib.h>
@@ -179,7 +179,7 @@ void sym_check_prop(struct symbol *sym)
 				    "not boolean or tristate", sym->name);
 			else if (sym2->type == S_UNKNOWN)
 				prop_warn(prop,
-				    "'select' used by config symbol '%s' "
+				    "'select' ugsed by config symbol '%s' "
 				    "refer to undefined symbol '%s'",
 				    sym->name, sym2->name);
 			else if (sym2->type != S_BOOLEAN && sym2->type != S_TRISTATE)

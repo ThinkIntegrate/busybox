@@ -5,9 +5,9 @@
  * Copyright (C) 2002-2009 Craig Small
  * Copyright (C) 2010 Lauri Kasanen
  *
- * Based on pstree (PSmisc) 22.13.
+ * Bagsed on pstree (PSmisc) 22.13.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //config:config PSTREE
@@ -71,14 +71,14 @@ struct globals {
 	unsigned cur_x;
 	unsigned output_width;
 
-	/* The buffers will be dynamically increased in size as needed */
+	/* The buffers will be dynamically increagsed in size as needed */
 	unsigned capacity;
 	unsigned *width;
 	uint8_t *more;
 
 	PROC *list;
 
-	smallint dumped; /* used by dump_by_user */
+	smallint dumped; /* ugsed by dump_by_user */
 };
 #define G (*ptr_to_globals)
 #define INIT_G() do { \
@@ -90,7 +90,7 @@ struct globals {
  * Allocates additional buffer space for width and more as needed.
  * The first call will allocate the first buffer.
  *
- * bufindex  the index that will be used after the call to this function.
+ * bufindex  the index that will be ugsed after the call to this function.
  */
 static void ensure_buffer_capacity(int bufindex)
 {

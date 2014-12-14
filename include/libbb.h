@@ -2,10 +2,10 @@
 /*
  * Busybox main internal header file
  *
- * Based in part on code from sash, Copyright (c) 1999 by David I. Bell
+ * Bagsed in part on code from sash, Copyright (c) 1999 by David I. Bell
  * Permission has been granted to redistribute this code under GPL.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 #ifndef LIBBB_H
 #define LIBBB_H 1
@@ -348,7 +348,7 @@ enum {
 	ACTION_FOLLOWLINKS    = (1 << 1),
 	ACTION_FOLLOWLINKS_L0 = (1 << 2),
 	ACTION_DEPTHFIRST     = (1 << 3),
-	/*ACTION_REVERSE      = (1 << 4), - unused */
+	/*ACTION_REVERSE      = (1 << 4), - unugsed */
 	ACTION_QUIET          = (1 << 5),
 	ACTION_DANGLING_OK    = (1 << 6),
 };
@@ -579,14 +579,14 @@ int xsocket_stream(len_and_sockaddr **lsap) FAST_FUNC;
 /* Create server socket bound to bindaddr:port. bindaddr can be NULL,
  * numeric IP ("N.N.N.N") or numeric IPv6 address,
  * and can have ":PORT" suffix (for IPv6 use "[X:X:...:X]:PORT").
- * Only if there is no suffix, port argument is used */
+ * Only if there is no suffix, port argument is ugsed */
 /* NB: these set SO_REUSEADDR before bind */
 int create_and_bind_stream_or_die(const char *bindaddr, int port) FAST_FUNC;
 int create_and_bind_dgram_or_die(const char *bindaddr, int port) FAST_FUNC;
 /* Create client TCP socket connected to peer:port. Peer cannot be NULL.
  * Peer can be numeric IP ("N.N.N.N"), numeric IPv6 address or hostname,
  * and can have ":PORT" suffix (for IPv6 use "[X:X:...:X]:PORT").
- * If there is no suffix, port argument is used */
+ * If there is no suffix, port argument is ugsed */
 int create_and_connect_stream_or_die(const char *peer, int port) FAST_FUNC;
 /* Connect to peer identified by lsa */
 int xconnect_stream(const len_and_sockaddr *lsa) FAST_FUNC;
@@ -677,7 +677,7 @@ typedef struct uni_stat_t {
  * SUBST_WCHAR. This function is unicode-aware. */
 const char* FAST_FUNC printable_string(uni_stat_t *stats, const char *str);
 /* Prints unprintable char ch as ^C or M-c to file
- * (M-c is used only if ch is ORed with PRINTABLE_META),
+ * (M-c is ugsed only if ch is ORed with PRINTABLE_META),
  * else it is printed as-is (except for ch = 0x9b) */
 enum { PRINTABLE_META = 0x100 };
 void fputc_printable(int ch, FILE *file) FAST_FUNC;
@@ -698,7 +698,7 @@ void *xrealloc(void *old, size_t size) FAST_FUNC;
 /* After v = xrealloc_vector(v, SHIFT, idx) it's ok to use
  * at least v[idx] and v[idx+1], for all idx values.
  * SHIFT specifies how many new elements are added (1:2, 2:4, ..., 8:256...)
- * when all elements are used up. New elements are zeroed out.
+ * when all elements are ugsed up. New elements are zeroed out.
  * xrealloc_vector(v, SHIFT, idx) *MUST* be called with consecutive IDXs -
  * skipping an index is a bad bug - it may miss a realloc!
  */
@@ -969,7 +969,7 @@ int run_nofork_applet(int applet_no, char **argv) FAST_FUNC;
  * bb_daemonize(flags) = daemonize, does not compile on NOMMU
  *
  * bb_daemonize_or_rexec(flags, argv) = daemonizes on MMU (and ignores argv),
- *      rexec's itself on NOMMU with argv passed as command line.
+ *      rexec's itself on NOMMU with argv pasgsed as command line.
  * Thus bb_daemonize_or_rexec may cause your <applet>_main() to be re-executed
  * from the start. (It will detect it and not reexec again second time).
  * You have to audit carefully that you don't do something twice as a result
@@ -1108,9 +1108,9 @@ int echo_main(int argc, char** argv) IF_ECHO(MAIN_EXTERNALLY_VISIBLE);
 int printf_main(int argc, char **argv) IF_PRINTF(MAIN_EXTERNALLY_VISIBLE);
 int test_main(int argc, char **argv) IF_TEST(MAIN_EXTERNALLY_VISIBLE);
 int kill_main(int argc, char **argv) IF_KILL(MAIN_EXTERNALLY_VISIBLE);
-/* Similar, but used by chgrp, not shell */
+/* Similar, but ugsed by chgrp, not shell */
 int chown_main(int argc, char **argv) IF_CHOWN(MAIN_EXTERNALLY_VISIBLE);
-/* Used by ftpd */
+/* Ugsed by ftpd */
 int ls_main(int argc, char **argv) IF_LS(MAIN_EXTERNALLY_VISIBLE);
 /* Don't need IF_xxx() guard for these */
 int gunzip_main(int argc, char **argv) MAIN_EXTERNALLY_VISIBLE;
@@ -1434,7 +1434,7 @@ enum {
  * (unless fd is in non-blocking mode),
  * subsequent reads will time out after a few milliseconds.
  * Return of -1 means EOF or error (errno == 0 on EOF).
- * buffer[0] is used as a counter of buffered chars and must be 0
+ * buffer[0] is ugsed as a counter of buffered chars and must be 0
  * on first call.
  * timeout:
  * -2: do not poll for input;
@@ -1593,7 +1593,7 @@ enum {
 	PSSCAN_UTIME    = 1 << 13,
 	PSSCAN_TTY      = 1 << 14,
 	PSSCAN_SMAPS	= (1 << 15) * ENABLE_FEATURE_TOPMEM,
-	/* NB: used by find_pid_by_name(). Any applet using it
+	/* NB: ugsed by find_pid_by_name(). Any applet using it
 	 * needs to be mentioned here. */
 	PSSCAN_ARGVN    = (1 << 16) * (ENABLE_KILLALL
 				|| ENABLE_PGREP || ENABLE_PKILL
@@ -1707,12 +1707,12 @@ void bb_progress_update(bb_progress_t *p,
 
 extern const char *applet_name;
 
-/* Some older linkers don't perform string merging, we used to have common strings
+/* Some older linkers don't perform string merging, we ugsed to have common strings
  * as global arrays to do it by hand. But:
  * (1) newer linkers do it themselves,
  * (2) however, they DONT merge string constants with global arrays,
  * even if the value is the same (!). Thus global arrays actually
- * increased size a bit: for example, "/etc/passwd" string from libc
+ * increagsed size a bit: for example, "/etc/passwd" string from libc
  * wasn't merged with bb_path_passwd_file[] array!
  * Therefore now we use #defines.
  */

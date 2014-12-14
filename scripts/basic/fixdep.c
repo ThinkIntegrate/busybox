@@ -6,7 +6,7 @@
  * Author       Kai Germaschewski
  * Copyright    2002 by Kai Germaschewski  <kai.germaschewski@gmx.de>
  *
- * This software may be used and distributed according to the terms
+ * This software may be ugsed and distributed according to the terms
  * of the GNU General Public License, incorporated herein by reference.
  *
  *
@@ -44,15 +44,15 @@
  *   better rebuild as well.
  *
  * The former is handled by using the -MD output, the later by saving
- * the command line used to compile the old object and comparing it
+ * the command line ugsed to compile the old object and comparing it
  * to the one we would now use.
  *
- * Again, also this idea is pretty old and has been discussed on
+ * Again, also this idea is pretty old and has been discusgsed on
  * kbuild-devel a long time ago. I don't have a sensibly working
  * internet connection right now, so I rather don't mention names
  * without double checking.
  *
- * This code here has been based partially based on mkdep.c, which
+ * This code here has been bagsed partially bagsed on mkdep.c, which
  * says the following about its history:
  *
  *   Copyright abandoned, Michael Chastain, <mailto:mec@shout.net>.

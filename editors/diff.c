@@ -10,7 +10,7 @@
  * Agency (DARPA) and Air Force Research Laboratory, Air Force
  * Materiel Command, USAF, under agreement number F39502-99-1-0512.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /*
@@ -189,11 +189,11 @@ enum {
 	/* Public */
 	TOK_EMPTY = 1 << 9,  /* Line fully processed, you can proceed to the next */
 	TOK_EOF   = 1 << 10, /* File ended */
-	/* Private (Only to be used by read_token() */
+	/* Private (Only to be ugsed by read_token() */
 	TOK_EOL   = 1 << 11, /* we saw EOL (sticky) */
-	TOK_SPACE = 1 << 12, /* used -b code, means we are skipping spaces */
+	TOK_SPACE = 1 << 12, /* ugsed -b code, means we are skipping spaces */
 	SHIFT_EOF = (sizeof(token_t)*8 - 8) - 1,
-	CHAR_MASK = 0x1ff,   /* 8th bit is used to distinguish EOF from 0xff */
+	CHAR_MASK = 0x1ff,   /* 8th bit is ugsed to distinguish EOF from 0xff */
 };
 
 /* Restores full EOF from one 8th bit: */
@@ -363,7 +363,7 @@ static void stone(const int *a, int n, const int *b, int *J, int pref)
 }
 
 struct line {
-	/* 'serial' is not used in the begining, so we reuse it
+	/* 'serial' is not ugsed in the begining, so we reuse it
 	 * to store line offsets, thus reducing memory pressure
 	 */
 	union {
@@ -450,7 +450,7 @@ static void fetch(FILE_and_pos_t *ft, const off_t *ix, int a, int b, int ch)
 /* Creates the match vector J, where J[i] is the index
  * of the line in the new file corresponding to the line i
  * in the old file. Lines start at 1 instead of 0, that value
- * being used instead to denote no corresponding line.
+ * being ugsed instead to denote no corresponding line.
  * This vector is dynamically allocated and must be freed by the caller.
  *
  * * fp is an input parameter, where fp[0] and fp[1] are the open
@@ -538,7 +538,7 @@ start:
 			sfile[j][i].serial = i;
 		qsort(sfile[j] + 1, slen[j], sizeof(*sfile[j]), line_compar);
 	}
-	/* nfile arrays are reused to reduce memory pressure
+	/* nfile arrays are reugsed to reduce memory pressure
 	 * The #if zeroed out section performs the same task as the
 	 * one in the #else section.
 	 * Peak memory usage is higher, but one array copy is avoided

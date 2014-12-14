@@ -20,7 +20,7 @@
 #include "ext2fs.h"
 
 /*
- * The data storage strategy used by icount relies on the observation
+ * The data storage strategy ugsed by icount relies on the observation
  * that most inode counts are either zero (for non-allocated inodes),
  * one (for most files), and only a few that are two or more
  * (directories and files that are linked to more than one directory).

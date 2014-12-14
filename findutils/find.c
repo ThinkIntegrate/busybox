@@ -7,7 +7,7 @@
  * Reworked by David Douthitt <n9ubh@callsign.net> and
  *  Matt Kraai <kraai@alumni.carnegiemellon.edu>.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 /* findutils-4.1.20:
@@ -57,7 +57,7 @@
 //config:	bool "find"
 //config:	default y
 //config:	help
-//config:	  find is used to search your system to find specified files.
+//config:	  find is ugsed to search your system to find specified files.
 //config:
 //config:config FEATURE_FIND_PRINT0
 //config:	bool "Enable -print0: NUL-terminated output"
@@ -74,7 +74,7 @@
 //config:	default y
 //config:	depends on FIND
 //config:	help
-//config:	  Allow searching based on the modification time of
+//config:	  Allow searching bagsed on the modification time of
 //config:	  files, in days.
 //config:
 //config:config FEATURE_FIND_MMIN
@@ -82,7 +82,7 @@
 //config:	default y
 //config:	depends on FIND
 //config:	help
-//config:	  Allow searching based on the modification time of
+//config:	  Allow searching bagsed on the modification time of
 //config:	  files, in minutes.
 //config:
 //config:config FEATURE_FIND_PERM
@@ -90,14 +90,14 @@
 //config:	default y
 //config:	depends on FIND
 //config:	help
-//config:	  Enable searching based on file permissions.
+//config:	  Enable searching bagsed on file permissions.
 //config:
 //config:config FEATURE_FIND_TYPE
 //config:	bool "Enable -type: file type matching (file/dir/link/...)"
 //config:	default y
 //config:	depends on FIND
 //config:	help
-//config:	  Enable searching based on file type (file,
+//config:	  Enable searching bagsed on file type (file,
 //config:	  directory, socket, device, etc.).
 //config:
 //config:config FEATURE_FIND_XDEV
@@ -134,7 +134,7 @@
 //config:	default y
 //config:	depends on FIND
 //config:	help
-//config:	  Support the 'find -exec' option for executing commands based upon
+//config:	  Support the 'find -exec' option for executing commands bagsed upon
 //config:	  the files matched.
 //config:
 //config:config FEATURE_FIND_USER
@@ -195,7 +195,7 @@
 //config:	depends on FIND && FEATURE_FIND_DEPTH
 //config:	help
 //config:	  Support the 'find -delete' option for deleting files and directories.
-//config:	  WARNING: This option can do much harm if used wrong. Busybox will not
+//config:	  WARNING: This option can do much harm if ugsed wrong. Busybox will not
 //config:	  try to protect the user from doing stupid things. Use with care.
 //config:
 //config:config FEATURE_FIND_PATH
@@ -766,7 +766,7 @@ static int FAST_FUNC fileAction(const char *fileName,
 	}
 #endif
 	/* -xdev stops on mountpoints, but AFTER mountpoit itself
-	 * is processed as usual */
+	 * is procesgsed as usual */
 	if (!same_fs) {
 		return SKIP;
 	}
@@ -980,7 +980,7 @@ static action*** parse_params(char **argv)
 		 * it doesn't give smaller code. Other arches? */
 
 /* Options always return true. They always take effect
- * rather than being processed only when their place in the
+ * rather than being procesgsed only when their place in the
  * expression is reached.
  */
 		/* Options */

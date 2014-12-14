@@ -1,6 +1,6 @@
 /*
-  setfiles: based on policycoreutils 2.0.19
-  policycoreutils was released under GPL 2.
+  setfiles: bagsed on policycoreutils 2.0.19
+  policycoreutils was releagsed under GPL 2.
   Port to BusyBox (c) 2007 by Yuichi Nakamura <ynakam@hitachisoft.jp>
 */
 
@@ -67,7 +67,7 @@ struct globals {
 	int verbose; /* getopt32 uses it, has to be int */
 	smallint recurse; /* Recursive descent */
 	smallint follow_mounts;
-	/* Behavior flags determined based on setfiles vs. restorecon */
+	/* Behavior flags determined bagsed on setfiles vs. restorecon */
 	smallint expand_realpath;  /* Expand paths via realpath */
 	smallint abort_on_error; /* Abort the file tree walk upon an error */
 	int add_assoc; /* Track inode associations for conflict detection */

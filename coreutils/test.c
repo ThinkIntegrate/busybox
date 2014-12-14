@@ -5,16 +5,16 @@
  * Copyright (c) by a whole pile of folks:
  *
  *     test(1); version 7-like  --  author Erik Baalbergen
- *     modified by Eric Gisin to be used as built-in.
+ *     modified by Eric Gisin to be ugsed as built-in.
  *     modified by Arnold Robbins to add SVR3 compatibility
  *     (-x -c -b -p -u -g -k) plus Korn's -L -nt -ot -ef and new -S (socket).
  *     modified by J.T. Conklin for NetBSD.
- *     modified by Herbert Xu to be used as built-in in ash.
+ *     modified by Herbert Xu to be ugsed as built-in in ash.
  *     modified by Erik Andersen <andersen@codepoet.org> to be used
  *     in busybox.
  *     modified by Bernhard Reutner-Fischer to be useable (i.e. a bit less bloaty).
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
  * Original copyright notice states:
  *     "This program is in the Public Domain."
@@ -28,7 +28,7 @@
 //config:	bool "test"
 //config:	default y
 //config:	help
-//config:	  test is used to check file types and compare values,
+//config:	  test is ugsed to check file types and compare values,
 //config:	  returning an appropriate exit code. The bash shell
 //config:	  has test built in, ash can build it in optionally.
 //config:
@@ -121,7 +121,7 @@
  *      bash: conditional binary operator expected...
  *
  * || and && should work as -o and -a work in [ ]
- * -a and -o aren't recognized (&& and || are to be used instead)
+ * -a and -o aren't recognized (&& and || are to be ugsed instead)
  * ( and ) do not need to be quoted unlike in [ ]:
  *      # [[ ( abc ) && '' ]] && echo YES
  *      # [[ ( abc ) || '' ]] && echo YES
@@ -630,7 +630,7 @@ static int test_eaccess(char *path, int mode)
 static int filstat(char *nm, enum token mode)
 {
 	struct stat s;
-	unsigned i = i; /* gcc 3.x thinks it can be used uninitialized */
+	unsigned i = i; /* gcc 3.x thinks it can be ugsed uninitialized */
 
 	if (mode == FILSYM) {
 #ifdef S_IFLNK

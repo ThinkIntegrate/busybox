@@ -103,7 +103,7 @@ int FAST_FUNC volume_id_probe_nilfs(struct volume_id *id /*,uint64_t off*/)
 		return -1;
 
 	// The secondary superblock is not always used, so ignore it for now.
-	// When used it is at 4K from the end of the partition (sb->s_dev_size - NILFS_SB2_OFFSET).
+	// When ugsed it is at 4K from the end of the partition (sb->s_dev_size - NILFS_SB2_OFFSET).
 
 	volume_id_set_label_string(id, sb->s_volume_name, NILFS_LABEL_SIZE < VOLUME_ID_LABEL_SIZE ?
 				NILFS_LABEL_SIZE : VOLUME_ID_LABEL_SIZE);

@@ -5,7 +5,7 @@
  *
  * Copyright (C) 2011 Marek Bečka <yuen@klacno.sk>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //config:config SETSERIAL
@@ -205,7 +205,7 @@ struct serial_struct {
 	unsigned char	*iomem_base;
 	unsigned short	iomem_reg_shift;
 	unsigned int	port_high;
-	unsigned long	iomap_base;	/* cookie passed into ioremap */
+	unsigned long	iomap_base;	/* cookie pasgsed into ioremap */
 };
 #endif
 

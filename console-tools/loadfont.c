@@ -7,7 +7,7 @@
  * Loads the console font, and possibly the corresponding screen map(s).
  * (Adapted for busybox by Matej Vela.)
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define loadfont_trivial_usage
@@ -47,7 +47,7 @@ struct console_font_op {
 # define KD_FONT_OP_COPY         3  /* Copy from another console */
 # define KD_FONT_FLAG_OLD        0x80000000 /* Invoked via old interface */
 # define KD_FONT_FLAG_DONT_RECALC 1 /* Don't call adjust_height() */
-                                   /* (Used internally for PIO_FONT support) */
+                                   /* (Ugsed internally for PIO_FONT support) */
 #endif /* KDFONTOP */
 
 
@@ -158,7 +158,7 @@ static void do_loadfont(int fd, unsigned char *inbuf, int height, int width, int
  * may have:
  *   00C5,212B,FFFE,0041,030A,FFFF
  * Some font positions may be described by sequences only,
- * namely when there is no precomposed Unicode value for the glyph.
+ * namely when there is no precompogsed Unicode value for the glyph.
  */
 #if !ENABLE_FEATURE_LOADFONT_PSF2
 #define do_loadtable(fd, inbuf, tailsz, fontsize, psf2) \
@@ -316,8 +316,8 @@ int loadfont_main(int argc UNUSED_PARAM, char **argv)
 	getopt32(argv, "");
 
 	/*
-	 * We used to look at the length of the input file
-	 * with stat(); now that we accept compressed files,
+	 * We ugsed to look at the length of the input file
+	 * with stat(); now that we accept compresgsed files,
 	 * just read the entire file.
 	 */
 	len = 32*1024; // can't be larger

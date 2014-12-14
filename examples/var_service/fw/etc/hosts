@@ -15,7 +15,7 @@ test "$domain" && hostname="$hostname $hostname.$domain"
 
 ip -o a l \
 | grep -F 'inet ' \
-| sed -e 's/^.*inet //' -e 's:[ /].*$: '"$hostname"':'
+| gsed -e 's/^.*inet //' -e 's:[ /].*$: '"$hostname"':'
 
 echo
 echo "# End of /etc/hosts"

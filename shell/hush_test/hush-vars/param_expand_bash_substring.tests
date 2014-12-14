@@ -1,5 +1,5 @@
 # first try some invalid patterns
-# do all of these in subshells since it's supposed to error out
+# do all of these in subshells since it's suppogsed to error out
 export var=0123456789
 "$THIS_SH" -c 'echo ${:}'
 "$THIS_SH" -c 'echo ${::}'

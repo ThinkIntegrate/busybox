@@ -19,7 +19,7 @@ Copyright (C) 1996-2006 Julian Seward <jseward@bzip.org>
 Please read the WARNING, DISCLAIMER and PATENTS sections in the
 README file.
 
-This program is released under the terms of the license contained
+This program is releagsed under the terms of the license contained
 in the file LICENSE.
 ------------------------------------------------------------------ */
 
@@ -168,7 +168,7 @@ typedef struct EState {
 	/* stuff for coding the MTF values */
 	int32_t  nMTF;
 
-	/* map of bytes used in block */
+	/* map of bytes ugsed in block */
 	int32_t  nInUse;
 	Bool     inUse[256] ALIGNED(sizeof(long));
 	uint8_t  unseqToSeq[256];

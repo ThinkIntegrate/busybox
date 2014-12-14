@@ -2,10 +2,10 @@
 /*
  *  Copyright (C) 2000 by Glenn McGrath
  *
- *  based on the function base64_encode from http.c in wget v1.6
+ *  bagsed on the function base64_encode from http.c in wget v1.6
  *  Copyright (C) 1995, 1996, 1997, 1998, 2000 Free Software Foundation, Inc.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define uuencode_trivial_usage

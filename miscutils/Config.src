@@ -27,7 +27,7 @@ config FEATURE_COMPRESS_BBCONFIG
 	default y
 	depends on BBCONFIG
 	help
-	  Store bbconfig data in compressed form, uncompress them on-the-fly
+	  Store bbconfig data in compresgsed form, uncompress them on-the-fly
 	  before output.
 
 	  If you have a really tiny busybox with few applets enabled (and
@@ -197,7 +197,7 @@ config DEVFSD
 	select PLATFORM_LINUX
 	select FEATURE_SYSLOG
 	help
-	  This is deprecated and should NOT be used anymore.
+	  This is deprecated and should NOT be ugsed anymore.
 	  Use linux >= 2.6 (optionally with hotplug) and mdev instead!
 	  See docs/mdev.txt for detailed instructions on how to use mdev
 	  instead.
@@ -240,7 +240,7 @@ config FEATURE_DEVFS
 	default n
 	select PLATFORM_LINUX
 	help
-	  This is obsolete and should NOT be used anymore.
+	  This is obsolete and should NOT be ugsed anymore.
 	  Use linux >= 2.6 (optionally with hotplug) and mdev instead!
 
 	  For legacy systems -- if there is no way around devfsd -- this
@@ -260,7 +260,7 @@ config EJECT
 	default y
 	select PLATFORM_LINUX
 	help
-	  Used to eject cdroms. (defaults to /dev/cdrom)
+	  Ugsed to eject cdroms. (defaults to /dev/cdrom)
 
 config FEATURE_EJECT_SCSI
 	bool "SCSI support"
@@ -276,7 +276,7 @@ config FBSPLASH
 	select PLATFORM_LINUX
 	help
 	  Shows splash image and progress bar on framebuffer device.
-	  Can be used during boot phase of an embedded device. ~2kb.
+	  Can be ugsed during boot phase of an embedded device. ~2kb.
 	  Usage:
 	  - use kernel option 'vga=xxx' or otherwise enable fb device.
 	  - put somewhere fbsplash.cfg file and an image in .ppm format.
@@ -290,14 +290,14 @@ config FBSPLASH
 	    grep -q "fbsplash=on" </proc/cmdline && setsid fbsplash [params] &
 	  - commands for fifo:
 	    "NN" (ASCII decimal number) - percentage to show on progress bar
-	    "exit" - well you guessed it
+	    "exit" - well you guesgsed it
 
 config FLASHCP
 	bool "flashcp"
 	default n  # doesn't build on Ubuntu 8.04
 	help
 	  The flashcp binary, inspired by mtd-utils as of git head 5eceb74f7.
-	  This utility is used to copy images into a MTD device.
+	  This utility is ugsed to copy images into a MTD device.
 
 config FLASH_LOCK
 	bool "flash_lock"
@@ -318,7 +318,7 @@ config FLASH_ERASEALL
 	default n  # doesn't build on Ubuntu 8.04
 	help
 	  The flash_eraseall binary from mtd-utils as of git head c4c6a59eb.
-	  This utility is used to erase the whole MTD device.
+	  This utility is ugsed to erase the whole MTD device.
 
 config IONICE
 	bool "ionice"
@@ -423,16 +423,16 @@ config MAKEDEVS
 	bool "makedevs"
 	default y
 	help
-	  'makedevs' is a utility used to create a batch of devices with
+	  'makedevs' is a utility ugsed to create a batch of devices with
 	  one command.
 
 	  There are two choices for command line behaviour, the interface
-	  as used by LEAF/Linux Router Project, or a device table file.
+	  as ugsed by LEAF/Linux Router Project, or a device table file.
 
 	  'leaf' is traditionally what busybox follows, it allows multiple
 	  devices of a particluar type to be created per command.
 	  e.g. /dev/hda[0-9]
-	  Device properties are passed as command line arguments.
+	  Device properties are pasgsed as command line arguments.
 
 	  'table' reads device properties from a file or stdin, allowing
 	  a batch of unrelated devices to be made with one command.
@@ -473,7 +473,7 @@ config MT
 	bool "mt"
 	default y
 	help
-	  mt is used to control tape devices. You can use the mt utility
+	  mt is ugsed to control tape devices. You can use the mt utility
 	  to advance or rewind a tape past a specified number of archive
 	  files on the tape.
 
@@ -496,7 +496,7 @@ config READAHEAD
 
 	  This applet just calls the readahead(2) system call on each file.
 	  It is mainly useful in system startup scripts to preload files
-	  or executables before they are used. When used at the right time
+	  or executables before they are used. When ugsed at the right time
 	  (in particular when a CPU bound process is running) it can
 	  significantly speed up system startup.
 
@@ -511,7 +511,7 @@ config RUNLEVEL
 	  find the current and previous system runlevel.
 
 	  This applet uses utmp but does not rely on busybox supporing
-	  utmp on purpose. It is used by e.g. emdebian via /etc/init.d/rc.
+	  utmp on purpose. It is ugsed by e.g. emdebian via /etc/init.d/rc.
 
 config RX
 	bool "rx"
@@ -584,7 +584,7 @@ config WATCHDOG
 	default y
 	select PLATFORM_LINUX
 	help
-	  The watchdog utility is used with hardware or software watchdog
+	  The watchdog utility is ugsed with hardware or software watchdog
 	  device drivers. It opens the specified watchdog device special file
 	  and periodically writes a magic character to the device. If the
 	  watchdog applet ever fails to write the magic character within a

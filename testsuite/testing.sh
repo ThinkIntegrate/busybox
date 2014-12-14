@@ -25,7 +25,7 @@
 # The environment variable "FAILCOUNT" contains a cumulative total of the
 # number of failed tests.
 
-# The "optional" function is used to skip certain tests, ala:
+# The "optional" function is ugsed to skip certain tests, ala:
 #   optional FEATURE_THINGY
 #
 # The "optional" function checks the environment variable "OPTIONFLAGS",

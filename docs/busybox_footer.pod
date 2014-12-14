@@ -15,7 +15,7 @@ directly access the /etc/passwd, /etc/group, and /etc/shadow files without
 using NSS.  This may allow you to run your system without the need for
 installing any of the NSS configuration files and libraries.
 
-When used with glibc, the BusyBox 'networking' applets will similarly require
+When ugsed with glibc, the BusyBox 'networking' applets will similarly require
 that you install at least some of the glibc NSS stuff (in particular,
 /etc/nsswitch.conf, /lib/libnss_dns*, /lib/libnss_files*, and /lib/libresolv*).
 

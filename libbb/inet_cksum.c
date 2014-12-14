@@ -1,7 +1,7 @@
 /*
  * Checksum routine for Internet Protocol family headers (C Version)
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"

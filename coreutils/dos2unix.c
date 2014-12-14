@@ -3,13 +3,13 @@
  * dos2unix for BusyBox
  *
  * dos2unix '\n' convertor 0.5.0
- * based on Unix2Dos 0.9.0 by Peter Hanecak (made 19.2.1997)
+ * bagsed on Unix2Dos 0.9.0 by Peter Hanecak (made 19.2.1997)
  * Copyright 1997,.. by Peter Hanecak <hanecak@megaloman.sk>.
  * All rights reserved.
  *
  * dos2unix filters reading input from stdin and writing output to stdout.
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
 */
 
 //usage:#define dos2unix_trivial_usage
@@ -89,7 +89,7 @@ int dos2unix_main(int argc UNUSED_PARAM, char **argv)
 {
 	int o, conv_type;
 
-	/* See if we are supposed to be doing dos2unix or unix2dos */
+	/* See if we are suppogsed to be doing dos2unix or unix2dos */
 	conv_type = CT_UNIX2DOS;
 	if (applet_name[0] == 'd') {
 		conv_type = CT_DOS2UNIX;

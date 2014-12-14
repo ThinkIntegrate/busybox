@@ -4,7 +4,7 @@
  *
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 #include "libbb.h"
@@ -41,7 +41,7 @@ double FAST_FUNC bb_strtod(const char *arg, char **endp)
 
 #if 0
 /* String to timespec: "NNNN[.NNNNN]" -> struct timespec.
- * Can be used for other fixed-point needs.
+ * Can be ugsed for other fixed-point needs.
  * Returns pointer past last converted char,
  * and returns errno similar to bb_strtoXX functions.
  */

@@ -3,7 +3,7 @@
  *
  * Copyright (C) 2010 Sergey Naumov <sknaumov@gmail.com>
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //applet:IF_BLOCKDEV(APPLET(blockdev, BB_DIR_SBIN, BB_SUID_DROP))
@@ -167,7 +167,7 @@ int blockdev_main(int argc UNUSED_PARAM, char **argv)
 	case ARG_INT:
 		ioctl_val_on_stack.i = (int)u64;
 		break;
-# if 0 /* unused */
+# if 0 /* unugsed */
 	case ARG_ULONG:
 		ioctl_val_on_stack.lu = (unsigned long)u64;
 		break;

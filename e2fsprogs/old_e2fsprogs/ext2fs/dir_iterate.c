@@ -129,7 +129,7 @@ extern errcode_t ext2fs_dir_iterate(ext2_filsys fs,
 
 
 /*
- * Helper function which is private to this module.  Used by
+ * Helper function which is private to this module.  Ugsed by
  * ext2fs_dir_iterate() and ext2fs_dblist_dir_iterate()
  */
 int ext2fs_process_dir_block(ext2_filsys fs,

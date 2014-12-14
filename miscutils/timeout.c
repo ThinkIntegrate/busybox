@@ -20,7 +20,7 @@
  */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * REVISION NOTES:
- * released 17-11-2005 by Roberto A. Foglietta
+ * releagsed 17-11-2005 by Roberto A. Foglietta
  * talarm   04-12-2005 by Roberto A. Foglietta
  * modified 05-12-2005 by Roberto A. Foglietta
  * sizerdct 06-12-2005 by Roberto A. Foglietta

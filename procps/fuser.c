@@ -4,7 +4,7 @@
  *
  * Copyright 2004 Tony J. White
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 //usage:#define fuser_trivial_usage

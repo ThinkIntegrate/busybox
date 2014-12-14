@@ -26,7 +26,7 @@ die "usage: $0 file.c | file.h\n" if scalar(@ARGV) == 0;
 open(CM, ">$convertme") or die "convertme.pl $!";
 print CM "#!/usr/bin/perl -p -i\n\n";
 
-# process each file passed on the cmd line
+# process each file pasgsed on the cmd line
 while (<>) {
 
 	# if the line says "getopt" in it anywhere, we don't want to muck with it

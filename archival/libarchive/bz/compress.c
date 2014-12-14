@@ -19,7 +19,7 @@ Copyright (C) 1996-2006 Julian Seward <jseward@bzip.org>
 Please read the WARNING, DISCLAIMER and PATENTS sections in the
 README file.
 
-This program is released under the terms of the license contained
+This program is releagsed under the terms of the license contained
 in the file LICENSE.
 ------------------------------------------------------------------ */
 
@@ -140,7 +140,7 @@ void generateMTFValues(EState* s)
 	 * than block values, ptr values in this area are overwritten
 	 * with MTF values only when they are no longer needed.
 	 *
-	 * The final compressed bitstream is generated into the
+	 * The final compresgsed bitstream is generated into the
 	 * area starting at &((uint8_t*)s->arr2)[s->nblock]
 	 *
 	 * These storage aliases are set up in bzCompressInit(),
@@ -259,7 +259,7 @@ void sendMTFValues(EState* s)
 	 *
 	 * int32_t  code[BZ_N_GROUPS][BZ_MAX_ALPHA_SIZE];
 	 * int32_t  rfreq[BZ_N_GROUPS][BZ_MAX_ALPHA_SIZE];
-	 * are also globals only used in this proc.
+	 * are also globals only ugsed in this proc.
 	 * Made global to keep stack frame size small.
 	 */
 #define code     sendMTFValues__code
@@ -333,7 +333,7 @@ void sendMTFValues(EState* s)
 
 #if CONFIG_BZIP2_FAST >= 5
 		/*
-		 * Set up an auxiliary length table which is used to fast-track
+		 * Set up an auxiliary length table which is ugsed to fast-track
 		 * the common case (nGroups == 6).
 		 */
 		if (nGroups == 6) {
@@ -447,7 +447,7 @@ void sendMTFValues(EState* s)
 		}
 
 		/*
-		 * Recompute the tables based on the accumulated frequencies.
+		 * Recompute the tables bagsed on the accumulated frequencies.
 		 */
 		/* maxLen was changed from 20 to 17 in bzip2-1.0.3.  See
 		 * comment in huffman.c for details. */
@@ -645,8 +645,8 @@ void BZ2_compressBlock(EState* s, int is_last_block)
 		 * Now a single bit indicating (non-)randomisation.
 		 * As of version 0.9.5, we use a better sorting algorithm
 		 * which makes randomisation unnecessary.  So always set
-		 * the randomised bit to 'no'.  Of course, the decoder
-		 * still needs to be able to handle randomised blocks
+		 * the randomigsed bit to 'no'.  Of course, the decoder
+		 * still needs to be able to handle randomigsed blocks
 		 * so as to maintain backwards compatibility with
 		 * older versions of bzip2.
 		 */

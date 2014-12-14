@@ -1,11 +1,11 @@
 /* vi: set sw=4 ts=4: */
-/* This file was released into the public domain by Paul Fox.
+/* This file was releagsed into the public domain by Paul Fox.
  */
 
 //usage:#define bbconfig_trivial_usage
 //usage:       ""
 //usage:#define bbconfig_full_usage "\n\n"
-//usage:       "Print the config file used by busybox build"
+//usage:       "Print the config file ugsed by busybox build"
 
 #include "libbb.h"
 #include "bbconfigopts.h"

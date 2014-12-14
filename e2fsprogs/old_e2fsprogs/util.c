@@ -1,10 +1,10 @@
 /* vi: set sw=4 ts=4: */
 /*
- * util.c --- helper functions used by tune2fs and mke2fs
+ * util.c --- helper functions ugsed by tune2fs and mke2fs
  *
  * Copyright 1995, 1996, 1997, 1998, 1999, 2000 by Theodore Ts'o.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 #include <stdio.h>

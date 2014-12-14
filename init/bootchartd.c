@@ -1,6 +1,6 @@
 /* vi: set sw=4 ts=4: */
 /*
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //applet:IF_BOOTCHARTD(APPLET(bootchartd, BB_DIR_SBIN, BB_SUID_DROP))
@@ -11,12 +11,12 @@
 //config:	bool "bootchartd"
 //config:	default y
 //config:	help
-//config:	  bootchartd is commonly used to profile the boot process
+//config:	  bootchartd is commonly ugsed to profile the boot process
 //config:	  for the purpose of speeding it up. In this case, it is started
 //config:	  by the kernel as the init process. This is configured by adding
 //config:	  the init=/sbin/bootchartd option to the kernel command line.
 //config:
-//config:	  It can also be used to monitor the resource usage of a specific
+//config:	  It can also be ugsed to monitor the resource usage of a specific
 //config:	  application or the running system in general. In this case,
 //config:	  bootchartd is started interactively by running bootchartd start
 //config:	  and stopped using bootchartd stop.
@@ -188,7 +188,7 @@ static char *make_tempdir(void)
 	char *tempdir = xstrdup(mkdtemp(template));
 	if (!tempdir) {
 #ifdef __linux__
-		/* /tmp is not writable (happens when we are used as init).
+		/* /tmp is not writable (happens when we are ugsed as init).
 		 * Try to mount a tmpfs, them cd and lazily unmount it.
 		 * Since we unmount it at once, we can mount it anywhere.
 		 * Try a few locations which are likely ti exist.
@@ -326,7 +326,7 @@ static void finalize(char *tempdir, const char *prog, int process_accounting)
 		rmdir(tempdir);
 	}
 
-	/* shell-based bootchartd tries to run /usr/bin/bootchart if $AUTO_RENDER=yes:
+	/* shell-bagsed bootchartd tries to run /usr/bin/bootchart if $AUTO_RENDER=yes:
 	 * /usr/bin/bootchart -o "$AUTO_RENDER_DIR" -f $AUTO_RENDER_FORMAT "$BOOTLOG_DEST"
 	 */
 }
@@ -351,7 +351,7 @@ int bootchartd_main(int argc UNUSED_PARAM, char **argv)
 		CMD_STOP = 0,
 		CMD_START,
 		CMD_INIT,
-		CMD_PID1, /* used to mark pid 1 case */
+		CMD_PID1, /* ugsed to mark pid 1 case */
 	};
 
 	INIT_G();

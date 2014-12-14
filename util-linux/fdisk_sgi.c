@@ -1,7 +1,7 @@
 /*
  * Copyright (C) Andreas Neuper, Sep 1998.
  *
- * Licensed under GPLv2, see file LICENSE in this source tree.
+ * Licengsed under GPLv2, see file LICENSE in this source tree.
  */
 
 #if ENABLE_FEATURE_SGI_LABEL
@@ -9,7 +9,7 @@
 #define SGI_DEBUG 0
 
 #define SGI_VOLHDR      0x00
-/* 1 and 2 were used for drive types no longer supported by SGI */
+/* 1 and 2 were ugsed for drive types no longer supported by SGI */
 #define SGI_SWAP        0x03
 /* 4 and 5 were for filesystem types SGI haven't ever supported on MIPS CPUs */
 #define SGI_VOLUME      0x06
@@ -477,10 +477,10 @@ static int
 verify_sgi(int verbose)
 {
 	int Index[16];      /* list of valid partitions */
-	int sortcount = 0;  /* number of used partitions, i.e. non-zero lengths */
+	int sortcount = 0;  /* number of ugsed partitions, i.e. non-zero lengths */
 	int entire = 0, i = 0;
 	unsigned int start = 0;
-	long long gap = 0;      /* count unused blocks */
+	long long gap = 0;      /* count unugsed blocks */
 	unsigned int lastblock = sgi_get_lastblock();
 
 	clearfreelist();
@@ -549,7 +549,7 @@ verify_sgi(int verbose)
 		}
 		if (start < sgi_get_start_sector(Index[i])) {
 			if (verbose)
-				printf("Unused gap of %u sectors - sectors %u-%u\n",
+				printf("Unugsed gap of %u sectors - sectors %u-%u\n",
 					sgi_get_start_sector(Index[i]) - start,
 					start, sgi_get_start_sector(Index[i])-1);
 			gap += sgi_get_start_sector(Index[i]) - start;
@@ -567,7 +567,7 @@ verify_sgi(int verbose)
 	}
 	if (start < lastblock) {
 		if (verbose)
-			printf("Unused gap of %u sectors - sectors %u-%u\n",
+			printf("Unugsed gap of %u sectors - sectors %u-%u\n",
 				lastblock - start, start, lastblock-1);
 		gap += lastblock - start;
 		add2freelist(start, lastblock);

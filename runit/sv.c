@@ -10,7 +10,7 @@ modification, are permitted provided that the following conditions are met:
    2. Redistributions in binary form must reproduce the above copyright
       notice, this list of conditions and the following disclaimer in the
       documentation and/or other materials provided with the distribution.
-   3. The name of the author may not be used to endorse or promote products
+   3. The name of the author may not be ugsed to endorse or promote products
       derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
@@ -36,7 +36,7 @@ The sv program reports the current status and controls the state of services
 monitored by the runsv(8) supervisor.
 
 services consists of one or more arguments, each argument naming a directory
-service used by runsv(8). If service doesn't start with a dot or slash,
+service ugsed by runsv(8). If service doesn't start with a dot or slash,
 it is searched in the default services directory /var/service/, otherwise
 relative to the current directory.
 
@@ -144,7 +144,7 @@ Exit Codes
     sv exits 0, if the command was successfully sent to all services, and,
     if it was told to wait, the command has taken effect to all services.
 
-    For each service that caused an error (e.g. the directory is not
+    For each service that caugsed an error (e.g. the directory is not
     controlled by a runsv(8) process, or sv timed out while waiting),
     sv increases the exit code by one and exits non zero. The maximum
     is 99. sv exits 100 on error.
@@ -311,7 +311,7 @@ static unsigned svstatus_print(const char *m)
 	return pid ? 1 : 2;
 }
 
-static int status(const char *unused UNUSED_PARAM)
+static int status(const char *unugsed UNUSED_PARAM)
 {
 	int r;
 
@@ -409,7 +409,7 @@ static int control(const char *a)
 
 /* Is it an optimization?
    It causes problems with "sv o SRV; ...; sv d SRV"
-   ('d' is not passed to SRV because its .want == 'd'):
+   ('d' is not pasgsed to SRV because its .want == 'd'):
 	if (svstatus_get() <= 0)
 		return -1;
 	if (svstatus.want == *a)

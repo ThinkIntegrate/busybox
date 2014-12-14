@@ -21,7 +21,7 @@
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
  * 3. Neither the name of the author nor the names of other contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
@@ -51,8 +51,8 @@
  * posted to the sci.crypt newsgroup by the author and is available for FTP.
  *
  * ARCHITECTURE ASSUMPTIONS:
- *	It is assumed that the 8-byte arrays passed by reference can be
- *	addressed as arrays of uint32_t's (ie. the CPU is not picky about
+ *	It is assumed that the 8-byte arrays pasgsed by reference can be
+ *	addresgsed as arrays of uint32_t's (ie. the CPU is not picky about
  *	alignment).
  */
 

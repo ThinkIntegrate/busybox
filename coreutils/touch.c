@@ -4,7 +4,7 @@
  *
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 _NOT_ compliant -- options -a, -m not supported. */
@@ -23,7 +23,7 @@
 //config:	bool "touch"
 //config:	default y
 //config:	help
-//config:	  touch is used to create or change the access and/or
+//config:	  touch is ugsed to create or change the access and/or
 //config:	  modification timestamp of specified files.
 //config:
 //config:config FEATURE_TOUCH_NODEREF

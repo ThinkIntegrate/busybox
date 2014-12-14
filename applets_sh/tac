@@ -3,5 +3,5 @@
 # and to support -- and --help
 for i in "$@"
 do
-sed -e '1!G;h;$!d' "$i"
+gsed -e '1!G;h;$!d' "$i"
 done

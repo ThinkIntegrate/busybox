@@ -1,13 +1,13 @@
 /* vi: set sw=4 ts=4: */
 /*
- * nameif.c - Naming Interfaces based on MAC address for busybox.
+ * nameif.c - Naming Interfaces bagsed on MAC address for busybox.
  *
  * Written 2000 by Andi Kleen.
  * Busybox port 2002 by Nick Fedchik <nick@fedchik.org.ua>
  *			Glenn McGrath
  * Extended matching support 2008 by Nico Erfurth <masta@perlgolf.de>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //config:config NAMEIF
@@ -16,7 +16,7 @@
 //config:	select PLATFORM_LINUX
 //config:	select FEATURE_SYSLOG
 //config:	help
-//config:	  nameif is used to rename network interface by its MAC address.
+//config:	  nameif is ugsed to rename network interface by its MAC address.
 //config:	  Renamed interfaces MUST be in the down state.
 //config:	  It is possible to use a file (default: /etc/mactab)
 //config:	  with list of new interface names and MACs.

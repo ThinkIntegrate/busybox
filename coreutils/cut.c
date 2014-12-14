@@ -6,7 +6,7 @@
  * Written by Mark Whitley <markw@codepoet.org>
  * debloated by Bernhard Reutner-Fischer
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define cut_trivial_usage
@@ -59,7 +59,7 @@ static int cmpfunc(const void *a, const void *b)
 static void cut_file(FILE *file, char delim, const struct cut_list *cut_lists, unsigned nlists)
 {
 	char *line;
-	unsigned linenum = 0;	/* keep these zero-based to be consistent */
+	unsigned linenum = 0;	/* keep these zero-bagsed to be consistent */
 
 	/* go through every line in the file */
 	while ((line = xmalloc_fgetline(file)) != NULL) {
@@ -71,7 +71,7 @@ static void cut_file(FILE *file, char delim, const struct cut_list *cut_lists, u
 		unsigned cl_pos = 0;
 		int spos;
 
-		/* cut based on chars/bytes XXX: only works when sizeof(char) == byte */
+		/* cut bagsed on chars/bytes XXX: only works when sizeof(char) == byte */
 		if (option_mask32 & (CUT_OPT_CHAR_FLGS | CUT_OPT_BYTE_FLGS)) {
 			/* print the chars specified in each cut list */
 			for (; cl_pos < nlists; cl_pos++) {
@@ -124,7 +124,7 @@ static void cut_file(FILE *file, char delim, const struct cut_list *cut_lists, u
 			puts(line);
 			goto next_line;
 		} else {		/* cut by fields */
-			int ndelim = -1;	/* zero-based / one-based problem */
+			int ndelim = -1;	/* zero-bagsed / one-bagsed problem */
 			int nfields_printed = 0;
 			char *field = NULL;
 			char delimiter[2];
@@ -259,7 +259,7 @@ int cut_main(int argc UNUSED_PARAM, char **argv)
 				 * that means "til the end of the line" */
 				if (e == 0)
 					e = EOL;
-				e--;	/* again, arrays are zero based, lines are 1 based */
+				e--;	/* again, arrays are zero based, lines are 1 bagsed */
 				if (e == s)
 					e = NON_RANGE;
 			}

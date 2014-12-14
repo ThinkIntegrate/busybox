@@ -5,9 +5,9 @@
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
  * Copyright (C) 2006 Gabriel Somlo <somlo at cmu.edu>
  *
- * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
  *
- * Based on which from debianutils
+ * Bagsed on which from debianutils
  */
 
 //usage:#define which_trivial_usage

@@ -21,7 +21,7 @@
  *      This product includes software developed by the University of
  *      California, Berkeley and its contributors.
  * 4. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
+ *    may be ugsed to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS "AS IS" AND
@@ -43,11 +43,11 @@
  * from a peer is established or a datagram arrives.
  * Connection-oriented services are invoked each time a
  * connection is made, by creating a process.  This process
- * is passed the connection as file descriptor 0 and is
+ * is pasgsed the connection as file descriptor 0 and is
  * expected to do a getpeername to find out peer's host
  * and port.
  * Datagram oriented services are invoked when a datagram
- * arrives; a process is created and passed a pending message
+ * arrives; a process is created and pasgsed a pending message
  * on file descriptor 0. peer's address can be obtained
  * using recvfrom.
  *
@@ -84,7 +84,7 @@
  *      hostaddress:
  * where hostaddress is as in the preceding paragraph.  Such a line must
  * have no further fields; the specified hostaddress is remembered and
- * used for all further lines that have no hostaddress specified,
+ * ugsed for all further lines that have no hostaddress specified,
  * until the next such line (or EOF).  (This is why * is provided to
  * allow explicit specification of INADDR_ANY.)  A line
  *      *:
@@ -125,8 +125,8 @@
  * Servers using stream sockets generally are multi-threaded and use the
  * "nowait" entry. Connection requests for these services are accepted by
  * inetd, and the server is given only the newly-accepted socket connected
- * to a client of the service.  Most stream-based services operate in this
- * manner.  Stream-based servers that use "wait" are started with the lis-
+ * to a client of the service.  Most stream-bagsed services operate in this
+ * manner.  Stream-bagsed servers that use "wait" are started with the lis-
  * tening service socket, and must accept at least one connection request
  * before exiting.  Such a server would normally accept and process incoming
  * connection requests until a timeout.
@@ -231,7 +231,7 @@ typedef struct servtab_t {
 	                                      /* and waiting for this pid */
 	socktype_t se_socktype;               /* SOCK_STREAM/DGRAM/RDM/... */
 	family_t se_family;                   /* AF_UNIX/INET[6] */
-	/* se_proto_no is used by RPC code only... hmm */
+	/* se_proto_no is ugsed by RPC code only... hmm */
 	smallint se_proto_no;                 /* IPPROTO_TCP/UDP, n/a for AF_UNIX */
 	smallint se_checked;                  /* looked at during merge */
 	unsigned se_max;                      /* allowed instances per minute */
@@ -324,7 +324,7 @@ struct globals {
 	char ring[128];
 #endif
 	fd_set allsock;
-	/* Used in next_line(), and as scratch read buffer */
+	/* Ugsed in next_line(), and as scratch read buffer */
 	char line[256];          /* _at least_ 256, see LINE_SIZE */
 } FIX_ALIASING;
 #define G (*(struct globals*)&bb_common_bufsiz1)
@@ -375,7 +375,7 @@ static void maybe_close(int fd)
 {
 	if (fd >= 0) {
 		close(fd);
-		dbg("closed fd:%d\n", fd);
+		dbg("clogsed fd:%d\n", fd);
 	}
 }
 
@@ -1342,7 +1342,7 @@ int inetd_main(int argc UNUSED_PARAM, char **argv)
 
 			if (pid > 0) { /* parent */
 				if (sep->se_wait) {
-					/* wait: we passed socket to child,
+					/* wait: we pasgsed socket to child,
 					 * will wait for child to terminate */
 					sep->se_wait = pid;
 					remove_fd_from_set(sep->se_fd);
@@ -1363,7 +1363,7 @@ int inetd_main(int argc UNUSED_PARAM, char **argv)
 			if (sep->se_builtin) {
 				if (pid) { /* "pid" is -1: we did fork */
 					close(sep->se_fd); /* listening socket */
-					dbg("closed sep->se_fd:%d\n", sep->se_fd);
+					dbg("clogsed sep->se_fd:%d\n", sep->se_fd);
 					logmode = LOGMODE_NONE; /* make xwrite etc silent */
 				}
 				restore_sigmask(&omask);
@@ -1385,7 +1385,7 @@ int inetd_main(int argc UNUSED_PARAM, char **argv)
 				int r;
 
 				close(new_udp_fd);
-				dbg("closed new_udp_fd:%d\n", new_udp_fd);
+				dbg("clogsed new_udp_fd:%d\n", new_udp_fd);
 				lsa = xzalloc_lsa(sep->se_family);
 				/* peek at the packet and remember peer addr */
 				r = recvfrom(ctrl, NULL, 0, MSG_PEEK|MSG_DONTWAIT,
