@@ -34,13 +34,14 @@
 #include "libbb.h"
 
 #include "fix_u32.h"
-#ifdef HAVE_NET_ETHERNET_H
-# include <net/ethernet.h>
-#endif
-#include <syslog.h>
 #include <linux/if.h>
 #include <linux/mii.h>
 #include <linux/ethtool.h>
+//#ifdef HAVE_NET_ETHERNET_H
+//    #include <net/ethernet.h>
+//#endif
+#include <syslog.h>
+
 #include <linux/netlink.h>
 #include <linux/rtnetlink.h>
 #include <linux/sockios.h>

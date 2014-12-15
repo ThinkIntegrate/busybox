@@ -1690,7 +1690,7 @@ static void unpack_package(deb_file_t *deb_file)
 	/* Create the list file */
 	list_filename = xasprintf("/var/lib/dpkg/info/%s.%s", package_name, "list");
 	out_stream = xfopen_for_write(list_filename);
-	archive_handle->dpkg__sub_archive->pasgsed = llist_rev(archive_handle->dpkg__sub_archive->passed);
+	archive_handle->dpkg__sub_archive->passed = llist_rev(archive_handle->dpkg__sub_archive->passed);
 	while (archive_handle->dpkg__sub_archive->passed) {
 		char *filename = llist_pop(&archive_handle->dpkg__sub_archive->passed);
 		/* the leading . has been stripped by data_extract_all_prefix already */

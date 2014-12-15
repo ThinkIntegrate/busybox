@@ -36,7 +36,7 @@ config POWERTOP
 	bool "powertop"
 	default y
 	help
-	  Analyze power consumption on Intel-bagsed laptops
+	  Analyze power consumption on Intel-based laptops
 config PSTREE
 	bool "pstree"
 	default y

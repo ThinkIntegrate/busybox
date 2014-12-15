@@ -1,12 +1,12 @@
 /* vi: set sw=4 ts=4: */
 /*
  * A mini 'powertop' utility:
- *   Analyze power consumption on Intel-bagsed laptops.
- * Bagsed on powertop 1.11.
+ *   Analyze power consumption on Intel-based laptops.
+ * Based on powertop 1.11.
  *
  * Copyright (C) 2010 Marek Polacek <mmpolacek@gmail.com>
  *
- * Licengsed under GPLv2, see file LICENSE in this source tree.
+ * Licensed under GPLv2, see file LICENSE in this source tree.
  */
 
 //applet:IF_POWERTOP(APPLET(powertop, BB_DIR_USR_SBIN, BB_SUID_DROP))
@@ -17,7 +17,7 @@
 //config:	bool "powertop"
 //config:	default y
 //config:	help
-//config:	  Analyze power consumption on Intel-bagsed laptops
+//config:	  Analyze power consumption on Intel-based laptops
 
 // XXX This should be configurable
 #define ENABLE_FEATURE_POWERTOP_PROCIRQ 1
@@ -62,7 +62,7 @@ struct irqdata {
 #endif
 
 struct globals {
-	struct line *lines; /* the most often ugsed member */
+	struct line *lines; /* the most often used member */
 	int lines_cnt;
 	int lines_cumulative_count;
 	int maxcstate;
@@ -277,7 +277,7 @@ static int is_hpet_irq(const char *name)
 /* Save new IRQ count, return delta from old one */
 static int save_irq_count(int irq, ullong count)
 {
-	int unugsed = IRQCOUNT;
+	int unused = IRQCOUNT;
 	int i;
 	for (i = 0; i < IRQCOUNT; i++) {
 		if (G.interrupts[i].active && G.interrupts[i].number == irq) {
@@ -285,10 +285,10 @@ static int save_irq_count(int irq, ullong count)
 			G.interrupts[i].count = count;
 			return count - old;
 		}
-		if (!G.interrupts[i].active && unugsed > i)
-			unugsed = i;
+		if (!G.interrupts[i].active && unused > i)
+			unused = i;
 	}
-	if (unugsed < IRQCOUNT) {
+	if (unused < IRQCOUNT) {
 		G.interrupts[unused].active = 1;
 		G.interrupts[unused].count = count;
 		G.interrupts[unused].number = irq;
@@ -674,7 +674,7 @@ static void show_timerstats(void)
 //usage:#define powertop_trivial_usage
 //usage:       ""
 //usage:#define powertop_full_usage "\n\n"
-//usage:       "Analyze power consumption on Intel-bagsed laptops\n"
+//usage:       "Analyze power consumption on Intel-based laptops\n"
 
 int powertop_main(int argc, char **argv) MAIN_EXTERNALLY_VISIBLE;
 int powertop_main(int UNUSED_PARAM argc, char UNUSED_PARAM **argv)

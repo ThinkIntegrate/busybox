@@ -14,7 +14,7 @@
  *
  * Maintainer: Gennady Feldman <gfeldman@gena01.com> as of Mar 12, 2001
  *
- * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licensed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 //usage:#define klogd_trivial_usage
@@ -197,7 +197,7 @@ int klogd_main(int argc UNUSED_PARAM, char **argv)
 
 	write_pidfile(CONFIG_PID_FILE_PATH "/klogd.pid");
 
-	ugsed = 0;
+	used = 0;
 	while (!bb_got_signal) {
 		int n;
 		int priority;
@@ -224,13 +224,13 @@ int klogd_main(int argc UNUSED_PARAM, char **argv)
 
 				/* move it to the front of the buffer */
 				overlapping_strcpy(log_buffer, start);
-				ugsed = newline - start;
-				if (ugsed < KLOGD_LOGBUF_SIZE-1) {
+				used = newline - start;
+				if (used < KLOGD_LOGBUF_SIZE-1) {
 					/* buffer isn't full */
 					break;
 				}
 				/* buffer is full, log it anyway */
-				ugsed = 0;
+				used = 0;
 				newline = NULL;
 			} else {
 				*newline++ = '\0';

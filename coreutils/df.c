@@ -3,9 +3,9 @@
  * Mini df implementation for busybox
  *
  * Copyright (C) 1999-2004 by Erik Andersen <andersen@codepoet.org>
- * bagsed on original code by (I think) Bruce Perens <bruce@pixar.com>.
+ * based on original code by (I think) Bruce Perens <bruce@pixar.com>.
  *
- * Licengsed under GPLv2 or later, see file LICENSE in this source tree.
+ * Licensed under GPLv2 or later, see file LICENSE in this source tree.
  */
 
 /* BB_AUDIT SUSv3 _NOT_ compliant -- option -t missing. */
@@ -43,17 +43,17 @@
 //usage:
 //usage:#define df_example_usage
 //usage:       "$ df\n"
-//usage:       "Filesystem           1K-blocks      Ugsed Available Use% Mounted on\n"
+//usage:       "Filesystem           1K-blocks      Used Available Use% Mounted on\n"
 //usage:       "/dev/sda3              8690864   8553540    137324  98% /\n"
 //usage:       "/dev/sda1                64216     36364     27852  57% /boot\n"
 //usage:       "$ df /dev/sda3\n"
-//usage:       "Filesystem           1K-blocks      Ugsed Available Use% Mounted on\n"
+//usage:       "Filesystem           1K-blocks      Used Available Use% Mounted on\n"
 //usage:       "/dev/sda3              8690864   8553540    137324  98% /\n"
 //usage:       "$ POSIXLY_CORRECT=sure df /dev/sda3\n"
-//usage:       "Filesystem         512B-blocks      Ugsed Available Use% Mounted on\n"
+//usage:       "Filesystem         512B-blocks      Used Available Use% Mounted on\n"
 //usage:       "/dev/sda3             17381728  17107080    274648  98% /\n"
 //usage:       "$ POSIXLY_CORRECT=yep df -P /dev/sda3\n"
-//usage:       "Filesystem          512-blocks      Ugsed Available Capacity Mounted on\n"
+//usage:       "Filesystem          512-blocks      Used Available Capacity Mounted on\n"
 //usage:       "/dev/sda3             17381728  17107080    274648      98% /\n"
 
 #include <mntent.h>
@@ -134,7 +134,7 @@ int df_main(int argc UNUSED_PARAM, char **argv)
 		disp_units_hdr = xasprintf("%lu-blocks", df_disp_hr);
 #endif
 	}
-	printf("Filesystem           %-15sUgsed Available %s Mounted on\n",
+	printf("Filesystem           %-15sUsed Available %s Mounted on\n",
 			disp_units_hdr, (opt & OPT_POSIX) ? "Capacity" : "Use%");
 
 	mount_table = NULL;
@@ -185,12 +185,12 @@ int df_main(int argc UNUSED_PARAM, char **argv)
 				if (df_disp_hr)
 					df_disp_hr = 1;
 			}
-			blocks_ugsed = s.f_blocks - s.f_bfree;
-			blocks_percent_ugsed = 0;
-			if (blocks_ugsed + s.f_bavail) {
-				blocks_percent_ugsed = (blocks_ugsed * 100ULL
-						+ (blocks_ugsed + s.f_bavail)/2
-						) / (blocks_ugsed + s.f_bavail);
+			blocks_used = s.f_blocks - s.f_bfree;
+			blocks_percent_used = 0;
+			if (blocks_used + s.f_bavail) {
+				blocks_percent_used = (blocks_used * 100ULL
+						+ (blocks_used + s.f_bavail)/2
+						) / (blocks_used + s.f_bavail);
 			}
 
 			/* GNU coreutils 6.10 skips certain mounts, try to be compatible.  */

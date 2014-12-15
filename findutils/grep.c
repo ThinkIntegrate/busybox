@@ -21,7 +21,7 @@
 //applet:IF_GREP(APPLET(grep, BB_DIR_BIN, BB_SUID_DROP))
 //applet:IF_FEATURE_GREP_EGREP_ALIAS(APPLET_ODDNAME(egrep, grep, BB_DIR_BIN, BB_SUID_DROP, egrep))
 //applet:IF_FEATURE_GREP_FGREP_ALIAS(APPLET_ODDNAME(fgrep, grep, BB_DIR_BIN, BB_SUID_DROP, fgrep))
-
+#undef ENABLE_EXTRA_COMPAT
 //kbuild:lib-$(CONFIG_GREP) += grep.o
 
 //config:config GREP
@@ -184,7 +184,7 @@ struct globals {
 #if !ENABLE_EXTRA_COMPAT
 	int reflags;
 #else
-	RE_TRANSLATE_TYPE case_fold; /* RE_TRANSLATE_TYPE is [[un]signed] char* */
+	unsigned char* case_fold; /* RE_TRANSLATE_TYPE is [[un]signed] char* */
 #endif
 	smalluint invert_search;
 	smalluint print_filename;
@@ -238,13 +238,13 @@ struct globals {
 typedef struct grep_list_data_t {
 	char *pattern;
 /* for GNU regex, matched_range must be persistent across grep_file() calls */
-#if !ENABLE_EXTRA_COMPAT
+//#if !ENABLE_EXTRA_COMPAT
 	regex_t compiled_regex;
 	regmatch_t matched_range;
-#else
+/*#else
 	struct re_pattern_buffer compiled_regex;
 	struct re_registers matched_range;
-#endif
+#endif*/
 #define ALLOCATED 1
 #define COMPILED 2
 	int flg_mem_alocated_compiled;
@@ -562,7 +562,7 @@ static int grep_file(FILE *file)
 				/* Add the line to the circular 'before' buffer */
 				free(before_buf[curpos]);
 				before_buf[curpos] = line;
-				IF_EXTRA_COMPAT(before_buf_size[curpos] = line_len;)
+			//	IF_EXTRA_COMPAT(before_buf_size[curpos] = line_len;)
 				curpos = (curpos + 1) % lines_before;
 				/* avoid free(line) - we took the line */
 				line = NULL;

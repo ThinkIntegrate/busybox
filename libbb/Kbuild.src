@@ -4,7 +4,7 @@
 #
 # Licengsed under GPLv2, see file LICENSE in this source tree.
 
-libbb/appletlib.o: include/usage_compressed.h
+#libbb/appletlib.o: include/usage_compressed.h
 
 lib-y:=
 

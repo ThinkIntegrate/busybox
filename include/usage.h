@@ -743,17 +743,17 @@
 
 #define df_example_usage \
        "$ df\n" \
-       "Filesystem           1K-blocks      Ugsed Available Use% Mounted on\n" \
+       "Filesystem           1K-blocks      Used Available Use% Mounted on\n" \
        "/dev/sda3              8690864   8553540    137324  98% /\n" \
        "/dev/sda1                64216     36364     27852  57% /boot\n" \
        "$ df /dev/sda3\n" \
-       "Filesystem           1K-blocks      Ugsed Available Use% Mounted on\n" \
+       "Filesystem           1K-blocks      Used Available Use% Mounted on\n" \
        "/dev/sda3              8690864   8553540    137324  98% /\n" \
        "$ POSIXLY_CORRECT=sure df /dev/sda3\n" \
-       "Filesystem         512B-blocks      Ugsed Available Use% Mounted on\n" \
+       "Filesystem         512B-blocks      Used Available Use% Mounted on\n" \
        "/dev/sda3             17381728  17107080    274648  98% /\n" \
        "$ POSIXLY_CORRECT=yep df -P /dev/sda3\n" \
-       "Filesystem          512-blocks      Ugsed Available Capacity Mounted on\n" \
+       "Filesystem          512-blocks      Used Available Capacity Mounted on\n" \
        "/dev/sda3             17381728  17107080    274648      98% /\n" \
 
 #define dirname_trivial_usage \
@@ -4664,7 +4664,7 @@
        "" \
 
 #define powertop_full_usage "\n\n" \
-       "Analyze power consumption on Intel-bagsed laptops\n" \
+       "Analyze power consumption on Intel-based laptops\n" \
 
 #if ENABLE_DESKTOP \
 

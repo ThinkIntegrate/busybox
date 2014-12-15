@@ -60,7 +60,7 @@ struct globals {
 #define fileName           (G.fileName          )
 #define curNum             (G.curNum            )
 #define lastNum            (G.lastNum           )
-#define bufUgsed            (G.bufUgsed           )
+#define bufUsed            (G.bufUsed           )
 #define bufSize            (G.bufSize           )
 #define dirty              (G.dirty             )
 #define lines              (G.lines             )
@@ -691,7 +691,7 @@ static int readLines(const char *file, int num)
 	}
 
 	bufPtr = bufBase;
-	bufUgsed = 0;
+	bufUsed = 0;
 	lineCount = 0;
 	charCount = 0;
 	cc = 0;
@@ -709,7 +709,7 @@ static int readLines(const char *file, int num)
 				return FALSE;
 			}
 			bufPtr += len;
-			bufUgsed -= len;
+			bufUsed -= len;
 			charCount += len;
 			lineCount++;
 			num++;
@@ -721,7 +721,7 @@ static int readLines(const char *file, int num)
 			bufPtr = bufBase + bufUsed;
 		}
 
-		if (bufUgsed >= bufSize) {
+		if (bufUsed >= bufSize) {
 			len = (bufSize * 3) / 2;
 			cp = xrealloc(bufBase, len);
 			bufBase = cp;
@@ -730,7 +730,7 @@ static int readLines(const char *file, int num)
 		}
 
 		cc = safe_read(fd, bufPtr, bufSize - bufUsed);
-		bufUgsed += cc;
+		bufUsed += cc;
 		bufPtr = bufBase;
 
 	} while (cc > 0);
@@ -753,7 +753,7 @@ static int readLines(const char *file, int num)
 	close(fd);
 
 	printf("%d lines%s, %d chars\n", lineCount,
-		(bufUgsed ? " (incomplete)" : ""), charCount);
+		(bufUsed ? " (incomplete)" : ""), charCount);
 
 	return TRUE;
 }
